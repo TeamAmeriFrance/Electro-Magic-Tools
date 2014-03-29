@@ -1,0 +1,57 @@
+#-------------------------------------------------------------------------------
+# Copyright (c) 2014 Tombenpotter.
+# All rights reserved. 
+# 
+# This program and the accompanying materials are made available under the terms of the GNU Public License v3.0
+# which accompanies this distribution, and is available at http://www.gnu.org/licenses/gpl.html
+# 
+# This class was made by Tombenpotter and is distributed as a part of the Electro-Magic Tools mod.
+# Electro-Magic Tools is a derivative work on Thaumcraft 4 (c) Azanor 2012.
+# http://www.minecraftforum.net/topic/1585216-
+#-------------------------------------------------------------------------------
+This .txt file is here so that I don't randomly forget to add stuff where it is needed.
+Anyone that's not a modder or didn't come here on purpose just has to ignore that.
+Consider this as a TODO list, that also register what's been done.
+
+
+Items----------------------------------------------------------------------------------------------------
+
+Thaumium Drill: Item is functional-Research is done
+Thaumium Chainsaw: Item is functional-Research is done
+Quantum Goggles of Revealing: Item is functional-Research is done
+Diamond Chainsaw: Item is functional-Research is done
+Omnitool: Item is functional-Research is done
+Diamond Omnitool: Item is functional-Research is done
+Thaumium Omnitool: Item is functional-Research is done
+Nanosuit Goggles of Revealing: Item is functional-Research is done
+Wand Focus: Explosion: Item is functional, but need to be ameliorated-Research is done
+Wand Focus : Kris-tmas: Item is functional-Research is done
+Wand Focus : Shield: Item is functional-Research is done
+Electric Goggles of Revealing: Item is functional-Research is done
+Chainsaw of the Stream: Item is functional-Research is done
+Drill of the Rockbreaker: Item is functional-Research is done
+Thaumium Plate: Item is functional (it does nothing)-Research is done
+Quantum Solar Helmet of Revealing: Item is functional-Research is done
+Mjolnir: Item is functional-Research is done
+Broken Relic of Mjolnir: Item is functional-Research is done
+Lightning Summoner: Item is functional-Research is done
+Supercharged Mjolnir: Item is functional-Research is done
+Electric Boots of the Traveller: Item is fully functional-Research is done
+Nanosuit Boots of the Traveller: Item is fully functional-Research is done
+Quantum Boots of the Traveller: Item is fully functional-Research is done
+
+Blocks---------------------------------------------------------------------------------------------------
+Potentia Generator: Block is functional-Research is done
+Shield Block: Block is functional, but doesn't resist to a wither-Research is done
+Ignis Generator: Block is functional-Research is done
+Auram Generator: Block is functional-Research is done
+Arbor Generator: Block is functional-Research is done
+Industrial Wand Charging Station: Block is functional-Research is done
+Compressed Solar Panel: Block is functional-Research is done
+Double Compressed Solar Panel: Block is functional-Research is done
+Ethereal Macerator : Block is functional-Research is done-Need to add a way to speed it up with essentia
+
+Entities-------------------------------------------------------------------------------------------------
+
+Laser: An explosion is created on landing-Texture/Model is all good
+Guardian Snowman: Texture is all good

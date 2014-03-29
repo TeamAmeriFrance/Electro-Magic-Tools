@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ElectricMagicTools",
+  "name": "Electric Magic Tools",
+  "description": "Have you ever thought about combining IC2 and TC4?",
+  "version": "${1.0.7}",
+  "mcversion": "${1.6.4}",
+  "url": "http://www.minecraftforum.net/topic/2196652-164smpindustrialcraft-2thaumcraft-electric-magic-tools/",
+  "updateUrl": "",
+  "authors": ["Tombenpotter"],
+  "credits": "All the guys who helped me in any way, shape or form, and beta testers I bug to try and break my stuff. And of course the IC2 team and Azanor",
+  "logoFile": "/assets/electricmagictools/textures/misc/emt.png",
+  "screenshots": [],
+  "dependencies": ["Thaumcraft", "ic2"]
+}
+]

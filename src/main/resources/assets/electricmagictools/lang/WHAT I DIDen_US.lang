@@ -1,0 +1,43 @@
+Thaumonomicon Names-----
+emt.tag.Electric Magic Tools=Combining Technology and Magic
+emt.tag.Thaumium Drill=Magic drilling
+emt.tag.Thaumium Chainsaw=Magic Chopping and attacking
+emt.tag.Electric Goggles=Electric Goggles of Revealing
+emt.tag.Thaumic Nanosuit Helmet=Nanosuit Goggles of Revealing
+emt.tag.Thaumic Quantum Helmet=Quantum Goggles of Revealing
+emt.tag.Iron Omnitool=All in one!
+emt.tag.Diamond Omnitool=All in one V2!
+emt.tag.Thaumium Omnitool=All in one V3!
+emt.tag.Explosion Focus=Concentrated Firebat
+emt.tag.Kris-tmas Focus=Ho! Ho! Ho!
+emt.tag.Shield Focus=S.H.I.E.L.D.
+emt.tag.Potentia Generator=Energetic fun
+emt.tag.Ignis Generator=Fiery fun
+emt.tag.Auram Generator=Magical fun
+emt.tag.Arbor Generator=Energy from trees
+emt.tag.Chainsaw of the Stream=Chop it all!
+emt.tag.Drill of the Rockbreaker=Mine it all!
+emt.tag.Shield Block=To blow or not to blow...
+emt.tag.Tiny Uranium=From large, to tiny...
+
+Thaumonomicon Texts-----
+emt.text.Electric Magic Tools=Welcome to the realm of magic, associated with technology! Our researchers worked in association with the Thaumaturges to make their preferred tools compatible with each system.
+emt.text.Thaumium Drill=You have discovered a way to infuse Thaumium with mundane electricity. You have managed to bring the diamond drill to a level higher than its previous state.               Nevertheless, these ameliorations do not come without drawbacks : during the magical process, the Drill lost its ability to place torches.      The Thaumium Drill itslef is not near the level reached by the Iridium Drill, so consider it as a mid-tier tool.                                                                You think you will manage to upgrade this tool in future projects.
+emt.text.Thaumium Chainsaw=You have discovered a way to infuse Thaumium with mundane electricity. You have managed to bring the chainsaw to a level higher than its previous state.               Nevertheless, these ameliorations do not come without drawbacks : during the magical process, the Chainsaw lost its ability to shear.                                             You think you will manage to upgrade this tool in future projects.
+emt.text.Electric Goggles=You have discovered a way to merge your goggles of revealing with mundane electricity. You can now recharge your goggles using EU, and see everything as it was before. You need a diamond helmet to be able to merge electricity and your goggles, getting a better protection out of the deal.
+emt.text.Thaumic Nanosuit Helmet=You have discovered a way to infuse advanced technological armor with magic. You have managed to bring the nanosuit helmet to a magic level so important that it now shows nodes and aspects. However, during the magical process, you lost the ability to control the nightvision effect of your helmet.
+emt.text.Thaumic Quantum Helmet=You have discovered a way to infuse highly advanced technological armor with magic. You have managed to bring the quantum helmet to a magic level so important that it now shows nodes and aspects. However, during the magical process, you lost the ability to control the nightvision effect and get fed by your helmet.
+emt.text.Iron Omnitool=You have discovered a way to combine the Mining Drill and the Chainsaw, resulting in a tool capable of doing everything those two tools could do! It comes to your attention, that since both tools are such low-level, this recipe is to happen in a mundane crafting bench.
+emt.text.Diamond Omnitool=You have discovered a way to combine the Diamond Drill and the Diamond Chainsaw, resulting in a tool capable of doing everything those two tools could do! It comes to your attention, that since Diamonds are gems, and crystals are a good catalyst of magic, this recipe is to happen in the Arcane Worktable.
+emt.text.Thaumium Omnitool=You have discovered a way to combine the Thaumium Drill and the Thaumium Chainsaw, resulting in a tool capable of doing everything those two tools could do! But do not forget that these tools were already infused with magic, which makes this Infusion quite risky.
+emt.text.Explosion Focus=You have found a way to modify the Nine Hells focus, therefore provoking a rather ... explosive effect. You have found the perfect tool for focusing the power of the beasts : the mundane mining laser. This recipe is not cheap, nor on the material side, nor in the magic side.
+emt.text.Kris-tmas Focus=Merry Christmas! This time, you have discovered a way to spawn some friends of yours, all thanks to the magic of Christmas!
+emt.text.Shield Focus=You have studied the portable hole, understanding how you could pass through blocks with its help. You have decided to reverse its effects, and create a shield of blocks to protect yourself from danger. However, doing so will make you slow down for the duration the shield is held. The shield is said to resist to anything and everything. Watch out! The shiel will replace all the blocks nearby, not caring if anything is already there. Use at your own risk, and for your own safety.
+emt.text.Potentia Generator=After numerous studies and hard research, you have finally managed to find how to create electricity from your spare essentia. The process is very specific, including many machines, but the result is worth it.                                                               This machine produces between 3000 and 3500 EU per unit of Potentia, making it really efficient. To produce energy, place a Potentia Jar on top of the machine.                                                 You think you will manage to convert which type of Essentia it uses in your future projects.
+emt.text.Ignis Generator=After some more studies, you have found a way to exchange which essentia your generator uses. You now have an Ignis Generator!
+emt.text.Auram Generator=After some more studies, you have found a way to exchange which essentia your generator uses. You now have an Auram Generator!
+emt.text.Arbor Generator=After some more studies, you have found a way to exchange which essentia your generator uses. You now have an Arbor Generator!
+emt.text.Chainsaw of the Stream=After studying both the Axe of the Stream and the Thaumium Chainsaw, you managed to combine most of their abilities, resulting in an electric tool that can chop down whole trees.
+emt.text.Drill of the Rockbreaker=After studying the Pickaxe of the Core, the Shovel of the Earthmover and the Thaumium Drill, you have managed to combine most of their abilities, resulting in an electric tool that can mine a whole 3x3x1 area of pickaxe materials, and dirt materials really quickly.             It is also able to find the closest ore clusters costing some EU.
+emt.text.Shield Block=After a long study of the shield created by the shield focus, you have discovered how to make its blocks real! They are highly blast resistant, and even nuke proof.      Be warned that in case of a nuclear explosion, the blocks survive, but the environnement might not.                                         These blocks are so volatile that they do not drop when broken, even if the silk touch enchant is used.
+emt.text.Tiny Uranium=After processing your all your ores and using them for the creation of nuclear reactors, you have finally run out of uranium nuggets, nedeed to make your beloved fuel rods. After long researches, you have managed to transform your leftover uranium into the needed nuggets!                                  However, this process is a bit wasteful, but you believe it to be worth the cost.

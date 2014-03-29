@@ -1,0 +1,20 @@
+Changelog of the mod : Electric Magic Tools, a Thaumcraft 4/Industrial-Craft 2 addon
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Version 1.0.0 : First release of the mod.
+Version 1.0.1 : Second release of the mod : fixes a crash due to the Omnitools.
+Version 1.0.2 : Third release of the mod : adds the Wand Focus : Laser, and a christmas easter egg. Does not work on servers.
+Version 1.0.3 : Attempt to fix the server crash of the mod. Attemps failed.
+Version 1.0.3b : Second attempt to fix the server crash, it is again working in SMP.
+Version 1.0.4 : Adds the Kris-tmas Focus and the Shield Focus
+Version 1.0.5 : Added some Ignis/Potentia/Auram generators, Electric Goggles of revealing, Chainsaw of the Stream, and Drill of the Rockbreaker.
+Version 1.0.6beta1 : Added an Industrial Wand Charging Station, some legendary tools, and a couple of other stuff.
+Version 1.0.6beta2 : No new stuff, but switched to ForgeGradle (964)
+Version 1.0.6beta3 : Added some enhanced boots of the traveller, and also capes for me and some friends
+Version 1.0.7 : Updated to Thaumcraft 4.1.0x
+Version 1.0.8 : Added some magical solar panels, different tiers and special capablities to all of them.
+Version 1.0.9beta1 : Fixed the bug with the Drill of the Rockbreaker, added UU-Matter Infusion Recipes, fixed the recipe for the Quantum Solar Helmet of Revealing, added the Wand Focus: Charging, a cool particle effect existing when the Electric/Nano/Quantum boots of the traveller are worn (you an disable it in the config),a portable node (Azanor agreed about the balance), and an Elecric Hoe of Growth.
+Version 1.0.9beta2 : Added a blacklist for the Ethereal Processor to anything that has "dust" in its OreDict entry. Included my build.gradle in the commit :)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------

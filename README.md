@@ -1,4 +1,4 @@
-Electro-Magic-Tools
-===================
+ElectricMagicTools
+==================
 
-An IC2/TC4 crossover addon, with nifty stuff!
+An IC2/TC4 crossover addon

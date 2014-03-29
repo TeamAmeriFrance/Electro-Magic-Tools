@@ -1,0 +1,84 @@
+/*******************************************************************************
+ * Copyright (c) 2014 Tombenpotter.
+ * All rights reserved. 
+ * 
+ * This program and the accompanying materials are made available under the terms of the GNU Public License v3.0
+ * which accompanies this distribution, and is available at http://www.gnu.org/licenses/gpl.html
+ * 
+ * This class was made by Tombenpotter and is distributed as a part of the Electro-Magic Tools mod.
+ * Electro-Magic Tools is a derivative work on Thaumcraft 4 (c) Azanor 2012.
+ * http://www.minecraftforum.net/topic/1585216-
+ ******************************************************************************/
+package electricMagicTools.tombenpotter.electricmagictools.common.items;
+
+import ic2.api.item.ElectricItem;
+import ic2.api.item.IElectricItem;
+
+import java.util.List;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
+import thaumcraft.api.IScribeTools;
+import thaumcraft.common.items.ItemInkwell;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import electricMagicTools.tombenpotter.electricmagictools.common.CreativeTab;
+
+public class ItemElectricScribingTools extends ItemInkwell implements IElectricItem, IScribeTools
+{
+
+	public static int maxCharge = 400;
+
+	public ItemElectricScribingTools(int id)
+	{
+		super(id);
+		this.setCreativeTab(CreativeTab.tabTombenpotter);
+		this.setMaxDamage(400);
+		this.setMaxStackSize(1);
+	}
+
+	@Override
+	public boolean canProvideEnergy(ItemStack itemStack) {
+		return false;
+	}
+
+	@Override
+	public int getChargedItemId(ItemStack itemStack) {
+		return itemID;
+	}
+
+	@Override
+	public int getEmptyItemId(ItemStack itemStack) {
+		return itemID;
+	}
+
+	@Override
+	public int getMaxCharge(ItemStack itemStack) {
+		return maxCharge;
+	}
+
+	@Override
+	public int getTier(ItemStack itemStack) {
+		return 1;
+	}
+
+	@Override
+	public int getTransferLimit(ItemStack itemStack) {
+		return 5;
+	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List itemList) {
+		ItemStack itemStack = new ItemStack(this, 1);
+		if (getChargedItemId(itemStack) == this.itemID)
+		{
+			ItemStack charged = new ItemStack(this, 1);
+			ElectricItem.manager.charge(charged, 2147483647, 2147483647, true, false);
+			itemList.add(charged);
+		}
+		if (getEmptyItemId(itemStack) == this.itemID)
+			itemList.add(new ItemStack(this, 1, getMaxDamage()));
+	}
+}
