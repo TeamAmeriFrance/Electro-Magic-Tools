@@ -45,7 +45,7 @@ public class TileEntitySaxumGenerator extends TileEntity
 
 		if (waitTime <= 0)
 		{
-			if (EssentiaHandler.drainEssentia(this, Aspect.STONE, ForgeDirection.UNKNOWN, 8))
+			if ((!this.worldObj.isRemote) && (EssentiaHandler.drainEssentia(this, Aspect.STONE, ForgeDirection.UNKNOWN, 8)))
 			{
 				energySource.addEnergy(Config.arborGenOutput);
 			}

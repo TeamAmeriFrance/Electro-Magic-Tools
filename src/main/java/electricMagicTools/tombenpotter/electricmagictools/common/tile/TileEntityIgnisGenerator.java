@@ -45,7 +45,7 @@ public class TileEntityIgnisGenerator extends TileEntity
 
 		if (waitTime <= 0)
 		{
-			if (EssentiaHandler.drainEssentia(this, Aspect.FIRE, ForgeDirection.UNKNOWN, 8))
+			if ((!this.worldObj.isRemote) && (EssentiaHandler.drainEssentia(this, Aspect.FIRE, ForgeDirection.UNKNOWN, 8)))
 			{
 				energySource.addEnergy(6000);
 			}
