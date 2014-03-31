@@ -267,7 +267,7 @@ public class ThaumonomiconResearch
 			if (Config.solarHelmetResearch == false)
 			{
 				text = "1";
-				research = new EMTResearchItem("Solar Helmet of Revealing", "EMT", ResearchAspects.solarHelmetRevealing, -2, -5, 1, new ItemStack(ItemRegistry.solarHelmetRevealing)).setSecondary().setParents("Compressed Solars").registerResearchItem();
+				research = new EMTResearchItem("Solar Helmet of Revealing", "EMT", ResearchAspects.solarHelmetRevealing, -2, -5, 1, new ItemStack(ItemRegistry.solarHelmetRevealing)).setSecondary().setParents("Compressed Solars").setParentsHidden("Quantum Goggles of Revealing").registerResearchItem();
 				research.setPages(new ResearchPage(text), new ResearchPage(EMTPostInitRecipes.solarHelmetRevealing));
 			}
 		}
