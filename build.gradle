@@ -13,7 +13,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.0.9c"
+version = "1.0.9d"
 group= "electricMagicTools.tombenpotter" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "ElectroMagicTools"
 
