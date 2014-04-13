@@ -35,7 +35,7 @@ import cpw.mods.fml.relauncher.ReflectionHelper;
 
 public class CapeEventHandler
 {
-	private final String serverLocation = "https://raw.github.com/Tombenpotter/ElectricMagicTools/master/capes.txt";
+	private final String serverLocation = "https://raw.github.com/Tombenpotter/Electro-Magic-Tools/master/capes.txt";
 	private final int timeout = 1000;
 
 	private static final Graphics TEST_GRAPHICS = new BufferedImage(128, 128, BufferedImage.TYPE_INT_RGB).getGraphics();
