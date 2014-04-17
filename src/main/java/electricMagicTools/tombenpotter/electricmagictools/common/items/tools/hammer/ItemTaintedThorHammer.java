@@ -13,7 +13,7 @@ package electricMagicTools.tombenpotter.electricmagictools.common.items.tools.ha
 
 import java.util.List;
 
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -23,19 +23,17 @@ import thaumcraft.common.entities.projectile.EntityAlumentum;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemTaintedThorHammer extends ItemThorHammer
-{
+public class ItemTaintedThorHammer extends ItemThorHammer {
 
-	public ItemTaintedThorHammer(int id)
-	{
-		super(id);
+	public ItemTaintedThorHammer() {
+		super();
 		this.setMaxDamage(1000);
 		// OreDictionary.registerOre("craftingToolForgeHammer", this);
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IconRegister iconRegister) {
+	public void registerIcons(IIconRegister iconRegister) {
 		this.itemIcon = iconRegister.registerIcon("electricmagictools:hammer/taintedthorhammer");
 	}
 
@@ -49,11 +47,9 @@ public class ItemTaintedThorHammer extends ItemThorHammer
 		world.spawnEntityInWorld(new EntityAlumentum(world, player.posX, player.posY + 4, player.posZ));
 		world.spawnEntityInWorld(new EntityAlumentum(world, player.posX, player.posY + 8, player.posZ));
 
-		if (player.capabilities.isCreativeMode)
-		{
+		if (player.capabilities.isCreativeMode) {
 			return itemstack;
-		} else
-		{
+		} else {
 			itemstack.damageItem(40, player);
 			return itemstack;
 		}

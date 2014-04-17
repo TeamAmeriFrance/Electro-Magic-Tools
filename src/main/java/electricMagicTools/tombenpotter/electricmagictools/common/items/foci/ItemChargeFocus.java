@@ -13,9 +13,8 @@ package electricMagicTools.tombenpotter.electricmagictools.common.items.foci;
 
 import ic2.api.item.ElectricItem;
 import ic2.api.item.IElectricItem;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
@@ -26,19 +25,17 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import electricMagicTools.tombenpotter.electricmagictools.common.Config;
 
-public class ItemChargeFocus extends ItemBaseFocus
-{
+public class ItemChargeFocus extends ItemBaseFocus {
 
 	private static final AspectList visCost = new AspectList().add(Aspect.FIRE, 10).add(Aspect.WATER, 10).add(Aspect.AIR, 10).add(Aspect.EARTH, 10).add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 10);
 
-	public ItemChargeFocus(int id)
-	{
-		super(id);
+	public ItemChargeFocus() {
+		super();
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IconRegister iconRegister) {
+	public void registerIcons(IIconRegister iconRegister) {
 		this.itemIcon = iconRegister.registerIcon("electricmagictools:chargefocus");
 	}
 
@@ -60,37 +57,27 @@ public class ItemChargeFocus extends ItemBaseFocus
 	@Override
 	public ItemStack onFocusRightClick(ItemStack itemstack, World world, EntityPlayer player, MovingObjectPosition movingobjectposition) {
 		ItemWandCasting wand = (ItemWandCasting) itemstack.getItem();
-		if (wand.consumeAllVis(itemstack, player, getVisCost(), true))
-		{
-			if (!world.isRemote)
-			{
+		if (wand.consumeAllVis(itemstack, player, getVisCost(), true, true)) {
+			if (!world.isRemote) {
 
 				int energyLeft = Config.chargeFocusProduction;
-				for (int i = 0; i < player.inventory.armorInventory.length; i++)
-				{
-					if (energyLeft > 0)
-					{
-						if ((player.inventory.armorInventory[i] != null) && ((Item.itemsList[player.inventory.armorInventory[i].itemID] instanceof IElectricItem)))
-						{
+				for (int i = 0; i < player.inventory.armorInventory.length; i++) {
+					if (energyLeft > 0) {
+						if ((player.inventory.armorInventory[i] != null) && (player.inventory.armorInventory[i].getItem() instanceof IElectricItem)) {
 							int sentPacket = ElectricItem.manager.charge(player.inventory.armorInventory[i], energyLeft, 4, false, false);
 							energyLeft -= sentPacket;
 						}
-					} else
-					{
+					} else {
 						return itemstack;
 					}
 				}
-				for (int j = 0; j < player.inventory.mainInventory.length; j++)
-				{
-					if (energyLeft > 0)
-					{
-						if ((player.inventory.mainInventory[j] != null) && ((Item.itemsList[player.inventory.mainInventory[j].itemID] instanceof IElectricItem)))
-						{
+				for (int j = 0; j < player.inventory.mainInventory.length; j++) {
+					if (energyLeft > 0) {
+						if ((player.inventory.mainInventory[j] != null) && (player.inventory.mainInventory[j].getItem() instanceof IElectricItem)) {
 							int sentPacket = ElectricItem.manager.charge(player.inventory.mainInventory[j], energyLeft, 4, false, false);
 							energyLeft -= sentPacket;
 						}
-					} else
-					{
+					} else {
 						return itemstack;
 					}
 				}

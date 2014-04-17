@@ -12,10 +12,15 @@
 package electricMagicTools.tombenpotter.electricmagictools.common.items.tools;
 
 import ic2.api.item.ElectricItem;
+
+import java.util.List;
+
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -25,31 +30,27 @@ import cpw.mods.fml.relauncher.SideOnly;
 import electricMagicTools.tombenpotter.electricmagictools.common.Config;
 import electricMagicTools.tombenpotter.electricmagictools.common.CreativeTab;
 
-public class ItemOmnitoolDiamond extends ItemOmnitoolIron
-{
+public class ItemOmnitoolDiamond extends ItemOmnitoolIron {
 
 	public int maxCharge = 70000;
 	private int cost;
 	private final int hitCost = 250;
 
-	public ItemOmnitoolDiamond(int id)
-	{
-		super(id);
+	public ItemOmnitoolDiamond() {
+		super();
 		this.efficiencyOnProperMaterial = 16F;
 		this.setCreativeTab(CreativeTab.tabTombenpotter);
 		this.setMaxStackSize(1);
-		if (Config.toolsInBore == false)
-		{
+		if (Config.toolsInBore == false) {
 			this.setMaxDamage(27);
-		} else
-		{
+		} else {
 			this.setMaxDamage(350);
 		}
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IconRegister iconRegister) {
+	public void registerIcons(IIconRegister iconRegister) {
 		this.itemIcon = iconRegister.registerIcon("electricmagictools:diamondomnitool");
 	}
 
@@ -64,46 +65,53 @@ public class ItemOmnitoolDiamond extends ItemOmnitoolIron
 	}
 
 	@Override
-	public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, EntityLivingBase par7EntityLivingBase) {
-		if (Config.toolsInBore == false)
-		{
+	public boolean onBlockDestroyed(ItemStack stack, World world, Block block, int par4, int par5, int par6, EntityLivingBase entityLiving) {
+		if (Config.toolsInBore == false) {
 			cost = 200;
-		} else
-		{
+		} else {
 			cost = 1;
 		}
-		ElectricItem.manager.use(par1ItemStack, cost, par7EntityLivingBase);
+		ElectricItem.manager.use(stack, cost, entityLiving);
 		return true;
 	}
 
 	@Override
 	public boolean canHarvestBlock(Block block, ItemStack stack) {
-		return Item.axeDiamond.canHarvestBlock(block) || Item.swordDiamond.canHarvestBlock(block) || Item.pickaxeDiamond.canHarvestBlock(block) || Item.shovelDiamond.canHarvestBlock(block) || Item.shears.canHarvestBlock(block);
+		return Items.diamond_axe.canHarvestBlock(block, stack) || Items.diamond_sword.canHarvestBlock(block, stack) || Items.diamond_pickaxe.canHarvestBlock(block, stack) || Items.diamond_shovel.canHarvestBlock(block, stack) || Items.shears.canHarvestBlock(block, stack);
 	}
 
 	@Override
-	public float getStrVsBlock(ItemStack stack, Block block, int meta) {
-		if (!ElectricItem.manager.canUse(stack, cost))
-		{
+	public float getDigSpeed(ItemStack stack, Block block, int meta) {
+		if (!ElectricItem.manager.canUse(stack, cost)) {
 			return 1.0F;
 		}
 
-		if (Item.axeWood.getStrVsBlock(stack, block, meta) > 1.0F || Item.swordWood.getStrVsBlock(stack, block, meta) > 1.0F || Item.pickaxeWood.getStrVsBlock(stack, block, meta) > 1.0F || Item.shovelWood.getStrVsBlock(stack, block, meta) > 1.0F || Item.shears.getStrVsBlock(stack, block, meta) > 1.0F)
-		{
+		if (Items.wooden_axe.getDigSpeed(stack, block, meta) > 1.0F || Items.wooden_sword.getDigSpeed(stack, block, meta) > 1.0F || Items.wooden_pickaxe.getDigSpeed(stack, block, meta) > 1.0F || Items.wooden_shovel.getDigSpeed(stack, block, meta) > 1.0F || Items.shears.getDigSpeed(stack, block, meta) > 1.0F) {
 			return efficiencyOnProperMaterial;
-		} else
-		{
-			return super.getStrVsBlock(stack, block, meta);
+		} else {
+			return super.getDigSpeed(stack, block, meta);
 		}
 	}
 
 	@Override
 	public boolean hitEntity(ItemStack itemstack, EntityLivingBase entityliving, EntityLivingBase attacker) {
-		if (ElectricItem.manager.use(itemstack, hitCost, attacker))
-		{
+		if (ElectricItem.manager.use(itemstack, hitCost, attacker)) {
 			entityliving.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), 10F);
 		}
 		return false;
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@SideOnly(Side.CLIENT)
+	public void getSubItems(Item item, CreativeTabs par2CreativeTabs, List itemList) {
+		ItemStack itemStack = new ItemStack(this, 1);
+		if (getChargedItem(itemStack) == this) {
+			ItemStack charged = new ItemStack(this, 1);
+			ElectricItem.manager.charge(charged, 2147483647, 2147483647, true, false);
+			itemList.add(charged);
+		}
+		if (getEmptyItem(itemStack) == this) {
+			itemList.add(new ItemStack(this, 1, getMaxDamage()));
+		}
+	}
 }

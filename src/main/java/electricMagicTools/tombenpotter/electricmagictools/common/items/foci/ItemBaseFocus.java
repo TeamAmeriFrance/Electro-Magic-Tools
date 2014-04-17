@@ -17,7 +17,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
@@ -26,14 +26,12 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.wands.IWandFocus;
 import electricMagicTools.tombenpotter.electricmagictools.common.CreativeTab;
 
-public abstract class ItemBaseFocus extends Item implements IWandFocus
-{
+public abstract class ItemBaseFocus extends Item implements IWandFocus {
 
-	private Icon ornament, depth;
+	private IIcon ornament, depth;
 
-	public ItemBaseFocus(int id)
-	{
-		super(id);
+	public ItemBaseFocus() {
+		super();
 		this.setMaxDamage(1);
 		this.setNoRepair();
 		this.setMaxStackSize(1);
@@ -64,12 +62,12 @@ public abstract class ItemBaseFocus extends Item implements IWandFocus
 	}
 
 	@Override
-	public Icon getFocusDepthLayerIcon() {
+	public IIcon getFocusDepthLayerIcon() {
 		return depth;
 	}
 
 	@Override
-	public Icon getOrnament() {
+	public IIcon getOrnament() {
 		return ornament;
 	}
 
@@ -132,11 +130,9 @@ public abstract class ItemBaseFocus extends Item implements IWandFocus
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
 		AspectList cost = getVisCost();
-		if (cost != null && cost.size() > 0)
-		{
+		if (cost != null && cost.size() > 0) {
 			list.add(StatCollector.translateToLocal(isVisCostPerTick() ? "item.Focus.cost2" : "item.Focus.cost1"));
-			for (Aspect aspect : cost.getAspectsSorted())
-			{
+			for (Aspect aspect : cost.getAspectsSorted()) {
 				float amount = cost.getAmount(aspect) / 100.0F;
 				list.add(" " + '\u00a7' + aspect.getChatcolor() + aspect.getName() + '\u00a7' + "r x " + amount);
 			}

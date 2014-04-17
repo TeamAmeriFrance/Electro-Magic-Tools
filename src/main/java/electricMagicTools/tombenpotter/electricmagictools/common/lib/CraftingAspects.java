@@ -14,8 +14,7 @@ package electricMagicTools.tombenpotter.electricmagictools.common.lib;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 
-public class CraftingAspects
-{
+public class CraftingAspects {
 
 	public static AspectList thaumiumDrillCrafting = new AspectList().add(Aspect.TOOL, 16).add(Aspect.MINE, 16).add(Aspect.ENERGY, 16);
 	public static AspectList thaumiumChainsawCrafting = new AspectList().add(Aspect.TOOL, 16).add(Aspect.WEAPON, 16).add(Aspect.ENERGY, 16);
@@ -31,14 +30,13 @@ public class CraftingAspects
 	public static AspectList ignisGeneratorCrafting = new AspectList().add(Aspect.FIRE, 16).add(Aspect.EXCHANGE, 8);
 	public static AspectList auramGeneratorCrafting = new AspectList().add(Aspect.AURA, 16).add(Aspect.EXCHANGE, 8);
 	public static AspectList arborGeneratorCrafting = new AspectList().add(Aspect.TREE, 16).add(Aspect.EXCHANGE, 8);
-	public static AspectList saxumGenerator = new AspectList().add(Aspect.STONE, 16).add(Aspect.EXCHANGE, 8);
 	public static AspectList streamChaisnawCrafting = new AspectList().add(Aspect.ENERGY, 48).add(Aspect.TREE, 48).add(Aspect.TOOL, 32).add(Aspect.WATER, 32);
-	public static AspectList rockbreakerDrillCrafting = new AspectList().add(Aspect.TOOL, 32).add(Aspect.STONE, 48).add(Aspect.ENERGY, 48).add(Aspect.MINE, 32);
+	public static AspectList rockbreakerDrillCrafting = new AspectList().add(Aspect.TOOL, 32).add(Aspect.ENERGY, 48).add(Aspect.MINE, 32);
 	public static AspectList shieldBlockCrafting = new AspectList().add(Aspect.ORDER, 1).add(Aspect.ENTROPY, 1);
 	public static AspectList tinyUraniumCrafting = new AspectList().add(Aspect.FIRE, 1).add(Aspect.WATER, 1).add(Aspect.AIR, 1).add(Aspect.EARTH, 1).add(Aspect.ORDER, 1).add(Aspect.ENTROPY, 1);
 	public static AspectList thorHammerCrafting = new AspectList().add(Aspect.WEAPON, 48).add(Aspect.WEATHER, 48).add(Aspect.ELDRITCH, 32);
 	public static AspectList superchargedThorHammerCrafting = new AspectList().add(Aspect.WEAPON, 48).add(Aspect.ENERGY, 64).add(Aspect.BEAST, 32);
-	public static AspectList wandCharger = new AspectList().add(Aspect.ENERGY, 322).add(Aspect.CRAFT, 48).add(Aspect.EXCHANGE, 48).add(Aspect.GREED, 64);
+	public static AspectList wandCharger = new AspectList().add(Aspect.ENERGY, 48).add(Aspect.CRAFT, 48).add(Aspect.EXCHANGE, 48).add(Aspect.GREED, 64);
 	public static AspectList compressedSolars = new AspectList().add(Aspect.FIRE, 8).add(Aspect.WATER, 8).add(Aspect.AIR, 8).add(Aspect.EARTH, 8).add(Aspect.ORDER, 8).add(Aspect.ENTROPY, 8);
 	public static AspectList solarHelmetRevealing = new AspectList().add(Aspect.ENERGY, 32).add(Aspect.AIR, 32).add(Aspect.LIGHT, 25);
 	public static AspectList electricBootsTravel = new AspectList().add(Aspect.ENERGY, 16).add(Aspect.ARMOR, 32).add(Aspect.MOTION, 32);
@@ -59,5 +57,8 @@ public class CraftingAspects
 	public static AspectList portableNode = new AspectList().add(Aspect.MAGIC, 32).add(Aspect.AURA, 32).add(Aspect.GREED, 32);
 	public static AspectList electricHoeGrowth = new AspectList().add(Aspect.ENERGY, 32).add(Aspect.PLANT, 25).add(Aspect.CROP, 32).add(Aspect.MAGIC, 48);
 	public static AspectList chargeFocus = new AspectList().add(Aspect.EXCHANGE, 25).add(Aspect.ENERGY, 32).add(Aspect.MECHANISM, 32);
-
+	public static AspectList wandChargeFocus = new AspectList().add(Aspect.ENERGY, 48).add(Aspect.AURA, 32).add(Aspect.EXCHANGE, 48).add(Aspect.GREED, 64);
+	public static AspectList inventoryChargingRing = new AspectList().add(Aspect.ENERGY, 64).add(Aspect.CRYSTAL, 32).add(Aspect.MAGIC,  48);
+	public static AspectList armorChargingRing = new AspectList().add(Aspect.ENERGY, 64).add(Aspect.ARMOR, 32).add(Aspect.MAGIC,  48);
+	
 }

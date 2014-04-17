@@ -15,7 +15,7 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
@@ -23,12 +23,10 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import electricMagicTools.tombenpotter.electricmagictools.common.CreativeTab;
 
-public class BlockShield extends Block
-{
+public class BlockShield extends Block {
 
-	public BlockShield(int id)
-	{
-		super(id, Material.rock);
+	public BlockShield() {
+		super(Material.rock);
 		this.setCreativeTab(CreativeTab.tabTombenpotter);
 		this.setHardness(1F);
 		this.setResistance(200000000F);
@@ -47,7 +45,7 @@ public class BlockShield extends Block
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IconRegister iconRegister) {
+	public void registerBlockIcons(IIconRegister iconRegister) {
 		this.blockIcon = iconRegister.registerIcon("electricmagictools:shield");
 	}
 

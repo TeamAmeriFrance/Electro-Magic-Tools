@@ -13,8 +13,7 @@ package electricMagicTools.tombenpotter.electricmagictools.common;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class TileEntityRegistry
-{
+public class TileEntityRegistry {
 
 	public static void registerEMTTileEntites() {
 
@@ -23,29 +22,28 @@ public class TileEntityRegistry
 		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityAuramGenerator.class, "tileentityauramgenerator");
 		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityArborGenerator.class, "tileentityarborgenerator");
 		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityIndustrialWandRecharge.class, "tileentityindustrialwandrecharge");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityCompressedSolar.class, "tileentitycompressedsolar");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityDoubleCompressedSolar.class, "tileentitydoublecompressedsolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityCompressedSolar.class, "tileentitycompressedsolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityDoubleCompressedSolar.class, "tileentitydoublecompressedsolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityTripleCompressedSolar.class, "tileentitytriplecompressedsolar");
 		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityEtherealMacerator.class, "tileentityetherealmacerator");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityWaterSolar.class, "tileentitywatersolar");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityDoubleWaterSolar.class, "tileentitydoublewatersolar");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityTripleWaterSolar.class, "tileentitytriplewatersolar");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityDarkSolar.class, "tileentitydarksolar");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityDoubleDarkSolar.class, "tileentitydoubledarksolar");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityTripleDarkSolar.class, "tileentitytripledarksolar");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityOrderSolar.class, "tileentityordersolar");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityDoubleOrderSolar.class, "tileentitydoubleordersolar");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityTripleOrderSolar.class, "tileentitytripleordersolar");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityFireSolar.class, "tileentityfiresolar");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityDoubleFireSolar.class, "tileentitydoublefiresolar");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityTripleFireSolar.class, "tileentitytriplefiresolar");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityAirSolar.class, "tileentityairsolar");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityDoubleAirSolar.class, "tileentitydoubleairsolar");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityTripleAirSolar.class, "tileentitytripleairsolar");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityEarthSolar.class, "tileentityearthsolar");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityDoubleEarthSolar.class, "tileentitydoubleearthsolar");
-		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityTripleEarthSolar.class, "tileentitytripleearthsolar");
-
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityWaterSolar.class, "tileentitywatersolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityDoubleWaterSolar.class, "tileentitydoublewatersolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityTripleWaterSolar.class, "tileentitytriplewatersolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityDarkSolar.class, "tileentitydarksolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityDoubleDarkSolar.class, "tileentitydoubledarksolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityTripleDarkSolar.class, "tileentitytripledarksolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityOrderSolar.class, "tileentityordersolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityDoubleOrderSolar.class, "tileentitydoubleordersolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityTripleOrderSolar.class, "tileentitytripleordersolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityFireSolar.class, "tileentityfiresolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityDoubleFireSolar.class, "tileentitydoublefiresolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityTripleFireSolar.class, "tileentitytriplefiresolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityAirSolar.class, "tileentityairsolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityDoubleAirSolar.class, "tileentitydoubleairsolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityTripleAirSolar.class, "tileentitytripleairsolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityEarthSolar.class, "tileentityearthsolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityDoubleEarthSolar.class, "tileentitydoubleearthsolar");
+		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.solars.TileEntityTripleEarthSolar.class, "tileentitytripleearthsolar");
 		GameRegistry.registerTileEntity(electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityPortableNode.class, "tileentityportablenode");
 	}
-
 }

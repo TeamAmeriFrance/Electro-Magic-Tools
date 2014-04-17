@@ -11,9 +11,9 @@
  ******************************************************************************/
 package electricMagicTools.tombenpotter.electricmagictools.common.entities;
 
-import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -25,16 +25,18 @@ import net.minecraft.entity.monster.EntitySnowman;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
+import net.minecraftforge.common.IExtendedEntityProperties;
 
-public class EntityArcher extends EntitySnowman
-{
+public class EntityArcher extends EntitySnowman implements IExtendedEntityProperties {
 
-	public EntityArcher(World par1World)
-	{
+	public EntityArcher(World par1World) {
 		super(par1World);
 		this.isImmuneToFire = true;
 		this.tasks.addTask(1, new EntityAISwimming(this));
@@ -46,8 +48,8 @@ public class EntityArcher extends EntitySnowman
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.30D);
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(40.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.30D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(40.0D);
 	}
 
 	@Override
@@ -58,8 +60,8 @@ public class EntityArcher extends EntitySnowman
 	}
 
 	@Override
-	protected int getDropItemId() {
-		return Item.arrow.itemID;
+	protected Item getDropItem() {
+		return Items.arrow;
 	}
 
 	@Override
@@ -69,52 +71,60 @@ public class EntityArcher extends EntitySnowman
 
 		j = this.rand.nextInt(3 + par2);
 
-		for (k = 0; k < j; ++k)
-		{
-			this.dropItem(Item.arrow.itemID, 1);
+		for (k = 0; k < j; ++k) {
+			this.dropItem(Items.arrow, 1);
 		}
 		j = this.rand.nextInt(3 + par2);
 
-		for (k = 0; k < j; ++k)
-		{
-			this.dropItem(Item.bone.itemID, 1);
+		for (k = 0; k < j; ++k) {
+			this.dropItem(Items.bone, 1);
 		}
 	}
 
 	@Override
 	protected void dropRareDrop(int par1) {
-		this.entityDropItem(new ItemStack(Block.web.blockID, 1, 1), 0.0F);
+		this.entityDropItem(new ItemStack(Blocks.web, 1, 1), 0.0F);
 	}
 
 	protected void addRandomArmor() {
 		super.addRandomArmor();
-		this.setCurrentItemOrArmor(0, new ItemStack(Item.bow));
+		this.setCurrentItemOrArmor(0, new ItemStack(Items.bow));
 	}
 
 	@Override
 	public void attackEntityWithRangedAttack(EntityLivingBase par1EntityLivingBase, float par2) {
-		EntityArrow entityarrow = new EntityArrow(this.worldObj, this, par1EntityLivingBase, 1.6F, (float) (14 - this.worldObj.difficultySetting * 4));
+		EntityArrow entityarrow = new EntityArrow(this.worldObj, this, par1EntityLivingBase, 1.6F, (float) (14 - this.worldObj.difficultySetting.getDifficultyId() * 4));
 		int i = EnchantmentHelper.getEnchantmentLevel(Enchantment.power.effectId, this.getHeldItem());
 		int j = EnchantmentHelper.getEnchantmentLevel(Enchantment.punch.effectId, this.getHeldItem());
-		entityarrow.setDamage((double) (par2 * 2.0F) + this.rand.nextGaussian() * 0.25D + (double) ((float) this.worldObj.difficultySetting * 0.11F));
+		entityarrow.setDamage((double) (par2 * 2.0F) + this.rand.nextGaussian() * 0.25D + (double) ((float) this.worldObj.difficultySetting.getDifficultyId() * 0.11F));
 
-		if (i > 0)
-		{
+		if (i > 0) {
 			entityarrow.setDamage(entityarrow.getDamage() + (double) i * 0.5D + 0.5D);
 		}
 
-		if (j > 0)
-		{
+		if (j > 0) {
 			entityarrow.setKnockbackStrength(j);
 		}
 
-		if (EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, this.getHeldItem()) > 0)
-		{
+		if (EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, this.getHeldItem()) > 0) {
 			entityarrow.setFire(100);
 		}
 
 		this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
 		this.worldObj.spawnEntityInWorld(entityarrow);
+	}
+
+	@Override
+	public void saveNBTData(NBTTagCompound compound) {
+	}
+
+	@Override
+	public void loadNBTData(NBTTagCompound compound) {
+
+	}
+
+	@Override
+	public void init(Entity entity, World world) {
 	}
 
 }

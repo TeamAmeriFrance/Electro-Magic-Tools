@@ -16,12 +16,12 @@ import ic2.api.item.IElectricItem;
 
 import java.util.List;
 
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.potion.Potion;
@@ -34,16 +34,14 @@ import electricMagicTools.tombenpotter.electricmagictools.common.Config;
 import electricMagicTools.tombenpotter.electricmagictools.common.CreativeTab;
 import electricMagicTools.tombenpotter.electricmagictools.common.entities.EntityArcher;
 
-public class ItemElectricThorHammer extends ItemSword implements IElectricItem
-{
+public class ItemElectricThorHammer extends ItemSword implements IElectricItem {
 
 	public int maxCharge = 1000000;
 	private final int hitCost = 5000;
 	private final int lightningCost = 75000;
 
-	public ItemElectricThorHammer(int id)
-	{
-		super(id, EnumToolMaterial.EMERALD);
+	public ItemElectricThorHammer() {
+		super(ToolMaterial.EMERALD);
 		this.setCreativeTab(CreativeTab.tabTombenpotter);
 		this.setMaxDamage(27);
 		this.setMaxStackSize(1);
@@ -53,16 +51,6 @@ public class ItemElectricThorHammer extends ItemSword implements IElectricItem
 	@Override
 	public boolean canProvideEnergy(ItemStack itemStack) {
 		return false;
-	}
-
-	@Override
-	public int getChargedItemId(ItemStack itemStack) {
-		return itemID;
-	}
-
-	@Override
-	public int getEmptyItemId(ItemStack itemStack) {
-		return itemID;
 	}
 
 	@Override
@@ -82,24 +70,22 @@ public class ItemElectricThorHammer extends ItemSword implements IElectricItem
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IconRegister iconRegister) {
+	public void registerIcons(IIconRegister iconRegister) {
 		this.itemIcon = iconRegister.registerIcon("electricmagictools:hammer/electricthorhammer");
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@SideOnly(Side.CLIENT)
-	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List itemList) {
+	public void getSubItems(Item item, CreativeTabs par2CreativeTabs, List itemList) {
 		ItemStack itemStack = new ItemStack(this, 1);
-
-		if (getChargedItemId(itemStack) == this.itemID)
-		{
+		if (getChargedItem(itemStack) == this) {
 			ItemStack charged = new ItemStack(this, 1);
 			ElectricItem.manager.charge(charged, 2147483647, 2147483647, true, false);
 			itemList.add(charged);
 		}
-
-		if (getEmptyItemId(itemStack) == this.itemID)
+		if (getEmptyItem(itemStack) == this) {
 			itemList.add(new ItemStack(this, 1, getMaxDamage()));
+		}
 	}
 
 	@Override
@@ -109,30 +95,25 @@ public class ItemElectricThorHammer extends ItemSword implements IElectricItem
 
 	@Override
 	public int getItemEnchantability() {
-		if (Config.enchanting == false)
-		{
+		if (Config.enchanting == false) {
 			return 0;
-		} else
-		{
+		} else {
 			return 4;
 		}
 	}
 
 	@Override
 	public boolean isBookEnchantable(ItemStack itemstack1, ItemStack itemstack2) {
-		if (Config.enchanting == false)
-		{
+		if (Config.enchanting == false) {
 			return false;
-		} else
-		{
+		} else {
 			return true;
 		}
 	}
 
 	@Override
 	public boolean hitEntity(ItemStack itemstack, EntityLivingBase entityliving, EntityLivingBase attacker) {
-		if (ElectricItem.manager.use(itemstack, hitCost, attacker))
-		{
+		if (ElectricItem.manager.use(itemstack, hitCost, attacker)) {
 			entityliving.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), 19F);
 		}
 		return false;
@@ -141,16 +122,14 @@ public class ItemElectricThorHammer extends ItemSword implements IElectricItem
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
-		list.add(player.username + "'s Hammer");
+		list.add(player.getCommandSenderName() + "'s Hammer");
 	}
 
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
-		if (player.capabilities.isCreativeMode)
-		{
+		if (player.capabilities.isCreativeMode) {
 			return itemstack;
-		} else if (ElectricItem.manager.canUse(itemstack, lightningCost))
-		{
+		} else if (ElectricItem.manager.canUse(itemstack, lightningCost)) {
 			player.swingItem();
 			// Corners
 			world.spawnEntityInWorld(new EntityLightningBolt(world, player.posX + 8, player.posY, player.posZ - 8));
@@ -206,11 +185,20 @@ public class ItemElectricThorHammer extends ItemSword implements IElectricItem
 			world.spawnEntityInWorld(archer3);
 			ElectricItem.manager.use(itemstack, lightningCost, player);
 			return itemstack;
-		} else
-		{
+		} else {
 			world.spawnEntityInWorld(new EntityLightningBolt(world, player.posX, player.posY, player.posZ));
 			player.addPotionEffect(new PotionEffect(Potion.harm.getId(), 1, 1));
 			return itemstack;
 		}
+	}
+
+	@Override
+	public Item getChargedItem(ItemStack itemStack) {
+		return this;
+	}
+
+	@Override
+	public Item getEmptyItem(ItemStack itemStack) {
+		return this;
 	}
 }

@@ -22,35 +22,33 @@ package electricMagicTools.tombenpotter.electricmagictools.common.items.armor;
 
 import java.util.List;
 
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
 import thaumcraft.api.aspects.Aspect;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import electricMagicTools.tombenpotter.electricmagictools.common.Config;
 
-public class ItemNanoBootsTraveller extends ItemElectricBootsTraveller
-{
+public class ItemNanoBootsTraveller extends ItemElectricBootsTraveller {
 
 	public int maxCharge = 500000;
 
-	public ItemNanoBootsTraveller(int id, int par3, int par4)
-	{
-		super(id, par3, par4);
+	public ItemNanoBootsTraveller(int par3, int par4) {
+		super(par3, par4);
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IconRegister iconRegister) {
+	public void registerIcons(IIconRegister iconRegister) {
 		this.itemIcon = iconRegister.registerIcon("electricmagictools:nanobootstravel");
 	}
 
 	@Override
-	public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer) {
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
 		return "electricmagictools:textures/models/nanobootstravel.png";
 	}
 
@@ -69,16 +67,14 @@ public class ItemNanoBootsTraveller extends ItemElectricBootsTraveller
 		player.fallDistance = 0F;
 	}
 
-	@ForgeSubscribe
+	@SubscribeEvent
 	@Override
 	public void onPlayerJump(LivingJumpEvent event) {
-		if (event.entityLiving instanceof EntityPlayer)
-		{
+		if (event.entityLiving instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) event.entityLiving;
-			boolean hasArmor = player.getCurrentArmor(0) != null && player.getCurrentArmor(0).itemID == itemID;
+			boolean hasArmor = player.getCurrentArmor(0) != null && player.getCurrentArmor(0).getItem() == this;
 
-			if (hasArmor)
-			{
+			if (hasArmor) {
 				player.motionY += Config.nanoBootsJump;
 			}
 		}

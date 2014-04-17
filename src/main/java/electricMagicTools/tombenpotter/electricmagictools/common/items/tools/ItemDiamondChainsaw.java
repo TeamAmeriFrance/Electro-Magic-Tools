@@ -12,10 +12,15 @@
 package electricMagicTools.tombenpotter.electricmagictools.common.items.tools;
 
 import ic2.api.item.ElectricItem;
+
+import java.util.List;
+
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -24,16 +29,14 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import electricMagicTools.tombenpotter.electricmagictools.common.CreativeTab;
 
-public class ItemDiamondChainsaw extends ItemThaumiumChainsaw
-{
+public class ItemDiamondChainsaw extends ItemThaumiumChainsaw {
 
 	public int maxCharge = 40000;
 	private final int cost = 200;
 	private final int hitCost = 300;
 
-	public ItemDiamondChainsaw(int id)
-	{
-		super(id);
+	public ItemDiamondChainsaw() {
+		super();
 		this.efficiencyOnProperMaterial = 16F;
 		this.setCreativeTab(CreativeTab.tabTombenpotter);
 		this.setMaxDamage(27);
@@ -42,7 +45,7 @@ public class ItemDiamondChainsaw extends ItemThaumiumChainsaw
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IconRegister iconRegister) {
+	public void registerIcons(IIconRegister iconRegister) {
 		this.itemIcon = iconRegister.registerIcon("electricmagictools:diamondchainsaw");
 	}
 
@@ -57,38 +60,48 @@ public class ItemDiamondChainsaw extends ItemThaumiumChainsaw
 	}
 
 	@Override
-	public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, EntityLivingBase par7EntityLivingBase) {
-		ElectricItem.manager.use(par1ItemStack, cost, par7EntityLivingBase);
+	public boolean onBlockDestroyed(ItemStack stack, World world, Block block, int par4, int par5, int par6, EntityLivingBase entityLiving) {
+		ElectricItem.manager.use(stack, cost, entityLiving);
 		return true;
 	}
 
 	@Override
 	public boolean canHarvestBlock(Block block, ItemStack stack) {
-		return Item.axeDiamond.canHarvestBlock(block) || Item.swordDiamond.canHarvestBlock(block);
+		return Items.diamond_axe.canHarvestBlock(block, stack) || Items.diamond_sword.canHarvestBlock(block, stack);
 	}
 
 	@Override
-	public float getStrVsBlock(ItemStack stack, Block block, int meta) {
-		if (!ElectricItem.manager.canUse(stack, cost))
-		{
+	public float getDigSpeed(ItemStack stack, Block block, int meta) {
+		if (!ElectricItem.manager.canUse(stack, cost)) {
 			return 1.0F;
 		}
 
-		if (Item.axeWood.getStrVsBlock(stack, block, meta) > 1.0F || Item.swordWood.getStrVsBlock(stack, block, meta) > 1.0F)
-		{
+		if (Items.wooden_axe.getDigSpeed(stack, block, meta) > 1.0F || Items.wooden_sword.getDigSpeed(stack, block, meta) > 1.0F) {
 			return efficiencyOnProperMaterial;
-		} else
-		{
-			return super.getStrVsBlock(stack, block, meta);
+		} else {
+			return super.getDigSpeed(stack, block, meta);
 		}
 	}
 
 	@Override
 	public boolean hitEntity(ItemStack itemstack, EntityLivingBase entityliving, EntityLivingBase attacker) {
-		if (ElectricItem.manager.use(itemstack, hitCost, attacker))
-		{
+		if (ElectricItem.manager.use(itemstack, hitCost, attacker)) {
 			entityliving.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), 12F);
 		}
 		return false;
+	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@SideOnly(Side.CLIENT)
+	public void getSubItems(Item item, CreativeTabs par2CreativeTabs, List itemList) {
+		ItemStack itemStack = new ItemStack(this, 1);
+		if (getChargedItem(itemStack) == this) {
+			ItemStack charged = new ItemStack(this, 1);
+			ElectricItem.manager.charge(charged, 2147483647, 2147483647, true, false);
+			itemList.add(charged);
+		}
+		if (getEmptyItem(itemStack) == this) {
+			itemList.add(new ItemStack(this, 1, getMaxDamage()));
+		}
 	}
 }

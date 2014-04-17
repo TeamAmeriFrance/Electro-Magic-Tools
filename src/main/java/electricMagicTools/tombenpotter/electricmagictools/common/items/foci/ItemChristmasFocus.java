@@ -11,7 +11,7 @@
  ******************************************************************************/
 package electricMagicTools.tombenpotter.electricmagictools.common.items.foci;
 
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.monster.EntitySnowman;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -23,14 +23,12 @@ import thaumcraft.common.items.wands.ItemWandCasting;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemChristmasFocus extends ItemBaseFocus
-{
+public class ItemChristmasFocus extends ItemBaseFocus {
 
 	private static final AspectList visCost = new AspectList().add(Aspect.ORDER, 500).add(Aspect.AIR, 500);
 
-	public ItemChristmasFocus(int id)
-	{
-		super(id);
+	public ItemChristmasFocus() {
+		super();
 	}
 
 	@Override
@@ -40,7 +38,7 @@ public class ItemChristmasFocus extends ItemBaseFocus
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IconRegister iconRegister) {
+	public void registerIcons(IIconRegister iconRegister) {
 		this.itemIcon = iconRegister.registerIcon("electricmagictools:christmasfocus");
 	}
 
@@ -57,10 +55,8 @@ public class ItemChristmasFocus extends ItemBaseFocus
 	@Override
 	public ItemStack onFocusRightClick(ItemStack itemstack, World world, EntityPlayer player, MovingObjectPosition movingobjectposition) {
 		ItemWandCasting wand = (ItemWandCasting) itemstack.getItem();
-		if (wand.consumeAllVis(itemstack, player, getVisCost(), true))
-		{
-			if (!world.isRemote)
-			{
+		if (wand.consumeAllVis(itemstack, player, getVisCost(), true, true)) {
+			if (!world.isRemote) {
 				EntitySnowman snowman;
 				snowman = new EntitySnowman(world);
 				snowman.setPosition(player.posX + 2, player.posY + 1, player.posZ + 2);

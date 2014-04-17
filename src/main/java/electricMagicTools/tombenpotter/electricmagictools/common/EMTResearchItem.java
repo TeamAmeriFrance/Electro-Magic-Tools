@@ -30,21 +30,17 @@ import thaumcraft.api.research.ResearchPage.PageType;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class EMTResearchItem extends ResearchItem
-{
+public class EMTResearchItem extends ResearchItem {
 
-	public EMTResearchItem(String par1, String par2)
-	{
+	public EMTResearchItem(String par1, String par2) {
 		super(par1, par2);
 	}
 
-	public EMTResearchItem(String par1, String par2, AspectList tags, int par3, int par4, int par5, ItemStack icon)
-	{
+	public EMTResearchItem(String par1, String par2, AspectList tags, int par3, int par4, int par5, ItemStack icon) {
 		super(par1, par2, tags, par3, par4, par5, icon);
 	}
 
-	public EMTResearchItem(String par1, String par2, AspectList tags, int par3, int par4, int par5, ResourceLocation icon)
-	{
+	public EMTResearchItem(String par1, String par2, AspectList tags, int par3, int par4, int par5, ResourceLocation icon) {
 		super(par1, par2, tags, par3, par4, par5, icon);
 	}
 
@@ -62,17 +58,14 @@ public class EMTResearchItem extends ResearchItem
 
 	@Override
 	public ResearchItem setPages(ResearchPage... par) {
-		for (ResearchPage page : par)
-		{
+		for (ResearchPage page : par) {
 			if (page.type == PageType.TEXT)
 				page.text = "emt.text." + key;
 
-			if (page.type == PageType.INFUSION_CRAFTING)
-			{
+			if (page.type == PageType.INFUSION_CRAFTING) {
 				if (parentsHidden == null || parentsHidden.length == 0)
 					parentsHidden = new String[] { "INFUSION" };
-				else
-				{
+				else {
 					String[] newParents = new String[parentsHidden.length + 1];
 					newParents[0] = "INFUSION";
 					for (int i = 0; i < parentsHidden.length; i++)

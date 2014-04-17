@@ -29,12 +29,11 @@ import javax.swing.ImageIcon;
 import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.renderer.ThreadDownloadImageData;
 import net.minecraftforge.client.event.RenderPlayerEvent;
-import net.minecraftforge.event.ForgeSubscribe;
 import cpw.mods.fml.common.Loader;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.ReflectionHelper;
 
-public class CapeEventHandler
-{
+public class CapeEventHandler {
 	private final String serverLocation = "https://raw.github.com/Tombenpotter/Electro-Magic-Tools/master/capes.txt";
 	private final int timeout = 1000;
 
@@ -44,28 +43,23 @@ public class CapeEventHandler
 
 	public static CapeEventHandler instance;
 
-	public CapeEventHandler()
-	{
+	public CapeEventHandler() {
 		buildCloakURLDatabase();
 		instance = this;
 	}
 
-	@ForgeSubscribe
+	@SubscribeEvent
 	public void onPreRenderSpecials(RenderPlayerEvent.Specials.Pre event) {
-		if (Loader.isModLoaded("shadersmod"))
-		{
+		if (Loader.isModLoaded("shadersmod")) {
 			return;
 		}
-		if (event.entityPlayer instanceof AbstractClientPlayer)
-		{
+		if (event.entityPlayer instanceof AbstractClientPlayer) {
 			AbstractClientPlayer abstractClientPlayer = (AbstractClientPlayer) event.entityPlayer;
 
-			if (!capePlayers.contains(abstractClientPlayer))
-			{
-				String cloakURL = cloaks.get(event.entityPlayer.username);
+			if (!capePlayers.contains(abstractClientPlayer)) {
+				String cloakURL = cloaks.get(event.entityPlayer.getCommandSenderName());
 
-				if (cloakURL == null)
-				{
+				if (cloakURL == null) {
 					return;
 				}
 
@@ -81,8 +75,7 @@ public class CapeEventHandler
 
 	public void buildCloakURLDatabase() {
 		URL url;
-		try
-		{
+		try {
 			url = new URL(serverLocation);
 			URLConnection con = url.openConnection();
 			con.setConnectTimeout(timeout);
@@ -92,18 +85,14 @@ public class CapeEventHandler
 
 			String str;
 			int linetracker = 1;
-			while ((str = br.readLine()) != null)
-			{
-				if (!str.startsWith("--"))
-				{
-					if (str.contains(":"))
-					{
+			while ((str = br.readLine()) != null) {
+				if (!str.startsWith("--")) {
+					if (str.contains(":")) {
 						String nick = str.substring(0, str.indexOf(":"));
 						String link = str.substring(str.indexOf(":") + 1);
 						new Thread(new CloakPreload(link)).start();
 						cloaks.put(nick, link);
-					} else
-					{
+					} else {
 						System.err.println("[Electro-Magic Tools] [skins.txt] Syntax error on line " + linetracker + ": " + str);
 					}
 				}
@@ -111,66 +100,50 @@ public class CapeEventHandler
 			}
 
 			br.close();
-		} catch (MalformedURLException e)
-		{
+		} catch (MalformedURLException e) {
 			e.printStackTrace();
-		} catch (IOException e)
-		{
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	private class CloakThread implements Runnable
-	{
+	private class CloakThread implements Runnable {
 		AbstractClientPlayer abstractClientPlayer;
 		String cloakURL;
 
-		public CloakThread(AbstractClientPlayer player, String cloak)
-		{
+		public CloakThread(AbstractClientPlayer player, String cloak) {
 			abstractClientPlayer = player;
 			cloakURL = cloak;
 		}
 
 		@Override
 		public void run() {
-			try
-			{
+			try {
 				Image cape = new ImageIcon(new URL(cloakURL)).getImage();
 				BufferedImage bo = new BufferedImage(cape.getWidth(null), cape.getHeight(null), BufferedImage.TYPE_INT_ARGB);
 				bo.getGraphics().drawImage(cape, 0, 0, null);
 
 				ReflectionHelper.setPrivateValue(ThreadDownloadImageData.class, abstractClientPlayer.getTextureCape(), bo, new String[] { "bufferedImage", "field_110560_d" });
-			} catch (MalformedURLException e)
-			{
+			} catch (MalformedURLException e) {
 				e.printStackTrace();
 			}
 		}
 	}
 
-	private class CloakPreload implements Runnable
-	{
+	private class CloakPreload implements Runnable {
 		String cloakURL;
 
-		public CloakPreload(String link)
-		{
+		public CloakPreload(String link) {
 			cloakURL = link;
 		}
 
 		@Override
 		public void run() {
-			try
-			{
+			try {
 				TEST_GRAPHICS.drawImage(new ImageIcon(new URL(cloakURL)).getImage(), 0, 0, null);
-			} catch (MalformedURLException e)
-			{
+			} catch (MalformedURLException e) {
 				e.printStackTrace();
 			}
 		}
-	}
-
-	public void refreshCapes() {
-		cloaks.clear();
-		capePlayers.clear();
-		buildCloakURLDatabase();
 	}
 }

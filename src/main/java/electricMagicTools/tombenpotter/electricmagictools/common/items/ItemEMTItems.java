@@ -13,23 +13,20 @@ package electricMagicTools.tombenpotter.electricmagictools.common.items;
 
 import java.util.List;
 
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import electricMagicTools.tombenpotter.electricmagictools.common.CreativeTab;
 
-public class ItemEMTItems extends Item
-{
+public class ItemEMTItems extends Item {
 
-	public Icon[] icon = new Icon[16];
+	public IIcon[] icon = new IIcon[16];
 
-	public ItemEMTItems(int id)
-	{
-		super(id);
+	public ItemEMTItems() {
 		this.setCreativeTab(CreativeTab.tabTombenpotter);
 		this.setMaxDamage(0);
 		this.setMaxStackSize(64);
@@ -39,30 +36,24 @@ public class ItemEMTItems extends Item
 	@Override
 	public String getUnlocalizedName(ItemStack itemstack) {
 		String name = "";
-		switch (itemstack.getItemDamage())
-		{
-		case 0:
-		{
+		switch (itemstack.getItemDamage()) {
+		case 0: {
 			name = "oreClusterUranium";
 			break;
 		}
-		case 1:
-		{
+		case 1: {
 			name = "crushedOreAmber";
 			break;
 		}
-		case 2:
-		{
+		case 2: {
 			name = "purifiedOreAmber";
 			break;
 		}
-		case 3:
-		{
+		case 3: {
 			name = "crushedOreCinnabar";
 			break;
 		}
-		case 4:
-		{
+		case 4: {
 			name = "purifiedOreCinnabar";
 			break;
 		}
@@ -74,7 +65,7 @@ public class ItemEMTItems extends Item
 	}
 
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister ri) {
+	public void registerIcons(IIconRegister ri) {
 		this.icon[0] = ri.registerIcon("electricmagictools:clusteruranium");
 		this.icon[1] = ri.registerIcon("electricmagictools:crushedamber");
 		this.icon[2] = ri.registerIcon("electricmagictools:purifiedamber");
@@ -83,13 +74,13 @@ public class ItemEMTItems extends Item
 	}
 
 	@SideOnly(Side.CLIENT)
-	public Icon getIconFromDamage(int meta) {
+	public IIcon getIconFromDamage(int meta) {
 		return this.icon[meta];
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@SideOnly(Side.CLIENT)
-	public void getSubItems(int id, CreativeTabs tabs, List list) {
+	public void getSubItems(Item item, CreativeTabs par2CreativeTabs, List list) {
 		// list.add(new ItemStack(this, 1, 0));
 		list.add(new ItemStack(this, 1, 1));
 		list.add(new ItemStack(this, 1, 2));

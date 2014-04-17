@@ -12,16 +12,14 @@
 package electricMagicTools.tombenpotter.electricmagictools.common;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityEggInfo;
 import net.minecraft.entity.EntityList;
+import net.minecraft.entity.EntityList.EntityEggInfo;
 import net.minecraft.entity.EntityLiving;
 import cpw.mods.fml.common.registry.EntityRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 import electricMagicTools.tombenpotter.electricmagictools.common.entities.EntityArcher;
 import electricMagicTools.tombenpotter.electricmagictools.common.entities.EntityLaser;
 
-public class EMTEntityRegistry
-{
+public class EMTEntityRegistry {
 
 	private static int startEID = 300;
 	private static int entityIDs = 0;
@@ -29,8 +27,7 @@ public class EMTEntityRegistry
 
 	private static int getUniqueEntityID() {
 
-		do
-		{
+		do {
 			startEID++;
 		} while (EntityList.getStringFromID(startEID) != null);
 		return startEID;
@@ -47,10 +44,7 @@ public class EMTEntityRegistry
 	public static void registerEMTEntities() {
 
 		EntityRegistry.registerModEntity(EntityLaser.class, "entityLaser", entityIDs++, ElectricMagicTools.instance, 80, 3, true);
-		LanguageRegistry.instance().addStringLocalization("entity.Tombenpotter's Electro-Magic Tools.entityLaser.name", "Laser");
 		EntityRegistry.registerModEntity(EntityArcher.class, "entityArcher", entityIDs++, ElectricMagicTools.instance, 80, 3, true);
-		LanguageRegistry.instance().addStringLocalization("entity.Tombenpotter's Electro-Magic Tools.entityArcher.name", "Guardian Snowman");
-
 		registerEntityEgg(ARCHER_CLASS, 0x99111F, 0xE5685);
 	}
 }

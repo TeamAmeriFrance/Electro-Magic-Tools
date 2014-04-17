@@ -17,12 +17,10 @@ import net.minecraft.item.ItemStack;
 import thaumcraft.common.items.wands.ItemWandCasting;
 import electricMagicTools.tombenpotter.electricmagictools.common.tile.container.ContainerIndustrialWandRecharge;
 
-public class SlotWandOnly extends Slot
-{
+public class SlotWandOnly extends Slot {
 	final ContainerIndustrialWandRecharge charger;
 
-	public SlotWandOnly(ContainerIndustrialWandRecharge indCharger, IInventory inv, int par3, int par4, int par5)
-	{
+	public SlotWandOnly(ContainerIndustrialWandRecharge indCharger, IInventory inv, int par3, int par4, int par5) {
 		super(inv, par3, par4, par5);
 		this.charger = indCharger;
 	}

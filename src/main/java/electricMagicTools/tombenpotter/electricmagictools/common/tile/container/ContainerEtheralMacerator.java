@@ -26,26 +26,21 @@ import net.minecraft.tileentity.TileEntity;
 import thaumcraft.common.container.SlotOutput;
 import electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityEtherealMacerator;
 
-public class ContainerEtheralMacerator extends Container
-{
+public class ContainerEtheralMacerator extends Container {
 
 	TileEntityEtherealMacerator te;
 
-	public ContainerEtheralMacerator(InventoryPlayer inventory, TileEntity te)
-	{
+	public ContainerEtheralMacerator(InventoryPlayer inventory, TileEntity te) {
 		this.te = ((TileEntityEtherealMacerator) te);
 		addSlotToContainer(new Slot(this.te, 0, 56, 26));
 		addSlotToContainer(new SlotOutput(this.te, 2, 116, 26));
 		addSlotToContainer(new SlotOutput(this.te, 1, 116, 53));
-		for (int i = 0; i < 3; i++)
-		{
-			for (int j = 0; j < 9; j++)
-			{
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 9; j++) {
 				addSlotToContainer(new Slot(inventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
 			}
 		}
-		for (int i = 0; i < 9; i++)
-		{
+		for (int i = 0; i < 9; i++) {
 			addSlotToContainer(new Slot(inventory, i, 8 + i * 18, 142));
 		}
 	}
@@ -60,26 +55,19 @@ public class ContainerEtheralMacerator extends Container
 	public final ItemStack transferStackInSlot(EntityPlayer player, int sourceSlotIndex) {
 		Slot sourceSlot = (Slot) inventorySlots.get(sourceSlotIndex);
 
-		if (sourceSlot != null && sourceSlot.getHasStack())
-		{
+		if (sourceSlot != null && sourceSlot.getHasStack()) {
 			ItemStack sourceItemStack = sourceSlot.getStack();
 			int oldSourceItemStackSize = sourceItemStack.stackSize;
 
-			if (sourceSlot.inventory == player.inventory)
-			{ // player inventory
-				// clicked
-				// 0: fill input existing stacks, 1: fill input empty stacks, 2:
-				// fill existing stacks, 3: fill empty stacks
-				for (int run = 0; run < 4 && sourceItemStack.stackSize > 0; run++)
-				{
-					if (run < 2)
-					{
-						for (Slot targetSlot : (List<Slot>) inventorySlots)
-						{
-							if (targetSlot instanceof SlotInvSlot && ((SlotInvSlot) targetSlot).invSlot.canInput() && targetSlot.isItemValid(sourceItemStack))
-							{
-								if (targetSlot.getStack() != null || run == 1)
-								{
+			if (sourceSlot.inventory == player.inventory) { // player inventory
+															// clicked
+															// 0: fill input existing stacks, 1: fill input empty stacks, 2:
+															// fill existing stacks, 3: fill empty stacks
+				for (int run = 0; run < 4 && sourceItemStack.stackSize > 0; run++) {
+					if (run < 2) {
+						for (Slot targetSlot : (List<Slot>) inventorySlots) {
+							if (targetSlot instanceof SlotInvSlot && ((SlotInvSlot) targetSlot).invSlot.canInput() && targetSlot.isItemValid(sourceItemStack)) {
+								if (targetSlot.getStack() != null || run == 1) {
 									mergeItemStack(sourceItemStack, targetSlot.slotNumber, targetSlot.slotNumber + 1, false);
 
 									if (sourceItemStack.stackSize == 0)
@@ -87,14 +75,10 @@ public class ContainerEtheralMacerator extends Container
 								}
 							}
 						}
-					} else
-					{
-						for (Slot targetSlot : (List<Slot>) inventorySlots)
-						{
-							if (targetSlot.inventory != player.inventory && targetSlot.isItemValid(sourceItemStack))
-							{
-								if (targetSlot.getStack() != null || run == 3)
-								{
+					} else {
+						for (Slot targetSlot : (List<Slot>) inventorySlots) {
+							if (targetSlot.inventory != player.inventory && targetSlot.isItemValid(sourceItemStack)) {
+								if (targetSlot.getStack() != null || run == 3) {
 									mergeItemStack(sourceItemStack, targetSlot.slotNumber, targetSlot.slotNumber + 1, false);
 
 									if (sourceItemStack.stackSize == 0)
@@ -104,18 +88,13 @@ public class ContainerEtheralMacerator extends Container
 						}
 					}
 				}
-			} else
-			{ // Shift-Click on a GUIslot of the container
-				for (int run = 0; run < 2 && sourceItemStack.stackSize > 0; run++)
-				{
-					for (ListIterator<Slot> it = ((List<Slot>) inventorySlots).listIterator(inventorySlots.size()); it.hasPrevious();)
-					{
+			} else { // Shift-Click on a GUIslot of the container
+				for (int run = 0; run < 2 && sourceItemStack.stackSize > 0; run++) {
+					for (ListIterator<Slot> it = ((List<Slot>) inventorySlots).listIterator(inventorySlots.size()); it.hasPrevious();) {
 						Slot targetSlot = it.previous();
 
-						if (targetSlot.inventory == player.inventory && targetSlot.isItemValid(sourceItemStack))
-						{
-							if (targetSlot.getStack() != null || run == 1)
-							{
+						if (targetSlot.inventory == player.inventory && targetSlot.isItemValid(sourceItemStack)) {
+							if (targetSlot.getStack() != null || run == 1) {
 								mergeItemStack(sourceItemStack, targetSlot.slotNumber, targetSlot.slotNumber + 1, false);
 
 								if (sourceItemStack.stackSize == 0)
@@ -126,13 +105,10 @@ public class ContainerEtheralMacerator extends Container
 				}
 			}
 
-			if (sourceItemStack.stackSize != oldSourceItemStackSize)
-			{
-				if (sourceItemStack.stackSize == 0)
-				{
+			if (sourceItemStack.stackSize != oldSourceItemStackSize) {
+				if (sourceItemStack.stackSize == 0) {
 					sourceSlot.putStack(null);
-				} else
-				{
+				} else {
 					sourceSlot.onPickupFromSlot(player, sourceItemStack);
 				}
 
@@ -141,8 +117,7 @@ public class ContainerEtheralMacerator extends Container
 				// causing a race condition of the client received an old state
 				// through packet delay after the slot click
 				// this forces a proper sync
-				if (IC2.platform.isSimulating())
-				{
+				if (IC2.platform.isSimulating()) {
 					detectAndSendChanges();
 				}
 			}

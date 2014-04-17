@@ -22,7 +22,6 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.relauncher.Side;
 import electricMagicTools.tombenpotter.electricmagictools.client.CapeEventHandler;
@@ -30,25 +29,26 @@ import electricMagicTools.tombenpotter.electricmagictools.common.recipes.EMTInit
 import electricMagicTools.tombenpotter.electricmagictools.common.recipes.EMTPostInitRecipes;
 import electricMagicTools.tombenpotter.electricmagictools.common.recipes.UuMInfusionRecipes;
 
-@Mod(modid = ElectricMagicTools.modid, name = "Electro-Magic Tools", version = "1.0.9", dependencies = "required-after:Thaumcraft ; required-after:IC2")
-@NetworkMod(clientSideRequired = true, serverSideRequired = false, channels = { ElectricMagicTools.modid })
-public class ElectricMagicTools
-{
+@Mod(modid = ElectricMagicTools.modid, name = "Electro-MagicTools", version = "1.1.0", dependencies = "required-after:Thaumcraft ; required-after:IC2")
+public class ElectricMagicTools {
 
 	@SidedProxy(clientSide = "electricMagicTools.tombenpotter.electricmagictools.client.ClientProxy", serverSide = "electricMagicTools.tombenpotter.electricmagictools.common.CommonProxy")
 	public static CommonProxy proxy;
 	@Instance(ElectricMagicTools.modid)
 	public static ElectricMagicTools instance;
 
-	public static final String modid = "Tombenpotter's Electro-Magic Tools";
+	public static final String modid = "Electro-MagicTools";
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		/** Creating the config file **/
 		Config.create(event);
 
-		/** Registering the custom crafting handler --- UNUSED FOR NOW **/
-		// GameRegistry.registerCraftingHandler(new EMTCraftingHandler());
+		/** Items Registry **/
+		ItemRegistry.registerEMTItems();
+
+		/** Blocks registry **/
+		BlockRegistry.registerEMTBlocks();
 
 		System.out.println("[EMT] Electro-Magic Tools : Successful PreInit");
 	}
@@ -59,24 +59,17 @@ public class ElectricMagicTools
 		proxy.load();
 
 		/** Making mobs drop additional items **/
-		MinecraftForge.EVENT_BUS.register(new EntityLivingHandler());
-
-		/** Making Creative Tab **/
-		CreativeTab.load();
-
-		/** Items Registry **/
-		ItemRegistry.registerEMTItems();
-
-		/** Blocks registry **/
-		BlockRegistry.registerEMTBlocks();
+		MinecraftForge.EVENT_BUS.register(new EMTEventHandler());
 
 		/** Tile entities registry **/
 		TileEntityRegistry.registerEMTTileEntites();
 
 		/** Generating in dungeon chests **/
-		if (Config.thorHammerResearch == false)
-		{
+		if (Config.thorHammerResearch == false) {
 			ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(ItemRegistry.taintedThorHammer), 1, 1, 5));
+		}
+		if (Config.oneRingSpawn == false) {
+			ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(ItemRegistry.emtBauble, 1, 2), 1, 1, 3));
 		}
 
 		/** Adding the recipes that go in Init **/
@@ -86,11 +79,10 @@ public class ElectricMagicTools
 		EMTEntityRegistry.registerEMTEntities();
 
 		/** GUI Handler Registry **/
-		NetworkRegistry.instance().registerGuiHandler(this, proxy);
+		NetworkRegistry.INSTANCE.registerGuiHandler(this, proxy);
 
 		/** Adds Capes **/
-		if (event.getSide() == Side.CLIENT && Config.capesOn == true)
-		{
+		if (event.getSide() == Side.CLIENT && Config.capesOn == true) {
 			MinecraftForge.EVENT_BUS.register(new CapeEventHandler());
 		}
 

@@ -1,4 +1,82 @@
-Thaumonomicon Names-----
+=============Creative Tab Name=============
+itemGroup.Electro-Magic Tools=Electro-Magic Tools
+
+=============Thaumonomicon Tab Name=============
+tc.research_category.EMT=Electro-Magic Tools
+
+=============Enity Names=============
+entity.Tombenpotter's Electro-Magic Tools.entityLaser.name=Laser
+entity.Tombenpotter's Electro-Magic Tools.entityArcher.name=Guardian Snowman
+
+=============Item Names=============
+item.thaumiumdrill.name=Thaumium Drill
+item.thaumiumchainsaw.name=Thaumium Chainsaw
+item.quantumthaumichelmet.name=Quantum Goggles of Revealing
+item.diamondchainsaw.name=Diamond Chainsaw
+item.ironomnitool.name=Omnitool
+item.diamondomnitool.name=Diamond Omnitool
+item.thaumiumomnitool.name=Thaumium Omnitool
+item.nanothaumichelmet.name=Nanosuit Goggles of Revealing
+item.laserfocus.name=Wand Focus: Explosion
+item.christmasfocus.name=Wand Focus: Kris-tmas
+item.shieldfocus.name=Wand Focus: Shield
+item.electricgoggles.name=Electric Goggles of Revealing
+item.streamchainsaw.name=Chainsaw of the Stream
+item.rockbreakerdrill.name=Drill of the Rockbreaker
+item.thaumiumplate.name=Thaumium Plate
+item.solarhelmetrevealing.name=Quantum Solar Helmet of Revealing
+item.hammerthor.name=Mjolnir
+item.taintedthorhammer.name=Broken Relic of Mjolnir
+item.lightningsummoner.name=Lightning Summoner
+item.electricthorhammer.name=Supercharged Mjolnir
+item.electricboots.name=Electric Boots of the Traveller
+item.nanobootstraveller.name=Nanosuit Boots of the Traveller
+item.quantumbootstraveller.name=Quantum Boots of the Traveller
+item.electricscribingtools.name=Electric Scribing Tools
+item.electrichoeofgrowth.name=Electric Hoe of Growth
+item.chargefocus.name=Wand Focus: Charging
+item.itememtitems.oreClusterUranium=Uranium Native Cluster
+item.itememtitems.crushedOreAmber.name=Crushed Amber Ore
+item.itememtitems.purifiedOreAmber.name=Purified Amber Ore
+item.itememtitems.crushedOreCinnabar.name=Crushed Cinnabar Ore
+item.itememtitems.purifiedOreCinnabar.name=Purified Cinnabar Ore
+item.emtbauble.euMaker.armor.name=Armor Charging Ring
+item.emtbauble.euMaker.inventory.name=Inventory Charging Ring
+item.emtbauble.oneRing.name=The One Ring
+item.wandchargefocus.name=Wand Focus: Wand Charging
+
+=============Block Names=============
+tile.shield.name=Shield Block
+tile.portablenode.name=Portable Node
+tile.essentiaGens.potentia.name=Potentia Generator
+tile.essentiaGens.ignis.name=Ignis Generator
+tile.essentiaGens.auram.name=Auram Generator
+tile.essentiaGens.arbor.name=Arbor Generator
+tile.emtmachines.wandrecharge.name=Industrial Wand Charging Station
+tile.emtmachines.etheralprocessor.name=Ethereal Processor
+tile.emtsolars.compressed.name=Compressed Solar Panel
+tile.emtsolars.doublecompressed.name=Double Compressed Solar Panel
+tile.emtsolars.triplecompressed.name=Triple Compressed Solar Panel
+tile.emtsolars.water.name=Water Infused Compressed Solar Panel
+tile.emtsolars.doublewater.name=Water Infused DoubleCompressed Solar Panel
+tile.emtsolars.triplewater.name=Water Infused Triple Compressed Solar Panel
+tile.emtsolars.dark.name=Entropy Infused Compressed Solar Panel
+tile.emtsolars.doubledark.name=Entropy Double Infused Compressed Solar Panel
+tile.emtsolars.tripledark.name=Entropy Triple Infused Compressed Solar Panel
+tile.emtsolars.order.name=Order Infused Compressed Solar Panel
+tile.emtsolars.doubleorder.name=Order Infused Double Compressed Solar Panel
+tile.emtsolars.tripleorder.name=Order Infused Triple Compressed Solar Panel
+tile.emtsolars.fire.name=Fire Infused Compressed Solar Panel
+tile.emtsolars.doublefire.name=Fire Infused Double Compressed Solar Panel
+tile.emtsolars.triplefire.name=Fire Infused Triple Compressed Solar Panel
+tile.emtsolars.air.name=Air Infused Compressed Solar Panel
+tile.emtsolars2.doubleair.name=Air Infused Double Compressed Solar Panel
+tile.emtsolars2.tripleair.name=Air Infused Triple Compressed Solar Panel
+tile.emtsolars2.earth.name=Earth Infused Compressed Solar Panel
+tile.emtsolars2.doubleearth.name=Earth Infused Double Compressed Solar Panel
+tile.emtsolars2.tripleearth.name=Earth Infused Triple Compressed Solar Panel
+
+=============Thaumonomicon Names=============
 emt.tag.Electric Magic Tools=Who says magic and technology can't go together?
 emt.tag.Thaumium Drill=Magical mining
 emt.tag.Thaumium Chainsaw=Felling trees and severing heads with a touch of magic
@@ -45,8 +123,12 @@ emt.tag.UU-Matter Infusion=A magically charged metamorphic liquid...
 emt.tag.Portable Node=Randomly convenient
 emt.tag.Electric Hoe of Growth=Shockingly natural
 emt.tag.Wand Focus: Charging=From vis to electricity
+emt.tag.Wand Focus: Wand Charging=From electricity to vis
+emt.tag.Inventory Charging Ring=Passive charger
+emt.tag.Armor Charging Ring=Passive life-saver
+emt.tag.The One Ring=Forged inside the pit of the volcanic Mount Doom...
 
-Thaumonomicon Texts-----
+=============Thaumonomicon Texts=============
 emt.text.Electric Magic Tools=Who says magic can't work with technology? Our researchers have collaborated with the top mages of the school of Thaumaturgy to bring you the effectiveness of magic coupled with the convenience of electric tools.
 emt.text.Thaumium Drill=You have discovered a way to infuse Thaumium with mundane electricity. Fusing Thaumium to a Diamond Drill results in a tool that can dig through stone faster and has a higher capacity.<BR><BR>While Thaumium is a very useful and powerful material, it is nowhere near the strength of Iridium. It is considered a mid-tier tool. <BR><BR>This tool may not be the most powerful, but you have a feeling that you will be able to upgrade it in the near future.
 emt.text.Thaumium Chainsaw=You have found a way to fuse Thaumium to a Diamond Chainsaw, allowing it to fell trees quicker and hold more power. Nevertheless, these ameliorations do not come without drawbacks: during the process of fusing these materials, the chainsaw loses its ability to shear foliage, tall grass, and animals.<BR><BR>You have an intuition you will be able to upgrade this tool in the near future.
@@ -92,4 +174,8 @@ emt.text.Earth Infused Solar Panels=You have decided to get closer to the core. 
 emt.text.UU-Matter Infusion=You have always found the powers possessed by UU-Mater very strange, even... magical looking, especially the hability to take a large number of shapes if manipulated correctly. And here you are, having discovered a way to shape the liquid through the process of Infusion Crafting. Many recipes are available, and all of them use between 4 to 32 of each primal aspect.
 emt.text.Portable Node=After studying in an in-depth manner of the wonders of Node Jarring, you have managed to create an item capable of spawning a random node. However, due to some parts of node magic which you cannot understand, this Portable Node will always be Fading and Unstable. <BR><BR>You can only get rid of it by a shift-right click, and you think that you should dispose of it as soon as possible, for unstable nodes are... rather unpredictable.
 emt.text.Electric Hoe of Growth=You have managed to upgrade your Hoe of Growth. It now delivers little shocks to the land and plants around it, much like your regular Hoe of Growth would do. <BR><BR>However, the magic contained within this tool is too powerful for you to convert it fully to using mundane electricity, for the tool still has a limited number of uses before it breaks, but is rechargeable.
-emt.text.Wand Focus: Charging=You realized you always carry a wand with you, along with your electric staff. But sometimes, you have ran out of juice in your electric tools. That's why you created this wand focus. It is very simple, yet very useful, for it drains vis from your wand storage, and charges the items using mundane electricity.
+emt.text.Wand Focus: Charging=You realized you always carry a wand with you, along with your electric stuff. But sometimes, you have ran out of juice in your electric tools. That's why you created this wand focus. It is very simple, yet very useful, for it drains vis from your wand storage, and charges the items using mundane electricity.
+emt.text.Wand Focus: Wand Charging=After studying in a more in-depth manner your Charging Focus, you have found a way to reverse its effects. Instead of consuming vis from your wand and giving off electricity, it rather consumes electricity to create vis.
+emt.text.Inventory Charging Ring=During your research, you discovered some new acessories, baubles. But an idea popped into your mind! You have finally, after hours of test, fails, and research, managed to transform a mundane ring into an item creating 32 EU/T for the sole purpose of recharging electric items in your inventory slots. But you feel like this wouldn't really save your life..
+emt.text.Armor Charging Ring=This item is going further than the previous one, and aims to be able to save your life. It will provide a way to charge electric items in your armor slots, and your armor slots only at a rate of 32 EU/T in any and every conditions.
+emt.text.The One Ring=Three Rings for the Elven-kings under the sky, Seven for the Dwarf-lords in their halls of stone, Nine for Mortal Men doomed to die, One for the Dark Lord on his dark throne in the Land of Mordor where the Shadows lie. One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them in the Land of Mordor where the Shadows lie. -J.R.R. Tolkien's epigraph to The Lord of The Rings.<BR>You dream of being able to disappear from sight , therefore becoming invulnerable to any attack. You have heard that this Ring lays somewhere in ruins, unaltered by time...

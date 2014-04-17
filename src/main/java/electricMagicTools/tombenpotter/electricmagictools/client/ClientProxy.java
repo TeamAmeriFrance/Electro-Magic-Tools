@@ -12,14 +12,13 @@
 package electricMagicTools.tombenpotter.electricmagictools.client;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import electricMagicTools.tombenpotter.electricmagictools.client.renderer.RenderArcher;
+import electricMagicTools.tombenpotter.electricmagictools.client.renderer.RenderLaser;
 import electricMagicTools.tombenpotter.electricmagictools.common.CommonProxy;
 import electricMagicTools.tombenpotter.electricmagictools.common.entities.EntityArcher;
 import electricMagicTools.tombenpotter.electricmagictools.common.entities.EntityLaser;
-import electricMagicTools.tombenpotter.electricmagictools.common.entities.RenderArcher;
-import electricMagicTools.tombenpotter.electricmagictools.common.entities.RenderLaser;
 
-public class ClientProxy extends CommonProxy
-{
+public class ClientProxy extends CommonProxy {
 
 	@Override
 	public void load() {

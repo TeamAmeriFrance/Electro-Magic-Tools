@@ -22,8 +22,7 @@ import electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntity
 import electricMagicTools.tombenpotter.electricmagictools.common.tile.container.ContainerEtheralMacerator;
 import electricMagicTools.tombenpotter.electricmagictools.common.tile.container.ContainerIndustrialWandRecharge;
 
-public class CommonProxy implements IGuiHandler
-{
+public class CommonProxy implements IGuiHandler {
 
 	public void load() {
 		registerRenders();
@@ -35,25 +34,20 @@ public class CommonProxy implements IGuiHandler
 
 	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-		TileEntity entity = world.getBlockTileEntity(x, y, z);
+		TileEntity entity = world.getTileEntity(x, y, z);
 
-		switch (ID)
-		{
+		switch (ID) {
 		case 0:
-			if (entity != null && entity instanceof TileEntityIndustrialWandRecharge)
-			{
+			if (entity != null && entity instanceof TileEntityIndustrialWandRecharge) {
 				return new ContainerIndustrialWandRecharge(player.inventory, (TileEntityIndustrialWandRecharge) entity);
-			} else
-			{
+			} else {
 				return null;
 			}
 
 		case 1:
-			if (entity != null && entity instanceof TileEntityEtherealMacerator)
-			{
+			if (entity != null && entity instanceof TileEntityEtherealMacerator) {
 				return new ContainerEtheralMacerator(player.inventory, (TileEntityEtherealMacerator) entity);
-			} else
-			{
+			} else {
 				return null;
 			}
 		default:
@@ -63,25 +57,20 @@ public class CommonProxy implements IGuiHandler
 
 	@Override
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-		TileEntity entity = world.getBlockTileEntity(x, y, z);
+		TileEntity entity = world.getTileEntity(x, y, z);
 
-		switch (ID)
-		{
+		switch (ID) {
 		case 0:
-			if (entity != null && entity instanceof TileEntityIndustrialWandRecharge)
-			{
+			if (entity != null && entity instanceof TileEntityIndustrialWandRecharge) {
 				return new GuiIndustrialWandRecharger(player.inventory, (TileEntityIndustrialWandRecharge) entity);
-			} else
-			{
+			} else {
 				return null;
 			}
 
 		case 1:
-			if (entity != null && entity instanceof TileEntityEtherealMacerator)
-			{
+			if (entity != null && entity instanceof TileEntityEtherealMacerator) {
 				return new GuiEtherealMacerator(player.inventory, (TileEntityEtherealMacerator) entity);
-			} else
-			{
+			} else {
 				return null;
 			}
 		default:

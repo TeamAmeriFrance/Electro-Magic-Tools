@@ -20,12 +20,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumArmorMaterial;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -44,8 +44,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import electricMagicTools.tombenpotter.electricmagictools.common.Config;
 import electricMagicTools.tombenpotter.electricmagictools.common.CreativeTab;
 
-public class ItemSolarHelmetRevealing extends ItemArmor implements ISpecialArmor, IRevealer, IVisDiscountGear, IGoggles, IElectricItem
-{
+public class ItemSolarHelmetRevealing extends ItemArmor implements ISpecialArmor, IRevealer, IVisDiscountGear, IGoggles, IElectricItem {
 
 	public int maxCharge = 10000000;
 	private int ticker;
@@ -61,9 +60,8 @@ public class ItemSolarHelmetRevealing extends ItemArmor implements ISpecialArmor
 	private static final Map potionCost = new HashMap();
 
 	@SuppressWarnings("unchecked")
-	public ItemSolarHelmetRevealing(int id, int par3, int par4)
-	{
-		super(id, EnumArmorMaterial.IRON, par3, par4);
+	public ItemSolarHelmetRevealing(int par3, int par4) {
+		super(ArmorMaterial.IRON, par3, par4);
 		this.setMaxDamage(27);
 		this.setMaxStackSize(1);
 		this.setCreativeTab(CreativeTab.tabTombenpotter);
@@ -83,11 +81,9 @@ public class ItemSolarHelmetRevealing extends ItemArmor implements ISpecialArmor
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void onArmorTickUpdate(World worldObj, EntityPlayer player, ItemStack itemStack) {
-		if (Config.nightVisionOff == false)
-		{
-			if (ElectricItem.manager.canUse(itemStack, 1 / 1000))
-			{
+	public void onArmorTick(World worldObj, EntityPlayer player, ItemStack itemStack) {
+		if (Config.nightVisionOff == false) {
+			if (ElectricItem.manager.canUse(itemStack, 1 / 1000)) {
 
 				int x = MathHelper.floor_double(player.posX);
 				int z = MathHelper.floor_double(player.posZ);
@@ -97,77 +93,61 @@ public class ItemSolarHelmetRevealing extends ItemArmor implements ISpecialArmor
 				if (lightlevel >= 0)
 					player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 300, -3));
 				ElectricItem.manager.use(itemStack, 1 / 1000, player);
-			} else
-			{
+			} else {
 				player.addPotionEffect(new PotionEffect(Potion.blindness.id, 300, 0, true));
 			}
 		}
 
 		int refill = player.getAir();
-		if (ElectricItem.manager.canUse(itemStack, 1000) && refill < 100)
-		{
+		if (ElectricItem.manager.canUse(itemStack, 1000) && refill < 100) {
 			player.setAir(refill + 200);
 			ElectricItem.manager.use(itemStack, 1000, null);
 		}
 
 		@SuppressWarnings("rawtypes")
 		Iterator i$ = (new LinkedList(player.getActivePotionEffects())).iterator();
-		do
-		{
-			if (!i$.hasNext())
-			{
+		do {
+			if (!i$.hasNext()) {
 				break;
 			}
 			{
 				PotionEffect effect = (PotionEffect) i$.next();
 				int id = effect.getPotionID();
 				Integer cost = (Integer) potionCost.get(Integer.valueOf(id));
-				if (cost != null)
-				{
+				if (cost != null) {
 					cost = Integer.valueOf(cost.intValue() * (effect.getAmplifier() + 1));
-					if (ElectricItem.manager.canUse(itemStack, cost.intValue()))
-					{
+					if (ElectricItem.manager.canUse(itemStack, cost.intValue())) {
 						ElectricItem.manager.use(itemStack, cost.intValue(), null);
-						ItemStack milk = (new ItemStack(Item.bucketMilk));
+						ItemStack milk = (new ItemStack(Items.milk_bucket));
 						player.curePotionEffects(milk);
 					}
 				}
 			}
 		} while (true);
 
-		if (worldObj.isRemote)
-		{
+		if (worldObj.isRemote) {
 			return;
 		}
 		checkForSun(player);
-		if (this.generating > 0)
-		{
+		if (this.generating > 0) {
 			int energyLeft = this.generating;
-			for (int i = 0; i < player.inventory.armorInventory.length; i++)
-			{
-				if (energyLeft > 0)
-				{
-					if ((player.inventory.armorInventory[i] != null) && ((Item.itemsList[player.inventory.armorInventory[i].itemID] instanceof IElectricItem)))
-					{
+			for (int i = 0; i < player.inventory.armorInventory.length; i++) {
+				if (energyLeft > 0) {
+					if ((player.inventory.armorInventory[i] != null) && (player.inventory.armorInventory[i].getItem() instanceof IElectricItem)) {
 						int sentPacket = ElectricItem.manager.charge(player.inventory.armorInventory[i], energyLeft, 4, false, false);
 						energyLeft -= sentPacket;
 					}
-				} else
-				{
+				} else {
 					return;
 				}
 			}
-			for (int j = 0; j < player.inventory.mainInventory.length; j++)
-			{
-				if (energyLeft > 0)
-				{
-					if ((player.inventory.mainInventory[j] != null) && ((Item.itemsList[player.inventory.mainInventory[j].itemID] instanceof IElectricItem)))
-					{
+			for (int j = 0; j < player.inventory.mainInventory.length; j++) {
+				if (energyLeft > 0) {
+					if ((player.inventory.mainInventory[j] != null) && (player.inventory.mainInventory[j].getItem() instanceof IElectricItem)) {
 						int sentPacket = ElectricItem.manager.charge(player.inventory.mainInventory[j], energyLeft, 4, false, false);
 						energyLeft -= sentPacket;
 					}
-				} else
-				{
+				} else {
 					return;
 				}
 			}
@@ -175,17 +155,14 @@ public class ItemSolarHelmetRevealing extends ItemArmor implements ISpecialArmor
 	}
 
 	public int checkForSun(EntityPlayer player) {
-		if (this.ticker++ % tickRate() == 0)
-		{
+		if (this.ticker++ % tickRate() == 0) {
 			updateVisibility(player);
 		}
-		if ((this.sunIsUp) && (this.skyIsVisible))
-		{
+		if ((this.sunIsUp) && (this.skyIsVisible)) {
 			this.generating = (0 + this.genDay);
 			return this.generating;
 		}
-		if (this.skyIsVisible)
-		{
+		if (this.skyIsVisible) {
 			this.generating = (0 + this.genNight);
 			return this.generating;
 		}
@@ -197,18 +174,14 @@ public class ItemSolarHelmetRevealing extends ItemArmor implements ISpecialArmor
 		this.dampPlace = (player.worldObj.getWorldChunkManager().getBiomeGenAt((int) player.posX, (int) player.posZ).getIntRainfall() > 0);
 		this.noSunWorld = player.worldObj.provider.hasNoSky;
 		Boolean rainWeather = Boolean.valueOf((this.dampPlace) && ((player.worldObj.isRaining()) || (player.worldObj.isThundering())));
-		if ((!player.worldObj.isDaytime()) || (rainWeather.booleanValue()))
-		{
+		if ((!player.worldObj.isDaytime()) || (rainWeather.booleanValue())) {
 			this.sunIsUp = false;
-		} else
-		{
+		} else {
 			this.sunIsUp = true;
 		}
-		if ((!player.worldObj.canBlockSeeTheSky((int) player.posX, (int) player.posY + 1, (int) player.posZ)) || (this.noSunWorld))
-		{
+		if ((!player.worldObj.canBlockSeeTheSky((int) player.posX, (int) player.posY + 1, (int) player.posZ)) || (this.noSunWorld)) {
 			this.skyIsVisible = false;
-		} else
-		{
+		} else {
 			this.skyIsVisible = true;
 		}
 	}
@@ -219,7 +192,7 @@ public class ItemSolarHelmetRevealing extends ItemArmor implements ISpecialArmor
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IconRegister iconRegister) {
+	public void registerIcons(IIconRegister iconRegister) {
 		this.itemIcon = iconRegister.registerIcon("electricmagictools:solarrevealinghelmet");
 	}
 
@@ -246,11 +219,9 @@ public class ItemSolarHelmetRevealing extends ItemArmor implements ISpecialArmor
 
 	@Override
 	public ArmorProperties getProperties(EntityLivingBase player, ItemStack armor, DamageSource source, double damage, int slot) {
-		if (source.isUnblockable())
-		{
+		if (source.isUnblockable()) {
 			return new net.minecraftforge.common.ISpecialArmor.ArmorProperties(0, 0.0D, 0);
-		} else
-		{
+		} else {
 			double absorptionRatio = getBaseAbsorptionRatio() * getDamageAbsorptionRatio();
 			int energyPerDamage = getEnergyPerDamage();
 			int damageLimit = energyPerDamage <= 0 ? 0 : (25 * ElectricItem.manager.getCharge(armor)) / energyPerDamage;
@@ -260,11 +231,9 @@ public class ItemSolarHelmetRevealing extends ItemArmor implements ISpecialArmor
 
 	@Override
 	public int getArmorDisplay(EntityPlayer player, ItemStack armor, int slot) {
-		if (ElectricItem.manager.getCharge(armor) >= getEnergyPerDamage())
-		{
+		if (ElectricItem.manager.getCharge(armor) >= getEnergyPerDamage()) {
 			return (int) Math.round(20D * getBaseAbsorptionRatio() * getDamageAbsorptionRatio());
-		} else
-		{
+		} else {
 			return 0;
 		}
 	}
@@ -288,33 +257,21 @@ public class ItemSolarHelmetRevealing extends ItemArmor implements ISpecialArmor
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@SideOnly(Side.CLIENT)
-	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List itemList) {
+	public void getSubItems(Item item, CreativeTabs par2CreativeTabs, List itemList) {
 		ItemStack itemStack = new ItemStack(this, 1);
-
-		if (getChargedItemId(itemStack) == this.itemID)
-		{
+		if (getChargedItem(itemStack) == this) {
 			ItemStack charged = new ItemStack(this, 1);
 			ElectricItem.manager.charge(charged, 2147483647, 2147483647, true, false);
 			itemList.add(charged);
 		}
-
-		if (getEmptyItemId(itemStack) == this.itemID)
+		if (getEmptyItem(itemStack) == this) {
 			itemList.add(new ItemStack(this, 1, getMaxDamage()));
+		}
 	}
 
 	@Override
 	public boolean canProvideEnergy(ItemStack itemStack) {
 		return true;
-	}
-
-	@Override
-	public int getChargedItemId(ItemStack itemStack) {
-		return itemID;
-	}
-
-	@Override
-	public int getEmptyItemId(ItemStack itemStack) {
-		return itemID;
 	}
 
 	@Override
@@ -334,23 +291,29 @@ public class ItemSolarHelmetRevealing extends ItemArmor implements ISpecialArmor
 
 	@Override
 	public int getItemEnchantability() {
-		if (Config.enchanting == false)
-		{
+		if (Config.enchanting == false) {
 			return 0;
-		} else
-		{
+		} else {
 			return 4;
 		}
 	}
 
 	@Override
 	public boolean isBookEnchantable(ItemStack itemstack1, ItemStack itemstack2) {
-		if (Config.enchanting == false)
-		{
+		if (Config.enchanting == false) {
 			return false;
-		} else
-		{
+		} else {
 			return true;
 		}
+	}
+
+	@Override
+	public Item getChargedItem(ItemStack itemStack) {
+		return this;
+	}
+
+	@Override
+	public Item getEmptyItem(ItemStack itemStack) {
+		return this;
 	}
 }

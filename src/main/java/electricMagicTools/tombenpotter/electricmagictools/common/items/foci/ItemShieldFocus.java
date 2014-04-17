@@ -11,9 +11,9 @@
  ******************************************************************************/
 package electricMagicTools.tombenpotter.electricmagictools.common.items.foci;
 
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
@@ -24,19 +24,17 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import electricMagicTools.tombenpotter.electricmagictools.common.BlockRegistry;
 
-public class ItemShieldFocus extends ItemBaseFocus
-{
+public class ItemShieldFocus extends ItemBaseFocus {
 
 	private static final AspectList visCost = new AspectList().add(Aspect.ORDER, 10).add(Aspect.WATER, 10).add(Aspect.AIR, 10);
 
-	public ItemShieldFocus(int id)
-	{
-		super(id);
+	public ItemShieldFocus() {
+		super();
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IconRegister iconRegister) {
+	public void registerIcons(IIconRegister iconRegister) {
 		this.itemIcon = iconRegister.registerIcon("electricmagictools:shieldfocus");
 	}
 
@@ -67,34 +65,28 @@ public class ItemShieldFocus extends ItemBaseFocus
 		player.motionZ = 0.0D;
 
 		ItemWandCasting wand = (ItemWandCasting) itemstack.getItem();
-		if (wand.consumeAllVis(itemstack, player, getVisCost(), true))
-		{
+		if (wand.consumeAllVis(itemstack, player, getVisCost(), true, true)) {
 			int x = MathHelper.floor_double(player.posX);
 			int y = MathHelper.floor_double(player.posY);
 			int z = MathHelper.floor_double(player.posZ);
 
-			if (wand.consumeAllVis(itemstack, player, getVisCost(), true))
-			{
-				// Player Level
-				if (player.worldObj.isAirBlock(x + 1, y, z) && player.worldObj.isAirBlock(x - 1, y, z) && player.worldObj.isAirBlock(x, y, z + 1) && player.worldObj.isAirBlock(x, y, z - 1))
-				{
-					player.worldObj.setBlock(x + 1, y, z, BlockRegistry.shield.blockID);
-					player.worldObj.setBlock(x - 1, y, z, BlockRegistry.shield.blockID);
-					player.worldObj.setBlock(x, y, z + 1, BlockRegistry.shield.blockID);
-					player.worldObj.setBlock(x, y, z - 1, BlockRegistry.shield.blockID);
-				}
-
-				// Above the player
-				if (player.worldObj.isAirBlock(x + 1, y + 1, z) && player.worldObj.isAirBlock(x - 1, y + 1, z) && player.worldObj.isAirBlock(x, y + 1, z + 1) && player.worldObj.isAirBlock(x, y + 1, z - 1))
-				{
-					player.worldObj.setBlock(x + 1, y + 1, z, BlockRegistry.shield.blockID);
-					player.worldObj.setBlock(x - 1, y + 1, z, BlockRegistry.shield.blockID);
-					player.worldObj.setBlock(x, y + 1, z + 1, BlockRegistry.shield.blockID);
-					player.worldObj.setBlock(x, y + 1, z - 1, BlockRegistry.shield.blockID);
-				}
+			// Player Level
+			if (player.worldObj.isAirBlock(x + 1, y, z) && player.worldObj.isAirBlock(x - 1, y, z) && player.worldObj.isAirBlock(x, y, z + 1) && player.worldObj.isAirBlock(x, y, z - 1)) {
+				player.worldObj.setBlock(x + 1, y, z, BlockRegistry.shield);
+				player.worldObj.setBlock(x - 1, y, z, BlockRegistry.shield);
+				player.worldObj.setBlock(x, y, z + 1, BlockRegistry.shield);
+				player.worldObj.setBlock(x, y, z - 1, BlockRegistry.shield);
 			}
 
+			// Above the player
+			if (player.worldObj.isAirBlock(x + 1, y + 1, z) && player.worldObj.isAirBlock(x - 1, y + 1, z) && player.worldObj.isAirBlock(x, y + 1, z + 1) && player.worldObj.isAirBlock(x, y + 1, z - 1)) {
+				player.worldObj.setBlock(x + 1, y + 1, z, BlockRegistry.shield);
+				player.worldObj.setBlock(x - 1, y + 1, z, BlockRegistry.shield);
+				player.worldObj.setBlock(x, y + 1, z + 1, BlockRegistry.shield);
+				player.worldObj.setBlock(x, y + 1, z - 1, BlockRegistry.shield);
+			}
 		}
+
 	}
 
 	@Override
@@ -104,24 +96,22 @@ public class ItemShieldFocus extends ItemBaseFocus
 		int z = MathHelper.floor_double(player.posZ);
 
 		// Player Level
-		if ((player.worldObj.getBlockId(x + 1, y, z) == BlockRegistry.shield.blockID) && (player.worldObj.getBlockId(x - 1, y, z) == BlockRegistry.shield.blockID) && (player.worldObj.getBlockId(x, y, z + 1) == BlockRegistry.shield.blockID) && (player.worldObj.getBlockId(x, y, z - 1) == BlockRegistry.shield.blockID))
-		{
-			player.worldObj.setBlock(x + 1, y, z, 0);
-			player.worldObj.setBlock(x - 1, y, z, 0);
-			player.worldObj.setBlock(x, y, z + 1, 0);
-			player.worldObj.setBlock(x, y, z - 1, 0);
+		if ((player.worldObj.getBlock(x + 1, y, z) == BlockRegistry.shield) && (player.worldObj.getBlock(x - 1, y, z) == BlockRegistry.shield) && (player.worldObj.getBlock(x, y, z + 1) == BlockRegistry.shield) && (player.worldObj.getBlock(x, y, z - 1) == BlockRegistry.shield)) {
+			player.worldObj.setBlockToAir(x + 1, y, z);
+			player.worldObj.setBlockToAir(x - 1, y, z);
+			player.worldObj.setBlockToAir(x, y, z + 1);
+			player.worldObj.setBlockToAir(x, y, z - 1);
 		}
 
 		// Above the player
-		if ((player.worldObj.getBlockId(x + 1, y + 1, z) == BlockRegistry.shield.blockID) && (player.worldObj.getBlockId(x - 1, y + 1, z) == BlockRegistry.shield.blockID) && (player.worldObj.getBlockId(x, y + 1, z + 1) == BlockRegistry.shield.blockID) && (player.worldObj.getBlockId(x, y + 1, z - 1) == BlockRegistry.shield.blockID))
-		{
-			player.worldObj.setBlock(x + 1, y + 1, z, 0);
-			player.worldObj.setBlock(x - 1, y + 1, z, 0);
-			player.worldObj.setBlock(x, y + 1, z + 1, 0);
-			player.worldObj.setBlock(x, y + 1, z - 1, 0);
+		if ((player.worldObj.getBlock(x + 1, y + 1, z) == BlockRegistry.shield) && (player.worldObj.getBlock(x - 1, y + 1, z) == BlockRegistry.shield) && (player.worldObj.getBlock(x, y + 1, z + 1) == BlockRegistry.shield) && (player.worldObj.getBlock(x, y + 1, z - 1) == BlockRegistry.shield)) {
+			player.worldObj.setBlockToAir(x + 1, y + 1, z);
+			player.worldObj.setBlockToAir(x - 1, y + 1, z);
+			player.worldObj.setBlockToAir(x, y + 1, z + 1);
+			player.worldObj.setBlockToAir(x, y + 1, z - 1);
 		}
 
-		ItemStack milk = (new ItemStack(Item.bucketMilk));
+		ItemStack milk = (new ItemStack(Items.milk_bucket));
 		player.curePotionEffects(milk);
 	}
 }

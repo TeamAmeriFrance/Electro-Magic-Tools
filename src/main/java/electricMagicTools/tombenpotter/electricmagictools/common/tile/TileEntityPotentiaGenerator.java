@@ -14,21 +14,19 @@ package electricMagicTools.tombenpotter.electricmagictools.common.tile;
 import ic2.api.energy.prefab.BasicSource;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraftforge.common.ForgeDirection;
+import net.minecraftforge.common.util.ForgeDirection;
 import thaumcraft.api.aspects.Aspect;
-import thaumcraft.common.lib.EssentiaHandler;
+import thaumcraft.common.lib.events.EssentiaHandler;
 import electricMagicTools.tombenpotter.electricmagictools.common.Config;
 
-public class TileEntityPotentiaGenerator extends TileEntity
-{
+public class TileEntityPotentiaGenerator extends TileEntity {
 	int x;
 	int y;
 	int z;
 	public ForgeDirection orientation;
 	public static int waitTime;
 
-	public TileEntityPotentiaGenerator()
-	{
+	public TileEntityPotentiaGenerator() {
 		orientation = ForgeDirection.getOrientation(1);
 		waitTime = 30;
 	}
@@ -39,15 +37,12 @@ public class TileEntityPotentiaGenerator extends TileEntity
 	public void updateEntity() {
 		energySource.updateEntity();
 
-		if (waitTime > 0)
-		{
+		if (waitTime > 0) {
 			waitTime--;
 		}
 
-		if (waitTime <= 0)
-		{
-			if ((!this.worldObj.isRemote) && (EssentiaHandler.drainEssentia(this, Aspect.ENERGY, ForgeDirection.UNKNOWN, 8)))
-			{
+		if (waitTime <= 0) {
+			if ((!this.worldObj.isRemote) && (EssentiaHandler.drainEssentia(this, Aspect.ENERGY, ForgeDirection.UNKNOWN, 8))) {
 				energySource.addEnergy(Config.potentiaGenOutput);
 			}
 			waitTime = Config.essentiaGeneratorsDelay;

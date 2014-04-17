@@ -27,40 +27,38 @@ import ic2.api.item.IMetalArmor;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumArmorMaterial;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ISpecialArmor;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.EventPriority;
-import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import thaumcraft.api.IVisDiscountGear;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.common.Thaumcraft;
+import cpw.mods.fml.common.eventhandler.EventPriority;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import electricMagicTools.tombenpotter.electricmagictools.common.Config;
 import electricMagicTools.tombenpotter.electricmagictools.common.CreativeTab;
 
-public class ItemElectricBootsTraveller extends ItemArmor implements IElectricItem, IVisDiscountGear, IMetalArmor, ISpecialArmor
-{
+public class ItemElectricBootsTraveller extends ItemArmor implements IElectricItem, IVisDiscountGear, IMetalArmor, ISpecialArmor {
 
 	public int maxCharge = 10000;
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static List<String> playersWith1Step = new ArrayList();
 
-	public ItemElectricBootsTraveller(int id, int par3, int par4)
-	{
-		super(id, EnumArmorMaterial.DIAMOND, par3, par4);
+	public ItemElectricBootsTraveller(int par3, int par4) {
+		super(ArmorMaterial.DIAMOND, par3, par4);
 		this.setMaxDamage(27);
 		this.setMaxStackSize(1);
 		this.setCreativeTab(CreativeTab.tabTombenpotter);
@@ -70,26 +68,26 @@ public class ItemElectricBootsTraveller extends ItemArmor implements IElectricIt
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@SideOnly(Side.CLIENT)
-	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List itemList) {
+	public void getSubItems(Item item, CreativeTabs par2CreativeTabs, List itemList) {
 		ItemStack itemStack = new ItemStack(this, 1);
-		if (getChargedItemId(itemStack) == this.itemID)
-		{
+		if (getChargedItem(itemStack) == this) {
 			ItemStack charged = new ItemStack(this, 1);
 			ElectricItem.manager.charge(charged, 2147483647, 2147483647, true, false);
 			itemList.add(charged);
 		}
-		if (getEmptyItemId(itemStack) == this.itemID)
+		if (getEmptyItem(itemStack) == this) {
 			itemList.add(new ItemStack(this, 1, getMaxDamage()));
+		}
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IconRegister iconRegister) {
+	public void registerIcons(IIconRegister iconRegister) {
 		this.itemIcon = iconRegister.registerIcon("electricmagictools:electricboots");
 	}
 
 	@Override
-	public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer) {
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
 		return "electricmagictools:textures/models/electricboots.png";
 	}
 
@@ -97,10 +95,9 @@ public class ItemElectricBootsTraveller extends ItemArmor implements IElectricIt
 		return true;
 	}
 
-	@ForgeSubscribe
+	@SubscribeEvent
 	public void onEntityUpdate(LivingUpdateEvent event) {
-		if (event.entityLiving instanceof EntityPlayer)
-		{
+		if (event.entityLiving instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) event.entityLiving;
 			ItemStack armor = player.getCurrentArmor(3 - armorType);
 			if (armor != null && armor.getItem() == this)
@@ -117,33 +114,30 @@ public class ItemElectricBootsTraveller extends ItemArmor implements IElectricIt
 		player.fallDistance = 0F;
 	}
 
-	@ForgeSubscribe
+	@SubscribeEvent
 	public void onPlayerJump(LivingJumpEvent event) {
-		if (event.entityLiving instanceof EntityPlayer)
-		{
+		if (event.entityLiving instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) event.entityLiving;
-			boolean hasArmor = player.getCurrentArmor(0) != null && player.getCurrentArmor(0).itemID == itemID;
+			boolean hasArmor = player.getCurrentArmor(0) != null && player.getCurrentArmor(0).getItem() == this;
 
 			if (hasArmor)
 				player.motionY += 0.3;
 		}
 	}
 
-	@ForgeSubscribe(priority = EventPriority.HIGH)
+	@SubscribeEvent(priority = EventPriority.HIGH)
 	public void onLivingUpdate(LivingUpdateEvent event) {
-		if (event.entityLiving instanceof EntityPlayer && event.entityLiving.worldObj.isRemote)
-		{
+		if (event.entityLiving instanceof EntityPlayer && event.entityLiving.worldObj.isRemote) {
 			EntityPlayer player = (EntityPlayer) event.entityLiving;
 
-			boolean highStepListed = playersWith1Step.contains(player.username);
-			boolean hasHighStep = player.getCurrentArmor(0) != null && player.getCurrentArmor(0).itemID == itemID;
+			boolean highStepListed = playersWith1Step.contains(player.getCommandSenderName());
+			boolean hasHighStep = player.getCurrentArmor(0) != null && player.getCurrentArmor(0).getItem() == this;
 
 			if (hasHighStep && !highStepListed)
-				playersWith1Step.add(player.username);
+				playersWith1Step.add(player.getCommandSenderName());
 
-			if (!hasHighStep && highStepListed)
-			{
-				playersWith1Step.remove(player.username);
+			if (!hasHighStep && highStepListed) {
+				playersWith1Step.remove(player.getCommandSenderName());
 				player.stepHeight = 0.5F;
 			}
 		}
@@ -157,16 +151,6 @@ public class ItemElectricBootsTraveller extends ItemArmor implements IElectricIt
 	@Override
 	public boolean canProvideEnergy(ItemStack itemStack) {
 		return false;
-	}
-
-	@Override
-	public int getChargedItemId(ItemStack itemStack) {
-		return itemID;
-	}
-
-	@Override
-	public int getEmptyItemId(ItemStack itemStack) {
-		return itemID;
 	}
 
 	@Override
@@ -191,22 +175,18 @@ public class ItemElectricBootsTraveller extends ItemArmor implements IElectricIt
 
 	@Override
 	public int getItemEnchantability() {
-		if (Config.enchanting == false)
-		{
+		if (Config.enchanting == false) {
 			return 0;
-		} else
-		{
+		} else {
 			return 4;
 		}
 	}
 
 	@Override
 	public boolean isBookEnchantable(ItemStack itemstack1, ItemStack itemstack2) {
-		if (Config.enchanting == false)
-		{
+		if (Config.enchanting == false) {
 			return false;
-		} else
-		{
+		} else {
 			return true;
 		}
 	}
@@ -217,11 +197,9 @@ public class ItemElectricBootsTraveller extends ItemArmor implements IElectricIt
 
 	@Override
 	public ArmorProperties getProperties(EntityLivingBase player, ItemStack armor, DamageSource source, double damage, int slot) {
-		if (source.isUnblockable())
-		{
+		if (source.isUnblockable()) {
 			return new net.minecraftforge.common.ISpecialArmor.ArmorProperties(0, 0.0D, 3);
-		} else
-		{
+		} else {
 			double absorptionRatio = getBaseAbsorptionRatio() * getDamageAbsorptionRatio();
 			int energyPerDamage = getEnergyPerDamage();
 			int damageLimit = energyPerDamage <= 0 ? 0 : (25 * ElectricItem.manager.getCharge(armor)) / energyPerDamage;
@@ -231,11 +209,9 @@ public class ItemElectricBootsTraveller extends ItemArmor implements IElectricIt
 
 	@Override
 	public int getArmorDisplay(EntityPlayer player, ItemStack armor, int slot) {
-		if (ElectricItem.manager.getCharge(armor) >= getEnergyPerDamage())
-		{
+		if (ElectricItem.manager.getCharge(armor) >= getEnergyPerDamage()) {
 			return (int) Math.round(20D * getBaseAbsorptionRatio() * getDamageAbsorptionRatio());
-		} else
-		{
+		} else {
 			return 0;
 		}
 	}
@@ -265,12 +241,21 @@ public class ItemElectricBootsTraveller extends ItemArmor implements IElectricIt
 	}
 
 	@Override
-	public void onArmorTickUpdate(World world, EntityPlayer player, ItemStack itemStack) {
-		if (Config.smoke == false && player.onGround == false)
-		{
+	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
+		if (Config.smoke == false && player.onGround == false) {
 			int miny = (int) (player.boundingBox.minY - 2.0D);
 			Thaumcraft.proxy.smokeSpiral(player.worldObj, player.posX, player.boundingBox.minY + player.height / 2.0F, player.posZ, 1.5F, player.worldObj.rand.nextInt(620), miny);
 		}
+	}
+
+	@Override
+	public Item getChargedItem(ItemStack itemStack) {
+		return this;
+	}
+
+	@Override
+	public Item getEmptyItem(ItemStack itemStack) {
+		return this;
 	}
 
 }

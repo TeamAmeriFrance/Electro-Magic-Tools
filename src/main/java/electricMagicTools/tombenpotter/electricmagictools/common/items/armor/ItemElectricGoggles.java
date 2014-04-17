@@ -13,7 +13,7 @@ package electricMagicTools.tombenpotter.electricmagictools.common.items.armor;
 
 import java.util.List;
 
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -22,24 +22,22 @@ import thaumcraft.api.aspects.Aspect;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemElectricGoggles extends ItemQuantumThaumicHelmet
-{
+public class ItemElectricGoggles extends ItemQuantumThaumicHelmet {
 
 	public int maxCharge = 10000;
 
-	public ItemElectricGoggles(int id, int par3, int par4)
-	{
-		super(id, par3, par4);
+	public ItemElectricGoggles(int par3, int par4) {
+		super(par3, par4);
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IconRegister iconRegister) {
+	public void registerIcons(IIconRegister iconRegister) {
 		this.itemIcon = iconRegister.registerIcon("electricmagictools:electricgoggles");
 	}
 
 	@Override
-	public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer) {
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
 		return "electricmagictools:textures/models/electricgoggles.png";
 	}
 
@@ -58,7 +56,7 @@ public class ItemElectricGoggles extends ItemQuantumThaumicHelmet
 	}
 
 	@Override
-	public void onArmorTickUpdate(World world, EntityPlayer player, ItemStack itemStack) {
+	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
 	}
 
 	@Override

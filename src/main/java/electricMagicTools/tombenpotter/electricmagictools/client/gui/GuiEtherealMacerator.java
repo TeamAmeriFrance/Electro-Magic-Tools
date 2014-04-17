@@ -13,7 +13,6 @@ package electricMagicTools.tombenpotter.electricmagictools.client.gui;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 
@@ -22,11 +21,9 @@ import org.lwjgl.opengl.GL11;
 import electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityEtherealMacerator;
 import electricMagicTools.tombenpotter.electricmagictools.common.tile.container.ContainerEtheralMacerator;
 
-public class GuiEtherealMacerator extends GuiContainer
-{
+public class GuiEtherealMacerator extends GuiContainer {
 
-	public GuiEtherealMacerator(InventoryPlayer inventory, TileEntityEtherealMacerator te)
-	{
+	public GuiEtherealMacerator(InventoryPlayer inventory, TileEntityEtherealMacerator te) {
 		super(new ContainerEtheralMacerator(inventory, te));
 		xSize = 176;
 		ySize = 165;
@@ -42,7 +39,7 @@ public class GuiEtherealMacerator extends GuiContainer
 	}
 
 	protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-		this.fontRenderer.drawString(I18n.getString("Ethereal Processor"), 6, 6, 4210752);
-		this.fontRenderer.drawString(I18n.getString("Inventory"), 8, this.ySize - 96 + 2, 4210752);
+		this.fontRendererObj.drawString("Ethereal Processor", 6, 6, 4210752);
+		this.fontRendererObj.drawString("Inventory", 8, this.ySize - 96 + 2, 4210752);
 	}
 }

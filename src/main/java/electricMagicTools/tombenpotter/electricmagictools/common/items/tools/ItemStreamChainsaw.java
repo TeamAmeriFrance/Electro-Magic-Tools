@@ -16,31 +16,32 @@ package electricMagicTools.tombenpotter.electricmagictools.common.items.tools;
 import ic2.api.item.ElectricItem;
 import ic2.api.item.IElectricItem;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.EnumAction;
-import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import thaumcraft.common.lib.PacketHandler;
+import thaumcraft.common.Thaumcraft;
 import thaumcraft.common.lib.Utils;
+import thaumcraft.common.lib.network.fx.PacketFXBlockBubble;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import electricMagicTools.tombenpotter.electricmagictools.common.Config;
 import electricMagicTools.tombenpotter.electricmagictools.common.CreativeTab;
 
-public class ItemStreamChainsaw extends ItemAxe implements IElectricItem
-{
+public class ItemStreamChainsaw extends ItemAxe implements IElectricItem {
 
 	boolean alternateServer;
 	boolean alternateClient;
@@ -50,9 +51,8 @@ public class ItemStreamChainsaw extends ItemAxe implements IElectricItem
 	private final int cost = 400;
 	private final int hitCost = 500;
 
-	public ItemStreamChainsaw(int id)
-	{
-		super(id, EnumToolMaterial.EMERALD);
+	public ItemStreamChainsaw() {
+		super(ToolMaterial.EMERALD);
 		this.efficiencyOnProperMaterial = 25F;
 		alternateServer = false;
 		alternateClient = false;
@@ -66,63 +66,42 @@ public class ItemStreamChainsaw extends ItemAxe implements IElectricItem
 	}
 
 	public boolean onItemUse(ItemStack itemstack, EntityPlayer player, World world, int x, int y, int z, int par7, float par8, float par9, float par10) {
-		int brokenID = world.getBlockId(x, y, z);
-		if (!player.isSneaking() && brokenID > 0 && Utils.isWoodLog(world, x, y, z))
-		{
-			if (!world.isRemote)
-			{
-				Utils.breakFurthestBlock(world, x, y, z, brokenID, player);
-				world.playSoundEffect(x, y, z, "thaumcraft:bubble", 0.15F, 1.0F);
-				ElectricItem.manager.use(itemstack, cost, player);
-				alternateServer = !alternateServer;
-			} else
-			{
+		Block bi = world.getBlock(x, y, z);
+		if ((!player.isSneaking()) && (Utils.isWoodLog(world, x, y, z))) {
+			if (!world.isRemote) {
+				if (Utils.breakFurthestBlock(world, x, y, z, bi, player)) {
+					world.playSoundEffect(x, y, z, "thaumcraft:bubble", 0.15F, 1.0F);
+					ElectricItem.manager.use(itemstack, cost, player);
+					this.alternateServer = (!this.alternateServer);
+				}
+			} else {
 				player.swingItem();
 				ElectricItem.manager.use(itemstack, cost, player);
-				alternateClient = !alternateClient;
+				this.alternateClient = (!this.alternateClient);
 			}
 		}
 		return super.onItemUse(itemstack, player, world, x, y, z, par7, par8, par9, par10);
 	}
 
-	@Override
-	public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, EntityLivingBase par7EntityLivingBase) {
-		ElectricItem.manager.use(par1ItemStack, cost, par7EntityLivingBase);
-		return true;
-	}
-
 	public boolean onBlockStartBreak(ItemStack itemstack, int x, int y, int z, EntityPlayer player) {
-		World world = ((Entity) (player)).worldObj;
-		int brokenID = world.getBlockId(x, y, z);
-		if (!player.isSneaking() && brokenID > 0 && Utils.isWoodLog(world, x, y, z))
-		{
-			if (!world.isRemote)
-			{
-				Utils.breakFurthestBlock(world, x, y, z, brokenID, player);
-				PacketHandler.sendBlockBoilFXPacket(x, y, z, 0.33F, 0.33F, 1.0F, player);
+		World world = player.worldObj;
+		Block bi = world.getBlock(x, y, z);
+		if ((!player.isSneaking()) && (Utils.isWoodLog(world, x, y, z))) {
+			if (!world.isRemote) {
+				Utils.breakFurthestBlock(world, x, y, z, bi, player);
+				Thaumcraft.packetPipeline.sendToAllAround(new PacketFXBlockBubble(x, y, z, new Color(0.33F, 0.33F, 1.0F).getRGB()), new NetworkRegistry.TargetPoint(world.provider.dimensionId, x, y, z, 32.0D));
+
 				world.playSoundEffect(x, y, z, "thaumcraft:bubble", 0.15F, 1.0F);
 			}
 			ElectricItem.manager.use(itemstack, cost, player);
 			return true;
-		} else
-		{
-			return super.onBlockStartBreak(itemstack, x, y, z, player);
 		}
+		return super.onBlockStartBreak(itemstack, x, y, z, player);
 	}
 
 	@Override
 	public boolean canProvideEnergy(ItemStack itemStack) {
 		return false;
-	}
-
-	@Override
-	public int getChargedItemId(ItemStack itemStack) {
-		return itemID;
-	}
-
-	@Override
-	public int getEmptyItemId(ItemStack itemStack) {
-		return itemID;
 	}
 
 	@Override
@@ -142,44 +121,39 @@ public class ItemStreamChainsaw extends ItemAxe implements IElectricItem
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IconRegister iconRegister) {
+	public void registerIcons(IIconRegister iconRegister) {
 		this.itemIcon = iconRegister.registerIcon("electricmagictools:streamchainsaw");
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@SideOnly(Side.CLIENT)
-	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List itemList) {
+	public void getSubItems(Item item, CreativeTabs par2CreativeTabs, List itemList) {
 		ItemStack itemStack = new ItemStack(this, 1);
-
-		if (getChargedItemId(itemStack) == this.itemID)
-		{
+		if (getChargedItem(itemStack) == this) {
 			ItemStack charged = new ItemStack(this, 1);
 			ElectricItem.manager.charge(charged, 2147483647, 2147483647, true, false);
 			itemList.add(charged);
 		}
-
-		if (getEmptyItemId(itemStack) == this.itemID)
+		if (getEmptyItem(itemStack) == this) {
 			itemList.add(new ItemStack(this, 1, getMaxDamage()));
+		}
 	}
 
 	@Override
 	public boolean canHarvestBlock(Block block, ItemStack stack) {
-		return Item.axeDiamond.canHarvestBlock(block) || Item.swordDiamond.canHarvestBlock(block);
+		return Items.diamond_axe.canHarvestBlock(block, stack) || Items.diamond_sword.canHarvestBlock(block, stack);
 	}
 
 	@Override
-	public float getStrVsBlock(ItemStack stack, Block block, int meta) {
-		if (!ElectricItem.manager.canUse(stack, cost))
-		{
+	public float getDigSpeed(ItemStack stack, Block block, int meta) {
+		if (!ElectricItem.manager.canUse(stack, cost)) {
 			return 1.0F;
 		}
 
-		if (Item.axeWood.getStrVsBlock(stack, block, meta) > 1.0F || Item.swordWood.getStrVsBlock(stack, block, meta) > 1.0F)
-		{
+		if (Items.wooden_axe.getDigSpeed(stack, block, meta) > 1.0F || Items.wooden_sword.getDigSpeed(stack, block, meta) > 1.0F) {
 			return efficiencyOnProperMaterial;
-		} else
-		{
-			return super.getStrVsBlock(stack, block, meta);
+		} else {
+			return super.getDigSpeed(stack, block, meta);
 		}
 	}
 
@@ -190,32 +164,37 @@ public class ItemStreamChainsaw extends ItemAxe implements IElectricItem
 
 	@Override
 	public int getItemEnchantability() {
-		if (Config.enchanting == false)
-		{
+		if (Config.enchanting == false) {
 			return 0;
-		} else
-		{
+		} else {
 			return 4;
 		}
 	}
 
 	@Override
 	public boolean isBookEnchantable(ItemStack itemstack1, ItemStack itemstack2) {
-		if (Config.enchanting == false)
-		{
+		if (Config.enchanting == false) {
 			return false;
-		} else
-		{
+		} else {
 			return true;
 		}
 	}
 
 	@Override
 	public boolean hitEntity(ItemStack itemstack, EntityLivingBase entityliving, EntityLivingBase attacker) {
-		if (ElectricItem.manager.use(itemstack, hitCost, attacker))
-		{
+		if (ElectricItem.manager.use(itemstack, hitCost, attacker)) {
 			entityliving.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), 12F);
 		}
 		return false;
+	}
+
+	@Override
+	public Item getChargedItem(ItemStack itemStack) {
+		return this;
+	}
+
+	@Override
+	public Item getEmptyItem(ItemStack itemStack) {
+		return this;
 	}
 }

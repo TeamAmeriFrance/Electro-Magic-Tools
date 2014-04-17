@@ -11,27 +11,24 @@
  ******************************************************************************/
 package electricMagicTools.tombenpotter.electricmagictools.common.items;
 
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumMovingObjectType;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.util.MovingObjectPosition.MovingObjectType;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import electricMagicTools.tombenpotter.electricmagictools.common.CreativeTab;
 
-public class ItemLightningSummoner extends Item
-{
+public class ItemLightningSummoner extends Item {
 
-	public ItemLightningSummoner(int id)
-	{
-		super(id);
+	public ItemLightningSummoner() {
 		this.setCreativeTab(CreativeTab.tabTombenpotter);
 		this.setMaxDamage(1);
 		this.setMaxStackSize(64);
@@ -39,7 +36,7 @@ public class ItemLightningSummoner extends Item
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IconRegister iconRegister) {
+	public void registerIcons(IIconRegister iconRegister) {
 		this.itemIcon = iconRegister.registerIcon("electricmagictools:lightningsummoner");
 	}
 
@@ -62,30 +59,25 @@ public class ItemLightningSummoner extends Item
 		float f9 = f3 * f5;
 		double d3 = 5000D;
 		Vec3 vec3d1 = vec3d.addVector(f7 * d3, f8 * d3, f9 * d3);
-		MovingObjectPosition movingobjectposition = world.rayTraceBlocks_do_do(vec3d, vec3d1, false, true);
-		if (movingobjectposition == null)
-		{
+		MovingObjectPosition movingobjectposition = player.worldObj.rayTraceBlocks(vec3d, vec3d1, true);
+		if (movingobjectposition == null) {
 			return itemstack;
 		}
-		if (movingobjectposition.typeOfHit == EnumMovingObjectType.TILE)
-		{
+		if (movingobjectposition.typeOfHit == MovingObjectType.BLOCK) {
 			int i = movingobjectposition.blockX;
 			int j = movingobjectposition.blockY;
 			int k = movingobjectposition.blockZ;
 			world.spawnEntityInWorld(new EntityLightningBolt(world, i, j, k));
-		} else if (movingobjectposition.typeOfHit == EnumMovingObjectType.ENTITY)
-		{
+		} else if (movingobjectposition.typeOfHit == MovingObjectType.ENTITY) {
 			Entity entityhit = movingobjectposition.entityHit;
 			double x = entityhit.posX;
 			double y = entityhit.posY;
 			double z = entityhit.posZ;
 			world.spawnEntityInWorld(new EntityLightningBolt(world, x, y, z));
 		}
-		if (player.capabilities.isCreativeMode)
-		{
+		if (player.capabilities.isCreativeMode) {
 			return itemstack;
-		} else
-		{
+		} else {
 			itemstack.damageItem(2, player);
 			return itemstack;
 		}
