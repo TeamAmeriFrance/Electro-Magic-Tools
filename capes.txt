@@ -10,3 +10,4 @@ Drullkus:https://raw.github.com/Tombenpotter/Electro-Magic-Tools/master/capes/ca
 jztech101:https://raw.github.com/Tombenpotter/Electro-Magic-Tools/master/capes/cape.png
 Pixel_404:https://raw.github.com/Tombenpotter/Electro-Magic-Tools/master/capes/cape.png
 Speedynutty68:https://raw.github.com/Tombenpotter/Electro-Magic-Tools/master/capes/cape.png
+TheDrunkMafia:https://raw.github.com/Tombenpotter/Electro-Magic-Tools/master/capes/cape.png

@@ -1,20 +1,77 @@
 Changelog of the mod : Electric Magic Tools, a Thaumcraft 4/Industrial-Craft 2 addon
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
+Version 1.1.1 : 
+Fixed a bug with The One Ring where mobs attacked you when you removed it while in creative.
+New Thaumonomicon entries for a couple of things, thanks to Professor29.
+Forgot to mention it, new Nanosuit Boots of the Traveller texture thanks to TehNut.
+Removed Thaumium Plate and Lightning Summoner, and moved them to use other ids. This will delete existing ones.
+Moved all the Solar Panels tooltips to require the use of the shift key to show themselves.
+Adding wings, my take at the mix of Magic and Jetpacks.
+Blacklist of the Etheral Processor now extends to anything containing armor, armour, helm, chestp, legging, boot, sword, shovel, axe or pick in its unlocalized name.
+Added a drop to the Tainted Chicken, the Tainted Feather. Also added a crafting recipe for it.
+Added a couple of crating components, used in the making of the wings.
+Added a bunch of console outputs on the starting of the game so that I know exactly when it crashed if it died at startup.
+Fixed a bug with the drill of the Rockbreaker that would make it use durability and eventually break when shift-breaking a block.
+Added a different texture file for each solar panel, so that it can be changed more easily.
+CyanideX remade all the EMT textures! Finally featuring cool looking stuff! Yey, thanks a lot to him!
 
-Version 1.0.0 : First release of the mod.
-Version 1.0.1 : Second release of the mod : fixes a crash due to the Omnitools.
-Version 1.0.2 : Third release of the mod : adds the Wand Focus : Laser, and a christmas easter egg. Does not work on servers.
-Version 1.0.3 : Attempt to fix the server crash of the mod. Attemps failed.
-Version 1.0.3b : Second attempt to fix the server crash, it is again working in SMP.
-Version 1.0.4 : Adds the Kris-tmas Focus and the Shield Focus
-Version 1.0.5 : Added some Ignis/Potentia/Auram generators, Electric Goggles of revealing, Chainsaw of the Stream, and Drill of the Rockbreaker.
-Version 1.0.6beta1 : Added an Industrial Wand Charging Station, some legendary tools, and a couple of other stuff.
-Version 1.0.6beta2 : No new stuff, but switched to ForgeGradle (964)
-Version 1.0.6beta3 : Added some enhanced boots of the traveller, and also capes for me and some friends
-Version 1.0.7 : Updated to Thaumcraft 4.1.0x
-Version 1.0.8 : Added some magical solar panels, different tiers and special capablities to all of them.
-Version 1.0.9beta1 : Fixed the bug with the Drill of the Rockbreaker, added UU-Matter Infusion Recipes, fixed the recipe for the Quantum Solar Helmet of Revealing, added the Wand Focus: Charging, a cool particle effect existing when the Electric/Nano/Quantum boots of the traveller are worn (you an disable it in the config),a portable node (Azanor agreed about the balance), and an Elecric Hoe of Growth.
-Version 1.0.9beta2 : Added a blacklist for the Ethereal Processor to anything that has "dust" in its OreDict entry. Included my build.gradle in the commit :)
+Version 1.1.0 : 
+Updating to MC 1.7.2.
+Added an Inventory Charging Bauble and an Armor Charging Bauble. 
+Added The One Ring, available only through dungeon loot.
+Added a Wand Charging wand focus.
+
+Versions 1.0.9a, 1.0.9b, 1.0.9c, 1.0.9d : 
+Added a blacklist for the Ethereal Processor to anything that has "dust" in its OreDict entry. 
+Mainly bugfixes.
+
+Version 1.0.9 : 
+Fixed the bug with the Drill of the Rockbreaker.
+Added UU-Matter Infusion Recipes.
+Fixed the recipe for the Quantum Solar Helmet of Revealing.
+Added the Wand Focus: Charging.
+Added a cool particle effect existing when the Electric/Nano/Quantum boots of the traveller are worn (you an disable it in the config).
+Added a portable node, and an Elecric Hoe of Growth.
+
+Version 1.0.8 : 
+Added some magical solar panels, different tiers and special abilities to all of them.
+
+Version 1.0.7 : 
+Updated to Thaumcraft 4.1.0x.
+
+Version 1.0.6 : 
+Added an Industrial Wand Charging Station.
+Added some legendary tools.
+A couple of other things. 
+Code wise, switching to Forge Gradle (#964). 
+Added some enhanced boots of the traveller, and capes for some friends and I.
+
+Version 1.0.5 : 
+Added some Ignis/Potentia/Auram generators.
+Added Electric Goggles of revealing.
+Added a Chainsaw of the Stream. 
+Added a Drill of the Rockbreaker.
+
+Version 1.0.4 : 
+Added the Kris-tmas Focus.
+Added the Shield Focus
+
+Version 1.0.3b : 
+Second attempt to fix the server crash, it is again working in SMP.
+
+Version 1.0.3 : 
+Attempt to fix the server crash of the mod. Attempt failed.
+
+Version 1.0.2 : 
+Adds the Wand Focus : Laser.
+Added a christmas easter egg. 
+Does not work on servers.
+
+Version 1.0.1 : 
+Fixes a crash due to the Omnitools.
+
+Version 1.0.0 : 
+First release of the mod.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
