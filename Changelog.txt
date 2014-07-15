@@ -1,8 +1,10 @@
 Changelog of the mod : Electric Magic Tools, a Thaumcraft 4/Industrial-Craft 2 addon
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
-Version 1.2 :
+Version 1.1.2 :
 Fixed the Shield Block being broken by the wither.
+Added Config GUIs. Regenerating the config file is HIGLY reccomended.
+Moved the baubles API to package it with EMT, along with the @API annotation to prevent any issues.
 
 Version 1.1.1 : 
 Fixed a bug with The One Ring where mobs attacked you when you removed it while in creative.
@@ -17,6 +19,7 @@ Added a couple of crating components, used in the making of the wings.
 Added a bunch of console outputs on the starting of the game so that I know exactly when it crashed if it died at startup.
 Fixed a bug with the drill of the Rockbreaker that would make it use durability and eventually break when shift-breaking a block.
 Added a different texture file for each solar panel, so that it can be changed more easily.
+
 CyanideX remade all the EMT textures! Finally featuring cool looking stuff! Yey, thanks a lot to him!
 
 Version 1.1.0 : 

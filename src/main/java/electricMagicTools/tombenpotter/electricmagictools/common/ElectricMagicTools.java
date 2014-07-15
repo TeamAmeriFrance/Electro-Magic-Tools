@@ -28,7 +28,7 @@ import electricMagicTools.tombenpotter.electricmagictools.common.recipes.UuMInfu
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 
-@Mod(modid = ElectricMagicTools.modid, name = "Electro-MagicTools", version = "1.2", guiFactory = "electricMagicTools.tombenpotter.electricmagictools.common.EMTGuiFactory",dependencies = "required-after:Thaumcraft ; required-after:IC2")
+@Mod(modid = ElectricMagicTools.modid, name = "Electro-MagicTools", version = "1.1.2", guiFactory = "electricMagicTools.tombenpotter.electricmagictools.common.EMTGuiFactory",dependencies = "required-after:Thaumcraft ; required-after:IC2")
 public class ElectricMagicTools {
 
     @SidedProxy(clientSide = "electricMagicTools.tombenpotter.electricmagictools.client.ClientProxy", serverSide = "electricMagicTools.tombenpotter.electricmagictools.common.CommonProxy")
