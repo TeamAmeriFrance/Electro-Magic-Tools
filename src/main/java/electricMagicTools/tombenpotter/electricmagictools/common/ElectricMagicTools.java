@@ -26,8 +26,9 @@ import electricMagicTools.tombenpotter.electricmagictools.common.recipes.EMTInit
 import electricMagicTools.tombenpotter.electricmagictools.common.recipes.EMTPostInitRecipes;
 import electricMagicTools.tombenpotter.electricmagictools.common.recipes.UuMInfusionRecipes;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.Configuration;
 
-@Mod(modid = ElectricMagicTools.modid, name = "Electro-MagicTools", version = "1.1.1", dependencies = "required-after:Thaumcraft ; required-after:IC2")
+@Mod(modid = ElectricMagicTools.modid, name = "Electro-MagicTools", version = "1.2", guiFactory = "electricMagicTools.tombenpotter.electricmagictools.common.EMTGuiFactory",dependencies = "required-after:Thaumcraft ; required-after:IC2")
 public class ElectricMagicTools {
 
     @SidedProxy(clientSide = "electricMagicTools.tombenpotter.electricmagictools.client.ClientProxy", serverSide = "electricMagicTools.tombenpotter.electricmagictools.common.CommonProxy")
@@ -42,15 +43,11 @@ public class ElectricMagicTools {
     public void preInit(FMLPreInitializationEvent event) {
         FMLLog.info("[EMT] Electro-Magic Tools : Starting planning the world domination");
 
-        /** Creating the config file **/
         FMLLog.info("[EMT] Electro-Magic Tools : Creating/Reading the config file");
-        Config.create(event);
-
-        /** Items Registry **/
+        Config.config = new Configuration(event.getSuggestedConfigurationFile());
+        Config.create();
         FMLLog.info("[EMT] Electro-Magic Tools : Registering the mod items");
         ItemRegistry.registerEMTItems();
-
-        /** Blocks registry **/
         FMLLog.info("[EMT] Electro-Magic Tools : Registering the mod blocks");
         BlockRegistry.registerEMTBlocks();
 
@@ -61,35 +58,21 @@ public class ElectricMagicTools {
     public void load(FMLInitializationEvent event) {
         FMLLog.info("[EMT] Electro-Magic Tools : Starting gathering allies");
 
-        /** Loading the proxies **/
         FMLLog.info("[EMT] Electro-Magic Tools : Loading the proxies");
         proxy.load();
 
-        /** Making mobs drop additional items **/
         FMLLog.info("[EMT] Electro-Magic Tools : Making mobs drop additional items");
         MinecraftForge.EVENT_BUS.register(new EMTEventHandler());
-
-        /** Tile entities registry **/
         FMLLog.info("[EMT] Electro-Magic Tools : Registering Tile entities");
         TileEntityRegistry.registerEMTTileEntites();
-
-        /** Generating loot in dungeon chests **/
         FMLLog.info("[EMT] Electro-Magic Tools : Generating loot in dungeon chests");
         DungeonChestGenerator.generateLoot();
-
-        /** Adding the recipes that go in Init **/
         FMLLog.info("[EMT] Electro-Magic Tools : Adding the Init recipes");
         EMTInitRecipes.add();
-
-        /** Entities Registry **/
         FMLLog.info("[EMT] Electro-Magic Tools : Registering entities");
         EMTEntityRegistry.registerEMTEntities();
-
-        /** GUI Handler Registry **/
         FMLLog.info("[EMT] Electro-Magic Tools : Registering the GUI Handler");
         NetworkRegistry.INSTANCE.registerGuiHandler(this, proxy);
-
-        /** Adds Capes **/
         if (event.getSide() == Side.CLIENT && Config.capesOn == true) {
             FMLLog.info("[EMT] Electro-Magic Tools : Adding capes");
             MinecraftForge.EVENT_BUS.register(new CapeEventHandler());
@@ -102,19 +85,12 @@ public class ElectricMagicTools {
     public void postInit(FMLPostInitializationEvent event) {
         FMLLog.info("[EMT] Electro-Magic Tools : Starting the world takeover");
 
-        /** Adding the recipes that go in PostInit **/
         FMLLog.info("[EMT] Electro-Magic Tools : Adding PostInit recipes");
         EMTPostInitRecipes.add();
-
-        /** Adding the UU-Matter Infusion recipes **/
         FMLLog.info("[EMT] Electro-Magic Tools : Adding the UU-Matter Infusion recipes");
         UuMInfusionRecipes.add();
-
-        /** Adding the EMT research tab to the Thaumonomicon **/
         FMLLog.info("[EMT] Electro-Magic Tools : Adding the EMT research tab to the Thaumonomicon");
         ThaumonomiconResearch.addResearchTab();
-
-        /** Adding the actual research to the game **/
         FMLLog.info("[EMT] Electro-Magic Tools : Adding research to the game");
         ThaumonomiconResearch.addResearch();
 

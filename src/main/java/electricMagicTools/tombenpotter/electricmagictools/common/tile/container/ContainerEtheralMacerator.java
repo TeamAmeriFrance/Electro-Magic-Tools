@@ -12,18 +12,14 @@
 package electricMagicTools.tombenpotter.electricmagictools.common.tile.container;
 
 import electricMagicTools.tombenpotter.electricmagictools.common.tile.TileEntityEtherealMacerator;
-import ic2.core.IC2;
-import ic2.core.slot.SlotInvSlot;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.tileentity.TileEntity;
 import thaumcraft.common.container.SlotOutput;
-
-import java.util.List;
-import java.util.ListIterator;
 
 public class ContainerEtheralMacerator extends Container {
 
@@ -49,79 +45,50 @@ public class ContainerEtheralMacerator extends Container {
         return this.te.isUseableByPlayer(player);
     }
 
-    @SuppressWarnings("unchecked")
     @Override
-    public final ItemStack transferStackInSlot(EntityPlayer player, int sourceSlotIndex) {
-        Slot sourceSlot = (Slot) inventorySlots.get(sourceSlotIndex);
+    public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2) {
+        ItemStack itemstack = null;
+        Slot slot = (Slot) this.inventorySlots.get(par2);
 
-        if (sourceSlot != null && sourceSlot.getHasStack()) {
-            ItemStack sourceItemStack = sourceSlot.getStack();
-            int oldSourceItemStackSize = sourceItemStack.stackSize;
+        if (slot != null && slot.getHasStack()) {
+            ItemStack itemstack1 = slot.getStack();
+            itemstack = itemstack1.copy();
 
-            if (sourceSlot.inventory == player.inventory) { // player inventory
-                // clicked
-                // 0: fill input existing stacks, 1: fill input empty stacks, 2:
-                // fill existing stacks, 3: fill empty stacks
-                for (int run = 0; run < 4 && sourceItemStack.stackSize > 0; run++) {
-                    if (run < 2) {
-                        for (Slot targetSlot : (List<Slot>) inventorySlots) {
-                            if (targetSlot instanceof SlotInvSlot && ((SlotInvSlot) targetSlot).invSlot.canInput() && targetSlot.isItemValid(sourceItemStack)) {
-                                if (targetSlot.getStack() != null || run == 1) {
-                                    mergeItemStack(sourceItemStack, targetSlot.slotNumber, targetSlot.slotNumber + 1, false);
-
-                                    if (sourceItemStack.stackSize == 0)
-                                        break;
-                                }
-                            }
-                        }
-                    } else {
-                        for (Slot targetSlot : (List<Slot>) inventorySlots) {
-                            if (targetSlot.inventory != player.inventory && targetSlot.isItemValid(sourceItemStack)) {
-                                if (targetSlot.getStack() != null || run == 3) {
-                                    mergeItemStack(sourceItemStack, targetSlot.slotNumber, targetSlot.slotNumber + 1, false);
-
-                                    if (sourceItemStack.stackSize == 0)
-                                        break;
-                                }
-                            }
-                        }
-                    }
+            if (par2 == 1) {
+                if (!this.mergeItemStack(itemstack1, 2, 38, true)) {
+                    return null;
                 }
-            } else { // Shift-Click on a GUIslot of the container
-                for (int run = 0; run < 2 && sourceItemStack.stackSize > 0; run++) {
-                    for (ListIterator<Slot> it = ((List<Slot>) inventorySlots).listIterator(inventorySlots.size()); it.hasPrevious(); ) {
-                        Slot targetSlot = it.previous();
 
-                        if (targetSlot.inventory == player.inventory && targetSlot.isItemValid(sourceItemStack)) {
-                            if (targetSlot.getStack() != null || run == 1) {
-                                mergeItemStack(sourceItemStack, targetSlot.slotNumber, targetSlot.slotNumber + 1, false);
-
-                                if (sourceItemStack.stackSize == 0)
-                                    break;
-                            }
-                        }
+                slot.onSlotChange(itemstack1, itemstack);
+            } else if (par2 != 0) {
+                if (FurnaceRecipes.smelting().getSmeltingResult(itemstack1) != null) {
+                    if (!this.mergeItemStack(itemstack1, 0, 1, false)) {
+                        return null;
                     }
+                } else if (par2 >= 2 && par2 < 29) {
+                    if (!this.mergeItemStack(itemstack1, 29, 38, false)) {
+                        return null;
+                    }
+                } else if (par2 >= 29 && par2 < 38 && !this.mergeItemStack(itemstack1, 2, 29, false)) {
+                    return null;
                 }
+            } else if (!this.mergeItemStack(itemstack1, 3, 38, false)) {
+                return null;
             }
 
-            if (sourceItemStack.stackSize != oldSourceItemStackSize) {
-                if (sourceItemStack.stackSize == 0) {
-                    sourceSlot.putStack(null);
-                } else {
-                    sourceSlot.onPickupFromSlot(player, sourceItemStack);
-                }
-
-                // vanilla doesn't fully re-sync after processing the slot click
-                // packet,
-                // causing a race condition of the client received an old state
-                // through packet delay after the slot click
-                // this forces a proper sync
-                if (IC2.platform.isSimulating()) {
-                    detectAndSendChanges();
-                }
+            if (itemstack1.stackSize == 0) {
+                slot.putStack((ItemStack) null);
+            } else {
+                slot.onSlotChanged();
             }
+
+            if (itemstack1.stackSize == itemstack.stackSize) {
+                return null;
+            }
+
+            slot.onPickupFromSlot(par1EntityPlayer, itemstack1);
         }
 
-        return null;
+        return itemstack;
     }
 }

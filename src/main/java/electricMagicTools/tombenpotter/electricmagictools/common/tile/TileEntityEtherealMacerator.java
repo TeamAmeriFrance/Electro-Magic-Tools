@@ -13,8 +13,8 @@ package electricMagicTools.tombenpotter.electricmagictools.common.tile;
 
 import electricMagicTools.tombenpotter.electricmagictools.common.BlockRegistry;
 import electricMagicTools.tombenpotter.electricmagictools.common.Config;
+import ic2.api.item.IC2Items;
 import ic2.api.tile.IWrenchable;
-import ic2.core.Ic2Items;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -245,7 +245,7 @@ public class TileEntityEtherealMacerator extends TileEntityEMT implements ISided
                 || this.slots[0].getItem() == Items.beef
                 || this.slots[0].getItem() == Items.chicken
                 || this.slots[0].getItem() == Items.fish
-                || this.slots[0].getItem() == Ic2Items.hydratedCoalDust.getItem()
+                || this.slots[0].getItem() == IC2Items.getItem("coalDust").getItem()
                 || (OreDictionary.getOreName(OreDictionary.getOreID(this.slots[0])).toLowerCase().contains("dust") || this.slots[0].getItem().getUnlocalizedName(this.slots[0]).toLowerCase().contains("armour") || this.slots[0].getItem().getUnlocalizedName(this.slots[0]).toLowerCase().contains("armor") || this.slots[0].getItem().getUnlocalizedName(this.slots[0]).toLowerCase().contains("helm") || this.slots[0].getItem().getUnlocalizedName(this.slots[0]).toLowerCase().contains("legging") || this.slots[0].getItem().getUnlocalizedName(this.slots[0]).toLowerCase().contains("boot") || this.slots[0].getItem().getUnlocalizedName(this.slots[0]).toLowerCase().contains("chestp") || this.slots[0].getItem().getUnlocalizedName(this.slots[0]).toLowerCase().contains("pick")
                 || this.slots[0].getItem().getUnlocalizedName(this.slots[0]).toLowerCase().contains("shovel") || this.slots[0].getItem().getUnlocalizedName(this.slots[0]).toLowerCase().contains("axe") || this.slots[0].getItem().getUnlocalizedName(this.slots[0]).toLowerCase().contains("pick"))) {
             return true;

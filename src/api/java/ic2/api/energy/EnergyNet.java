@@ -7,7 +7,7 @@ package ic2.api.energy;
  * The old EnergyNet methods missing in IEnergyNet have been migrated to events (load, unload) or
  * removed (tiles no longer emit energy actively, the energy net implementation requests it).
  * 
- * See ic2/api/energy/usage.txt for an overall description of the energy net api.
+ * See ic2/baubles.api/energy/usage.txt for an overall description of the energy net baubles.api.
  */
 public final class EnergyNet {
 	/**

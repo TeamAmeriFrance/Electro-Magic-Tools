@@ -19,7 +19,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.Explosion;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -30,7 +32,7 @@ public class BlockShield extends Block {
         super(Material.rock);
         this.setCreativeTab(CreativeTab.tabTombenpotter);
         this.setHardness(1F);
-        this.setResistance(200000000F);
+        this.setResistance(10000000000000000000000000000000000000F);
     }
 
     @Override
@@ -65,14 +67,25 @@ public class BlockShield extends Block {
         return false;
     }
 
-    public boolean canEntityDestroy(World world, int x, int y, int z, Entity entity) {
+    @Override
+    public boolean canBeReplacedByLeaves(IBlockAccess world, int x, int y, int z)
+    {
         return false;
     }
 
+    @Override
+    public boolean canEntityDestroy(IBlockAccess world, int x, int y, int z, Entity entity)
+    {
+        return false;
+    }
+
+    @Override
+    public boolean canCreatureSpawn(EnumCreatureType type, IBlockAccess world, int x, int y, int z)
+    {
+        return false;
+    }
+
+    @Override
     public void onBlockExploded(World world, int x, int y, int z, Explosion explosion) {
-    }
-
-    public boolean canDragonDestroy(World world, int x, int y, int z) {
-        return false;
     }
 }

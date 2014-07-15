@@ -16,7 +16,7 @@ import ic2.api.energy.tile.IEnergyTile;
  * your own energy grid implementation if you need to. It's not required if you
  * always lookup energy paths on demand.
  * 
- * See ic2/api/energy/usage.txt for an overall description of the energy net api.
+ * See ic2/baubles.api/energy/usage.txt for an overall description of the energy net baubles.api.
  */
 public class EnergyTileLoadEvent extends EnergyTileEvent {
 	public EnergyTileLoadEvent(IEnergyTile energyTile1) {

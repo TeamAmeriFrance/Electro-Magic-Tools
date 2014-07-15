@@ -139,6 +139,6 @@ distribution rules or to use energy networks provided by other mods, you can reg
 tile events and use the interfaces to handle the energy distribution yourself. It's no longer
 required to use conversion blocks.
 
-IC2's EnergyNet itself is built on top of the api events and interfaces, providing their default
+IC2's EnergyNet itself is built on top of the baubles.api events and interfaces, providing their default
 use case.
 

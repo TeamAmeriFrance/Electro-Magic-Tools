@@ -21,8 +21,6 @@ import ic2.api.item.IC2Items;
 import ic2.api.recipe.IRecipeInput;
 import ic2.api.recipe.RecipeInputItemStack;
 import ic2.api.recipe.Recipes;
-import ic2.core.Ic2Items;
-import ic2.core.util.StackUtil;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -232,14 +230,19 @@ public class EMTPostInitRecipes {
         NBTTagCompound waterAmount = new NBTTagCompound();
         waterAmount.setInteger("amount", 1000);
 
-        Recipes.oreWashing.addRecipe(new RecipeInputItemStack(new ItemStack(ItemRegistry.itemEMTItems, 1, 1)), waterAmount, new ItemStack[]{new ItemStack(ItemRegistry.itemEMTItems, 1, 2), StackUtil.copyWithSize(Ic2Items.smallCopperDust, 2), Ic2Items.stoneDust});
-        Recipes.oreWashing.addRecipe(new RecipeInputItemStack(new ItemStack(ItemRegistry.itemEMTItems, 1, 3)), waterAmount, new ItemStack[]{new ItemStack(ItemRegistry.itemEMTItems, 1, 4), StackUtil.copyWithSize(Ic2Items.smallTinDust, 2), Ic2Items.stoneDust});
+        ItemStack smallCopperDust = IC2Items.getItem("smallCopperDust");
+        smallCopperDust.stackSize = 2;
+        ItemStack smallTinDust = IC2Items.getItem("smallTinDust");
+        smallCopperDust.stackSize = 2;
+
+        Recipes.oreWashing.addRecipe(new RecipeInputItemStack(new ItemStack(ItemRegistry.itemEMTItems, 1, 1)), waterAmount, new ItemStack[]{new ItemStack(ItemRegistry.itemEMTItems, 1, 2), smallCopperDust, IC2Items.getItem("stoneDust")});
+        Recipes.oreWashing.addRecipe(new RecipeInputItemStack(new ItemStack(ItemRegistry.itemEMTItems, 1, 3)), waterAmount, new ItemStack[]{new ItemStack(ItemRegistry.itemEMTItems, 1, 4), smallTinDust, IC2Items.getItem("stoneDust")});
 
         NBTTagCompound heatAmount = new NBTTagCompound();
         heatAmount.setInteger("minHeat", 1000);
 
-        Recipes.centrifuge.addRecipe(new RecipeInputItemStack(new ItemStack(ItemRegistry.itemEMTItems, 1, 2)), heatAmount, new ItemStack[]{Ic2Items.smallCopperDust, new ItemStack(ConfigItems.itemResource, 1, 6)});
-        Recipes.centrifuge.addRecipe(new RecipeInputItemStack(new ItemStack(ItemRegistry.itemEMTItems, 1, 4)), heatAmount, new ItemStack[]{Ic2Items.smallTinDust, new ItemStack(ConfigItems.itemResource, 1, 3)});
+        Recipes.centrifuge.addRecipe(new RecipeInputItemStack(new ItemStack(ItemRegistry.itemEMTItems, 1, 2)), heatAmount, new ItemStack[]{IC2Items.getItem("smallCopperDust"), new ItemStack(ConfigItems.itemResource, 1, 6)});
+        Recipes.centrifuge.addRecipe(new RecipeInputItemStack(new ItemStack(ItemRegistry.itemEMTItems, 1, 4)), heatAmount, new ItemStack[]{IC2Items.getItem("smallTinDust"), new ItemStack(ConfigItems.itemResource, 1, 3)});
     }
 
     public static InfusionRecipe thaumiumDrill;

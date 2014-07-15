@@ -26,7 +26,7 @@ public class IC2Reactor {
 		if (pkg != null) {
 			String packageName = pkg.getName();
 
-			return packageName.substring(0, packageName.length() - ".api.reactor".length());
+			return packageName.substring(0, packageName.length() - ".baubles.api.reactor".length());
 		}
 
 		return "ic2";

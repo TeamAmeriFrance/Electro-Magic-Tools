@@ -11,6 +11,7 @@
  ******************************************************************************/
 package electricMagicTools.tombenpotter.electricmagictools.common;
 
+import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityCreeper;
@@ -34,5 +35,11 @@ public class EMTEventHandler {
                 event.drops.add(new EntityItem(event.entityLiving.worldObj, event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, new ItemStack(ItemRegistry.itemEMTItems, 1, 14)));
             }
         }
+    }
+
+    @SubscribeEvent
+    public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent eventArgs) {
+        if (eventArgs.modID.equals(ElectricMagicTools.modid))
+            Config.create();
     }
 }

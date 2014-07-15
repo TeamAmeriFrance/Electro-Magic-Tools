@@ -8,7 +8,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 /**
  * Interface representing the methods provided by the global EnergyNet class.
  * 
- * See ic2/api/energy/usage.txt for an overall description of the energy net api.
+ * See ic2/baubles.api/energy/usage.txt for an overall description of the energy net baubles.api.
  */
 public interface IEnergyNet {
 	/**

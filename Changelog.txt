@@ -1,6 +1,9 @@
 Changelog of the mod : Electric Magic Tools, a Thaumcraft 4/Industrial-Craft 2 addon
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
+Version 1.2 :
+Fixed the Shield Block being broken by the wither.
+
 Version 1.1.1 : 
 Fixed a bug with The One Ring where mobs attacked you when you removed it while in creative.
 New Thaumonomicon entries for a couple of things, thanks to Professor29.

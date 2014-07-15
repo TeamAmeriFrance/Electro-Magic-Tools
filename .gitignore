@@ -1,0 +1,17 @@
+.gradle/
+build/
+eclipse/
+out/
+asm/*
+*.psd
+*.iml
+*.ipr
+*.iws
+*.psd
+/bin
+*.psd
+*.classpath
+*.project
+/bin
+libs/*
+MCFPost.txt
