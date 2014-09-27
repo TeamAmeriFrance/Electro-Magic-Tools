@@ -1,6 +1,19 @@
 Changelog of the mod : Electric Magic Tools, a Thaumcraft 4/Industrial-Craft 2 addon
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
+Version 1.1.4 :
+Updated to Minecraft version 1.7.10.
+Rewrote and improved the Essentia Generator code. It's now very easy to add new ones.
+Rewrote and improved the Solar Panel code. It's now very easy to add new ones.
+Rewrote and improved the Drill, Chainsaw, Omnitool, Boot, Goggle and Wing code. It's now very easy to add new ones, as well as way more efficient.
+Refractored  a lot of the code in preparation for the modules.
+Added a new Essentia Generator, the Aer Generator.
+Added a tooltip to the current Essentia Generators, saying they will be removed in future versions.
+Added an Essentia Generator, alongisde with a dynamic system calculating outputs linked to different essentias. Change the values of the primals in the config, and there is even a maximum cap!
+
+Version 1.1.3 : 
+Added a logo to the mcmod.info, and fixed the version tag.
+
 Version 1.1.2 :
 Fixed the Shield Block being broken by the wither.
 Added Config GUIs. Regenerating the config file is HIGLY reccomended.
