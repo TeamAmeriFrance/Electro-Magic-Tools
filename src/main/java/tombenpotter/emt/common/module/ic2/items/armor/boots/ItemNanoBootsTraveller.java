@@ -31,25 +31,24 @@ import tombenpotter.emt.common.util.ConfigHandler;
 
 public class ItemNanoBootsTraveller extends ItemElectricBootsTraveller {
 
-	public ItemNanoBootsTraveller(int par3, int par4) {
-		super(par3, par4);
-		maxCharge = 500000;
-		speedBonus = (float) ConfigHandler.nanoBootsSpeed;
-		jumpBonus = (float) ConfigHandler.nanoBootsJump;
-		fallDistance = 0.75F;
-		visDiscount = 4;
-		transferLimit = 1000;
-		energyPerDamage = 500;
-	}
+    public ItemNanoBootsTraveller(int par3, int par4) {
+        super(par3, par4);
+        maxCharge = 1000000;
+        speedBonus = (float) ConfigHandler.nanoBootsSpeed;
+        jumpBonus = (float) ConfigHandler.nanoBootsJump;
+        visDiscount = 4;
+        transferLimit = 1000;
+        energyPerDamage = 500;
+    }
 
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void registerIcons(IIconRegister iconRegister) {
-		this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":nanobootstravel");
-	}
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerIcons(IIconRegister iconRegister) {
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":nanobootstravel");
+    }
 
-	@Override
-	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-		return ModInformation.texturePath + ":textures/models/nanobootstravel.png";
-	}
+    @Override
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
+        return ModInformation.texturePath + ":textures/models/nanobootstravel.png";
+    }
 }
