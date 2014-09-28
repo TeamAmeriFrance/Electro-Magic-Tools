@@ -1,6 +1,11 @@
 Changelog of the mod : Electric Magic Tools, a Thaumcraft 4/Industrial-Craft 2 addon
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
+Version 2.0.0Alpha1:
+Since SOMEONE decided to change the modid, and almost everything else, this is now EMT 2.0.0. Hurray, and all that stuff.
+Fixed the Essentia Generators crashing when placed in world. Oops.
+And, well, as you can see, resumed the work on EMT. Sorry for the delay! :p
+
 Version 1.1.4 :
 Updated to Minecraft version 1.7.10.
 Rewrote and improved the Essentia Generator code. It's now very easy to add new ones.

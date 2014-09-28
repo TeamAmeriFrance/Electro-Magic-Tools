@@ -7,7 +7,6 @@ import thaumcraft.api.aspects.Aspect;
 import thaumcraft.common.lib.events.EssentiaHandler;
 import tombenpotter.emt.common.module.ic2.tile.TileEntityEMT;
 import tombenpotter.emt.common.util.ConfigHandler;
-import tombenpotter.emt.common.util.EssentiasOutputs;
 
 public abstract class TileEntityBaseGenerator extends TileEntityEMT {
 
@@ -18,7 +17,7 @@ public abstract class TileEntityBaseGenerator extends TileEntityEMT {
 
 	public TileEntityBaseGenerator() {
 		waitTime = 30;
-		output = EssentiasOutputs.outputs.get(aspect.getTag());
+		output = 0;
 	}
 
 	@Override
