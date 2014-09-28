@@ -53,7 +53,7 @@ public class EMTInitRecipes {
 			cardboard = GameRegistry.addShapedRecipe(new ItemStack(IC2ModuleItemRegistry.itemEMTItems, 1, 11), "XXX", "YYY", "XXX", 'X', new ItemStack(Items.paper), 'Y', OreDictionary.getOres("logWood").get(i));
 		}
 		for (int i = 0; i < OreDictionary.getOres("itemRubber").size(); i++) {
-			rubberBall = GameRegistry.addShapedRecipe(new ItemStack(IC2ModuleItemRegistry.itemEMTItems, 1, 10), "XXX", "XXX", "XXX", 'X', OreDictionary.getOres("itemRubber").get(i));
+			rubberBall = GameRegistry.addShapedRecipe(new ItemStack(IC2ModuleItemRegistry.itemEMTItems, 1, 10), "XX", "XX", 'X', OreDictionary.getOres("itemRubber").get(i));
 		}
 
 		/** Smelting Recipes **/
