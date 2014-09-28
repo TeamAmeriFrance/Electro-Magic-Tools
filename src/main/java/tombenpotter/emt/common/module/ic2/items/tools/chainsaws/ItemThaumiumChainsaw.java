@@ -9,6 +9,7 @@
  * Electro-Magic Tools is a derivative work on Thaumcraft 4 (c) Azanor 2012.
  * http://www.minecraftforum.net/topic/1585216-
  ******************************************************************************/
+
 package tombenpotter.emt.common.module.ic2.items.tools.chainsaws;
 
 import cpw.mods.fml.relauncher.Side;
@@ -22,43 +23,43 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import tombenpotter.emt.ElectroMagicTools;
-import tombenpotter.emt.common.util.CreativeTab;
+import tombenpotter.emt.ModInformation;
 
 public class ItemThaumiumChainsaw extends ItemDiamondChainsaw {
 
-    public ItemThaumiumChainsaw() {
-        this.efficiencyOnProperMaterial = 21F;
-        this.setCreativeTab(CreativeTab.tabTombenpotter);
-        this.setMaxDamage(27);
-        this.setMaxStackSize(1);
-        maxCharge = 60000;
-        cost = 250;
-        hitCost = 350;
-    }
+	public ItemThaumiumChainsaw() {
+		this.efficiencyOnProperMaterial = 21F;
+		this.setCreativeTab(ElectroMagicTools.tabEMT);
+		this.setMaxDamage(27);
+		this.setMaxStackSize(1);
+		maxCharge = 60000;
+		cost = 250;
+		hitCost = 350;
+	}
 
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ElectroMagicTools.texturePath + ":thaumiumchainsaw");
-    }
+	@SideOnly(Side.CLIENT)
+	@Override
+	public void registerIcons(IIconRegister iconRegister) {
+		this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":thaumiumchainsaw");
+	}
 
-    @Override
-    public boolean onBlockDestroyed(ItemStack stack, World world, Block block, int par4, int par5, int par6, EntityLivingBase entityLiving) {
-        ElectricItem.manager.use(stack, cost, entityLiving);
-        return true;
-    }
+	@Override
+	public boolean onBlockDestroyed(ItemStack stack, World world, Block block, int par4, int par5, int par6, EntityLivingBase entityLiving) {
+		ElectricItem.manager.use(stack, cost, entityLiving);
+		return true;
+	}
 
-    @Override
-    public boolean hitEntity(ItemStack itemstack, EntityLivingBase entityliving, EntityLivingBase attacker) {
-        if (ElectricItem.manager.use(itemstack, hitCost, attacker)) {
-            entityliving.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), 12F);
-        }
-        return false;
-    }
+	@Override
+	public boolean hitEntity(ItemStack itemstack, EntityLivingBase entityliving, EntityLivingBase attacker) {
+		if (ElectricItem.manager.use(itemstack, hitCost, attacker)) {
+			entityliving.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), 12F);
+		}
+		return false;
+	}
 
-     /* IC2 API METHODS */
-    @Override
-    public double getTransferLimit(ItemStack itemStack) {
-        return 600;
-    }
+	/* IC2 API METHODS */
+	@Override
+	public double getTransferLimit(ItemStack itemStack) {
+		return 600;
+	}
 }

@@ -6,60 +6,61 @@ import net.minecraftforge.common.util.ForgeDirection;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.common.lib.events.EssentiaHandler;
 import tombenpotter.emt.common.module.ic2.tile.TileEntityEMT;
-import tombenpotter.emt.common.util.Config;
+import tombenpotter.emt.common.util.ConfigHandler;
 import tombenpotter.emt.common.util.EssentiasOutputs;
 
 public abstract class TileEntityBaseGenerator extends TileEntityEMT {
-    public static int waitTime;
-    public BasicSource energySource = new BasicSource(this, 1000000000, 3);
-    public Aspect aspect;
-    public double output;
 
-    public TileEntityBaseGenerator() {
-        waitTime = 30;
-        output = EssentiasOutputs.outputs.get(aspect.getTag());
-    }
+	public static int waitTime;
+	public BasicSource energySource = new BasicSource(this, 1000000000, 3);
+	public Aspect aspect;
+	public double output;
 
-    @Override
-    public void updateEntity() {
-        energySource.updateEntity();
+	public TileEntityBaseGenerator() {
+		waitTime = 30;
+		output = EssentiasOutputs.outputs.get(aspect.getTag());
+	}
 
-        if (waitTime > 0) {
-            waitTime--;
-        }
+	@Override
+	public void updateEntity() {
+		energySource.updateEntity();
 
-        if (waitTime <= 0) {
-            createEnergy();
-            waitTime = Config.essentiaGeneratorsDelay;
-        }
-    }
+		if (waitTime > 0) {
+			waitTime--;
+		}
 
-    public void createEnergy() {
-        if (!this.worldObj.isRemote && EssentiaHandler.drainEssentia(this, aspect, ForgeDirection.UNKNOWN, 8)) {
-            energySource.addEnergy(output);
-        }
-    }
+		if (waitTime <= 0) {
+			createEnergy();
+			waitTime = ConfigHandler.essentiaGeneratorsDelay;
+		}
+	}
 
-    @Override
-    public void onChunkUnload() {
-        energySource.onChunkUnload();
-    }
+	public void createEnergy() {
+		if (!this.worldObj.isRemote && EssentiaHandler.drainEssentia(this, aspect, ForgeDirection.UNKNOWN, 8)) {
+			energySource.addEnergy(output);
+		}
+	}
 
-    @Override
-    public void invalidate() {
-        energySource.invalidate();
-        super.invalidate();
-    }
+	@Override
+	public void onChunkUnload() {
+		energySource.onChunkUnload();
+	}
 
-    @Override
-    public void readFromNBT(NBTTagCompound tag) {
-        super.readFromNBT(tag);
-        energySource.readFromNBT(tag);
-    }
+	@Override
+	public void invalidate() {
+		energySource.invalidate();
+		super.invalidate();
+	}
 
-    @Override
-    public void writeToNBT(NBTTagCompound tag) {
-        super.writeToNBT(tag);
-        energySource.writeToNBT(tag);
-    }
+	@Override
+	public void readFromNBT(NBTTagCompound tag) {
+		super.readFromNBT(tag);
+		energySource.readFromNBT(tag);
+	}
+
+	@Override
+	public void writeToNBT(NBTTagCompound tag) {
+		super.writeToNBT(tag);
+		energySource.writeToNBT(tag);
+	}
 }

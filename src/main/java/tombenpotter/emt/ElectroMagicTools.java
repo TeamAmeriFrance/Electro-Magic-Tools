@@ -9,9 +9,10 @@
  * Electro-Magic Tools is a derivative work on Thaumcraft 4 (c) Azanor 2012.
  * http://www.minecraftforum.net/topic/1585216-
  ******************************************************************************/
+
 package tombenpotter.emt;
 
-import cpw.mods.fml.common.FMLLog;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -21,8 +22,10 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.config.Configuration;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import tombenpotter.emt.common.commands.CommandOutputs;
 import tombenpotter.emt.common.module.base.EMTEntityRegistry;
 import tombenpotter.emt.common.module.ic2.recipes.EMTInitRecipes;
@@ -31,69 +34,73 @@ import tombenpotter.emt.common.module.ic2.recipes.UuMInfusionRecipes;
 import tombenpotter.emt.common.util.*;
 import tombenpotter.emt.proxies.CommonProxy;
 
-@Mod(modid = ElectroMagicTools.modid, name = "Electro-MagicTools", version = "1.1.4", guiFactory = "tombenpotter.emt.client.gui.config.EMTGuiFactory", dependencies = "required-after:Thaumcraft ; required-after:IC2")
+import static tombenpotter.emt.common.util.TextHelper.localize;
+
+@Mod(modid = ModInformation.modid, name = ModInformation.name, version = ModInformation.version, guiFactory = ModInformation.guiFactory, dependencies = ModInformation.depend)
 public class ElectroMagicTools {
 
-    @SidedProxy(clientSide = "tombenpotter.emt.proxies.ClientProxy", serverSide = "tombenpotter.emt.proxies.CommonProxy")
-    public static CommonProxy proxy;
-    @Instance(ElectroMagicTools.modid)
-    public static ElectroMagicTools instance;
 
-    public static final String modid = "Electro-MagicTools";
-    public static final String texturePath = "electromagictools";
+	@SidedProxy(clientSide = ModInformation.clientProxy, serverSide = ModInformation.commonProxy)
+	public static CommonProxy proxy;
 
-    @EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-        FMLLog.info("[EMT] Electro-Magic Tools : Starting planning the world domination");
+	public static CreativeTabs tabEMT = new CreativeTabEMT(ModInformation.modid + ".creativeTab");
+	public static Logger logger = LogManager.getLogger(ModInformation.name);
 
-        FMLLog.info("[EMT] Electro-Magic Tools : Creating/Reading the config file");
-        Config.config = new Configuration(event.getSuggestedConfigurationFile());
-        Config.create();
+	@Instance(ModInformation.modid)
+	public static ElectroMagicTools instance;
 
-        RegistryHandler.registerIc2Registrys();
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event) {
+		ElectroMagicTools.logger.info(localize("console.EMT.preInit.begin"));
 
-        EssentiasOutputs.addPrimalOutputs();
-        EssentiasOutputs.addOutputs();
+		ElectroMagicTools.logger.info(localize("console.EMT.preInit.configRead"));
+		ConfigHandler.init(event.getSuggestedConfigurationFile());
 
-        FMLLog.info("[EMT] Electro-Magic Tools : Planning complete");
-    }
+		FMLCommonHandler.instance().bus().register(new EventHandlerEMT());
+		RegistryHandler.registerIc2Registrys();
 
-    @EventHandler
-    public void load(FMLInitializationEvent event) {
-        FMLLog.info("[EMT] Electro-Magic Tools : Starting gathering allies");
+		EssentiasOutputs.addPrimalOutputs();
+		EssentiasOutputs.addOutputs();
 
-        FMLLog.info("[EMT] Electro-Magic Tools : Loading the proxies");
-        proxy.load();
-        FMLLog.info("[EMT] Electro-Magic Tools : Making mobs drop additional items");
-        MinecraftForge.EVENT_BUS.register(new EMTEventHandler());
-        FMLLog.info("[EMT] Electro-Magic Tools : Generating loot in dungeon chests");
-        DungeonChestGenerator.generateLoot();
-        FMLLog.info("[EMT] Electro-Magic Tools : Adding the Init recipes");
-        EMTInitRecipes.add();
-        FMLLog.info("[EMT] Electro-Magic Tools : Registering entities");
-        EMTEntityRegistry.registerEMTEntities();
-        FMLLog.info("[EMT] Electro-Magic Tools : Registering the GUI Handler");
-        NetworkRegistry.INSTANCE.registerGuiHandler(this, proxy);
+		ElectroMagicTools.logger.info(localize("console.EMT.preInit.end"));
+	}
 
-        FMLLog.info("[EMT] Electro-Magic Tools : Allies gathered.");
-    }
+	@EventHandler
+	public void load(FMLInitializationEvent event) {
+		ElectroMagicTools.logger.info(localize("console.EMT.init.begin"));
 
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
-        FMLLog.info("[EMT] Electro-Magic Tools : Starting the world takeover");
+		ElectroMagicTools.logger.info(localize("console.EMT.init.loadProxies"));
+		proxy.load();
+		ElectroMagicTools.logger.info(localize("console.EMT.init.mobDrops"));
+		MinecraftForge.EVENT_BUS.register(new EntityEventHandler());
+		ElectroMagicTools.logger.info(localize("console.EMT.init.loot"));
+		DungeonChestGenerator.generateLoot();
+		ElectroMagicTools.logger.info(localize("console.EMT.init.recipes"));
+		EMTInitRecipes.add();
+		ElectroMagicTools.logger.info(localize("console.EMT.init.entities"));
+		EMTEntityRegistry.registerEMTEntities();
+		ElectroMagicTools.logger.info(localize("console.EMT.init.guiHandler"));
+		NetworkRegistry.INSTANCE.registerGuiHandler(this, proxy);
 
-        FMLLog.info("[EMT] Electro-Magic Tools : Adding PostInit recipes");
-        EMTPostInitRecipes.add();
-        FMLLog.info("[EMT] Electro-Magic Tools : Adding the UU-Matter Infusion recipes");
-        UuMInfusionRecipes.add();
+		ElectroMagicTools.logger.info(localize("console.EMT.init.end"));
+	}
 
-        RegistryHandler.registerIc2PostRegistrys();
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event) {
+		ElectroMagicTools.logger.info(localize("console.EMT.postInit.begin"));
 
-        FMLLog.info("[EMT] Electro-Magic Tools : World takeover complete. Enjoy!");
-    }
+		ElectroMagicTools.logger.info(localize("console.EMT.postInit.recipes"));
+		EMTPostInitRecipes.add();
+		ElectroMagicTools.logger.info(localize("console.EMT.postInit.uumatter"));
+		UuMInfusionRecipes.add();
 
-    @EventHandler
-    public void onFMLServerStart(FMLServerStartingEvent event) {
-        event.registerServerCommand(new CommandOutputs());
-    }
+		RegistryHandler.registerIc2PostRegistrys();
+
+		ElectroMagicTools.logger.info(localize("console.EMT.postInit.end"));
+	}
+
+	@EventHandler
+	public void onFMLServerStart(FMLServerStartingEvent event) {
+		event.registerServerCommand(new CommandOutputs());
+	}
 }

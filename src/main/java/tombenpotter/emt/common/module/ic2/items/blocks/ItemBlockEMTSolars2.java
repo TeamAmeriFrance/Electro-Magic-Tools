@@ -9,94 +9,96 @@
  * Electro-Magic Tools is a derivative work on Thaumcraft 4 (c) Azanor 2012.
  * http://www.minecraftforum.net/topic/1585216-
  ******************************************************************************/
+
 package tombenpotter.emt.common.module.ic2.items.blocks;
 
-import tombenpotter.emt.common.util.Config;
 import net.minecraft.block.Block;
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import tombenpotter.emt.common.util.ConfigHandler;
+import tombenpotter.emt.common.util.TextHelper;
 
 import java.util.List;
 
+import static tombenpotter.emt.common.util.TextHelper.localize;
+
 public class ItemBlockEMTSolars2 extends ItemBlock {
 
-    public ItemBlockEMTSolars2(Block id) {
-        super(id);
-        setHasSubtypes(true);
-    }
+	public ItemBlockEMTSolars2(Block id) {
+		super(id);
+		setHasSubtypes(true);
+	}
 
-    @Override
-    public String getUnlocalizedName(ItemStack itemstack) {
-        String name = "";
-        switch (itemstack.getItemDamage()) {
-            case 0: {
-                name = "doubleair";
-                break;
-            }
-            case 1: {
-                name = "tripleair";
-                break;
-            }
-            case 2: {
-                name = "earth";
-                break;
-            }
-            case 3: {
-                name = "doubleearth";
-                break;
-            }
-            case 4: {
-                name = "tripleearth";
-                break;
-            }
-            default:
-                name = "nothing";
-                break;
-        }
-        return getUnlocalizedName() + "." + name;
-    }
+	@Override
+	public String getUnlocalizedName(ItemStack itemstack) {
+		String name = "";
+		switch (itemstack.getItemDamage()) {
+			case 0: {
+				name = "doubleair";
+				break;
+			}
+			case 1: {
+				name = "tripleair";
+				break;
+			}
+			case 2: {
+				name = "earth";
+				break;
+			}
+			case 3: {
+				name = "doubleearth";
+				break;
+			}
+			case 4: {
+				name = "tripleearth";
+				break;
+			}
+			default:
+				name = "nothing";
+				break;
+		}
+		return getUnlocalizedName() + "." + name;
+	}
 
-    @Override
-    public int getMetadata(int par1) {
-        return par1;
-    }
+	@Override
+	public int getMetadata(int par1) {
+		return par1;
+	}
 
-    @Override
-    @SuppressWarnings({"unchecked", "rawtypes"})
-    public void addInformation(ItemStack itemstack, EntityPlayer player, List list, boolean par4) {
-        if (GuiScreen.isShiftKeyDown()) {
-            switch (itemstack.getItemDamage()) {
-                case 0: {
-                    list.add("Normal Conditions: " + Config.doubleCompressedSolarOutput + " EU/T");
-                    list.add("Special Effect: Output multiplied by 2.5 when the block is over Y = 160");
-                    break;
-                }
-                case 1: {
-                    list.add("Normal Conditions: " + Config.tripleCompressedSolarOutput + " EU/T");
-                    list.add("Special Effect: Output multiplied by 2.5 when the block is over Y = 160");
-                    break;
-                }
-                case 2: {
-                    list.add("Normal Conditions: " + Config.compressedSolarOutput + " EU/T");
-                    list.add("Special Effect: Output multiplied by 2.5 when the block is under Y = 10");
-                    break;
-                }
-                case 3: {
-                    list.add("Normal Conditions: " + Config.doubleCompressedSolarOutput + " EU/T");
-                    list.add("Special Effect: Output multiplied by 2.5 when the block is under Y = 10");
-                    break;
-                }
-                case 4: {
-                    list.add("Normal Conditions: " + Config.tripleCompressedSolarOutput + " EU/T");
-                    list.add("Special Effect: Output multiplied by 2.5 when the block is under Y = 10");
-                    break;
-                }
-                default:
-                    list.add("Didn't I forget a tooltip?");
-                    break;
-            }
-        }
-    }
+	@Override
+	@SuppressWarnings({"unchecked", "rawtypes"})
+	public void addInformation(ItemStack itemstack, EntityPlayer player, List list, boolean par4) {
+		switch (itemstack.getItemDamage()) {
+			case 0: {
+				list.add(TextHelper.BRIGHT_BLUE + localize("tooltip.EMT.normalConditions") + ": " + TextHelper.LIGHT_GRAY + ConfigHandler.doubleCompressedSolarOutput + " " + localize("tooltip.EMT.euPerTick"));
+				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY  + localize("tooltip.EMT.output.double.half") + " " + localize("tooltip.EMT.output.double.half.height"));
+				break;
+			}
+			case 1: {
+				list.add(TextHelper.BRIGHT_BLUE + localize("tooltip.EMT.normalConditions") + ": " + TextHelper.LIGHT_GRAY + ConfigHandler.tripleCompressedSolarOutput + " " + localize("tooltip.EMT.euPerTick"));
+				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY  + localize("tooltip.EMT.output.double.half") + " " + localize("tooltip.EMT.output.double.half.height"));
+				break;
+			}
+			case 2: {
+				list.add(TextHelper.BRIGHT_BLUE + localize("tooltip.EMT.normalConditions") + ": " + TextHelper.LIGHT_GRAY + ConfigHandler.compressedSolarOutput + " " + localize("tooltip.EMT.euPerTick"));
+				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY  + localize("tooltip.EMT.output.double.half") + " " + localize("tooltip.EMT.output.double.half.low"));
+				break;
+			}
+			case 3: {
+				list.add(TextHelper.BRIGHT_BLUE + localize("tooltip.EMT.normalConditions") + ": " + TextHelper.LIGHT_GRAY + ConfigHandler.doubleCompressedSolarOutput + " " + localize("tooltip.EMT.euPerTick"));
+				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY  + localize("tooltip.EMT.output.double.half") + " " + localize("tooltip.EMT.output.double.half.low"));
+				break;
+			}
+			case 4: {
+				list.add(TextHelper.BRIGHT_BLUE + localize("tooltip.EMT.normalConditions") + ": " + TextHelper.LIGHT_GRAY + ConfigHandler.tripleCompressedSolarOutput + " " + localize("tooltip.EMT.euPerTick"));
+				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY  + localize("tooltip.EMT.output.double.half") + " " + localize("tooltip.EMT.output.double.half.low"));
+				break;
+			}
+			default: {
+				list.add(localize("tooltip.EMT.forget"));
+				break;
+			}
+		}
+	}
 }

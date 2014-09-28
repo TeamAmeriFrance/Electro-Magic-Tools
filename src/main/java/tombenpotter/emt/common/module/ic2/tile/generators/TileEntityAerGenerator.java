@@ -4,7 +4,7 @@ import thaumcraft.api.aspects.Aspect;
 
 public class TileEntityAerGenerator extends TileEntityBaseGenerator {
 
-    public TileEntityAerGenerator() {
-        aspect = Aspect.AIR;
-    }
+	public TileEntityAerGenerator() {
+		aspect = Aspect.AIR;
+	}
 }

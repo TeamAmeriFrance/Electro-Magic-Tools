@@ -9,6 +9,7 @@
  * Electro-Magic Tools is a derivative work on Thaumcraft 4 (c) Azanor 2012.
  * http://www.minecraftforum.net/topic/1585216-
  ******************************************************************************/
+
 package tombenpotter.emt.common.module.base.tile;
 
 import thaumcraft.api.nodes.NodeModifier;
@@ -17,17 +18,17 @@ import thaumcraft.common.tiles.TileNode;
 
 public class TileEntityPortableNode extends TileNode {
 
-    public TileEntityPortableNode() {
-        super();
-    }
+	public TileEntityPortableNode() {
+		super();
+	}
 
-    @Override
-    public NodeModifier getNodeModifier() {
-        return NodeModifier.FADING;
-    }
+	@Override
+	public NodeModifier getNodeModifier() {
+		return NodeModifier.FADING;
+	}
 
-    @Override
-    public NodeType getNodeType() {
-        return NodeType.UNSTABLE;
-    }
+	@Override
+	public NodeType getNodeType() {
+		return NodeType.UNSTABLE;
+	}
 }

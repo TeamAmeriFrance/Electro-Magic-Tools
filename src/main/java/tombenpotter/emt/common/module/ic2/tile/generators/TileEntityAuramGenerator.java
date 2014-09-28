@@ -9,12 +9,14 @@
  * Electro-Magic Tools is a derivative work on Thaumcraft 4 (c) Azanor 2012.
  * http://www.minecraftforum.net/topic/1585216-
  ******************************************************************************/
+
 package tombenpotter.emt.common.module.ic2.tile.generators;
 
 import thaumcraft.api.aspects.Aspect;
 
 public class TileEntityAuramGenerator extends TileEntityBaseGenerator {
-    public TileEntityAuramGenerator() {
-        aspect = Aspect.AURA;
-    }
+
+	public TileEntityAuramGenerator() {
+		aspect = Aspect.AURA;
+	}
 }

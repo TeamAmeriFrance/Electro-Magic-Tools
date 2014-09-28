@@ -9,6 +9,7 @@
  * Electro-Magic Tools is a derivative work on Thaumcraft 4 (c) Azanor 2012.
  * http://www.minecraftforum.net/topic/1585216-
  ******************************************************************************/
+
 package tombenpotter.emt.common.module.base.items.foci;
 
 import cpw.mods.fml.relauncher.Side;
@@ -21,48 +22,48 @@ import net.minecraft.world.World;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.items.wands.ItemWandCasting;
-import tombenpotter.emt.ElectroMagicTools;
+import tombenpotter.emt.ModInformation;
 import tombenpotter.emt.common.module.base.entities.EntityLaser;
 
 public class ItemExplosionFocus extends ItemBaseFocus {
 
-    private static final AspectList visCost = new AspectList().add(Aspect.FIRE, 200).add(Aspect.ENTROPY, 200);
+	private static final AspectList visCost = new AspectList().add(Aspect.FIRE, 200).add(Aspect.ENTROPY, 200);
 
-    public ItemExplosionFocus() {
-        super();
-    }
+	public ItemExplosionFocus() {
+		super();
+	}
 
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ElectroMagicTools.texturePath + ":explosionfocus");
-    }
+	@SideOnly(Side.CLIENT)
+	@Override
+	public void registerIcons(IIconRegister iconRegister) {
+		this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":explosionfocus");
+	}
 
-    @Override
-    public int getFocusColor() {
-        return 9990;
-    }
+	@Override
+	public int getFocusColor() {
+		return 9990;
+	}
 
-    @Override
-    public AspectList getVisCost() {
-        return visCost;
-    }
+	@Override
+	public AspectList getVisCost() {
+		return visCost;
+	}
 
-    @Override
-    public String getSortingHelper(ItemStack itemstack) {
-        return "EXPLOSION";
-    }
+	@Override
+	public String getSortingHelper(ItemStack itemstack) {
+		return "EXPLOSION";
+	}
 
-    @Override
-    public ItemStack onFocusRightClick(ItemStack itemstack, World world, EntityPlayer player, MovingObjectPosition movingobjectposition) {
-        ItemWandCasting wand = (ItemWandCasting) itemstack.getItem();
-        if (wand.consumeAllVis(itemstack, player, getVisCost(), true, true)) {
-            if (!world.isRemote) {
-                EntityLaser laser;
-                laser = new EntityLaser(world, player, 2);
-                world.spawnEntityInWorld(laser);
-            }
-        }
-        return itemstack;
-    }
+	@Override
+	public ItemStack onFocusRightClick(ItemStack itemstack, World world, EntityPlayer player, MovingObjectPosition movingobjectposition) {
+		ItemWandCasting wand = (ItemWandCasting) itemstack.getItem();
+		if (wand.consumeAllVis(itemstack, player, getVisCost(), true, true)) {
+			if (!world.isRemote) {
+				EntityLaser laser;
+				laser = new EntityLaser(world, player, 2);
+				world.spawnEntityInWorld(laser);
+			}
+		}
+		return itemstack;
+	}
 }

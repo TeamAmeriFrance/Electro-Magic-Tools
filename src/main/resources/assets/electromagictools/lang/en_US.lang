@@ -1,96 +1,126 @@
 #=============Creative Tab Name=============
-itemGroup.Electro-Magic Tools=Electro-Magic Tools
+itemGroup.EMT.creativeTab=Electro-Magic Tools
 
 #=============Thaumonomicon Tab Name=============
 tc.research_category.EMT=Electro-Magic Tools
 
+#=============GUI=============
+gui.EMT.config.title=Electro-Magic Tools Configuration
+gui.EMT.etherealMacerator.title=Ethereal Processor
+gui.EMT.wandRecharge.title=Industrial Wand Recharge Station
+gui.EMT.inventory=Inventory
+
+#=============Tooltips=============
+#This comes after a player name. The 's is depicting ownership.
+tooltip.EMT.hammer.electric='s Hammer
+tooltip.EMT.hammer.broken.thor=It was once the Hammer of Thor.
+tooltip.EMT.hammer.broken.danger=It is now very dangerous.
+tooltip.EMT.hammer.broken.plsNoRightClick=Do NOT right-click.
+tooltip.EMT.hammer.broken.plsRightClick=Do right-click.
+tooltip.EMT.visDiscount=Vis Discount
+tooltip.EMT.specialEffect=Special Effect
+tooltip.EMT.normalConditions=Normal Conditions
+tooltip.EMT.euPerTick=EU/t
+tooltip.EMT.night=at night
+tooltip.EMT.forget=Didn't I forget a tooltip?
+tooltip.EMT.raining=while raining
+tooltip.EMT.output.triple=Output multiplied by 3
+tooltip.EMT.output.double=Output multipled by 2
+tooltip.EMT.output.double.half=Output multiplied by 2.5
+tooltip.EMT.output.double.nether=when located in the Nether
+tooltip.EMT.output.double.lava=when lava is on top
+tooltip.EMT.output.double.half.height=when the block is over Y = 160
+tooltip.EMT.output.double.half.low=when the block is under Y = 10
+
+
 #=============Enity Names=============
-entity.Tombenpotter's Electro-Magic Tools.entityLaser.name=Laser
-entity.Tombenpotter's Electro-Magic Tools.entityArcher.name=Guardian Snowman
+entity.EMT.entityLaser.name=Laser
+entity.EMT.entityArcher.name=Guardian Snowman
 
 #=============Item Names=============
-item.thaumiumdrill.name=Thaumium Drill
-item.thaumiumchainsaw.name=Thaumium Chainsaw
-item.quantumthaumichelmet.name=Quantum Goggles of Revealing
-item.diamondchainsaw.name=Diamond Chainsaw
-item.ironomnitool.name=Omnitool
-item.diamondomnitool.name=Diamond Omnitool
-item.thaumiumomnitool.name=Thaumium Omnitool
-item.nanothaumichelmet.name=Nanosuit Goggles of Revealing
-item.laserfocus.name=Wand Focus: Explosion
-item.christmasfocus.name=Wand Focus: Kris-tmas
-item.shieldfocus.name=Wand Focus: Shield
-item.electricgoggles.name=Electric Goggles of Revealing
-item.streamchainsaw.name=Chainsaw of the Stream
-item.rockbreakerdrill.name=Drill of the Rockbreaker
-item.solarhelmetrevealing.name=Quantum Solar Helmet of Revealing
-item.hammerthor.name=Mjolnir
-item.taintedthorhammer.name=Broken Relic of Mjolnir
-item.electricthorhammer.name=Supercharged Mjolnir
-item.electricboots.name=Electric Boots of the Traveller
-item.nanobootstraveller.name=Nanosuit Boots of the Traveller
-item.quantumbootstraveller.name=Quantum Boots of the Traveller
-item.electricscribingtools.name=Electric Scribing Tools
-item.electrichoeofgrowth.name=Electric Hoe of Growth
-item.chargefocus.name=Wand Focus: Charging
-item.itememtitems.oreClusterUranium=Uranium Native Cluster
-item.itememtitems.crushedOreAmber.name=Crushed Amber Ore
-item.itememtitems.purifiedOreAmber.name=Purified Amber Ore
-item.itememtitems.crushedOreCinnabar.name=Crushed Cinnabar Ore
-item.itememtitems.purifiedOreCinnabar.name=Purified Cinnabar Ore
-item.itememtitems.thaumiumPlate.name=Thaumium Plate
-item.itememtitems.lightningSummoner.name=Lightning Summoner
-item.itememtitems.featherMesh.name=Feather Mesh
-item.itememtitems.glue.name=Glue
-item.itememtitems.ductTape.name=Duct Tape
-item.itememtitems.rubberBall.name=Rubber Ball
-item.itememtitems.cardboard.name=Cardboard Sheet
-item.itememtitems.featherGluedCardboardWing.name=Feather Glued Carboard Wing
-item.itememtitems.denseIronSheet.name=Dense Iron Sheet
-item.itememtitems.taintedFeather.name=Tainted Feather
-item.itememtitems.thaumiumWing.name=Thaumium Reinforced Wing
-item.emtbauble.euMaker.armor.name=Armor Charging Ring
-item.emtbauble.euMaker.inventory.name=Inventory Charging Ring
-item.emtbauble.oneRing.name=The One Ring
-item.wandchargefocus.name=Wand Focus: Wand Charging
-item.featherwing.name=Feather Duct-Taped Wings
-item.thaumiumwing.name=Thaumium Reinforced Wings
-item.nanowing.name=Nanosuit Wings
-item.quantumwing.name=Quantum Wings
+item.EMT.thaumiumdrill.name=Thaumium Drill
+item.EMT.thaumiumchainsaw.name=Thaumium Chainsaw
+item.EMT.quantumthaumichelmet.name=Quantum Goggles of Revealing
+item.EMT.diamondchainsaw.name=Diamond Chainsaw
+item.EMT.ironomnitool.name=Omnitool
+item.EMT.diamondomnitool.name=Diamond Omnitool
+item.EMT.thaumiumomnitool.name=Thaumium Omnitool
+item.EMT.nanothaumichelmet.name=Nanosuit Goggles of Revealing
+item.EMT.laserfocus.name=Wand Focus: Explosion
+item.EMT.christmasfocus.name=Wand Focus: Kris-tmas
+item.EMT.shieldfocus.name=Wand Focus: Shield
+item.EMT.electricgoggles.name=Electric Goggles of Revealing
+item.EMT.streamchainsaw.name=Chainsaw of the Stream
+item.EMT.rockbreakerdrill.name=Drill of the Rockbreaker
+item.EMT.solarhelmetrevealing.name=Quantum Solar Helmet of Revealing
+item.EMT.hammerthor.name=Mjolnir
+item.EMT.taintedthorhammer.name=Broken Relic of Mjolnir
+item.EMT.electricthorhammer.name=Supercharged Mjolnir
+item.EMT.electricboots.name=Electric Boots of the Traveller
+item.EMT.nanobootstraveller.name=Nanosuit Boots of the Traveller
+item.EMT.quantumbootstraveller.name=Quantum Boots of the Traveller
+item.EMT.electricscribingtools.name=Electric Scribing Tools
+item.EMT.electrichoeofgrowth.name=Electric Hoe of Growth
+item.EMT.chargefocus.name=Wand Focus: Charging
+item.EMT.emtitems.oreClusterUranium=Uranium Native Cluster
+item.EMT.emtitems.crushedOreAmber.name=Crushed Amber Ore
+item.EMT.emtitems.purifiedOreAmber.name=Purified Amber Ore
+item.EMT.emtitems.crushedOreCinnabar.name=Crushed Cinnabar Ore
+item.EMT.emtitems.purifiedOreCinnabar.name=Purified Cinnabar Ore
+item.EMT.emtitems.thaumiumPlate.name=Thaumium Plate
+item.EMT.emtitems.lightningSummoner.name=Lightning Summoner
+item.EMT.emtitems.featherMesh.name=Feather Mesh
+item.EMT.emtitems.glue.name=Glue
+item.EMT.emtitems.ductTape.name=Duct Tape
+item.EMT.emtitems.rubberBall.name=Rubber Ball
+item.EMT.emtitems.cardboard.name=Cardboard Sheet
+item.EMT.emtitems.featherGluedCardboardWing.name=Feather Glued Carboard Wing
+item.EMT.emtitems.denseIronSheet.name=Dense Iron Sheet
+item.EMT.emtitems.taintedFeather.name=Tainted Feather
+item.EMT.emtitems.thaumiumWing.name=Thaumium Reinforced Wing
+item.EMT.emtbauble.euMaker.armor.name=Armor Charging Ring
+item.EMT.emtbauble.euMaker.inventory.name=Inventory Charging Ring
+item.EMT.emtbauble.oneRing.name=The One Ring
+item.EMT.wandchargefocus.name=Wand Focus: Wand Charging
+item.EMT.featherwing.name=Feather Duct-Taped Wings
+item.EMT.thaumiumwing.name=Thaumium Reinforced Wings
+item.EMT.nanowing.name=Nanosuit Wings
+item.EMT.quantumwing.name=Quantum Wings
 
 #=============Block Names=============
-tile.shield.name=Shield Block
-tile.portablenode.name=Portable Node
-tile.essentiaGens.potentia.name=Potentia Generator
-tile.essentiaGens.ignis.name=Ignis Generator
-tile.essentiaGens.auram.name=Auram Generator
-tile.essentiaGens.arbor.name=Arbor Generator
-tile.essentiaGens.aer.name=Aer Generator
-tile.emtmachines.wandrecharge.name=Industrial Wand Charging Station
-tile.emtmachines.etheralprocessor.name=Ethereal Processor
-tile.emtsolars.compressed.name=Compressed Solar Panel
-tile.emtsolars.doublecompressed.name=Double Compressed Solar Panel
-tile.emtsolars.triplecompressed.name=Triple Compressed Solar Panel
-tile.emtsolars.water.name=Water Infused Compressed Solar Panel
-tile.emtsolars.doublewater.name=Water Infused DoubleCompressed Solar Panel
-tile.emtsolars.triplewater.name=Water Infused Triple Compressed Solar Panel
-tile.emtsolars.dark.name=Entropy Infused Compressed Solar Panel
-tile.emtsolars.doubledark.name=Entropy Double Infused Compressed Solar Panel
-tile.emtsolars.tripledark.name=Entropy Triple Infused Compressed Solar Panel
-tile.emtsolars.order.name=Order Infused Compressed Solar Panel
-tile.emtsolars.doubleorder.name=Order Infused Double Compressed Solar Panel
-tile.emtsolars.tripleorder.name=Order Infused Triple Compressed Solar Panel
-tile.emtsolars.fire.name=Fire Infused Compressed Solar Panel
-tile.emtsolars.doublefire.name=Fire Infused Double Compressed Solar Panel
-tile.emtsolars.triplefire.name=Fire Infused Triple Compressed Solar Panel
-tile.emtsolars.air.name=Air Infused Compressed Solar Panel
-tile.emtsolars2.doubleair.name=Air Infused Double Compressed Solar Panel
-tile.emtsolars2.tripleair.name=Air Infused Triple Compressed Solar Panel
-tile.emtsolars2.earth.name=Earth Infused Compressed Solar Panel
-tile.emtsolars2.doubleearth.name=Earth Infused Double Compressed Solar Panel
-tile.emtsolars2.tripleearth.name=Earth Infused Triple Compressed Solar Panel
+tile.EMT.shield.name=Shield Block
+tile.EMT.portablenode.name=Portable Node
+tile.EMT.essentiaGens.potentia.name=Potentia Generator
+tile.EMT.essentiaGens.ignis.name=Ignis Generator
+tile.EMT.essentiaGens.auram.name=Auram Generator
+tile.EMT.essentiaGens.arbor.name=Arbor Generator
+tile.EMT.essentiaGens.aer.name=Aer Generator
+tile.EMT.emtmachines.wandrecharge.name=Industrial Wand Charging Station
+tile.EMT.emtmachines.etheralprocessor.name=Ethereal Processor
+tile.EMT.emtsolars.compressed.name=Compressed Solar Panel
+tile.EMT.emtsolars.doublecompressed.name=Double Compressed Solar Panel
+tile.EMT.emtsolars.triplecompressed.name=Triple Compressed Solar Panel
+tile.EMT.emtsolars.water.name=Water Infused Compressed Solar Panel
+tile.EMT.emtsolars.doublewater.name=Water Infused DoubleCompressed Solar Panel
+tile.EMT.emtsolars.triplewater.name=Water Infused Triple Compressed Solar Panel
+tile.EMT.emtsolars.dark.name=Entropy Infused Compressed Solar Panel
+tile.EMT.emtsolars.doubledark.name=Entropy Double Infused Compressed Solar Panel
+tile.EMT.emtsolars.tripledark.name=Entropy Triple Infused Compressed Solar Panel
+tile.EMT.emtsolars.order.name=Order Infused Compressed Solar Panel
+tile.EMT.emtsolars.doubleorder.name=Order Infused Double Compressed Solar Panel
+tile.EMT.emtsolars.tripleorder.name=Order Infused Triple Compressed Solar Panel
+tile.EMT.emtsolars.fire.name=Fire Infused Compressed Solar Panel
+tile.EMT.emtsolars.doublefire.name=Fire Infused Double Compressed Solar Panel
+tile.EMT.emtsolars.triplefire.name=Fire Infused Triple Compressed Solar Panel
+tile.EMT.emtsolars.air.name=Air Infused Compressed Solar Panel
+tile.EMT.emtsolars2.doubleair.name=Air Infused Double Compressed Solar Panel
+tile.EMT.emtsolars2.tripleair.name=Air Infused Triple Compressed Solar Panel
+tile.EMT.emtsolars2.earth.name=Earth Infused Compressed Solar Panel
+tile.EMT.emtsolars2.doubleearth.name=Earth Infused Double Compressed Solar Panel
+tile.EMT.emtsolars2.tripleearth.name=Earth Infused Triple Compressed Solar Panel
+tile.EMT.essentiaGenerator.name=Essentia Generator
 
-#=============Thaumonomicon Names=============
+#=============Thaumonomicon Flavor Text=============
 emt.tag.Electric Magic Tools=Who says magic and technology can't go together?
 emt.tag.Thaumium Drill=Magical mining
 emt.tag.Thaumium Chainsaw=Felling trees and severing heads with a touch of magic
@@ -201,3 +231,29 @@ emt.text.Feather Wings=Duct-taping feathers to cardboard sheets, formed in the s
 emt.text.Thaumium Reinforced Wings=The magic infusing thaumium is well known. Therefore, reinforcing your cardboard wings with thaumium sounded like a good idea. You can thrust yourself much higher on spacebar hit, and slow your fall down when spacebar is held. Sneak to go down at a steady pace. Included: fall damage reduction, 50%.
 emt.text.Nanosuit Wings=Combining the magic harnessed by thaumium with the nanotechnologies in your wings.. seemed like the logical way to go. You can thrust yourself way higher than before, and fall even slower when holding spacebar. Included: fall damage reduction, 75%.
 emt.text.Quantum Wings=After exploring all the possibilities of nanotechnologies, you decided to do the last jump. Quantum. You can thrust yourself many blocks high, have a very good protection, and your fall is slowed down a lot. However, the quantum impredictability happened once again. Your fall will be completely stopped when spacebar and sneak are maintained. You don't know why, but it works. Included: fall damage reduction, 100%.
+
+#=============Console Logging=============
+console.EMT.preInit.begin=Starting planning the world domination
+console.EMT.preInit.configRead=Creating/Reading the config file
+console.EMT.preInit.end=Planning complete
+
+console.EMT.init.begin=Gathering allies
+console.EMT.init.loadProxies=Loading the proxies
+console.EMT.init.mobDrops=Making mobs drop additional items
+console.EMT.init.dungeon=Adding dungeon loot
+console.EMT.init.recipes=Adding the Init recipes
+console.EMT.init.entities=Registering entities
+console.EMT.init.guiHandler=Registering the GUI Handler
+console.EMT.init.end=Allies gathered.
+
+console.EMT.postInit.begin=Starting the world takeover
+console.EMT.postInit.recipes=Adding PostInit recipes
+console.EMT.postInit.uumatter=Adding the UU-Matter Infusion recipes
+console.EMT.postInit.end=World takeover complete. Enjoy!
+
+console.EMT.config.refresh=Refreshing configuration file.
+
+console.EMT.recipes.amberConflict=Removing conflicting amber macerating recipe(s)
+console.EMT.recipes.cinnabarConflict=Removing Conflicting cinnabar macerating recipe(s)
+
+console.EMT.modLoaded.GT=Gregtech Addon detected. Disabling the fix for the Diamond Drill recipe.

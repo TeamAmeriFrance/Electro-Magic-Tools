@@ -9,6 +9,7 @@
  * Electro-Magic Tools is a derivative work on Thaumcraft 4 (c) Azanor 2012.
  * http://www.minecraftforum.net/topic/1585216-
  ******************************************************************************/
+
 package tombenpotter.emt.common.module.ic2.blocks;
 
 import cpw.mods.fml.relauncher.Side;
@@ -22,67 +23,67 @@ import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import tombenpotter.emt.ElectroMagicTools;
-import tombenpotter.emt.common.util.CreativeTab;
+import tombenpotter.emt.ModInformation;
 
 import java.util.Random;
 
 public class BlockShield extends Block {
 
-    public BlockShield() {
-        super(Material.rock);
-        this.setCreativeTab(CreativeTab.tabTombenpotter);
-        this.setHardness(1F);
-        this.setResistance(10000000000000000000000000000000000000F);
-    }
+	public BlockShield() {
+		super(Material.rock);
+		this.setCreativeTab(ElectroMagicTools.tabEMT);
+		this.setHardness(1F);
+		this.setResistance(10000000000000000000000000000000000000F);
+	}
 
-    @Override
-    public int quantityDropped(Random par1Random) {
-        return 0;
-    }
+	@Override
+	public int quantityDropped(Random par1Random) {
+		return 0;
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public int getRenderBlockPass() {
-        return 0;
-    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public int getRenderBlockPass() {
+		return 0;
+	}
 
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon(ElectroMagicTools.texturePath + ":shield");
-    }
+	@SideOnly(Side.CLIENT)
+	@Override
+	public void registerBlockIcons(IIconRegister iconRegister) {
+		this.blockIcon = iconRegister.registerIcon(ModInformation.texturePath + ":shield");
+	}
 
-    @Override
-    public boolean isOpaqueCube() {
-        return false;
-    }
+	@Override
+	public boolean isOpaqueCube() {
+		return false;
+	}
 
-    @Override
-    public boolean renderAsNormalBlock() {
-        return false;
-    }
+	@Override
+	public boolean renderAsNormalBlock() {
+		return false;
+	}
 
-    @Override
-    protected boolean canSilkHarvest() {
-        return false;
-    }
+	@Override
+	protected boolean canSilkHarvest() {
+		return false;
+	}
 
-    @Override
-    public boolean canBeReplacedByLeaves(IBlockAccess world, int x, int y, int z) {
-        return false;
-    }
+	@Override
+	public boolean canBeReplacedByLeaves(IBlockAccess world, int x, int y, int z) {
+		return false;
+	}
 
-    @Override
-    public boolean canEntityDestroy(IBlockAccess world, int x, int y, int z, Entity entity) {
-        return false;
-    }
+	@Override
+	public boolean canEntityDestroy(IBlockAccess world, int x, int y, int z, Entity entity) {
+		return false;
+	}
 
-    @Override
-    public boolean canCreatureSpawn(EnumCreatureType type, IBlockAccess world, int x, int y, int z) {
-        return false;
-    }
+	@Override
+	public boolean canCreatureSpawn(EnumCreatureType type, IBlockAccess world, int x, int y, int z) {
+		return false;
+	}
 
-    @Override
-    public void onBlockExploded(World world, int x, int y, int z, Explosion explosion) {
-    }
+	@Override
+	public void onBlockExploded(World world, int x, int y, int z, Explosion explosion) {
+	}
 }

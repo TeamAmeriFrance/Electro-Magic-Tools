@@ -9,17 +9,25 @@
  * Electro-Magic Tools is a derivative work on Thaumcraft 4 (c) Azanor 2012.
  * http://www.minecraftforum.net/topic/1585216-
  ******************************************************************************/
+
 package tombenpotter.emt.common.util;
 
-import tombenpotter.emt.common.module.ic2.IC2ModuleItemRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import tombenpotter.emt.common.module.ic2.IC2ModuleItemRegistry;
 
-public class CreativeTab {
-    public static CreativeTabs tabTombenpotter = new CreativeTabs("Electro-Magic Tools") {
-        @Override
-        public Item getTabIconItem() {
-            return IC2ModuleItemRegistry.thorHammer;
-        }
-    };
+public class CreativeTabEMT extends CreativeTabs {
+
+	public CreativeTabEMT(String tabLabel) {
+		super(tabLabel);
+	}
+
+	@Override
+	public ItemStack getIconItemStack() {
+		return new ItemStack(IC2ModuleItemRegistry.thorHammer);
+	}
+
+	@Override
+	public Item getTabIconItem() { return new Item(); }
 }

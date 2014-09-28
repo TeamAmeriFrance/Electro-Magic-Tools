@@ -18,36 +18,38 @@
  *
  * http://www.minecraftforum.net/topic/1813058-
  ******************************************************************************/
+
 package tombenpotter.emt.common.module.ic2.items.armor.boots;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import tombenpotter.emt.common.util.Config;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-import tombenpotter.emt.ElectroMagicTools;
+import tombenpotter.emt.ModInformation;
+import tombenpotter.emt.common.util.ConfigHandler;
 
 public class ItemNanoBootsTraveller extends ItemElectricBootsTraveller {
-    public ItemNanoBootsTraveller(int par3, int par4) {
-        super(par3, par4);
-        maxCharge = 500000;
-        speedBonus = (float) Config.nanoBootsSpeed;
-        jumpBonus = (float) Config.nanoBootsJump;
-        fallDistance = 0.75F;
-        visDiscount = 4;
-        transferLimit = 1000;
-        energyPerDamage = 500;
-    }
 
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ElectroMagicTools.texturePath + ":nanobootstravel");
-    }
+	public ItemNanoBootsTraveller(int par3, int par4) {
+		super(par3, par4);
+		maxCharge = 500000;
+		speedBonus = (float) ConfigHandler.nanoBootsSpeed;
+		jumpBonus = (float) ConfigHandler.nanoBootsJump;
+		fallDistance = 0.75F;
+		visDiscount = 4;
+		transferLimit = 1000;
+		energyPerDamage = 500;
+	}
 
-    @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-        return ElectroMagicTools.texturePath + ":textures/models/nanobootstravel.png";
-    }
+	@SideOnly(Side.CLIENT)
+	@Override
+	public void registerIcons(IIconRegister iconRegister) {
+		this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":nanobootstravel");
+	}
+
+	@Override
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
+		return ModInformation.texturePath + ":textures/models/nanobootstravel.png";
+	}
 }

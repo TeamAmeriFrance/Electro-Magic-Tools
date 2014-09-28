@@ -9,6 +9,7 @@
  * Electro-Magic Tools is a derivative work on Thaumcraft 4 (c) Azanor 2012.
  * http://www.minecraftforum.net/topic/1585216-
  ******************************************************************************/
+
 package tombenpotter.emt.proxies;
 
 import cpw.mods.fml.common.network.IGuiHandler;
@@ -24,48 +25,47 @@ import tombenpotter.emt.common.module.ic2.tile.TileEntityIndustrialWandRecharge;
 
 public class CommonProxy implements IGuiHandler {
 
-    public void load() {
-        registerRenders();
-    }
+	public void load() {
+		registerRenders();
+	}
 
-    public void registerRenders() {
-        /* Empty in base proxy */
-    }
+	public void registerRenders() {
+	    /* Empty in base proxy */
+	}
 
-    @Override
-    public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-        TileEntity entity = world.getTileEntity(x, y, z);
+	@Override
+	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+		TileEntity entity = world.getTileEntity(x, y, z);
 
-        switch (ID) {
-            case 0:
-                if (entity != null && entity instanceof TileEntityIndustrialWandRecharge) {
-                    return new ContainerIndustrialWandRecharge(player.inventory, (TileEntityIndustrialWandRecharge) entity);
-                }
-            case 1:
-                if (entity != null && entity instanceof TileEntityEtherealMacerator) {
-                    return new ContainerEtheralMacerator(player.inventory, (TileEntityEtherealMacerator) entity);
-                }
-            default:
-                return null;
-        }
-    }
+		switch (ID) {
+			case 0:
+				if (entity != null && entity instanceof TileEntityIndustrialWandRecharge) {
+					return new ContainerIndustrialWandRecharge(player.inventory, (TileEntityIndustrialWandRecharge) entity);
+				}
+			case 1:
+				if (entity != null && entity instanceof TileEntityEtherealMacerator) {
+					return new ContainerEtheralMacerator(player.inventory, (TileEntityEtherealMacerator) entity);
+				}
+			default:
+				return null;
+		}
+	}
 
-    @Override
-    public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-        TileEntity entity = world.getTileEntity(x, y, z);
+	@Override
+	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+		TileEntity entity = world.getTileEntity(x, y, z);
 
-        switch (ID) {
-            case 0:
-                if (entity != null && entity instanceof TileEntityIndustrialWandRecharge) {
-                    return new GuiIndustrialWandRecharger(player.inventory, (TileEntityIndustrialWandRecharge) entity);
-                }
-            case 1:
-                if (entity != null && entity instanceof TileEntityEtherealMacerator) {
-                    return new GuiEtherealMacerator(player.inventory, (TileEntityEtherealMacerator) entity);
-                }
-            default:
-                return null;
-
-        }
-    }
+		switch (ID) {
+			case 0:
+				if (entity != null && entity instanceof TileEntityIndustrialWandRecharge) {
+					return new GuiIndustrialWandRecharger(player.inventory, (TileEntityIndustrialWandRecharge) entity);
+				}
+			case 1:
+				if (entity != null && entity instanceof TileEntityEtherealMacerator) {
+					return new GuiEtherealMacerator(player.inventory, (TileEntityEtherealMacerator) entity);
+				}
+			default:
+				return null;
+		}
+	}
 }

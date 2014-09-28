@@ -4,10 +4,6 @@ import baubles.api.BaubleType;
 import baubles.api.IBauble;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import tombenpotter.emt.common.util.Config;
-import tombenpotter.emt.common.util.CreativeTab;
-import tombenpotter.emt.ElectroMagicTools;
-import tombenpotter.emt.common.util.TextHelper;
 import ic2.api.item.ElectricItem;
 import ic2.api.item.IElectricItem;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -22,190 +18,196 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.IIcon;
+import tombenpotter.emt.ElectroMagicTools;
+import tombenpotter.emt.ModInformation;
+import tombenpotter.emt.common.util.ConfigHandler;
+import tombenpotter.emt.common.util.TextHelper;
 
 import java.util.List;
 import java.util.Random;
 
 public class ItemEMTBaubles extends Item implements IBauble {
-    public IIcon[] icon = new IIcon[16];
-    public static int wornTick;
-    public Random random = new Random();
 
-    public ItemEMTBaubles() {
-        this.setCreativeTab(CreativeTab.tabTombenpotter);
-        this.setMaxDamage(0);
-        this.setMaxStackSize(1);
-        setHasSubtypes(true);
+	public IIcon[] icon = new IIcon[16];
+	public static int wornTick;
+	public Random random = new Random();
 
-        wornTick = 0;
-    }
+	public ItemEMTBaubles() {
+		this.setCreativeTab(ElectroMagicTools.tabEMT);
+		this.setMaxDamage(0);
+		this.setMaxStackSize(1);
+		this.setUnlocalizedName(ModInformation.modid);
+		setHasSubtypes(true);
 
-    @Override
-    public String getUnlocalizedName(ItemStack itemstack) {
-        String name = "";
-        switch (itemstack.getItemDamage()) {
-            case 0: {
-                name = "euMaker.armor";
-                break;
-            }
-            case 1: {
-                name = "euMaker.inventory";
-                break;
-            }
-            case 2: {
-                name = "oneRing";
-                break;
-            }
-            default:
-                name = "nothing";
-                break;
-        }
-        return getUnlocalizedName() + "." + name;
-    }
+		wornTick = 0;
+	}
 
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister ri) {
-        this.icon[0] = ri.registerIcon(ElectroMagicTools.texturePath + ":armoreumaker");
-        this.icon[1] = ri.registerIcon(ElectroMagicTools.texturePath + ":inventoryeumaker");
-        this.icon[2] = ri.registerIcon(ElectroMagicTools.texturePath + ":onering");
-    }
+	@Override
+	public String getUnlocalizedName(ItemStack itemstack) {
+		String name = "";
+		switch (itemstack.getItemDamage()) {
+			case 0: {
+				name = "euMaker.armor";
+				break;
+			}
+			case 1: {
+				name = "euMaker.inventory";
+				break;
+			}
+			case 2: {
+				name = "oneRing";
+				break;
+			}
+			default:
+				name = "nothing";
+				break;
+		}
+		return getUnlocalizedName() + "." + name;
+	}
 
-    @SideOnly(Side.CLIENT)
-    public IIcon getIconFromDamage(int meta) {
-        return this.icon[meta];
-    }
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IIconRegister ri) {
+		this.icon[0] = ri.registerIcon(ModInformation.texturePath + ":armoreumaker");
+		this.icon[1] = ri.registerIcon(ModInformation.texturePath + ":inventoryeumaker");
+		this.icon[2] = ri.registerIcon(ModInformation.texturePath + ":onering");
+	}
 
-    @SuppressWarnings({"rawtypes", "unchecked"})
-    @SideOnly(Side.CLIENT)
-    public void getSubItems(Item item, CreativeTabs par2CreativeTabs, List list) {
-        list.add(new ItemStack(this, 1, 0));
-        list.add(new ItemStack(this, 1, 1));
-        list.add(new ItemStack(this, 1, 2));
-    }
+	@SideOnly(Side.CLIENT)
+	public IIcon getIconFromDamage(int meta) {
+		return this.icon[meta];
+	}
 
-    @SideOnly(Side.CLIENT)
-    public boolean hasEffect(ItemStack stack) {
-        if (stack.getItemDamage() == 2) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+	@SuppressWarnings({"rawtypes", "unchecked"})
+	@SideOnly(Side.CLIENT)
+	public void getSubItems(Item item, CreativeTabs par2CreativeTabs, List list) {
+		list.add(new ItemStack(this, 1, 0));
+		list.add(new ItemStack(this, 1, 1));
+		list.add(new ItemStack(this, 1, 2));
+	}
 
-    @Override
-    public BaubleType getBaubleType(ItemStack stack) {
-        if (stack.getItemDamage() <= 2) {
-            return BaubleType.RING;
-        } else {
-            return null;
-        }
-    }
+	@SideOnly(Side.CLIENT)
+	public boolean hasEffect(ItemStack stack) {
+		if (stack.getItemDamage() == 2) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
-    @Override
-    public void onWornTick(ItemStack stack, EntityLivingBase player) {
-        if (!player.worldObj.isRemote) {
-            if (stack != null) {
-                if (stack.getItemDamage() == 0) {
-                    if (player instanceof EntityPlayer) {
-                        int energyLeft = Config.armorBaubleProduction;
-                        for (int i = 0; i < ((EntityPlayer) player).inventory.armorInventory.length; i++) {
-                            if (energyLeft > 0) {
-                                if ((((EntityPlayer) player).inventory.armorInventory[i] != null) && (((EntityPlayer) player).inventory.armorInventory[i].getItem() instanceof IElectricItem)) {
-                                    double sentPacket = ElectricItem.manager.charge(((EntityPlayer) player).inventory.armorInventory[i], energyLeft, 4, false, false);
-                                    energyLeft -= sentPacket;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            if (stack != null) {
-                if (stack.getItemDamage() == 1) {
-                    if (player instanceof EntityPlayer) {
-                        int energyLeft = Config.inventoryBaubleProdution;
-                        for (int i = 0; i < ((EntityPlayer) player).inventory.mainInventory.length; i++) {
-                            if (energyLeft > 0) {
-                                if ((((EntityPlayer) player).inventory.mainInventory[i] != null) && (((EntityPlayer) player).inventory.mainInventory[i].getItem() instanceof IElectricItem)) {
-                                    double sentPacket = ElectricItem.manager.charge(((EntityPlayer) player).inventory.mainInventory[i], energyLeft, 4, false, false);
-                                    energyLeft -= sentPacket;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+	@Override
+	public BaubleType getBaubleType(ItemStack stack) {
+		if (stack.getItemDamage() <= 2) {
+			return BaubleType.RING;
+		} else {
+			return null;
+		}
+	}
 
-            if (stack != null && stack.getItemDamage() == 2) {
-                if (player instanceof EntityPlayer) {
-                    ((EntityPlayer) player).capabilities.disableDamage = true;
+	@Override
+	public void onWornTick(ItemStack stack, EntityLivingBase player) {
+		if (!player.worldObj.isRemote) {
+			if (stack != null) {
+				if (stack.getItemDamage() == 0) {
+					if (player instanceof EntityPlayer) {
+						int energyLeft = ConfigHandler.armorBaubleProduction;
+						for (int i = 0; i < ((EntityPlayer) player).inventory.armorInventory.length; i++) {
+							if (energyLeft > 0) {
+								if ((((EntityPlayer) player).inventory.armorInventory[i] != null) && (((EntityPlayer) player).inventory.armorInventory[i].getItem() instanceof IElectricItem)) {
+									double sentPacket = ElectricItem.manager.charge(((EntityPlayer) player).inventory.armorInventory[i], energyLeft, 4, false, false);
+									energyLeft -= sentPacket;
+								}
+							}
+						}
+					}
+				}
+			}
+			if (stack != null) {
+				if (stack.getItemDamage() == 1) {
+					if (player instanceof EntityPlayer) {
+						int energyLeft = ConfigHandler.inventoryBaubleProdution;
+						for (int i = 0; i < ((EntityPlayer) player).inventory.mainInventory.length; i++) {
+							if (energyLeft > 0) {
+								if ((((EntityPlayer) player).inventory.mainInventory[i] != null) && (((EntityPlayer) player).inventory.mainInventory[i].getItem() instanceof IElectricItem)) {
+									double sentPacket = ElectricItem.manager.charge(((EntityPlayer) player).inventory.mainInventory[i], energyLeft, 4, false, false);
+									energyLeft -= sentPacket;
+								}
+							}
+						}
+					}
+				}
+			}
 
-                    wornTick++;
+			if (stack != null && stack.getItemDamage() == 2) {
+				if (player instanceof EntityPlayer) {
+					((EntityPlayer) player).capabilities.disableDamage = true;
 
-                    NBTTagCompound tag = new NBTTagCompound();
-                    tag.setInteger("MindCorruption", wornTick);
-                    ((EntityPlayer) player).writeToNBT(tag);
-                    int corruption = tag.getInteger("MindCorruption");
-                    if (tag != null && corruption != wornTick) {
-                        wornTick = corruption;
-                    }
+					wornTick++;
 
-                    if (corruption == 0)
-                        ((EntityPlayer) player).addChatMessage(new ChatComponentText(TextHelper.PURPLE + "You have worn the Ring. Your soul has now been forever " + TextHelper.PURPLE + "tainted. " + TextHelper.RED + TextHelper.ITALIC + "Beware of wearing the ring. The tainting will only " + TextHelper.RED + TextHelper.ITALIC + "increase, and strange things will start happening."));
+					NBTTagCompound tag = new NBTTagCompound();
+					tag.setInteger("MindCorruption", wornTick);
+					((EntityPlayer) player).writeToNBT(tag);
+					int corruption = tag.getInteger("MindCorruption");
+					if (tag != null && corruption != wornTick) {
+						wornTick = corruption;
+					}
 
-                    if (corruption > 6000 && corruption < 24000 && random.nextInt(2000) == 0)
-                        player.addPotionEffect(new PotionEffect(Potion.blindness.id, 500, 2, false));
+					if (corruption == 0)
+						((EntityPlayer) player).addChatMessage(new ChatComponentText(TextHelper.PURPLE + "You have worn the Ring. Your soul has now been forever " + TextHelper.PURPLE + "tainted. " + TextHelper.RED + TextHelper.ITALIC + "Beware of wearing the ring. The tainting will only " + TextHelper.RED + TextHelper.ITALIC + "increase, and strange things will start happening."));
 
-                    if (corruption >= 6000 && corruption < 24000 && random.nextInt(2000) == 0)
-                        player.addPotionEffect(new PotionEffect(Potion.confusion.id, 500, 2, false));
+					if (corruption > 6000 && corruption < 24000 && random.nextInt(2000) == 0)
+						player.addPotionEffect(new PotionEffect(Potion.blindness.id, 500, 2, false));
 
-                    if (corruption >= 24000 && corruption < 72000 && random.nextInt(2000) == 0) {
-                        for (int i = 0; i <= 5; i++)
-                            ((EntityPlayer) player).capabilities.disableDamage = false;
+					if (corruption >= 6000 && corruption < 24000 && random.nextInt(2000) == 0)
+						player.addPotionEffect(new PotionEffect(Potion.confusion.id, 500, 2, false));
 
-                        player.attackEntityFrom(DamageSource.magic, 5);
-                    }
+					if (corruption >= 24000 && corruption < 72000 && random.nextInt(2000) == 0) {
+						for (int i = 0; i <= 5; i++)
+							((EntityPlayer) player).capabilities.disableDamage = false;
 
-                    if (corruption >= 72000 && corruption < 120000 && random.nextInt(4000) == 0) {
-                        for (int i = 0; i <= 100; i++)
-                            ((EntityPlayer) player).capabilities.disableDamage = false;
+						player.attackEntityFrom(DamageSource.magic, 5);
+					}
 
-                        player.motionY = 2;
-                    }
+					if (corruption >= 72000 && corruption < 120000 && random.nextInt(4000) == 0) {
+						for (int i = 0; i <= 100; i++)
+							((EntityPlayer) player).capabilities.disableDamage = false;
 
-                    if (corruption >= 120000 && random.nextInt(10000) == 0) {
-                        for (int i = 0; i <= 510; i++)
-                            ((EntityPlayer) player).capabilities.disableDamage = false;
+						player.motionY = 2;
+					}
 
-                        player.addPotionEffect(new PotionEffect(Potion.wither.id, 5000, 4, false));
-                    }
-                }
-            }
-        }
-    }
+					if (corruption >= 120000 && random.nextInt(10000) == 0) {
+						for (int i = 0; i <= 510; i++)
+							((EntityPlayer) player).capabilities.disableDamage = false;
 
-    @Override
-    public void onEquipped(ItemStack stack, EntityLivingBase player) {
-        if (stack != null && stack.getItemDamage() == 2) {
-            player.setInvisible(true);
-        }
-    }
+						player.addPotionEffect(new PotionEffect(Potion.wither.id, 5000, 4, false));
+					}
+				}
+			}
+		}
+	}
 
-    @Override
-    public void onUnequipped(ItemStack stack, EntityLivingBase player) {
-        if (stack != null && stack.getItemDamage() == 2) {
-            player.setInvisible(false);
-            if (player instanceof EntityPlayer && !((EntityPlayer) player).capabilities.isCreativeMode)
-                ((EntityPlayer) player).capabilities.disableDamage = false;
-        }
-    }
+	@Override
+	public void onEquipped(ItemStack stack, EntityLivingBase player) {
+		if (stack != null && stack.getItemDamage() == 2) {
+			player.setInvisible(true);
+		}
+	}
 
-    @Override
-    public boolean canEquip(ItemStack stack, EntityLivingBase player) {
-        return true;
-    }
+	@Override
+	public void onUnequipped(ItemStack stack, EntityLivingBase player) {
+		if (stack != null && stack.getItemDamage() == 2) {
+			player.setInvisible(false);
+			if (player instanceof EntityPlayer && !((EntityPlayer) player).capabilities.isCreativeMode)
+				((EntityPlayer) player).capabilities.disableDamage = false;
+		}
+	}
 
-    @Override
-    public boolean canUnequip(ItemStack stack, EntityLivingBase player) {
-        return true;
-    }
+	@Override
+	public boolean canEquip(ItemStack stack, EntityLivingBase player) {
+		return true;
+	}
+
+	@Override
+	public boolean canUnequip(ItemStack stack, EntityLivingBase player) {
+		return true;
+	}
 }

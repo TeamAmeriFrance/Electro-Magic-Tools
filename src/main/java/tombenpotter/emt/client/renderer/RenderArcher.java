@@ -9,6 +9,7 @@
  * Electro-Magic Tools is a derivative work on Thaumcraft 4 (c) Azanor 2012.
  * http://www.minecraftforum.net/topic/1585216-
  ******************************************************************************/
+
 package tombenpotter.emt.client.renderer;
 
 import cpw.mods.fml.relauncher.Side;
@@ -17,4 +18,5 @@ import net.minecraft.client.renderer.entity.RenderSnowMan;
 
 @SideOnly(Side.CLIENT)
 public class RenderArcher extends RenderSnowMan {
+
 }

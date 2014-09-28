@@ -9,29 +9,30 @@
  * Electro-Magic Tools is a derivative work on Thaumcraft 4 (c) Azanor 2012.
  * http://www.minecraftforum.net/topic/1585216-
  ******************************************************************************/
+
 package tombenpotter.emt.common.module.ic2.tile.solars.water;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import tombenpotter.emt.common.module.ic2.IC2ModuleBlockRegistry;
 import tombenpotter.emt.common.module.ic2.tile.solars.TileEntitySolarBase;
-import tombenpotter.emt.common.util.Config;
+import tombenpotter.emt.common.util.ConfigHandler;
 
 public class TileEntityWaterSolar extends TileEntitySolarBase {
 
-    public TileEntityWaterSolar() {
-        output = Config.compressedSolarOutput;
-    }
+	public TileEntityWaterSolar() {
+		output = ConfigHandler.compressedSolarOutput;
+	}
 
-    @Override
-    public void createEnergy() {
-        if (worldObj.isRaining() && worldObj.canBlockSeeTheSky(xCoord, yCoord + 1, zCoord) || worldObj.isThundering() && worldObj.canBlockSeeTheSky(xCoord, yCoord + 1, zCoord)) {
-            energySource.addEnergy(output);
-        }
-    }
+	@Override
+	public void createEnergy() {
+		if (worldObj.isRaining() && worldObj.canBlockSeeTheSky(xCoord, yCoord + 1, zCoord) || worldObj.isThundering() && worldObj.canBlockSeeTheSky(xCoord, yCoord + 1, zCoord)) {
+			energySource.addEnergy(output);
+		}
+	}
 
-    @Override
-    public ItemStack getWrenchDrop(EntityPlayer entityPlayer) {
-        return new ItemStack(IC2ModuleBlockRegistry.emtSolars, 1, 3);
-    }
+	@Override
+	public ItemStack getWrenchDrop(EntityPlayer entityPlayer) {
+		return new ItemStack(IC2ModuleBlockRegistry.emtSolars, 1, 3);
+	}
 }

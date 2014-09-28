@@ -9,22 +9,23 @@
  * Electro-Magic Tools is a derivative work on Thaumcraft 4 (c) Azanor 2012.
  * http://www.minecraftforum.net/topic/1585216-
  ******************************************************************************/
+
 package tombenpotter.emt.common.module.ic2.tile.solars.compressed;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import tombenpotter.emt.common.module.ic2.IC2ModuleBlockRegistry;
 import tombenpotter.emt.common.module.ic2.tile.solars.TileEntitySolarBase;
-import tombenpotter.emt.common.util.Config;
+import tombenpotter.emt.common.util.ConfigHandler;
 
 public class TileEntityDoubleCompressedSolar extends TileEntitySolarBase {
 
-    public TileEntityDoubleCompressedSolar() {
-        output = Config.doubleCompressedSolarOutput;
-    }
+	public TileEntityDoubleCompressedSolar() {
+		output = ConfigHandler.doubleCompressedSolarOutput;
+	}
 
-    @Override
-    public ItemStack getWrenchDrop(EntityPlayer entityPlayer) {
-        return new ItemStack(IC2ModuleBlockRegistry.emtSolars, 1, 1);
-    }
+	@Override
+	public ItemStack getWrenchDrop(EntityPlayer entityPlayer) {
+		return new ItemStack(IC2ModuleBlockRegistry.emtSolars, 1, 1);
+	}
 }
