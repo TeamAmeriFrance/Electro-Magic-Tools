@@ -196,7 +196,7 @@ public class ConfigHandler {
 		quantumWingsResearch = config.get(CATEGORY_RESEARCH, "Quantum Wings", false).getBoolean(quantumWingsResearch);
 		aerGeneratorResearch = config.get(CATEGORY_RESEARCH, "Aer Generator", false).getBoolean(aerGeneratorResearch);
 
-		if(config.hasChanged()) {
+		if (config.hasChanged()) {
 			config.save();
 		}
 	}

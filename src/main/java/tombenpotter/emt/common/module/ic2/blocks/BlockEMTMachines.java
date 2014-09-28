@@ -30,7 +30,6 @@ import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
 import tombenpotter.emt.common.module.ic2.tile.TileEntityEtherealMacerator;
 import tombenpotter.emt.common.module.ic2.tile.TileEntityIndustrialWandRecharge;
-import tombenpotter.emt.common.util.CreativeTabEMT;
 
 import java.util.List;
 import java.util.Random;

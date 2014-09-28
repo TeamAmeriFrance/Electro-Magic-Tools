@@ -19,7 +19,12 @@ configFile.withReader {
     project.ext.config = new ConfigSlurper().parse prop
 }
 
-version = config.mc_version + "-" + config.mod_version + "-" + config.build_number
+def build_number = 'CUSTOM'
+
+if (System.getenv('BUILD_NUMBER') != null)
+    build_number = System.getenv('BUILD_NUMBER')
+
+version = config.mc_version + "-" + config.mod_version + "-${build_number}"
 group= config.package_group
 archivesBaseName = config.mod_name
 
@@ -57,7 +62,6 @@ processResources {
 }
 
 jar {
-    dependsOn "incrementBuildNumber"
     manifest.mainAttributes(
             "Built-By": System.getProperty('user.name'),
             "Created-By": "${System.getProperty('java.vm.version')} + (${System.getProperty('java.vm.vendor')})",
@@ -69,17 +73,4 @@ jar {
 
 tasks.withType(JavaCompile) { task ->
     task.options.encoding = 'UTF-8'
-}
-
-task("incrementBuildNumber") {
-	// increment build number
-	doFirst {
-		// increment
-		config.build_number = (config.build_number.toString().toInteger()) + 1
-
-		// write back to the file
-		configFile.withWriter {
-			config.toProperties().store(it, "")
-		}
-	}
 }

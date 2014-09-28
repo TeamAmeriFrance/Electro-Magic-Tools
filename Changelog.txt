@@ -6,10 +6,15 @@ Updated to Minecraft version 1.7.10.
 Rewrote and improved the Essentia Generator code. It's now very easy to add new ones.
 Rewrote and improved the Solar Panel code. It's now very easy to add new ones.
 Rewrote and improved the Drill, Chainsaw, Omnitool, Boot, Goggle and Wing code. It's now very easy to add new ones, as well as way more efficient.
-Refractored  a lot of the code in preparation for the modules.
+Refactored  a lot of the code in preparation for the modules.
 Added a new Essentia Generator, the Aer Generator.
 Added a tooltip to the current Essentia Generators, saying they will be removed in future versions.
 Added an Essentia Generator, alongisde with a dynamic system calculating outputs linked to different essentias. Change the values of the primals in the config, and there is even a maximum cap!
+Added localization text for almost everything. (TehNut)
+Added config GUI for in game config changes. (Implemented by Tombenpotter, fixed by TehNut)
+Fixed Charged Creepers and Tainted Chickens not dropping things. (TehNut)
+Organized creative tab to make it look nicer (TehNut)
+Compressed Solar Panel tooltips are now easier to read. (TehNut)
 
 Version 1.1.3 : 
 Added a logo to the mcmod.info, and fixed the version tag.

@@ -131,60 +131,60 @@ public class ItemBlockEMTSolars extends ItemBlock {
 				break;
 			}
 			case 4: {
-				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY  + ConfigHandler.doubleCompressedSolarOutput + " " + localize("tooltip.EMT.euPerTick") + " " + localize("tooltip.EMT.raining"));
+				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY + ConfigHandler.doubleCompressedSolarOutput + " " + localize("tooltip.EMT.euPerTick") + " " + localize("tooltip.EMT.raining"));
 				break;
 			}
 			case 5: {
-				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY  + ConfigHandler.tripleCompressedSolarOutput + " " + localize("tooltip.EMT.euPerTick") + " " + localize("tooltip.EMT.raining"));
+				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY + ConfigHandler.tripleCompressedSolarOutput + " " + localize("tooltip.EMT.euPerTick") + " " + localize("tooltip.EMT.raining"));
 				break;
 			}
 			case 6: {
-				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY  + ConfigHandler.compressedSolarOutput + " " + localize("tooltip.EMT.euPerTick") + " " + localize("tooltip.EMT.night"));
+				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY + ConfigHandler.compressedSolarOutput + " " + localize("tooltip.EMT.euPerTick") + " " + localize("tooltip.EMT.night"));
 				break;
 			}
 			case 7: {
-				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY  + ConfigHandler.doubleCompressedSolarOutput + " " + localize("tooltip.EMT.euPerTick") + " " + localize("tooltip.EMT.night"));
+				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY + ConfigHandler.doubleCompressedSolarOutput + " " + localize("tooltip.EMT.euPerTick") + " " + localize("tooltip.EMT.night"));
 				break;
 			}
 			case 8: {
-				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY  + ConfigHandler.tripleCompressedSolarOutput + " " + localize("tooltip.EMT.euPerTick") + " " + localize("tooltip.EMT.night"));
+				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY + ConfigHandler.tripleCompressedSolarOutput + " " + localize("tooltip.EMT.euPerTick") + " " + localize("tooltip.EMT.night"));
 				break;
 			}
 			case 9: {
 				list.add(TextHelper.BRIGHT_BLUE + localize("tooltip.EMT.normalConditions") + ": " + TextHelper.LIGHT_GRAY + ConfigHandler.compressedSolarOutput + " " + localize("tooltip.EMT.euPerTick"));
-				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY  + localize("tooltip.EMT.output.triple"));
+				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY + localize("tooltip.EMT.output.triple"));
 				break;
 			}
 			case 10: {
-				list.add(TextHelper.BRIGHT_BLUE + localize("tooltip.EMT.normalConditions") + ": " + TextHelper.LIGHT_GRAY  + ConfigHandler.doubleCompressedSolarOutput + " " + localize("tooltip.EMT.euPerTick"));
-				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY  + localize("tooltip.EMT.output.triple"));
+				list.add(TextHelper.BRIGHT_BLUE + localize("tooltip.EMT.normalConditions") + ": " + TextHelper.LIGHT_GRAY + ConfigHandler.doubleCompressedSolarOutput + " " + localize("tooltip.EMT.euPerTick"));
+				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY + localize("tooltip.EMT.output.triple"));
 				break;
 			}
 
 			case 11: {
 				list.add(TextHelper.BRIGHT_BLUE + localize("tooltip.EMT.normalConditions") + ": " + TextHelper.LIGHT_GRAY + ConfigHandler.tripleCompressedSolarOutput + " " + localize("tooltip.EMT.euPerTick"));
-				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY  + localize("tooltip.EMT.output.triple"));
+				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY + localize("tooltip.EMT.output.triple"));
 				break;
 			}
 			case 12: {
 				list.add(TextHelper.BRIGHT_BLUE + localize("tooltip.EMT.normalConditions") + ": " + TextHelper.LIGHT_GRAY + ConfigHandler.compressedSolarOutput + " " + localize("tooltip.EMT.euPerTick"));
-				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY  + localize("tooltip.EMT.output.double") + " " + localize("tooltip.EMT.output.double.nether"));
+				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY + localize("tooltip.EMT.output.double") + " " + localize("tooltip.EMT.output.double.nether"));
 				break;
 			}
 			case 13: {
 				list.add(TextHelper.BRIGHT_BLUE + localize("tooltip.EMT.normalConditions") + ": " + TextHelper.LIGHT_GRAY + ConfigHandler.doubleCompressedSolarOutput + " " + localize("tooltip.EMT.euPerTick"));
-				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY  + localize("tooltip.EMT.output.double") + " " + localize("tooltip.EMT.output.double.nether"));
+				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY + localize("tooltip.EMT.output.double") + " " + localize("tooltip.EMT.output.double.nether"));
 				break;
 			}
 			case 14: {
 				list.add(TextHelper.BRIGHT_BLUE + localize("tooltip.EMT.normalConditions") + ": " + TextHelper.LIGHT_GRAY + ConfigHandler.tripleCompressedSolarOutput + " " + localize("tooltip.EMT.euPerTick"));
-				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY  + localize("tooltip.EMT.output.double") + " " + localize("tooltip.EMT.output.double.lava"));
-				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY  + localize("tooltip.EMT.output.double") + " " +localize("tooltip.EMT.output.double.nether"));
+				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY + localize("tooltip.EMT.output.double") + " " + localize("tooltip.EMT.output.double.lava"));
+				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY + localize("tooltip.EMT.output.double") + " " + localize("tooltip.EMT.output.double.nether"));
 				break;
 			}
 			case 15: {
 				list.add(TextHelper.BRIGHT_BLUE + localize("tooltip.EMT.normalConditions") + ": " + TextHelper.LIGHT_GRAY + ConfigHandler.compressedSolarOutput + " " + localize("tooltip.EMT.euPerTick"));
-				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY  + localize("tooltip.EMT.output.double.half") + " " + localize("tooltip.EMT.output.double.half.height"));
+				list.add(TextHelper.BRIGHT_GREEN + localize("tooltip.EMT.specialEffect") + ": " + TextHelper.LIGHT_GRAY + localize("tooltip.EMT.output.double.half") + " " + localize("tooltip.EMT.output.double.half.height"));
 				break;
 			}
 			default: {
