@@ -88,7 +88,6 @@ public class ItemDiamondChainsaw extends ItemAxe implements IElectricItem {
 		return false;
 	}
 
-	@SuppressWarnings({"rawtypes", "unchecked"})
 	@SideOnly(Side.CLIENT)
 	public void getSubItems(Item item, CreativeTabs par2CreativeTabs, List itemList) {
 		ItemStack itemStack = new ItemStack(this, 1);

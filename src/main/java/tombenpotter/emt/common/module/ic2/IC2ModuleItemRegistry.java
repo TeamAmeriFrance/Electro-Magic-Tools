@@ -23,6 +23,8 @@ import tombenpotter.emt.common.module.base.items.*;
 import tombenpotter.emt.common.module.base.items.foci.ItemChristmasFocus;
 import tombenpotter.emt.common.module.base.items.foci.ItemExplosionFocus;
 import tombenpotter.emt.common.module.base.items.foci.ItemShieldFocus;
+import tombenpotter.emt.common.module.base.tools.ItemTaintedThorHammer;
+import tombenpotter.emt.common.module.base.tools.ItemThorHammer;
 import tombenpotter.emt.common.module.ic2.items.ItemElectricScribingTools;
 import tombenpotter.emt.common.module.ic2.items.armor.boots.ItemElectricBootsTraveller;
 import tombenpotter.emt.common.module.ic2.items.armor.boots.ItemNanoBootsTraveller;

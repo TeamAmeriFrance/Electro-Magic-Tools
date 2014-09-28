@@ -19,17 +19,28 @@ import tombenpotter.emt.common.module.ic2.IC2ModuleItemRegistry;
 
 public class CreativeTabEMT extends CreativeTabs {
 
-	public CreativeTabEMT(String tabLabel) {
-		super(tabLabel);
-	}
+    public CreativeTabEMT(String tabLabel) {
+        super(tabLabel);
+    }
 
-	@Override
-	public ItemStack getIconItemStack() {
-		return new ItemStack(IC2ModuleItemRegistry.thorHammer);
-	}
+    @Override
+    public ItemStack getIconItemStack() {
+        return new ItemStack(IC2ModuleItemRegistry.thorHammer);
+    }
 
-	@Override
-	public Item getTabIconItem() {
-		return new Item();
-	}
+    @Override
+    public Item getTabIconItem() {
+        return new Item();
+    }
+
+    @Override
+    public boolean hasSearchBar() {
+        return true;
+    }
+
+    @Override
+    public int getSearchbarWidth()
+    {
+        return 63;
+    }
 }
