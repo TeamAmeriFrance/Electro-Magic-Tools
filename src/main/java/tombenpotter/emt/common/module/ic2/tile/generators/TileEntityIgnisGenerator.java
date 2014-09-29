@@ -17,8 +17,8 @@ import tombenpotter.emt.common.util.EssentiasOutputs;
 
 public class TileEntityIgnisGenerator extends TileEntityBaseGenerator {
 
-	public TileEntityIgnisGenerator() {
-		aspect = Aspect.FIRE;
+    public TileEntityIgnisGenerator() {
+        aspect = Aspect.FIRE;
         EssentiasOutputs.outputs.get(aspect.getTag());
-	}
+    }
 }

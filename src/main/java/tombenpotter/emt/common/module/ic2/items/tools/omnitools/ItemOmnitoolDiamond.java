@@ -28,48 +28,48 @@ import tombenpotter.emt.common.util.ConfigHandler;
 
 public class ItemOmnitoolDiamond extends ItemOmnitoolIron {
 
-	public ItemOmnitoolDiamond() {
-		super();
-		this.efficiencyOnProperMaterial = 16F;
-		this.setCreativeTab(ElectroMagicTools.tabEMT);
-		this.setMaxStackSize(1);
-		if (ConfigHandler.toolsInBore == false) {
-			this.setMaxDamage(27);
-		} else {
-			this.setMaxDamage(350);
-		}
-		maxCharge = 70000;
-		hitCost = 250;
-	}
+    public ItemOmnitoolDiamond() {
+        super();
+        this.efficiencyOnProperMaterial = 16F;
+        this.setCreativeTab(ElectroMagicTools.tabEMT);
+        this.setMaxStackSize(1);
+        if (ConfigHandler.toolsInBore == false) {
+            this.setMaxDamage(27);
+        } else {
+            this.setMaxDamage(350);
+        }
+        maxCharge = 70000;
+        hitCost = 250;
+    }
 
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void registerIcons(IIconRegister iconRegister) {
-		this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":diamondomnitool");
-	}
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerIcons(IIconRegister iconRegister) {
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":diamondomnitool");
+    }
 
-	@Override
-	public boolean onBlockDestroyed(ItemStack stack, World world, Block block, int par4, int par5, int par6, EntityLivingBase entityLiving) {
-		if (ConfigHandler.toolsInBore == false) {
-			cost = 200;
-		} else {
-			cost = 1;
-		}
-		ElectricItem.manager.use(stack, cost, entityLiving);
-		return true;
-	}
+    @Override
+    public boolean onBlockDestroyed(ItemStack stack, World world, Block block, int par4, int par5, int par6, EntityLivingBase entityLiving) {
+        if (ConfigHandler.toolsInBore == false) {
+            cost = 200;
+        } else {
+            cost = 1;
+        }
+        ElectricItem.manager.use(stack, cost, entityLiving);
+        return true;
+    }
 
-	@Override
-	public boolean hitEntity(ItemStack itemstack, EntityLivingBase entityliving, EntityLivingBase attacker) {
-		if (ElectricItem.manager.use(itemstack, hitCost, attacker)) {
-			entityliving.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), 10F);
-		}
-		return false;
-	}
+    @Override
+    public boolean hitEntity(ItemStack itemstack, EntityLivingBase entityliving, EntityLivingBase attacker) {
+        if (ElectricItem.manager.use(itemstack, hitCost, attacker)) {
+            entityliving.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), 10F);
+        }
+        return false;
+    }
 
-	/* IC2 API METHODS */
-	@Override
-	public double getTransferLimit(ItemStack itemStack) {
-		return 400;
-	}
+    /* IC2 API METHODS */
+    @Override
+    public double getTransferLimit(ItemStack itemStack) {
+        return 400;
+    }
 }

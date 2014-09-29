@@ -40,67 +40,65 @@ import static tombenpotter.emt.common.util.TextHelper.localize;
 public class ElectroMagicTools {
 
 
-	@SidedProxy(clientSide = ModInformation.clientProxy, serverSide = ModInformation.commonProxy)
-	public static CommonProxy proxy;
+    @SidedProxy(clientSide = ModInformation.clientProxy, serverSide = ModInformation.commonProxy)
+    public static CommonProxy proxy;
 
-	public static CreativeTabs tabEMT = new CreativeTabEMT(ModInformation.modid + ".creativeTab");
-	public static Logger logger = LogManager.getLogger(ModInformation.name);
+    public static CreativeTabs tabEMT = new CreativeTabEMT(ModInformation.modid + ".creativeTab");
+    public static Logger logger = LogManager.getLogger(ModInformation.name);
 
-	@Instance(ModInformation.modid)
-	public static ElectroMagicTools instance;
+    @Instance(ModInformation.modid)
+    public static ElectroMagicTools instance;
 
-	@EventHandler
-	public void preInit(FMLPreInitializationEvent event) {
-		ElectroMagicTools.logger.info(localize("console.EMT.preInit.begin"));
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent event) {
+        ElectroMagicTools.logger.info(localize("console.EMT.preInit.begin"));
 
-		ElectroMagicTools.logger.info(localize("console.EMT.preInit.configRead"));
-		ConfigHandler.init(event.getSuggestedConfigurationFile());
+        ElectroMagicTools.logger.info(localize("console.EMT.preInit.configRead"));
+        ConfigHandler.init(event.getSuggestedConfigurationFile());
+        FMLCommonHandler.instance().bus().register(new EventHandlerEMT());
+        RegistryHandler.registerIc2Registrys();
+        RegistryHandler.registerVanillaRegistrys();
+        EssentiasOutputs.addPrimalOutputs();
+        EssentiasOutputs.addOutputs();
 
-		FMLCommonHandler.instance().bus().register(new EventHandlerEMT());
-		RegistryHandler.registerIc2Registrys();
+        ElectroMagicTools.logger.info(localize("console.EMT.preInit.end"));
+    }
 
-		EssentiasOutputs.addPrimalOutputs();
-		EssentiasOutputs.addOutputs();
+    @EventHandler
+    public void load(FMLInitializationEvent event) {
+        ElectroMagicTools.logger.info(localize("console.EMT.init.begin"));
 
-		ElectroMagicTools.logger.info(localize("console.EMT.preInit.end"));
-	}
+        ElectroMagicTools.logger.info(localize("console.EMT.init.loadProxies"));
+        proxy.load();
+        ElectroMagicTools.logger.info(localize("console.EMT.init.mobDrops"));
+        MinecraftForge.EVENT_BUS.register(new EntityEventHandler());
+        ElectroMagicTools.logger.info(localize("console.EMT.init.loot"));
+        DungeonChestGenerator.generateLoot();
+        ElectroMagicTools.logger.info(localize("console.EMT.init.recipes"));
+        EMTInitRecipes.add();
+        ElectroMagicTools.logger.info(localize("console.EMT.init.entities"));
+        EMTEntityRegistry.registerEMTEntities();
+        ElectroMagicTools.logger.info(localize("console.EMT.init.guiHandler"));
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, proxy);
 
-	@EventHandler
-	public void load(FMLInitializationEvent event) {
-		ElectroMagicTools.logger.info(localize("console.EMT.init.begin"));
+        ElectroMagicTools.logger.info(localize("console.EMT.init.end"));
+    }
 
-		ElectroMagicTools.logger.info(localize("console.EMT.init.loadProxies"));
-		proxy.load();
-		ElectroMagicTools.logger.info(localize("console.EMT.init.mobDrops"));
-		MinecraftForge.EVENT_BUS.register(new EntityEventHandler());
-		ElectroMagicTools.logger.info(localize("console.EMT.init.loot"));
-		DungeonChestGenerator.generateLoot();
-		ElectroMagicTools.logger.info(localize("console.EMT.init.recipes"));
-		EMTInitRecipes.add();
-		ElectroMagicTools.logger.info(localize("console.EMT.init.entities"));
-		EMTEntityRegistry.registerEMTEntities();
-		ElectroMagicTools.logger.info(localize("console.EMT.init.guiHandler"));
-		NetworkRegistry.INSTANCE.registerGuiHandler(this, proxy);
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
+        ElectroMagicTools.logger.info(localize("console.EMT.postInit.begin"));
 
-		ElectroMagicTools.logger.info(localize("console.EMT.init.end"));
-	}
+        ElectroMagicTools.logger.info(localize("console.EMT.postInit.recipes"));
+        EMTPostInitRecipes.add();
+        ElectroMagicTools.logger.info(localize("console.EMT.postInit.uumatter"));
+        UuMInfusionRecipes.add();
+        RegistryHandler.registerIc2PostRegistrys();
 
-	@EventHandler
-	public void postInit(FMLPostInitializationEvent event) {
-		ElectroMagicTools.logger.info(localize("console.EMT.postInit.begin"));
+        ElectroMagicTools.logger.info(localize("console.EMT.postInit.end"));
+    }
 
-		ElectroMagicTools.logger.info(localize("console.EMT.postInit.recipes"));
-		EMTPostInitRecipes.add();
-		ElectroMagicTools.logger.info(localize("console.EMT.postInit.uumatter"));
-		UuMInfusionRecipes.add();
-
-		RegistryHandler.registerIc2PostRegistrys();
-
-		ElectroMagicTools.logger.info(localize("console.EMT.postInit.end"));
-	}
-
-	@EventHandler
-	public void onFMLServerStart(FMLServerStartingEvent event) {
-		event.registerServerCommand(new CommandOutputs());
-	}
+    @EventHandler
+    public void onFMLServerStart(FMLServerStartingEvent event) {
+        event.registerServerCommand(new CommandOutputs());
+    }
 }

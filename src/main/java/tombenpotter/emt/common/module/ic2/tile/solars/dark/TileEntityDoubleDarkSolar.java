@@ -19,12 +19,12 @@ import tombenpotter.emt.common.util.ConfigHandler;
 
 public class TileEntityDoubleDarkSolar extends TileEntityDarkSolar {
 
-	public TileEntityDoubleDarkSolar() {
-		output = ConfigHandler.doubleCompressedSolarOutput;
-	}
+    public TileEntityDoubleDarkSolar() {
+        output = ConfigHandler.doubleCompressedSolarOutput;
+    }
 
-	@Override
-	public ItemStack getWrenchDrop(EntityPlayer entityPlayer) {
-		return new ItemStack(IC2ModuleBlockRegistry.emtSolars, 1, 7);
-	}
+    @Override
+    public ItemStack getWrenchDrop(EntityPlayer entityPlayer) {
+        return new ItemStack(IC2ModuleBlockRegistry.emtSolars, 1, 7);
+    }
 }

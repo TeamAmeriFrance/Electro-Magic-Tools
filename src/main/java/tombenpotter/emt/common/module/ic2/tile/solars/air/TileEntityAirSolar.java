@@ -20,21 +20,21 @@ import tombenpotter.emt.common.util.ConfigHandler;
 
 public class TileEntityAirSolar extends TileEntitySolarBase {
 
-	public TileEntityAirSolar() {
-		output = ConfigHandler.compressedSolarOutput;
-	}
+    public TileEntityAirSolar() {
+        output = ConfigHandler.compressedSolarOutput;
+    }
 
-	@Override
-	public void createEnergy() {
-		if (theSunIsVisible && this.yCoord >= 160) {
-			energySource.addEnergy(output * 2.5);
-		} else if (theSunIsVisible) {
-			energySource.addEnergy(output);
-		}
-	}
+    @Override
+    public void createEnergy() {
+        if (theSunIsVisible && this.yCoord >= 160) {
+            energySource.addEnergy(output * 2.5);
+        } else if (theSunIsVisible) {
+            energySource.addEnergy(output);
+        }
+    }
 
-	@Override
-	public ItemStack getWrenchDrop(EntityPlayer entityPlayer) {
-		return new ItemStack(IC2ModuleBlockRegistry.emtSolars, 1, 15);
-	}
+    @Override
+    public ItemStack getWrenchDrop(EntityPlayer entityPlayer) {
+        return new ItemStack(IC2ModuleBlockRegistry.emtSolars, 1, 15);
+    }
 }

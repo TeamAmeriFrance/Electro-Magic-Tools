@@ -27,43 +27,43 @@ import tombenpotter.emt.common.module.base.entities.EntityLaser;
 
 public class ItemExplosionFocus extends ItemBaseFocus {
 
-	private static final AspectList visCost = new AspectList().add(Aspect.FIRE, 200).add(Aspect.ENTROPY, 200);
+    private static final AspectList visCost = new AspectList().add(Aspect.FIRE, 200).add(Aspect.ENTROPY, 200);
 
-	public ItemExplosionFocus() {
-		super();
-	}
+    public ItemExplosionFocus() {
+        super();
+    }
 
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void registerIcons(IIconRegister iconRegister) {
-		this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":explosionfocus");
-	}
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerIcons(IIconRegister iconRegister) {
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":explosionfocus");
+    }
 
-	@Override
-	public int getFocusColor() {
-		return 9990;
-	}
+    @Override
+    public int getFocusColor() {
+        return 9990;
+    }
 
-	@Override
-	public AspectList getVisCost() {
-		return visCost;
-	}
+    @Override
+    public AspectList getVisCost() {
+        return visCost;
+    }
 
-	@Override
-	public String getSortingHelper(ItemStack itemstack) {
-		return "EXPLOSION";
-	}
+    @Override
+    public String getSortingHelper(ItemStack itemstack) {
+        return "EXPLOSION";
+    }
 
-	@Override
-	public ItemStack onFocusRightClick(ItemStack itemstack, World world, EntityPlayer player, MovingObjectPosition movingobjectposition) {
-		ItemWandCasting wand = (ItemWandCasting) itemstack.getItem();
-		if (wand.consumeAllVis(itemstack, player, getVisCost(), true, true)) {
-			if (!world.isRemote) {
-				EntityLaser laser;
-				laser = new EntityLaser(world, player, 2);
-				world.spawnEntityInWorld(laser);
-			}
-		}
-		return itemstack;
-	}
+    @Override
+    public ItemStack onFocusRightClick(ItemStack itemstack, World world, EntityPlayer player, MovingObjectPosition movingobjectposition) {
+        ItemWandCasting wand = (ItemWandCasting) itemstack.getItem();
+        if (wand.consumeAllVis(itemstack, player, getVisCost(), true, true)) {
+            if (!world.isRemote) {
+                EntityLaser laser;
+                laser = new EntityLaser(world, player, 2);
+                world.spawnEntityInWorld(laser);
+            }
+        }
+        return itemstack;
+    }
 }

@@ -20,19 +20,19 @@ import tombenpotter.emt.common.util.ConfigHandler;
 
 public class TileEntityDarkSolar extends TileEntitySolarBase {
 
-	public TileEntityDarkSolar() {
-		output = ConfigHandler.compressedSolarOutput;
-	}
+    public TileEntityDarkSolar() {
+        output = ConfigHandler.compressedSolarOutput;
+    }
 
-	@Override
-	public void createEnergy() {
-		if (worldObj.canBlockSeeTheSky(xCoord, yCoord + 1, zCoord) && !worldObj.isDaytime() && !worldObj.isRaining() && !worldObj.isThundering()) {
-			energySource.addEnergy(output);
-		}
-	}
+    @Override
+    public void createEnergy() {
+        if (worldObj.canBlockSeeTheSky(xCoord, yCoord + 1, zCoord) && !worldObj.isDaytime() && !worldObj.isRaining() && !worldObj.isThundering()) {
+            energySource.addEnergy(output);
+        }
+    }
 
-	@Override
-	public ItemStack getWrenchDrop(EntityPlayer entityPlayer) {
-		return new ItemStack(IC2ModuleBlockRegistry.emtSolars, 1, 6);
-	}
+    @Override
+    public ItemStack getWrenchDrop(EntityPlayer entityPlayer) {
+        return new ItemStack(IC2ModuleBlockRegistry.emtSolars, 1, 6);
+    }
 }

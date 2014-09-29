@@ -15,18 +15,19 @@ import static tombenpotter.emt.common.util.ConfigHandler.*;
 
 public class EMTGuiConfig extends GuiConfig {
 
-	public EMTGuiConfig(GuiScreen parentScreen) {
-		super(parentScreen, getConfigElements(parentScreen), ModInformation.modid, false, false, StatCollector.translateToLocal("gui." + ModInformation.modid + ".config.title"));
-	}
+    public EMTGuiConfig(GuiScreen parentScreen) {
+        super(parentScreen, getConfigElements(parentScreen), ModInformation.modid, false, false, StatCollector.translateToLocal("gui." + ModInformation.modid + ".config.title"));
+    }
 
-	@SuppressWarnings("rawtypes")
-	private static List<IConfigElement> getConfigElements(GuiScreen parent) {
-		List<IConfigElement> list = new ArrayList<IConfigElement>();
+    @SuppressWarnings("rawtypes")
+    private static List<IConfigElement> getConfigElements(GuiScreen parent) {
+        List<IConfigElement> list = new ArrayList<IConfigElement>();
 
-		list.add(new ConfigElement<ConfigCategory>(config.getCategory(CATEGORY_VALUES.toLowerCase())));
-		list.add(new ConfigElement<ConfigCategory>(config.getCategory(CATEGORY_RESEARCH.toLowerCase())));
-		list.add(new ConfigElement<ConfigCategory>(config.getCategory(CATEGORY_OUTPUTS.toLowerCase())));
+        list.add(new ConfigElement<ConfigCategory>(config.getCategory(CATEGORY_RANDOM.toLowerCase())));
+        list.add(new ConfigElement<ConfigCategory>(config.getCategory(CATEGORY_VALUES.toLowerCase())));
+        list.add(new ConfigElement<ConfigCategory>(config.getCategory(CATEGORY_RESEARCH.toLowerCase())));
+        list.add(new ConfigElement<ConfigCategory>(config.getCategory(CATEGORY_OUTPUTS.toLowerCase())));
 
-		return list;
-	}
+        return list;
+    }
 }

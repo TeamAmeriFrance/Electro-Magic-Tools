@@ -10,24 +10,24 @@ import tombenpotter.emt.common.module.vanilla.VanillaRecipesRegistry;
 
 public class RegistryHandler {
 
-	public static void registerVanillaRegistrys() {
-		VanillaBlocksRegistry.registerBlocks();
-		VanillaItemsRegistry.registerItems();
-		VanillaRecipesRegistry.registerRecipes();
-	}
+    public static void registerVanillaRegistrys() {
+        VanillaBlocksRegistry.registerBlocks();
+        VanillaItemsRegistry.registerItems();
+        VanillaRecipesRegistry.registerRecipes();
+    }
 
-	public static void registerIc2Registrys() {
-		IC2ModuleItemRegistry.registerItems();
-		IC2ModuleBlockRegistry.registerBlocks();
-		IC2ModuleTERegistry.registerTEs();
-	}
+    public static void registerIc2Registrys() {
+        IC2ModuleItemRegistry.registerItems();
+        IC2ModuleBlockRegistry.registerBlocks();
+        IC2ModuleTERegistry.registerTEs();
+    }
 
-	public static void registerIc2PostRegistrys() {
-		IC2ModuleResearch.addResearchTab();
-		IC2ModuleResearch.addResearch();
-	}
+    public static void registerIc2PostRegistrys() {
+        IC2ModuleResearch.addResearchTab();
+        IC2ModuleResearch.addResearch();
+    }
 
-	public static void registerTeRegistrys() {
+    public static void registerTeRegistrys() {
 
-	}
+    }
 }

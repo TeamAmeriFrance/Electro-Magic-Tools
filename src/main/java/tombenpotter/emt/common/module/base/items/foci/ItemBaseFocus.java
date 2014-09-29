@@ -29,114 +29,114 @@ import java.util.List;
 
 public abstract class ItemBaseFocus extends Item implements IWandFocus {
 
-	private IIcon ornament, depth;
+    private IIcon ornament, depth;
 
-	public ItemBaseFocus() {
-		super();
-		this.setMaxDamage(1);
-		this.setNoRepair();
-		this.setMaxStackSize(1);
-		this.setCreativeTab(ElectroMagicTools.tabEMT);
-	}
+    public ItemBaseFocus() {
+        super();
+        this.setMaxDamage(1);
+        this.setNoRepair();
+        this.setMaxStackSize(1);
+        this.setCreativeTab(ElectroMagicTools.tabEMT);
+    }
 
-	boolean hasOrnament() {
-		return false;
-	}
+    boolean hasOrnament() {
+        return false;
+    }
 
-	boolean hasDepth() {
-		return false;
-	}
+    boolean hasDepth() {
+        return false;
+    }
 
-	@Override
-	public int getFocusColor() {
-		return 0;
-	}
+    @Override
+    public int getFocusColor() {
+        return 0;
+    }
 
-	@Override
-	public boolean isItemTool(ItemStack par1ItemStack) {
-		return true;
-	}
+    @Override
+    public boolean isItemTool(ItemStack par1ItemStack) {
+        return true;
+    }
 
-	@Override
-	public EnumRarity getRarity(ItemStack itemstack) {
-		return EnumRarity.rare;
-	}
+    @Override
+    public EnumRarity getRarity(ItemStack itemstack) {
+        return EnumRarity.rare;
+    }
 
-	@Override
-	public IIcon getFocusDepthLayerIcon() {
-		return depth;
-	}
+    @Override
+    public IIcon getFocusDepthLayerIcon() {
+        return depth;
+    }
 
-	@Override
-	public IIcon getOrnament() {
-		return ornament;
-	}
+    @Override
+    public IIcon getOrnament() {
+        return ornament;
+    }
 
-	@Override
-	public WandFocusAnimation getAnimation() {
-		return WandFocusAnimation.WAVE;
-	}
+    @Override
+    public WandFocusAnimation getAnimation() {
+        return WandFocusAnimation.WAVE;
+    }
 
-	@Override
-	public AspectList getVisCost() {
-		return null;
-	}
+    @Override
+    public AspectList getVisCost() {
+        return null;
+    }
 
-	public boolean isUseItem() {
-		return isVisCostPerTick();
-	}
+    public boolean isUseItem() {
+        return isVisCostPerTick();
+    }
 
-	@Override
-	public boolean isVisCostPerTick() {
-		return false;
-	}
+    @Override
+    public boolean isVisCostPerTick() {
+        return false;
+    }
 
-	@Override
-	public ItemStack onFocusRightClick(ItemStack paramItemStack, World paramWorld, EntityPlayer paramEntityPlayer, MovingObjectPosition paramMovingObjectPosition) {
-		if (isUseItem())
-			paramEntityPlayer.setItemInUse(paramItemStack, Integer.MAX_VALUE);
-		return paramItemStack;
-	}
+    @Override
+    public ItemStack onFocusRightClick(ItemStack paramItemStack, World paramWorld, EntityPlayer paramEntityPlayer, MovingObjectPosition paramMovingObjectPosition) {
+        if (isUseItem())
+            paramEntityPlayer.setItemInUse(paramItemStack, Integer.MAX_VALUE);
+        return paramItemStack;
+    }
 
-	@Override
-	public void onUsingFocusTick(ItemStack itemstack, EntityPlayer player, int count) {
+    @Override
+    public void onUsingFocusTick(ItemStack itemstack, EntityPlayer player, int count) {
 
-	}
+    }
 
-	@Override
-	public void onPlayerStoppedUsingFocus(ItemStack itemstack, World world, EntityPlayer player, int count) {
-	}
+    @Override
+    public void onPlayerStoppedUsingFocus(ItemStack itemstack, World world, EntityPlayer player, int count) {
+    }
 
-	@Override
-	public String getSortingHelper(ItemStack itemstack) {
-		return "00";
-	}
+    @Override
+    public String getSortingHelper(ItemStack itemstack) {
+        return "00";
+    }
 
-	@Override
-	public boolean onFocusBlockStartBreak(ItemStack itemstack, int x, int y, int z, EntityPlayer player) {
-		return false;
-	}
+    @Override
+    public boolean onFocusBlockStartBreak(ItemStack itemstack, int x, int y, int z, EntityPlayer player) {
+        return false;
+    }
 
-	@Override
-	public boolean acceptsEnchant(int id) {
-		return false;
-	}
+    @Override
+    public boolean acceptsEnchant(int id) {
+        return false;
+    }
 
-	@Override
-	public int getItemEnchantability() {
-		return 5;
-	}
+    @Override
+    public int getItemEnchantability() {
+        return 5;
+    }
 
-	@SuppressWarnings({"rawtypes", "unchecked"})
-	@Override
-	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
-		AspectList cost = getVisCost();
-		if (cost != null && cost.size() > 0) {
-			list.add(StatCollector.translateToLocal(isVisCostPerTick() ? "item.Focus.cost2" : "item.Focus.cost1"));
-			for (Aspect aspect : cost.getAspectsSorted()) {
-				float amount = cost.getAmount(aspect) / 100.0F;
-				list.add(" " + '\u00a7' + aspect.getChatcolor() + aspect.getName() + '\u00a7' + "r x " + amount);
-			}
-		}
-	}
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    @Override
+    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
+        AspectList cost = getVisCost();
+        if (cost != null && cost.size() > 0) {
+            list.add(StatCollector.translateToLocal(isVisCostPerTick() ? "item.Focus.cost2" : "item.Focus.cost1"));
+            for (Aspect aspect : cost.getAspectsSorted()) {
+                float amount = cost.getAmount(aspect) / 100.0F;
+                list.add(" " + '\u00a7' + aspect.getChatcolor() + aspect.getName() + '\u00a7' + "r x " + amount);
+            }
+        }
+    }
 }

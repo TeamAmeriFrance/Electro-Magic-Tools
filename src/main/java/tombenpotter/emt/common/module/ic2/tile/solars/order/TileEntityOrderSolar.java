@@ -20,19 +20,19 @@ import tombenpotter.emt.common.util.ConfigHandler;
 
 public class TileEntityOrderSolar extends TileEntitySolarBase {
 
-	public TileEntityOrderSolar() {
-		output = ConfigHandler.compressedSolarOutput;
-	}
+    public TileEntityOrderSolar() {
+        output = ConfigHandler.compressedSolarOutput;
+    }
 
-	@Override
-	public void createEnergy() {
-		if (theSunIsVisible) {
-			energySource.addEnergy(output * 3);
-		}
-	}
+    @Override
+    public void createEnergy() {
+        if (theSunIsVisible) {
+            energySource.addEnergy(output * 3);
+        }
+    }
 
-	@Override
-	public ItemStack getWrenchDrop(EntityPlayer entityPlayer) {
-		return new ItemStack(IC2ModuleBlockRegistry.emtSolars, 1, 9);
-	}
+    @Override
+    public ItemStack getWrenchDrop(EntityPlayer entityPlayer) {
+        return new ItemStack(IC2ModuleBlockRegistry.emtSolars, 1, 9);
+    }
 }

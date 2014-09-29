@@ -20,13 +20,13 @@ import tombenpotter.emt.common.module.base.entities.EntityLaser;
 
 public class ClientProxy extends CommonProxy {
 
-	@Override
-	public void load() {
-		registerRenders();
-	}
+    @Override
+    public void load() {
+        registerRenders();
+    }
 
-	public void registerRenders() {
-		RenderingRegistry.registerEntityRenderingHandler(EntityLaser.class, new RenderLaser());
-		RenderingRegistry.registerEntityRenderingHandler(EntityArcher.class, new RenderArcher());
-	}
+    public void registerRenders() {
+        RenderingRegistry.registerEntityRenderingHandler(EntityLaser.class, new RenderLaser());
+        RenderingRegistry.registerEntityRenderingHandler(EntityArcher.class, new RenderArcher());
+    }
 }

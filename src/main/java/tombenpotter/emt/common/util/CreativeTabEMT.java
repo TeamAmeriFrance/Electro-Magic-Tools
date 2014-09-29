@@ -39,8 +39,7 @@ public class CreativeTabEMT extends CreativeTabs {
     }
 
     @Override
-    public int getSearchbarWidth()
-    {
+    public int getSearchbarWidth() {
         return 63;
     }
 }

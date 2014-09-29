@@ -1,4 +1,4 @@
-package tombenpotter.emt.common.module.base.tools;
+package tombenpotter.emt.common.module.base.items.tools;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -7,7 +7,6 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -15,10 +14,9 @@ import net.minecraft.world.World;
 import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
 import tombenpotter.emt.common.util.ConfigHandler;
-import tombenpotter.emt.common.util.IRefillable;
 import tombenpotter.emt.common.util.RandomHelper;
 
-public class ItemBaseOmnitool extends ItemPickaxe implements IRefillable {
+public class ItemBaseOmnitool extends ItemPickaxe {
 
     public String textureName;
 
@@ -38,7 +36,7 @@ public class ItemBaseOmnitool extends ItemPickaxe implements IRefillable {
     }
 
     @Override
-    public void onUpdate(ItemStack stack, World world, Entity entity, int p_77663_4_, boolean p_77663_5_) {
+    public void onUpdate(ItemStack stack, World world, Entity entity, int slot, boolean currentItem) {
         if (stack.getItemDamage() < 1) stack.setItemDamage(1);
     }
 
@@ -50,15 +48,13 @@ public class ItemBaseOmnitool extends ItemPickaxe implements IRefillable {
 
     @Override
     public boolean canHarvestBlock(Block block, ItemStack stack) {
-        return Items.iron_axe.canHarvestBlock(block, stack) || Items.iron_sword.canHarvestBlock(block, stack) || Items.iron_pickaxe.canHarvestBlock(block, stack) || Items.iron_shovel.canHarvestBlock(block, stack) || Items.shears.canHarvestBlock(block, stack);
+        return false;
     }
 
     @Override
     public float getDigSpeed(ItemStack stack, Block block, int meta) {
         if (stack.getItemDamage() <= 1) return 1.0F;
-        if (Items.wooden_axe.getDigSpeed(stack, block, meta) > 1.0F || Items.wooden_sword.getDigSpeed(stack, block, meta) > 1.0F || Items.wooden_pickaxe.getDigSpeed(stack, block, meta) > 1.0F || Items.wooden_shovel.getDigSpeed(stack, block, meta) > 1.0F || Items.shears.getDigSpeed(stack, block, meta) > 1.0F) {
-            return efficiencyOnProperMaterial;
-        } else return super.getDigSpeed(stack, block, meta);
+        else return super.getDigSpeed(stack, block, meta);
     }
 
     @Override

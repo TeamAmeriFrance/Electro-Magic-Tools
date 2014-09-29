@@ -26,33 +26,33 @@ import tombenpotter.emt.common.module.ic2.IC2ModuleItemRegistry;
 
 public class EventHandlerEMT {
 
-	@SubscribeEvent
-	public void onEntityLivingDrops(LivingDropsEvent event) {
-		if (event.source.getEntity() != null && event.source.getEntity() instanceof EntityPlayer) {
-			if (event.entityLiving instanceof EntityCreeper) {
-				EntityCreeper creeper = (EntityCreeper) event.entityLiving;
-				if (creeper.getPowered()) {
-					event.drops.add(new EntityItem(event.entityLiving.worldObj, event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, new ItemStack(IC2ModuleItemRegistry.itemEMTItems, 1, 6)));
-				}
-			}
-			if (event.entityLiving instanceof EntityTaintChicken) {
-				event.drops.add(new EntityItem(event.entityLiving.worldObj, event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, new ItemStack(IC2ModuleItemRegistry.itemEMTItems, 1, 14)));
-			}
-		}
+    @SubscribeEvent
+    public void onEntityLivingDrops(LivingDropsEvent event) {
+        if (event.source.getEntity() != null && event.source.getEntity() instanceof EntityPlayer) {
+            if (event.entityLiving instanceof EntityCreeper) {
+                EntityCreeper creeper = (EntityCreeper) event.entityLiving;
+                if (creeper.getPowered()) {
+                    event.drops.add(new EntityItem(event.entityLiving.worldObj, event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, new ItemStack(IC2ModuleItemRegistry.itemEMTItems, 1, 6)));
+                }
+            }
+            if (event.entityLiving instanceof EntityTaintChicken) {
+                event.drops.add(new EntityItem(event.entityLiving.worldObj, event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, new ItemStack(IC2ModuleItemRegistry.itemEMTItems, 1, 14)));
+            }
+        }
 
-		if (event.entityLiving instanceof EntityCreeper) {
-			event.entityLiving.entityDropItem(new ItemStack(IC2ModuleItemRegistry.itemEMTItems, 6), 1);
-		}
-		if (event.entityLiving instanceof EntityTaintChicken) {
-			event.entityLiving.entityDropItem(new ItemStack(IC2ModuleItemRegistry.itemEMTItems, 14), 1);
-		}
-	}
+        if (event.entityLiving instanceof EntityCreeper) {
+            event.entityLiving.entityDropItem(new ItemStack(IC2ModuleItemRegistry.itemEMTItems, 6), 1);
+        }
+        if (event.entityLiving instanceof EntityTaintChicken) {
+            event.entityLiving.entityDropItem(new ItemStack(IC2ModuleItemRegistry.itemEMTItems, 14), 1);
+        }
+    }
 
-	@SubscribeEvent
-	public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent eventArgs) {
-		if (eventArgs.modID.equals(ModInformation.modid)) {
-			ConfigHandler.syncConfig();
-			ElectroMagicTools.logger.info(TextHelper.localize("console.EMT.config.refresh"));
-		}
-	}
+    @SubscribeEvent
+    public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent eventArgs) {
+        if (eventArgs.modID.equals(ModInformation.modid)) {
+            ConfigHandler.syncConfig();
+            ElectroMagicTools.logger.info(TextHelper.localize("console.EMT.config.refresh"));
+        }
+    }
 }

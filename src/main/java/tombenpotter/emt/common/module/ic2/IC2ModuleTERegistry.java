@@ -41,37 +41,37 @@ import tombenpotter.emt.common.module.ic2.tile.solars.water.TileEntityWaterSolar
 
 public class IC2ModuleTERegistry {
 
-	public static void registerTEs() {
+    public static void registerTEs() {
 
-		GameRegistry.registerTileEntity(TileEntityPotentiaGenerator.class, "tileentitypotentiagenerator");
-		GameRegistry.registerTileEntity(TileEntityIgnisGenerator.class, "tileentityignisgenerator");
-		GameRegistry.registerTileEntity(TileEntityAuramGenerator.class, "tileentityauramgenerator");
-		GameRegistry.registerTileEntity(TileEntityArborGenerator.class, "tileentityarborgenerator");
-		GameRegistry.registerTileEntity(TileEntityAerGenerator.class, "tileentityaergenerator");
-		GameRegistry.registerTileEntity(TileEntityIndustrialWandRecharge.class, "tileentityindustrialwandrecharge");
-		GameRegistry.registerTileEntity(TileEntityCompressedSolar.class, "tileentitycompressedsolar");
-		GameRegistry.registerTileEntity(TileEntityDoubleCompressedSolar.class, "tileentitydoublecompressedsolar");
-		GameRegistry.registerTileEntity(TileEntityTripleCompressedSolar.class, "tileentitytriplecompressedsolar");
-		GameRegistry.registerTileEntity(TileEntityEtherealMacerator.class, "tileentityetherealmacerator");
-		GameRegistry.registerTileEntity(TileEntityWaterSolar.class, "tileentitywatersolar");
-		GameRegistry.registerTileEntity(TileEntityDoubleWaterSolar.class, "tileentitydoublewatersolar");
-		GameRegistry.registerTileEntity(TileEntityTripleWaterSolar.class, "tileentitytriplewatersolar");
-		GameRegistry.registerTileEntity(TileEntityDarkSolar.class, "tileentitydarksolar");
-		GameRegistry.registerTileEntity(TileEntityDoubleDarkSolar.class, "tileentitydoubledarksolar");
-		GameRegistry.registerTileEntity(TileEntityTripleDarkSolar.class, "tileentitytripledarksolar");
-		GameRegistry.registerTileEntity(TileEntityOrderSolar.class, "tileentityordersolar");
-		GameRegistry.registerTileEntity(TileEntityDoubleOrderSolar.class, "tileentitydoubleordersolar");
-		GameRegistry.registerTileEntity(TileEntityTripleOrderSolar.class, "tileentitytripleordersolar");
-		GameRegistry.registerTileEntity(TileEntityFireSolar.class, "tileentityfiresolar");
-		GameRegistry.registerTileEntity(TileEntityDoubleFireSolar.class, "tileentitydoublefiresolar");
-		GameRegistry.registerTileEntity(TileEntityTripleFireSolar.class, "tileentitytriplefiresolar");
-		GameRegistry.registerTileEntity(TileEntityAirSolar.class, "tileentityairsolar");
-		GameRegistry.registerTileEntity(TileEntityDoubleAirSolar.class, "tileentitydoubleairsolar");
-		GameRegistry.registerTileEntity(TileEntityTripleAirSolar.class, "tileentitytripleairsolar");
-		GameRegistry.registerTileEntity(TileEntityEarthSolar.class, "tileentityearthsolar");
-		GameRegistry.registerTileEntity(TileEntityDoubleEarthSolar.class, "tileentitydoubleearthsolar");
-		GameRegistry.registerTileEntity(TileEntityTripleEarthSolar.class, "tileentitytripleearthsolar");
-		GameRegistry.registerTileEntity(TileEntityPortableNode.class, "tileentityportablenode");
-		GameRegistry.registerTileEntity(TileEntityEssentiaGenerator.class, "tileentityessentiagenerator");
-	}
+        GameRegistry.registerTileEntity(TileEntityPotentiaGenerator.class, "tileentitypotentiagenerator");
+        GameRegistry.registerTileEntity(TileEntityIgnisGenerator.class, "tileentityignisgenerator");
+        GameRegistry.registerTileEntity(TileEntityAuramGenerator.class, "tileentityauramgenerator");
+        GameRegistry.registerTileEntity(TileEntityArborGenerator.class, "tileentityarborgenerator");
+        GameRegistry.registerTileEntity(TileEntityAerGenerator.class, "tileentityaergenerator");
+        GameRegistry.registerTileEntity(TileEntityIndustrialWandRecharge.class, "tileentityindustrialwandrecharge");
+        GameRegistry.registerTileEntity(TileEntityCompressedSolar.class, "tileentitycompressedsolar");
+        GameRegistry.registerTileEntity(TileEntityDoubleCompressedSolar.class, "tileentitydoublecompressedsolar");
+        GameRegistry.registerTileEntity(TileEntityTripleCompressedSolar.class, "tileentitytriplecompressedsolar");
+        GameRegistry.registerTileEntity(TileEntityEtherealMacerator.class, "tileentityetherealmacerator");
+        GameRegistry.registerTileEntity(TileEntityWaterSolar.class, "tileentitywatersolar");
+        GameRegistry.registerTileEntity(TileEntityDoubleWaterSolar.class, "tileentitydoublewatersolar");
+        GameRegistry.registerTileEntity(TileEntityTripleWaterSolar.class, "tileentitytriplewatersolar");
+        GameRegistry.registerTileEntity(TileEntityDarkSolar.class, "tileentitydarksolar");
+        GameRegistry.registerTileEntity(TileEntityDoubleDarkSolar.class, "tileentitydoubledarksolar");
+        GameRegistry.registerTileEntity(TileEntityTripleDarkSolar.class, "tileentitytripledarksolar");
+        GameRegistry.registerTileEntity(TileEntityOrderSolar.class, "tileentityordersolar");
+        GameRegistry.registerTileEntity(TileEntityDoubleOrderSolar.class, "tileentitydoubleordersolar");
+        GameRegistry.registerTileEntity(TileEntityTripleOrderSolar.class, "tileentitytripleordersolar");
+        GameRegistry.registerTileEntity(TileEntityFireSolar.class, "tileentityfiresolar");
+        GameRegistry.registerTileEntity(TileEntityDoubleFireSolar.class, "tileentitydoublefiresolar");
+        GameRegistry.registerTileEntity(TileEntityTripleFireSolar.class, "tileentitytriplefiresolar");
+        GameRegistry.registerTileEntity(TileEntityAirSolar.class, "tileentityairsolar");
+        GameRegistry.registerTileEntity(TileEntityDoubleAirSolar.class, "tileentitydoubleairsolar");
+        GameRegistry.registerTileEntity(TileEntityTripleAirSolar.class, "tileentitytripleairsolar");
+        GameRegistry.registerTileEntity(TileEntityEarthSolar.class, "tileentityearthsolar");
+        GameRegistry.registerTileEntity(TileEntityDoubleEarthSolar.class, "tileentitydoubleearthsolar");
+        GameRegistry.registerTileEntity(TileEntityTripleEarthSolar.class, "tileentitytripleearthsolar");
+        GameRegistry.registerTileEntity(TileEntityPortableNode.class, "tileentityportablenode");
+        GameRegistry.registerTileEntity(TileEntityEssentiaGenerator.class, "tileentityessentiagenerator");
+    }
 }

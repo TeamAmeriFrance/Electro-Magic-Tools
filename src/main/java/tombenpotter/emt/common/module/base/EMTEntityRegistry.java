@@ -23,30 +23,30 @@ import tombenpotter.emt.common.module.base.entities.EntityLaser;
 
 public class EMTEntityRegistry {
 
-	private static int startEID = 300;
-	private static int entityIDs = 0;
-	private static final Class<? extends EntityLiving> ARCHER_CLASS = EntityArcher.class;
+    private static int startEID = 300;
+    private static int entityIDs = 0;
+    private static final Class<? extends EntityLiving> ARCHER_CLASS = EntityArcher.class;
 
-	private static int getUniqueEntityID() {
+    private static int getUniqueEntityID() {
 
-		do {
-			startEID++;
-		} while (EntityList.getStringFromID(startEID) != null);
-		return startEID;
-	}
+        do {
+            startEID++;
+        } while (EntityList.getStringFromID(startEID) != null);
+        return startEID;
+    }
 
-	@SuppressWarnings("unchecked")
-	public static void registerEntityEgg(Class<? extends Entity> entity, int colPrim, int colSec) {
-		int id = getUniqueEntityID();
-		EntityList.IDtoClassMapping.put(id, entity);
-		EntityList.entityEggs.put(id, new EntityEggInfo(id, colPrim, colSec));
-		return;
-	}
+    @SuppressWarnings("unchecked")
+    public static void registerEntityEgg(Class<? extends Entity> entity, int colPrim, int colSec) {
+        int id = getUniqueEntityID();
+        EntityList.IDtoClassMapping.put(id, entity);
+        EntityList.entityEggs.put(id, new EntityEggInfo(id, colPrim, colSec));
+        return;
+    }
 
-	public static void registerEMTEntities() {
+    public static void registerEMTEntities() {
 
-		EntityRegistry.registerModEntity(EntityLaser.class, "entityLaser", entityIDs++, ElectroMagicTools.instance, 80, 3, true);
-		EntityRegistry.registerModEntity(EntityArcher.class, "entityArcher", entityIDs++, ElectroMagicTools.instance, 80, 3, true);
-		registerEntityEgg(ARCHER_CLASS, 0x99111F, 0xE5685);
-	}
+        EntityRegistry.registerModEntity(EntityLaser.class, "entityLaser", entityIDs++, ElectroMagicTools.instance, 80, 3, true);
+        EntityRegistry.registerModEntity(EntityArcher.class, "entityArcher", entityIDs++, ElectroMagicTools.instance, 80, 3, true);
+        registerEntityEgg(ARCHER_CLASS, 0x99111F, 0xE5685);
+    }
 }

@@ -30,62 +30,62 @@ import tombenpotter.emt.common.util.ConfigHandler;
 
 public class ItemChargeFocus extends ItemBaseFocus {
 
-	private static final AspectList visCost = new AspectList().add(Aspect.FIRE, 10).add(Aspect.WATER, 10).add(Aspect.AIR, 10).add(Aspect.EARTH, 10).add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 10);
+    private static final AspectList visCost = new AspectList().add(Aspect.FIRE, 10).add(Aspect.WATER, 10).add(Aspect.AIR, 10).add(Aspect.EARTH, 10).add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 10);
 
-	public ItemChargeFocus() {
-		super();
-	}
+    public ItemChargeFocus() {
+        super();
+    }
 
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void registerIcons(IIconRegister iconRegister) {
-		this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":chargefocus");
-	}
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerIcons(IIconRegister iconRegister) {
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":chargefocus");
+    }
 
-	@Override
-	public int getFocusColor() {
-		return 0xFFFF00;
-	}
+    @Override
+    public int getFocusColor() {
+        return 0xFFFF00;
+    }
 
-	@Override
-	public AspectList getVisCost() {
-		return visCost;
-	}
+    @Override
+    public AspectList getVisCost() {
+        return visCost;
+    }
 
-	@Override
-	public String getSortingHelper(ItemStack itemstack) {
-		return "WANDCHARGING";
-	}
+    @Override
+    public String getSortingHelper(ItemStack itemstack) {
+        return "WANDCHARGING";
+    }
 
-	@Override
-	public ItemStack onFocusRightClick(ItemStack itemstack, World world, EntityPlayer player, MovingObjectPosition movingobjectposition) {
-		ItemWandCasting wand = (ItemWandCasting) itemstack.getItem();
-		if (wand.consumeAllVis(itemstack, player, getVisCost(), true, true)) {
-			if (!world.isRemote) {
+    @Override
+    public ItemStack onFocusRightClick(ItemStack itemstack, World world, EntityPlayer player, MovingObjectPosition movingobjectposition) {
+        ItemWandCasting wand = (ItemWandCasting) itemstack.getItem();
+        if (wand.consumeAllVis(itemstack, player, getVisCost(), true, true)) {
+            if (!world.isRemote) {
 
-				int energyLeft = ConfigHandler.chargeFocusProduction;
-				for (int i = 0; i < player.inventory.armorInventory.length; i++) {
-					if (energyLeft > 0) {
-						if ((player.inventory.armorInventory[i] != null) && (player.inventory.armorInventory[i].getItem() instanceof IElectricItem)) {
-							double sentPacket = ElectricItem.manager.charge(player.inventory.armorInventory[i], energyLeft, 4, false, false);
-							energyLeft -= sentPacket;
-						}
-					} else {
-						return itemstack;
-					}
-				}
-				for (int j = 0; j < player.inventory.mainInventory.length; j++) {
-					if (energyLeft > 0) {
-						if ((player.inventory.mainInventory[j] != null) && (player.inventory.mainInventory[j].getItem() instanceof IElectricItem)) {
-							double sentPacket = ElectricItem.manager.charge(player.inventory.mainInventory[j], energyLeft, 4, false, false);
-							energyLeft -= sentPacket;
-						}
-					} else {
-						return itemstack;
-					}
-				}
-			}
-		}
-		return itemstack;
-	}
+                int energyLeft = ConfigHandler.chargeFocusProduction;
+                for (int i = 0; i < player.inventory.armorInventory.length; i++) {
+                    if (energyLeft > 0) {
+                        if ((player.inventory.armorInventory[i] != null) && (player.inventory.armorInventory[i].getItem() instanceof IElectricItem)) {
+                            double sentPacket = ElectricItem.manager.charge(player.inventory.armorInventory[i], energyLeft, 4, false, false);
+                            energyLeft -= sentPacket;
+                        }
+                    } else {
+                        return itemstack;
+                    }
+                }
+                for (int j = 0; j < player.inventory.mainInventory.length; j++) {
+                    if (energyLeft > 0) {
+                        if ((player.inventory.mainInventory[j] != null) && (player.inventory.mainInventory[j].getItem() instanceof IElectricItem)) {
+                            double sentPacket = ElectricItem.manager.charge(player.inventory.mainInventory[j], energyLeft, 4, false, false);
+                            energyLeft -= sentPacket;
+                        }
+                    } else {
+                        return itemstack;
+                    }
+                }
+            }
+        }
+        return itemstack;
+    }
 }
