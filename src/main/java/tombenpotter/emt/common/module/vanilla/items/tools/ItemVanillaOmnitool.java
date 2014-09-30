@@ -5,37 +5,36 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import tombenpotter.emt.common.module.base.items.tools.ItemBaseChainsaw;
-import tombenpotter.emt.common.util.IRefillable;
+import tombenpotter.emt.common.module.base.items.tools.ItemBaseOmnitool;
 
-public class ItemVanillaChainsaw extends ItemBaseChainsaw implements IRefillable {
+public class ItemVanillaOmnitool extends ItemBaseOmnitool {
 
     public Item repairMaterial;
     public int repairMeta;
     public float damageAdded;
 
-    public ItemVanillaChainsaw(ToolMaterial material, int maxDamage, String textureName, Item repairMaterial) {
+    public ItemVanillaOmnitool(Item.ToolMaterial material, int maxDamage, String textureName, Item repairMaterial) {
         super(material, maxDamage, textureName);
         this.repairMaterial = repairMaterial;
         this.repairMeta = 0;
-        damageAdded = 2;
+        damageAdded = 4;
     }
 
-    public ItemVanillaChainsaw(ToolMaterial material, int maxDamage, String textureName, Item repairMaterial, float damageAdded) {
+    public ItemVanillaOmnitool(Item.ToolMaterial material, int maxDamage, String textureName, Item repairMaterial, float damageAdded) {
         super(material, maxDamage, textureName);
         this.repairMaterial = repairMaterial;
         this.repairMeta = 0;
         this.damageAdded = damageAdded;
     }
 
-    public ItemVanillaChainsaw(ToolMaterial material, int maxDamage, String textureName, Item repairMaterial, int repairMeta) {
+    public ItemVanillaOmnitool(Item.ToolMaterial material, int maxDamage, String textureName, Item repairMaterial, int repairMeta) {
         super(material, maxDamage, textureName);
         this.repairMaterial = repairMaterial;
         this.repairMeta = repairMeta;
-        damageAdded = 2;
+        damageAdded = 4;
     }
 
-    public ItemVanillaChainsaw(ToolMaterial material, int maxDamage, String textureName, Item repairMaterial, int repairMeta, float damageAdded) {
+    public ItemVanillaOmnitool(Item.ToolMaterial material, int maxDamage, String textureName, Item repairMaterial, int repairMeta, float damageAdded) {
         super(material, maxDamage, textureName);
         this.repairMaterial = repairMaterial;
         this.repairMeta = repairMeta;

@@ -1,10 +1,16 @@
 Changelog of the mod : Electric Magic Tools, a Thaumcraft 4/Industrial-Craft 2 addon
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
+Version 2.0.0.Alpha4:
+Added some items to the vanilla module of the mod: Wooden, Stone, Iron, Golden and Diamond Drills.
+Added Wooden, Stone, Iron, Golden and Diamond Chainsaws.
+Added Iron, Golden and Diamond Omnitools.
+Removed stuff from capes, it's not needed anymore.
+
 Version 2.0.0Alpha3:
 Fixed the UU-Matter infusion research page crash. But the recipes aren't viable anymore, I'll get to fixing that ASAP.
 Added a few Base tools, just for later purposes.
-Added a interface for using in said tools, for later purposes too
+Added an interface for using in said tools, for later purposes too
 
 Version 2.0.0Aplha2:
 Fixed the Electric/Nano/Qunatum Boots of the Traveller not preventing fall damage. They now drain energy when doing so.

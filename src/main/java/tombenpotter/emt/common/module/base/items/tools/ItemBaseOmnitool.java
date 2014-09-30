@@ -4,17 +4,24 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.entity.Entity;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
+import net.minecraft.stats.StatList;
 import net.minecraft.world.World;
+import net.minecraftforge.common.IShearable;
 import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
 import tombenpotter.emt.common.util.ConfigHandler;
 import tombenpotter.emt.common.util.RandomHelper;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 public class ItemBaseOmnitool extends ItemPickaxe {
 
@@ -36,13 +43,8 @@ public class ItemBaseOmnitool extends ItemPickaxe {
     }
 
     @Override
-    public void onUpdate(ItemStack stack, World world, Entity entity, int slot, boolean currentItem) {
-        if (stack.getItemDamage() < 1) stack.setItemDamage(1);
-    }
-
-    @Override
-    public boolean onBlockDestroyed(ItemStack stack, World world, Block block, int par4, int par5, int par6, EntityLivingBase entityLiving) {
-        if (stack.getItemDamage() > 1) stack.damageItem(1, entityLiving);
+    public boolean onBlockDestroyed(ItemStack stack, World world, Block block, int x, int y, int z, EntityLivingBase entityLiving) {
+        if ((double) block.getBlockHardness(world, x, y, z) != 0.0D) stack.damageItem(1, entityLiving);
         return true;
     }
 
@@ -53,16 +55,19 @@ public class ItemBaseOmnitool extends ItemPickaxe {
 
     @Override
     public float getDigSpeed(ItemStack stack, Block block, int meta) {
-        if (stack.getItemDamage() <= 1) return 1.0F;
-        else return super.getDigSpeed(stack, block, meta);
+        if (block.getHarvestTool(meta) == null) {
+            return efficiencyOnProperMaterial;
+        } else {
+            if (canHarvestBlock(block, stack) && (block.getHarvestTool(meta).equals("pickaxe") || block.getHarvestTool(meta).equals("shovel")) || block.getHarvestTool(meta).equals("axe") || Items.shears.canHarvestBlock(block, stack)) {
+                return efficiencyOnProperMaterial;
+            }
+        }
+        return super.getDigSpeed(stack, block, meta);
     }
 
     @Override
     public boolean hitEntity(ItemStack stack, EntityLivingBase entityliving, EntityLivingBase attacker) {
-        if (stack.getItemDamage() <= 1) {
-            entityliving.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), 8F);
-            stack.damageItem(1, attacker);
-        }
+        stack.damageItem(1, attacker);
         return true;
     }
 
@@ -85,5 +90,33 @@ public class ItemBaseOmnitool extends ItemPickaxe {
     @Override
     public boolean isBookEnchantable(ItemStack itemstack1, ItemStack itemstack2) {
         return ConfigHandler.enchanting;
+    }
+
+    @Override
+    public boolean onBlockStartBreak(ItemStack stack, int x, int y, int z, EntityPlayer player) {
+        if (player.worldObj.isRemote) {
+            return false;
+        }
+        Block block = player.worldObj.getBlock(x, y, z);
+        if (block instanceof IShearable) {
+            IShearable target = (IShearable) block;
+            if (target.isShearable(stack, player.worldObj, x, y, z)) {
+                ArrayList<ItemStack> drops = target.onSheared(stack, player.worldObj, x, y, z,
+                        EnchantmentHelper.getEnchantmentLevel(Enchantment.fortune.effectId, stack));
+                Random rand = new Random();
+                for (ItemStack drop : drops) {
+                    float f = 0.7F;
+                    double d = (double) (rand.nextFloat() * f) + (double) (1.0F - f) * 0.5D;
+                    double d1 = (double) (rand.nextFloat() * f) + (double) (1.0F - f) * 0.5D;
+                    double d2 = (double) (rand.nextFloat() * f) + (double) (1.0F - f) * 0.5D;
+                    EntityItem entityitem = new EntityItem(player.worldObj, (double) x + d, (double) y + d1, (double) z + d2, drop);
+                    entityitem.delayBeforeCanPickup = 10;
+                    player.worldObj.spawnEntityInWorld(entityitem);
+                }
+                stack.damageItem(1, player);
+                player.addStat(StatList.mineBlockStatArray[Block.getIdFromBlock(block)], 1);
+            }
+        }
+        return false;
     }
 }
