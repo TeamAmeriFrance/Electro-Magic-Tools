@@ -30,19 +30,24 @@ public class IC2ModuleBlockRegistry {
 
     public static void registerBlocks() {
         shield = new BlockShield().setBlockName(ModInformation.modid + ".shield");
-        portableNode = new BlockPortableNode().setBlockName(ModInformation.modid + ".portablenode");
-        emtSolars = new BlockEMTSolars().setBlockName(ModInformation.modid + ".emtsolars");
-        emtSolars2 = new BlockEMTSolars2().setBlockName(ModInformation.modid + ".emtsolars2");
-        emtMachines = new BlockEMTMachines().setBlockName(ModInformation.modid + ".emtmachines");
-        essentiaGens = new BlockEssentiaGenerators().setBlockName(ModInformation.modid + ".essentiaGens");
-        essentiaGenerator = new BlockEssentiaGenerator().setBlockName(ModInformation.modid + ".essentiaGenerator");
+        GameRegistry.registerBlock(shield, "ShieldBlock");
 
-        GameRegistry.registerBlock(shield, "Shield Block");
-        GameRegistry.registerBlock(portableNode, "Portable Node");
-        GameRegistry.registerBlock(emtSolars, ItemBlockEMTSolars.class, "EMT Solar Panels");
-        GameRegistry.registerBlock(emtSolars2, ItemBlockEMTSolars2.class, "EMT Solars 2");
-        GameRegistry.registerBlock(emtMachines, ItemBlockEMTMachines.class, "EMT Machines");
-        GameRegistry.registerBlock(essentiaGens, ItemBlockEssentiaGenerators.class, "Essentia Generators");
+        portableNode = new BlockPortableNode().setBlockName(ModInformation.modid + ".portablenode");
+        GameRegistry.registerBlock(portableNode, "PortableNode");
+
+        emtSolars = new BlockEMTSolars().setBlockName(ModInformation.modid + ".emtsolars");
+        GameRegistry.registerBlock(emtSolars, ItemBlockEMTSolars.class, "EMTSolars");
+
+        emtSolars2 = new BlockEMTSolars2().setBlockName(ModInformation.modid + ".emtsolars2");
+        GameRegistry.registerBlock(emtSolars2, ItemBlockEMTSolars2.class, "EMTSolars2");
+
+        emtMachines = new BlockEMTMachines().setBlockName(ModInformation.modid + ".emtmachines");
+        GameRegistry.registerBlock(emtMachines, ItemBlockEMTMachines.class, "EMTMachines");
+
+        essentiaGens = new BlockEssentiaGenerators().setBlockName(ModInformation.modid + ".essentiaGens");
+        GameRegistry.registerBlock(essentiaGens, ItemBlockEssentiaGenerators.class, "EssentiaGenerators");
+
+        essentiaGenerator = new BlockEssentiaGenerator().setBlockName(ModInformation.modid + ".essentiaGenerator");
         GameRegistry.registerBlock(essentiaGenerator, ItemBlockEssentiaGenerator.class, "Essentia Generator");
     }
 }

@@ -53,7 +53,6 @@ public class ElectroMagicTools {
     public void preInit(FMLPreInitializationEvent event) {
         ElectroMagicTools.logger.info(localize("console.EMT.preInit.begin"));
 
-        ElectroMagicTools.logger.info(localize("console.EMT.preInit.configRead"));
         ConfigHandler.init(event.getSuggestedConfigurationFile());
         FMLCommonHandler.instance().bus().register(new EventHandlerEMT());
         RegistryHandler.registerIc2Registrys();

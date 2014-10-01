@@ -6,8 +6,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import tombenpotter.emt.common.module.base.items.tools.ItemBaseOmnitool;
+import tombenpotter.emt.common.util.IRefillable;
 
-public class ItemVanillaOmnitool extends ItemBaseOmnitool {
+public class ItemVanillaOmnitool extends ItemBaseOmnitool implements IRefillable{
 
     public Item repairMaterial;
     public int repairMeta;

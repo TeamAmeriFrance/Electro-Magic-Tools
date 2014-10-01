@@ -8,19 +8,11 @@ import tombenpotter.emt.common.util.IRefillable;
 
 public class ItemVanillaDrill extends ItemBaseDrill implements IRefillable {
 
-    public Item repairMaterial;
-    public int repairMeta;
+    public ItemStack repairMaterial;
 
-    public ItemVanillaDrill(ToolMaterial material, int maxDamage, String textureName, Item repairMaterial) {
+    public ItemVanillaDrill(ToolMaterial material, int maxDamage, String textureName, ItemStack repairMaterial) {
         super(material, maxDamage, textureName);
         this.repairMaterial = repairMaterial;
-        this.repairMeta = 0;
-    }
-
-    public ItemVanillaDrill(ToolMaterial material, int maxDamage, String textureName, Item repairMaterial, int repairMeta) {
-        super(material, maxDamage, textureName);
-        this.repairMaterial = repairMaterial;
-        this.repairMeta = repairMeta;
     }
 
     @Override
@@ -30,7 +22,7 @@ public class ItemVanillaDrill extends ItemBaseDrill implements IRefillable {
 
     @Override
     public boolean getIsRepairable(ItemStack stack1, ItemStack stack2) {
-        return (stack2.getItem() == repairMaterial && stack2.getItemDamage() == repairMeta) ? true : super.getIsRepairable(stack1, stack2);
+        return stack2.isItemEqual(repairMaterial) ? true : super.getIsRepairable(stack1, stack2);
     }
 
     @Override
