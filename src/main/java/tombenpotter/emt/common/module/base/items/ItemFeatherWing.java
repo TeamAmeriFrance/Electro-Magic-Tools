@@ -30,7 +30,7 @@ public class ItemFeatherWing extends ItemArmor {
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":featherwings");
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":armor/wing_feather");
     }
 
     @Override

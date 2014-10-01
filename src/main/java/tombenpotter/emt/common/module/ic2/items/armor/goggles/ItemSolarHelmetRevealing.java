@@ -68,6 +68,12 @@ public class ItemSolarHelmetRevealing extends ItemQuantumGoggles {
         potionCost.put(Integer.valueOf(Potion.confusion.id), Integer.valueOf(5000));
     }
 
+	@SideOnly(Side.CLIENT)
+	@Override
+	public void registerIcons(IIconRegister iconRegister) {
+		this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":armor/goggles_solar");
+	}
+
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layerType) {
         return ModInformation.texturePath + ":textures/models/solarrevealinghelmet.png";
@@ -181,11 +187,5 @@ public class ItemSolarHelmetRevealing extends ItemQuantumGoggles {
 
     public static int tickRate() {
         return 128;
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":solarrevealinghelmet");
     }
 }

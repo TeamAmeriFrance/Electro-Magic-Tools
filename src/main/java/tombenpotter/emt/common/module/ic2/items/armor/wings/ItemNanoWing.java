@@ -41,7 +41,7 @@ public class ItemNanoWing extends ItemThaumiumReinforcedWing implements IElectri
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":nanowings");
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":armor/wing_nano");
     }
 
     @SuppressWarnings({"rawtypes", "unchecked"})

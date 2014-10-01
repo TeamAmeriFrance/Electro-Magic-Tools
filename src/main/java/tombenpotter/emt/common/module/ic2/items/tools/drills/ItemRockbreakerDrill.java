@@ -72,7 +72,7 @@ public class ItemRockbreakerDrill extends ItemThaumiumDrill {
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":rockbreakerdrill");
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":tools/drill_rockbreaker");
     }
 
     private boolean isEffectiveAgainst(Block block) {

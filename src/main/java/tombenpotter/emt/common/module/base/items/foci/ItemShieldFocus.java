@@ -12,9 +12,6 @@
 
 package tombenpotter.emt.common.module.base.items.foci;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -23,7 +20,6 @@ import net.minecraft.world.World;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.items.wands.ItemWandCasting;
-import tombenpotter.emt.ModInformation;
 import tombenpotter.emt.common.module.ic2.IC2ModuleBlockRegistry;
 
 public class ItemShieldFocus extends ItemBaseFocus {
@@ -31,13 +27,7 @@ public class ItemShieldFocus extends ItemBaseFocus {
     private static final AspectList visCost = new AspectList().add(Aspect.ORDER, 10).add(Aspect.WATER, 10).add(Aspect.AIR, 10);
 
     public ItemShieldFocus() {
-        super();
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":shieldfocus");
+        super("focus.shield", "focus_shield");
     }
 
     @Override

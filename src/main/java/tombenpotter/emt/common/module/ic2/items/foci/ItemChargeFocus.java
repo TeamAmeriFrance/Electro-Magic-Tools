@@ -12,11 +12,8 @@
 
 package tombenpotter.emt.common.module.ic2.items.foci;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import ic2.api.item.ElectricItem;
 import ic2.api.item.IElectricItem;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MovingObjectPosition;
@@ -24,7 +21,6 @@ import net.minecraft.world.World;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.items.wands.ItemWandCasting;
-import tombenpotter.emt.ModInformation;
 import tombenpotter.emt.common.module.base.items.foci.ItemBaseFocus;
 import tombenpotter.emt.common.util.ConfigHandler;
 
@@ -33,13 +29,7 @@ public class ItemChargeFocus extends ItemBaseFocus {
     private static final AspectList visCost = new AspectList().add(Aspect.FIRE, 10).add(Aspect.WATER, 10).add(Aspect.AIR, 10).add(Aspect.EARTH, 10).add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 10);
 
     public ItemChargeFocus() {
-        super();
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":chargefocus");
+        super("focus.charge", "focus_charge");
     }
 
     @Override

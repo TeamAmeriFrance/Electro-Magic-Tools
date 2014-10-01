@@ -55,7 +55,7 @@ public class ItemThaumiumDrill extends ItemPickaxe implements IElectricItem {
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":thaumiumdrill");
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":tools/drill_thaumium");
     }
 
     @SuppressWarnings({"rawtypes", "unchecked"})

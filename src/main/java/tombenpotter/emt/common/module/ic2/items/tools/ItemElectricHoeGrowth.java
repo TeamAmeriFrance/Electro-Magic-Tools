@@ -27,7 +27,7 @@ import java.util.List;
 
 public class ItemElectricHoeGrowth extends ItemElementalHoe implements IElectricItem {
 
-    public IIcon icon;
+	public IIcon icon;
     public int maxCharge = 1000000;
     public int growthCost = 1000;
     public int tillCost = 100;
@@ -38,12 +38,12 @@ public class ItemElectricHoeGrowth extends ItemElementalHoe implements IElectric
         this.setMaxStackSize(1);
     }
 
-    /**
-     * @SideOnly(Side.CLIENT)
-     * @Override public void registerIcons(IIconRegister iconRegister) {
-     * this.icon = iconRegister.registerIcon("electromagictools:electrichoegrowth");
-     * }
-     */
+//	  Why this no work? :(
+//    @SideOnly(Side.CLIENT)
+//    @Override
+//    public void registerIcons(IIconRegister iconRegister) {
+//	    this.icon = iconRegister.registerIcon(ModInformation.texturePath + ":tools/hoe_growth");
+//    }
 
     @SuppressWarnings({"rawtypes", "unchecked"})
     @SideOnly(Side.CLIENT)

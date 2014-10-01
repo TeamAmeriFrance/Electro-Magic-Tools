@@ -56,7 +56,7 @@ public class ItemQuantumGoggles extends ItemNanoGoggles {
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":quantumthaumichelmet");
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":armor/goggles_quantum");
     }
 
     @Override

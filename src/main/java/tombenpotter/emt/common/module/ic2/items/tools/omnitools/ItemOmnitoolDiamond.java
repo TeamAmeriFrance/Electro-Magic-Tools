@@ -33,7 +33,7 @@ public class ItemOmnitoolDiamond extends ItemOmnitoolIron {
         this.efficiencyOnProperMaterial = 16F;
         this.setCreativeTab(ElectroMagicTools.tabEMT);
         this.setMaxStackSize(1);
-        if (ConfigHandler.toolsInBore == false) {
+        if (!ConfigHandler.toolsInBore) {
             this.setMaxDamage(27);
         } else {
             this.setMaxDamage(350);
@@ -45,12 +45,12 @@ public class ItemOmnitoolDiamond extends ItemOmnitoolIron {
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":diamondomnitool");
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":tools/omnitool_diamond");
     }
 
     @Override
     public boolean onBlockDestroyed(ItemStack stack, World world, Block block, int par4, int par5, int par6, EntityLivingBase entityLiving) {
-        if (ConfigHandler.toolsInBore == false) {
+        if (!ConfigHandler.toolsInBore) {
             cost = 200;
         } else {
             cost = 1;

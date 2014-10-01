@@ -53,7 +53,7 @@ public class ItemDiamondChainsaw extends ItemAxe implements IElectricItem {
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":diamondchainsaw");
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":tools/chainsaw_diamond");
     }
 
     @Override

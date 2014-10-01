@@ -12,9 +12,6 @@
 
 package tombenpotter.emt.common.module.base.items.foci;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.monster.EntitySnowman;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -23,25 +20,18 @@ import net.minecraft.world.World;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.items.wands.ItemWandCasting;
-import tombenpotter.emt.ModInformation;
 
 public class ItemChristmasFocus extends ItemBaseFocus {
 
     private static final AspectList visCost = new AspectList().add(Aspect.ORDER, 500).add(Aspect.AIR, 500);
 
     public ItemChristmasFocus() {
-        super();
+        super("focus.christmas", "focus_christmas");
     }
 
     @Override
     public int getFocusColor() {
         return 99999999;
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":christmasfocus");
     }
 
     @Override

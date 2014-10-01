@@ -56,7 +56,7 @@ public class ItemStreamChainsaw extends ItemThaumiumChainsaw {
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":streamchainsaw");
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":tools/chainsaw_stream");
     }
 
     @Override

@@ -27,7 +27,7 @@ public class ItemQuantumWing extends ItemNanoWing {
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":quantumwings");
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":armor/wing_quantum");
     }
 
     @Override

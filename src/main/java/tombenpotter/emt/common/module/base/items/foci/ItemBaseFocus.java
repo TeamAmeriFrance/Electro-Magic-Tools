@@ -24,6 +24,7 @@ import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.wands.IWandFocus;
 import tombenpotter.emt.ElectroMagicTools;
+import tombenpotter.emt.ModInformation;
 
 import java.util.List;
 
@@ -31,12 +32,15 @@ public abstract class ItemBaseFocus extends Item implements IWandFocus {
 
     private IIcon ornament, depth;
 
-    public ItemBaseFocus() {
+    public ItemBaseFocus(String unlocName, String textureName) {
         super();
-        this.setMaxDamage(1);
-        this.setNoRepair();
-        this.setMaxStackSize(1);
-        this.setCreativeTab(ElectroMagicTools.tabEMT);
+
+	    setUnlocalizedName(ModInformation.modid + "." + unlocName);
+	    setTextureName(ModInformation.texturePath + ":" + textureName);
+	    setCreativeTab(ElectroMagicTools.tabEMT);
+	    setMaxDamage(1);
+	    setNoRepair();
+	    setMaxStackSize(1);
     }
 
     boolean hasOrnament() {

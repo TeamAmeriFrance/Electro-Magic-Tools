@@ -9,6 +9,8 @@ gui.EMT.config.title=Electro-Magic Tools Configuration
 gui.EMT.etherealMacerator.title=Ethereal Processor
 gui.EMT.wandRecharge.title=Industrial Wand Recharge Station
 gui.EMT.inventory=Inventory
+gui.EMT.book.aspect.output.eu.title=Essentia Outputs Book
+gui.EMT.book.aspect.output.essentia.eu=EU Ouput per Essentia
 
 #=============Tooltips=============
 #This comes after a player name. The 's is depicting ownership.
@@ -32,36 +34,11 @@ tooltip.EMT.output.double.lava=when lava is on top
 tooltip.EMT.output.double.half.height=when the block is over Y = 160
 tooltip.EMT.output.double.half.low=when the block is under Y = 10
 
-
 #=============Enity Names=============
 entity.EMT.entityLaser.name=Laser
 entity.EMT.entityArcher.name=Guardian Snowman
 
 #=============Item Names=============
-item.EMT.thaumiumdrill.name=Thaumium Drill
-item.EMT.thaumiumchainsaw.name=Thaumium Chainsaw
-item.EMT.quantumthaumichelmet.name=Quantum Goggles of Revealing
-item.EMT.diamondchainsaw.name=Diamond Chainsaw
-item.EMT.ironomnitool.name=Omnitool
-item.EMT.diamondomnitool.name=Diamond Omnitool
-item.EMT.thaumiumomnitool.name=Thaumium Omnitool
-item.EMT.nanothaumichelmet.name=Nanosuit Goggles of Revealing
-item.EMT.laserfocus.name=Wand Focus: Explosion
-item.EMT.christmasfocus.name=Wand Focus: Kris-tmas
-item.EMT.shieldfocus.name=Wand Focus: Shield
-item.EMT.electricgoggles.name=Electric Goggles of Revealing
-item.EMT.streamchainsaw.name=Chainsaw of the Stream
-item.EMT.rockbreakerdrill.name=Drill of the Rockbreaker
-item.EMT.solarhelmetrevealing.name=Quantum Solar Helmet of Revealing
-item.EMT.hammerthor.name=Mjolnir
-item.EMT.taintedthorhammer.name=Broken Relic of Mjolnir
-item.EMT.electricthorhammer.name=Supercharged Mjolnir
-item.EMT.electricboots.name=Electric Boots of the Traveller
-item.EMT.nanobootstraveller.name=Nanosuit Boots of the Traveller
-item.EMT.quantumbootstraveller.name=Quantum Boots of the Traveller
-item.EMT.electricscribingtools.name=Electric Scribing Tools
-item.EMT.electrichoeofgrowth.name=Electric Hoe of Growth
-item.EMT.chargefocus.name=Wand Focus: Charging
 item.EMT.emtitems.oreClusterUranium=Uranium Native Cluster
 item.EMT.emtitems.crushedOreAmber.name=Crushed Amber Ore
 item.EMT.emtitems.purifiedOreAmber.name=Purified Amber Ore
@@ -79,14 +56,87 @@ item.EMT.emtitems.denseIronSheet.name=Dense Iron Sheet
 item.EMT.emtitems.taintedFeather.name=Tainted Feather
 item.EMT.emtitems.thaumiumWing.name=Thaumium Reinforced Wing
 item.EMT.emtitems.uumatterDrop.name=Crystallized UU-Matter Drop
+
 item.EMT.emtbauble.euMaker.armor.name=Armor Charging Ring
 item.EMT.emtbauble.euMaker.inventory.name=Inventory Charging Ring
 item.EMT.emtbauble.oneRing.name=The One Ring
-item.EMT.wandchargefocus.name=Wand Focus: Wand Charging
-item.EMT.featherwing.name=Feather Duct-Taped Wings
-item.EMT.thaumiumwing.name=Thaumium Reinforced Wings
-item.EMT.nanowing.name=Nanosuit Wings
-item.EMT.quantumwing.name=Quantum Wings
+
+item.EMT.goggles.electric.name=Electric Goggles of Revealing
+item.EMT.goggles.nano.name=Nanosuit Goggles of Revealing
+item.EMT.goggles.quantum.name=Quantum Goggles of Revealing
+item.EMT.goggles.solar.name=Solar Goggles of Revealing
+
+item.EMT.boots.traveller.electric.name=Electric Boots of the Traveller
+item.EMT.boots.traveller.nano.name=Nanosuit Boots of the Traveller
+item.EMT.boots.traveller.quantum.name=Quantum Boots of the Traveller
+
+item.EMT.scribingtools.electric.name=Electric Scribing Tools
+
+item.EMT.wing.feather.name=Feather Duct-Taped Wings
+item.EMT.wing.thaumium.name=Thaumium Reinforced Wings
+item.EMT.wing.nano.name=Nanosuit Wings
+item.EMT.wing.quantum.name=Quantum Wings
+
+item.EMT.hammer.broken.name=Broken Relic of Mjolnir
+item.EMT.hammer.name=Mjolnir
+item.EMT.hammer.electric.name=Supercharged Mjolnir
+
+item.EMT.drill.thaumium.name=Thaumium Drill
+
+item.EMT.chainsaw.diamond.name=Diamond Chainsaw
+item.EMT.chainsaw.thaumium.name=Thaumium Chainsaw
+
+item.EMT.omnitool.iron.name=Iron Omnitool
+item.EMT.omnitool.diamond.name=Diamond Omnitool
+item.EMT.omnitool.thaumium.name=Thaumium Omnitool
+
+item.EMT.chainsaw.stream.name=Chainsaw of the Stream
+item.EMT.drill.rockbreaker.name=Drill of the Rockbreaker
+item.EMT.hoeofgrowth.electric.name=Electric Hoe of Growth
+
+item.EMT.focus.explosion.name=Wand Focus: Explosion
+item.EMT.focus.christmas.name=Wand Focus: Kris-tmas
+item.EMT.focus.shield.name=Wand Focus: Shield
+item.EMT.focus.charge.name=Wand Focus: Charging
+item.EMT.focus.charge.wand.name=Wand Focus: Wand Charging
+
+item.EMT.drill.wood.name=Wooden Drill
+item.EMT.drill.stone.name=Stone Drill
+item.EMT.drill.iron.name=Iron Drill
+item.EMT.drill.gold.name=Golden Drill
+item.EMT.drill.diamond.name=Diamond Drill
+item.EMT.drill.copper.name=Copper Drill
+item.EMT.drill.tin.name=Tin Drill
+item.EMT.drill.lead.name=Lead Drill
+item.EMT.drill.bronze.name=Bronze Drill
+
+item.EMT.chainsaw.wood.name=Wooden Chainsaw
+item.EMT.chainsaw.stone.name=Stone Chainsaw
+item.EMT.chainsaw.iron.name=Iron Chainsaw
+item.EMT.chainsaw.gold.name=Golden Chainsaw
+item.EMT.chainsaw.diamond.name=Diamond Chainsaw
+
+item.EMT.omnitool.iron.name=Iron Omnitool
+item.EMT.omnitool.gold.name=Golden Omnitool
+item.EMT.omnitool.diamond.name=Diamond Omnitool
+
+item.EMT.material.drillTop.wood.name=Wooden Drill Top
+item.EMT.material.drillTop.stone.name=Stone Drill Top
+item.EMT.material.drillTop.iron.name=Iron Drill Top
+item.EMT.material.drillTop.gold.name=Golden Drill Top
+item.EMT.material.drillTop.diamond.name=Diamond Drill Top
+item.EMT.material.drillTop.tin.name=Tin Drill Top
+item.EMT.material.drillTop.copper.name=Copper Drill Top
+item.EMT.material.drillTop.lead.name=Lead Drill Top
+
+item.EMT.material.chainsawTop.wood.name=Wooden Chainsaw Top
+item.EMT.material.chainsawTop.stone.name=Stone Chainsaw Top
+item.EMT.material.chainsawTop.iron.name=Iron Chainsaw Top
+item.EMT.material.chainsawTop.gold.name=Golden Chainsaw Top
+item.EMT.material.chainsawTop.diamond.name=Diamond Chainsaw Top
+item.EMT.material.chainsawTop.tin.name=Tin Chainsaw Top
+item.EMT.material.chainsawTop.copper.name=Copper Chainsaw Top
+item.EMT.material.chainsawTop.lead.name=Lead Chainsaw Top
 
 #=============Block Names=============
 tile.EMT.shield.name=Shield Block

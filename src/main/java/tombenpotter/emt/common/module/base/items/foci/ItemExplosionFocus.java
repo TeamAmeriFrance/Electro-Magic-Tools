@@ -12,9 +12,6 @@
 
 package tombenpotter.emt.common.module.base.items.foci;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MovingObjectPosition;
@@ -22,7 +19,6 @@ import net.minecraft.world.World;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.items.wands.ItemWandCasting;
-import tombenpotter.emt.ModInformation;
 import tombenpotter.emt.common.module.base.entities.EntityLaser;
 
 public class ItemExplosionFocus extends ItemBaseFocus {
@@ -30,13 +26,7 @@ public class ItemExplosionFocus extends ItemBaseFocus {
     private static final AspectList visCost = new AspectList().add(Aspect.FIRE, 200).add(Aspect.ENTROPY, 200);
 
     public ItemExplosionFocus() {
-        super();
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":explosionfocus");
+        super("focus.explosion", "focus_explosion");
     }
 
     @Override

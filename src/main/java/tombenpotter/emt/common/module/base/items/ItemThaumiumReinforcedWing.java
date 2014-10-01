@@ -36,7 +36,7 @@ public class ItemThaumiumReinforcedWing extends ItemFeatherWing implements IVisD
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":thaumiumwings");
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":armor/wing_thaumium");
     }
 
     @Override

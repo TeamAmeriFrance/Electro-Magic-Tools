@@ -10,6 +10,7 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.nbt.NBTTagString;
 import thaumcraft.api.aspects.Aspect;
 import tombenpotter.emt.common.util.EssentiasOutputs;
+import tombenpotter.emt.common.util.TextHelper;
 
 import java.util.Collection;
 import java.util.List;
@@ -47,16 +48,15 @@ public class CommandOutputs extends CommandBase {
         }
     }
 
-
     @Override
     public void processCommand(ICommandSender command, String[] astring) {
-        text = "EU Ouput per Essentia: ";
+        text = TextHelper.localize("gui.EMT.book.aspect.output.essentia.eu") + ": ";
         Collection<Aspect> aspectCollection = Aspect.aspects.values();
         for (Aspect aspect : aspectCollection) {
             String text2 = addStrings(text, (aspect.getTag() + ": " + String.valueOf(EssentiasOutputs.outputs.get(aspect.getTag())) + "\n"));
             text = text2;
         }
-        addOutputsBook("Essentia Outputs Book", text, command, astring);
+        addOutputsBook(TextHelper.localize("gui.EMT.book.aspect.output.eu.title"), text, command, astring);
     }
 
     public void addOutputsBook(String title, String text, ICommandSender command, String[] astring) {

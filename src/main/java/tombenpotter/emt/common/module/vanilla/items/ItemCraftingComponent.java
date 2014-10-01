@@ -14,9 +14,9 @@ import java.util.List;
 
 public class ItemCraftingComponent extends Item {
 
-    public IIcon[] icon = new IIcon[500];
-    public final String drillTop = "DrillTop";
-    public final String chainsawTop = "ChainsawTop";
+    public IIcon[] icon = new IIcon[17];
+    public final String drillTop = "drillTop";
+    public final String chainsawTop = "chainsawTop";
 
     public ItemCraftingComponent() {
         this.setMaxDamage(0);
@@ -32,75 +32,67 @@ public class ItemCraftingComponent extends Item {
                 name = "nothing";
                 break;
             case 0: {
-                name = "wooden" + drillTop;
+                name = drillTop + ".wood";
                 break;
             }
             case 1: {
-                name = "stone" + drillTop;
+                name = drillTop + ".stone";
                 break;
             }
             case 2: {
-                name = "iron" + drillTop;
+                name = drillTop + ".iron";
                 break;
             }
             case 3: {
-                name = "golden" + drillTop;
+                name = drillTop + ".gold";
                 break;
             }
             case 4: {
-                name = "diamond" + drillTop;
+                name = drillTop + ".diamond";
                 break;
             }
             case 5: {
-                name = "copper" + drillTop;
+                name = drillTop + ".copper";
                 break;
             }
             case 6: {
-                name = "tin" + drillTop;
+                name = drillTop + ".tin";
                 break;
             }
             case 7: {
-                name = "lead" + drillTop;
+                name = drillTop + ".lead";
                 break;
             }
             case 8: {
-                name = "tin" + drillTop;
+                name = chainsawTop + ".wood";
                 break;
             }
             case 9: {
-                name = "wooden" + chainsawTop;
+                name = chainsawTop + ".stone";
                 break;
             }
             case 10: {
-                name = "stone" + chainsawTop;
+                name = chainsawTop + ".iron";
                 break;
             }
             case 11: {
-                name = "iron" + chainsawTop;
+                name = chainsawTop + ".gold";
                 break;
             }
             case 12: {
-                name = "golden" + chainsawTop;
+                name = chainsawTop + ".diamond";
                 break;
             }
             case 13: {
-                name = "diamond" + chainsawTop;
+                name = chainsawTop + ".copper";
                 break;
             }
             case 14: {
-                name = "copper" + chainsawTop;
+                name = chainsawTop + ".tin";
                 break;
             }
             case 15: {
-                name = "tin" + chainsawTop;
-                break;
-            }
-            case 16: {
-                name = "lead" + chainsawTop;
-                break;
-            }
-            case 17: {
-                name = "tin" + chainsawTop;
+                name = chainsawTop + ".lead";
                 break;
             }
         }
@@ -109,25 +101,23 @@ public class ItemCraftingComponent extends Item {
 
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister ri) {
-        this.icon[0] = ri.registerIcon(ModInformation.texturePath + ":wooden" + drillTop);
-        this.icon[1] = ri.registerIcon(ModInformation.texturePath + ":stone" + drillTop);
-        this.icon[2] = ri.registerIcon(ModInformation.texturePath + ":iron" + drillTop);
-        this.icon[3] = ri.registerIcon(ModInformation.texturePath + ":golden" + drillTop);
-        this.icon[4] = ri.registerIcon(ModInformation.texturePath + ":diamond" + drillTop);
-        this.icon[5] = ri.registerIcon(ModInformation.texturePath + ":copper" + drillTop);
-        this.icon[6] = ri.registerIcon(ModInformation.texturePath + ":tin" + drillTop);
-        this.icon[7] = ri.registerIcon(ModInformation.texturePath + ":lead" + drillTop);
-        this.icon[8] = ri.registerIcon(ModInformation.texturePath + ":bronze" + drillTop);
+        this.icon[0] = ri.registerIcon(ModInformation.texturePath + ":materials/" + drillTop + "_" + "wood");
+        this.icon[1] = ri.registerIcon(ModInformation.texturePath + ":materials/" + drillTop + "_" + "stone");
+        this.icon[2] = ri.registerIcon(ModInformation.texturePath + ":materials/" + drillTop + "_" + "iron");
+        this.icon[3] = ri.registerIcon(ModInformation.texturePath + ":materials/" + drillTop + "_" + "gold");
+        this.icon[4] = ri.registerIcon(ModInformation.texturePath + ":materials/" + drillTop + "_" + "diamond");
+        this.icon[5] = ri.registerIcon(ModInformation.texturePath + ":materials/" + drillTop + "_" + "copper");
+        this.icon[6] = ri.registerIcon(ModInformation.texturePath + ":materials/" + drillTop + "_" + "tin");
+        this.icon[7] = ri.registerIcon(ModInformation.texturePath + ":materials/" + drillTop + "_" + "lead");
 
-        this.icon[9] = ri.registerIcon(ModInformation.texturePath + ":wooden" + chainsawTop);
-        this.icon[10] = ri.registerIcon(ModInformation.texturePath + ":stone" + chainsawTop);
-        this.icon[11] = ri.registerIcon(ModInformation.texturePath + ":iron" + chainsawTop);
-        this.icon[12] = ri.registerIcon(ModInformation.texturePath + ":golden" + chainsawTop);
-        this.icon[13] = ri.registerIcon(ModInformation.texturePath + ":diamond" + chainsawTop);
-        this.icon[14] = ri.registerIcon(ModInformation.texturePath + ":copper" + chainsawTop);
-        this.icon[15] = ri.registerIcon(ModInformation.texturePath + ":tin" + chainsawTop);
-        this.icon[16] = ri.registerIcon(ModInformation.texturePath + ":lead" + chainsawTop);
-        this.icon[17] = ri.registerIcon(ModInformation.texturePath + ":bronze" + chainsawTop);
+	    this.icon[8] = ri.registerIcon(ModInformation.texturePath + ":materials/" + chainsawTop + "_" + "wood");
+	    this.icon[9] = ri.registerIcon(ModInformation.texturePath + ":materials/" + chainsawTop + "_" + "stone");
+	    this.icon[10] = ri.registerIcon(ModInformation.texturePath + ":materials/" + chainsawTop + "_" + "iron");
+	    this.icon[11] = ri.registerIcon(ModInformation.texturePath + ":materials/" + chainsawTop + "_" + "gold");
+	    this.icon[12] = ri.registerIcon(ModInformation.texturePath + ":materials/" + chainsawTop + "_" + "diamond");
+	    this.icon[13] = ri.registerIcon(ModInformation.texturePath + ":materials/" + chainsawTop + "_" + "copper");
+	    this.icon[14] = ri.registerIcon(ModInformation.texturePath + ":materials/" + chainsawTop + "_" + "tin");
+	    this.icon[15] = ri.registerIcon(ModInformation.texturePath + ":materials/" + chainsawTop + "_" + "lead");
     }
 
     @SideOnly(Side.CLIENT)
@@ -137,7 +127,7 @@ public class ItemCraftingComponent extends Item {
 
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item item, CreativeTabs par2CreativeTabs, List list) {
-        for (int i = 0; i <= 32; i++) {
+        for (int i = 0; i <= 15; i++) {
             list.add(new ItemStack(this, 1, i));
         }
     }

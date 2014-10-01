@@ -131,23 +131,23 @@ public class ItemEMTItems extends Item {
 
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister ri) {
-        this.icon[0] = ri.registerIcon(ModInformation.texturePath + ":clusteruranium");
-        this.icon[1] = ri.registerIcon(ModInformation.texturePath + ":crushedamber");
-        this.icon[2] = ri.registerIcon(ModInformation.texturePath + ":purifiedamber");
-        this.icon[3] = ri.registerIcon(ModInformation.texturePath + ":crushedcinnabar");
-        this.icon[4] = ri.registerIcon(ModInformation.texturePath + ":purifiedcinnabar");
-        this.icon[5] = ri.registerIcon(ModInformation.texturePath + ":thaumiumplate");
-        this.icon[6] = ri.registerIcon(ModInformation.texturePath + ":lightningsummoner");
-        this.icon[7] = ri.registerIcon(ModInformation.texturePath + ":feathermesh");
-        this.icon[8] = ri.registerIcon(ModInformation.texturePath + ":glue");
-        this.icon[9] = ri.registerIcon(ModInformation.texturePath + ":ducttape");
-        this.icon[10] = ri.registerIcon(ModInformation.texturePath + ":rubberball");
-        this.icon[11] = ri.registerIcon(ModInformation.texturePath + ":cardboard");
-        this.icon[12] = ri.registerIcon(ModInformation.texturePath + ":feathercarboardwing");
-        this.icon[13] = ri.registerIcon(ModInformation.texturePath + ":denseironsheet");
-        this.icon[14] = ri.registerIcon(ModInformation.texturePath + ":taintedfeather");
-        this.icon[15] = ri.registerIcon(ModInformation.texturePath + ":thaumiumWing");
-        this.icon[16] = ri.registerIcon(ModInformation.texturePath + ":uumatterdrop");
+        this.icon[0] = ri.registerIcon(ModInformation.texturePath + ":materials/clusteruranium");
+        this.icon[1] = ri.registerIcon(ModInformation.texturePath + ":materials/crushedamber");
+        this.icon[2] = ri.registerIcon(ModInformation.texturePath + ":materials/purifiedamber");
+        this.icon[3] = ri.registerIcon(ModInformation.texturePath + ":materials/crushedcinnabar");
+        this.icon[4] = ri.registerIcon(ModInformation.texturePath + ":materials/purifiedcinnabar");
+        this.icon[5] = ri.registerIcon(ModInformation.texturePath + ":materials/thaumiumplate");
+        this.icon[6] = ri.registerIcon(ModInformation.texturePath + ":materials/lightningsummoner");
+        this.icon[7] = ri.registerIcon(ModInformation.texturePath + ":materials/feathermesh");
+        this.icon[8] = ri.registerIcon(ModInformation.texturePath + ":materials/glue");
+        this.icon[9] = ri.registerIcon(ModInformation.texturePath + ":materials/ducttape");
+        this.icon[10] = ri.registerIcon(ModInformation.texturePath + ":materials/rubberball");
+        this.icon[11] = ri.registerIcon(ModInformation.texturePath + ":materials/cardboard");
+        this.icon[12] = ri.registerIcon(ModInformation.texturePath + ":materials/cardboardsheet");
+        this.icon[13] = ri.registerIcon(ModInformation.texturePath + ":materials/denseironsheet");
+        this.icon[14] = ri.registerIcon(ModInformation.texturePath + ":materials/taintedfeather");
+        this.icon[15] = ri.registerIcon(ModInformation.texturePath + ":materials/thaumiumWing");
+        this.icon[16] = ri.registerIcon(ModInformation.texturePath + ":materials/uumatterdrop");
     }
 
     @SideOnly(Side.CLIENT)

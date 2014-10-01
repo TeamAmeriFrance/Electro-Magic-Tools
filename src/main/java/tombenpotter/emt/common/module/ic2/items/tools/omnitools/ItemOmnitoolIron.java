@@ -46,7 +46,7 @@ public class ItemOmnitoolIron extends ItemPickaxe implements IElectricItem {
         this.efficiencyOnProperMaterial = 13F;
         this.setCreativeTab(ElectroMagicTools.tabEMT);
         this.setMaxStackSize(1);
-        if (ConfigHandler.toolsInBore == false) {
+        if (!ConfigHandler.toolsInBore) {
             this.setMaxDamage(27);
         } else {
             this.setMaxDamage(200);
@@ -56,7 +56,7 @@ public class ItemOmnitoolIron extends ItemPickaxe implements IElectricItem {
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":ironomnitool");
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":tools/omnitool_iron");
     }
 
     @SuppressWarnings({"rawtypes", "unchecked"})
@@ -77,7 +77,7 @@ public class ItemOmnitoolIron extends ItemPickaxe implements IElectricItem {
     public boolean onBlockDestroyed(ItemStack stack, World world, Block block, int par4, int par5, int par6, EntityLivingBase entityLiving)
 
     {
-        if (ConfigHandler.toolsInBore == false) {
+        if (!ConfigHandler.toolsInBore) {
             cost = 100;
         } else {
             cost = 1;
@@ -148,7 +148,7 @@ public class ItemOmnitoolIron extends ItemPickaxe implements IElectricItem {
 
     @Override
     public int getItemEnchantability() {
-        if (ConfigHandler.enchanting == false) {
+        if (!ConfigHandler.enchanting) {
             return 0;
         } else {
             return 4;

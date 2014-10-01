@@ -55,7 +55,7 @@ public class ItemElectricGoggles extends ItemArmor implements IElectricItem, IVi
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":electricgoggles");
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":armor/goggles_electric");
     }
 
     @Override
