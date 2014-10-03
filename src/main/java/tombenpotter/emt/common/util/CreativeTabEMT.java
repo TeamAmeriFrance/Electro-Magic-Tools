@@ -21,6 +21,7 @@ public class CreativeTabEMT extends CreativeTabs {
 
     public CreativeTabEMT(String tabLabel) {
         super(tabLabel);
+	    setBackgroundImageName("emt.png");
     }
 
     @Override
@@ -40,6 +41,6 @@ public class CreativeTabEMT extends CreativeTabs {
 
     @Override
     public int getSearchbarWidth() {
-        return 63;
+        return 60;
     }
 }
