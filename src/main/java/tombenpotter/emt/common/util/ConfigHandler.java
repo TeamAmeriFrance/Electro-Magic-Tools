@@ -13,6 +13,7 @@ public class ConfigHandler {
     public static String CATEGORY_RESEARCH = "Research";
     public static String CATEGORY_VALUES = "Numeric Values";
     public static String CATEGORY_OUTPUTS = "Essentia Generator Outputs";
+	public static String CATEGORY_MODULES = "Modules";
 
     public static int essentiaGeneratorsDelay;
     public static int etherealProcessorBaseSpeed;
@@ -102,6 +103,9 @@ public class ConfigHandler {
     public static boolean nanoWingResearch;
     public static boolean quantumWingsResearch;
     public static boolean aerGeneratorResearch;
+
+	public static boolean enableIC2Module;
+	public static boolean enableTEModule;
 
     public static void init(File file) {
         config = new Configuration(file);
@@ -196,6 +200,9 @@ public class ConfigHandler {
         nanoWingResearch = config.get(CATEGORY_RESEARCH, "Nanosuit Wings", false).getBoolean(nanoWingResearch);
         quantumWingsResearch = config.get(CATEGORY_RESEARCH, "Quantum Wings", false).getBoolean(quantumWingsResearch);
         aerGeneratorResearch = config.get(CATEGORY_RESEARCH, "Aer Generator", false).getBoolean(aerGeneratorResearch);
+
+	    enableIC2Module = config.get(CATEGORY_MODULES, "IC2 Module", true).getBoolean(enableIC2Module);
+	    enableTEModule = config.get(CATEGORY_MODULES, "TE Module", true).getBoolean(enableTEModule);
 
         if (config.hasChanged()) {
             config.save();

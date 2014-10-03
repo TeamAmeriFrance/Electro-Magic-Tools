@@ -60,6 +60,8 @@ public class ElectroMagicTools {
         EssentiasOutputs.addPrimalOutputs();
         EssentiasOutputs.addOutputs();
 
+//	    ModuleRegistry.RegisterModules();
+
         ElectroMagicTools.logger.info(localize("console.EMT.preInit.end"));
     }
 
