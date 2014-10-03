@@ -117,6 +117,8 @@ public class ConfigHandler {
         config.addCustomCategoryComment(CATEGORY_VALUES, "The only way to change some numbers that my machines uses.");
         config.addCustomCategoryComment(CATEGORY_RESEARCH, "The only way to disable some researches. " + "Be careful, if you disable some researches, " + "all researches linked to it will be removed too. " + "Really, don't touch that unless you know exactly what you are doing.");
         config.addCustomCategoryComment(CATEGORY_OUTPUTS, "Change outputs linked to different Essentias here");
+	    config.addCustomCategoryComment(CATEGORY_RANDOM, "Options that don't fit into the other categories.");
+	    config.addCustomCategoryComment(CATEGORY_MODULES, "Currently does nothing. Here for dev purposes.");
 
         capesOn = config.get(CATEGORY_RANDOM, "Enable capes", true, "This config option is to enable or disable capes for people who have them. " + "Seriously, you shouldn't touch that unless you have another cape and " + "it conflicts with it.").getBoolean(capesOn);
         toolsInBore = config.get(CATEGORY_RANDOM, "Tools for Arcane Bore", false, "This will augment the durablilty of the tools, and will also decrease the EU cost to 1. " + "The tools should have the same number of uses than before.").getBoolean(toolsInBore);

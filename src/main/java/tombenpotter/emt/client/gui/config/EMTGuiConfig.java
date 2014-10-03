@@ -27,6 +27,7 @@ public class EMTGuiConfig extends GuiConfig {
         list.add(new ConfigElement<ConfigCategory>(config.getCategory(CATEGORY_VALUES.toLowerCase())));
         list.add(new ConfigElement<ConfigCategory>(config.getCategory(CATEGORY_RESEARCH.toLowerCase())));
         list.add(new ConfigElement<ConfigCategory>(config.getCategory(CATEGORY_OUTPUTS.toLowerCase())));
+	    list.add(new ConfigElement<ConfigCategory>(config.getCategory(CATEGORY_MODULES.toLowerCase())));
 
         return list;
     }
