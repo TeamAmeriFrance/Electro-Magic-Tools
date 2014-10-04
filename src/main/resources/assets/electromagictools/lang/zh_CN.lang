@@ -1,93 +1,153 @@
-=============Creative Tab Name=============
-itemGroup.Electro-Magic Tools=电子魔法工具
+#=============Creative Tab Name=============
+itemGroup.EMT.creativeTab=电子魔法工具
 
-=============Thaumonomicon Tab Name=============
+#=============Thaumonomicon Tab Name=============
 tc.research_category.EMT=电子魔法工具
+
+#=============GUI=============
+gui.EMT.config.title=Electro-Magic Tools Configuration
+gui.EMT.etherealMacerator.title=天域加工机
+gui.EMT.wandRecharge.title=工业法杖充能站
+gui.EMT.inventory=物品栏
+gui.EMT.book.aspect.output.eu.title=源质发电机
+gui.EMT.book.aspect.output.essentia.eu=源质发电功率
 
 =============Enity Names=============
 entity.Tombenpotter's Electro-Magic Tools.entityLaser.name=激光
-entity.Tombenpotter's Electro-Magic Tools.entityArcher.name=守护雪人
+entity.Tombenpotter's Electro-Magic Tools.entityArcher.name=守卫雪人
 
-=============Item Names=============
-item.thaumiumdrill.name=神秘电钻
-item.thaumiumchainsaw.name=神秘电锯
-item.quantumthaumichelmet.name=量子揭示护目镜
-item.diamondchainsaw.name=钻石电锯
-item.ironomnitool.name=铁制钻锯
-item.diamondomnitool.name=钻石钻锯
-item.thaumiumomnitool.name=神秘钻锯
-item.nanothaumichelmet.name=纳米揭示护目镜
-item.laserfocus.name=法杖核心：爆炸
-item.christmasfocus.name=法杖核心：圣诞
-item.shieldfocus.name=法杖核心：护盾
-item.electricgoggles.name=电子护目镜
-item.streamchainsaw.name=奔雷电锯
-item.rockbreakerdrill.name=破岩者电钻
-item.solarhelmetrevealing.name=太阳能揭示头盔
-item.hammerthor.name=雷神之锤
-item.taintedthorhammer.name=破损的雷神之锤
-item.electricthorhammer.name=高压雷神之锤
-item.electricboots.name=电子旅行者之靴
-item.nanobootstraveller.name=纳米旅行者之靴
-item.quantumbootstraveller.name=量子旅行者之靴
-item.electricscribingtools.name=电子笔墨
-item.electrichoeofgrowth.name=电子句芒锄
-item.chargefocus.name=法杖核心：充电
-item.itememtitems.oreClusterUranium=铀矿簇
-item.itememtitems.crushedOreAmber.name=粉碎琥珀矿
-item.itememtitems.purifiedOreAmber.name=纯净的粉碎琥珀矿
-item.itememtitems.crushedOreCinnabar.name=粉碎朱砂矿
-item.itememtitems.purifiedOreCinnabar.name=纯净的粉碎朱砂矿
-item.itememtitems.thaumiumPlate.name=神秘板
-item.itememtitems.lightningSummoner.name=雷电召唤者
-item.itememtitems.featherMesh.name=织羽
-item.itememtitems.glue.name=粘合剂
-item.itememtitems.ductTape.name=布基胶带
-item.itememtitems.rubberBall.name=橡胶球
-item.itememtitems.cardboard.name=硬纸板
-item.itememtitems.featherGluedCardboardWing.name=纸板羽翼
-item.itememtitems.denseIronSheet.name=致密铁片
-item.itememtitems.taintedFeather.name=腐化羽毛
-item.itememtitems.thaumiumWing.name=神秘增强翼
-item.emtbauble.euMaker.armor.name=装备充电戒指
-item.emtbauble.euMaker.inventory.name=物品充电戒指
-item.emtbauble.oneRing.name=魔戒
-item.wandchargefocus.name=法杖核心: 化魔
-item.featherwing.name=粘合纸板羽翼
-item.thaumiumwing.name=神秘翼
-item.nanowing.name=纳米翼
-item.quantumwing.name=量子翼
+#=============Item Names=============
+item.EMT.emtitems.oreClusterUranium=铀矿簇
+item.EMT.emtitems.crushedOreAmber.name=粉碎琥珀矿
+item.EMT.emtitems.purifiedOreAmber.name=纯净的粉碎琥珀矿
+item.EMT.emtitems.crushedOreCinnabar.name=粉碎朱砂矿
+item.EMT.emtitems.purifiedOreCinnabar.name=纯净的粉碎朱砂矿
+item.EMT.emtitems.thaumiumPlate.name=神秘板
+item.EMT.emtitems.lightningSummoner.name=雷电召唤者
+item.EMT.emtitems.featherMesh.name=织羽
+item.EMT.emtitems.glue.name=粘合剂
+item.EMT.emtitems.ductTape.name=布基胶带
+item.EMT.emtitems.rubberBall.name=橡胶球
+item.EMT.emtitems.cardboard.name=硬纸板
+item.EMT.emtitems.featherGluedCardboardWing.name=纸板羽翼
+item.EMT.emtitems.denseIronSheet.name=致密铁片
+item.EMT.emtitems.taintedFeather.name=腐化羽毛
+item.EMT.emtitems.thaumiumWing.name=神秘增强翼
+item.EMT.emtitems.uumatterDrop.name=结晶UU物质液滴
 
-=============Block Names=============
-tile.shield.name=盾方块
-tile.portablenode.name=便携式节点
-tile.essentiaGens.potentia.name=能量源质发电机
-tile.essentiaGens.ignis.name=火源质发电机
-tile.essentiaGens.auram.name=灵气源质发电机
-tile.essentiaGens.arbor.name=树木源质发电机
-tile.emtmachines.wandrecharge.name=工业法杖充能站
-tile.emtmachines.etheralprocessor.name=天域加工机
-tile.emtsolars.compressed.name=压缩太阳能
-tile.emtsolars.doublecompressed.name=双重压缩太阳能
-tile.emtsolars.triplecompressed.name=三重压缩太阳能
-tile.emtsolars.water.name=水注魔太阳能v1
-tile.emtsolars.doublewater.name=水注魔太阳能v2
-tile.emtsolars.triplewater.name=水注魔太阳能v3
-tile.emtsolars.dark.name=混沌注魔太阳能v1
-tile.emtsolars.doubledark.name=混沌注魔太阳能v2
-tile.emtsolars.tripledark.name=混沌压缩太阳能v3
-tile.emtsolars.order.name=秩序注魔太阳能v1
-tile.emtsolars.doubleorder.name=秩序注魔太阳能v2
-tile.emtsolars.tripleorder.name=秩序注魔太阳能v3
-tile.emtsolars.fire.name=火注魔太阳能v1
-tile.emtsolars.doublefire.name=火注魔太阳能v2
-tile.emtsolars.triplefire.name=火注魔太阳能v3
-tile.emtsolars.air.name=风注魔太阳能v1
-tile.emtsolars2.doubleair.name=风注魔太阳能v2
-tile.emtsolars2.tripleair.name=风注魔太阳能v3
-tile.emtsolars2.earth.name=地注魔太阳能v1
-tile.emtsolars2.doubleearth.name=地注魔太阳能v2
-tile.emtsolars2.tripleearth.name=地注魔太阳能v3
+item.EMT.emtbauble.euMaker.armor.name=装备充电戒指
+item.EMT.emtbauble.euMaker.inventory.name=物品充电戒指
+item.EMT.emtbauble.oneRing.name=魔戒
+
+item.EMT.goggles.electric.name=电子护目镜
+item.EMT.goggles.nano.name=纳米揭示护目镜
+item.EMT.goggles.quantum.name=量子揭示护目镜
+item.EMT.goggles.solar.name=太阳能揭示护目镜
+
+item.EMT.boots.traveller.electric.name=电子旅行者之靴
+item.EMT.boots.traveller.nano.name=纳米旅行者之靴
+item.EMT.boots.traveller.quantum.name=量子旅行者之靴
+
+item.EMT.scribingtools.electric.name=电子笔与墨
+
+item.EMT.wing.feather.name=粘合纸板羽翼
+item.EMT.wing.thaumium.name=神秘翼
+item.EMT.wing.nano.name=纳米翼
+item.EMT.wing.quantum.name=量子翼
+
+item.EMT.hammer.broken.name=破损的雷神之锤
+item.EMT.hammer.name=雷神之锤
+item.EMT.hammer.electric.name=高压雷神之锤
+
+item.EMT.drill.thaumium.name=神秘电钻
+
+item.EMT.chainsaw.diamond.name=钻石电锯
+item.EMT.chainsaw.thaumium.name=神秘电锯
+
+item.EMT.omnitool.iron.name=铁制钻锯
+item.EMT.omnitool.diamond.name=钻石钻锯
+item.EMT.omnitool.thaumium.name=神秘钻锯
+
+item.EMT.chainsaw.stream.name=奔雷电锯
+item.EMT.drill.rockbreaker.name=破岩者电钻
+item.EMT.hoeofgrowth.electric.name=电子句芒锄
+
+item.EMT.focus.explosion.name=法杖核心：爆炸
+item.EMT.focus.christmas.name=法杖核心：圣诞
+item.EMT.focus.shield.name=法杖核心：护盾
+item.EMT.focus.charge.name=法杖核心：充电
+item.EMT.focus.charge.wand.name=法杖核心: 化魔
+
+item.EMT.drill.wood.name=木电钻
+item.EMT.drill.stone.name=石电钻
+item.EMT.drill.iron.name=铁制电钻
+item.EMT.drill.gold.name=金电钻
+item.EMT.drill.diamond.name=钻石电钻
+item.EMT.drill.copper.name=铜电钻
+item.EMT.drill.tin.name=锡电钻
+item.EMT.drill.lead.name=铅电钻
+item.EMT.drill.bronze.name=青铜电钻
+
+item.EMT.chainsaw.wood.name=木电锯
+item.EMT.chainsaw.stone.name=石电锯
+item.EMT.chainsaw.iron.name=铁制电锯
+item.EMT.chainsaw.gold.name=金电锯
+item.EMT.chainsaw.diamond.name=钻石电锯
+
+item.EMT.omnitool.iron.name=铁制钻锯
+item.EMT.omnitool.gold.name=金钻锯
+item.EMT.omnitool.diamond.name=钻石钻锯
+
+item.EMT.material.drillTop.wood.name=木钻头
+item.EMT.material.drillTop.stone.name=石钻头
+item.EMT.material.drillTop.iron.name=铁钻头
+item.EMT.material.drillTop.gold.name=金钻头
+item.EMT.material.drillTop.diamond.name=钻石钻头
+item.EMT.material.drillTop.tin.name=锡钻头
+item.EMT.material.drillTop.copper.name=铜钻头
+item.EMT.material.drillTop.lead.name=铅钻头
+
+item.EMT.material.chainsawTop.wood.name=木锯刃
+item.EMT.material.chainsawTop.stone.name=石锯刃
+item.EMT.material.chainsawTop.iron.name=铁锯刃
+item.EMT.material.chainsawTop.gold.name=金锯刃
+item.EMT.material.chainsawTop.diamond.name=钻石锯刃
+item.EMT.material.chainsawTop.tin.name=锡锯刃
+item.EMT.material.chainsawTop.copper.name=铜锯刃
+item.EMT.material.chainsawTop.lead.name=铅锯刃
+
+#=============Block Names=============
+tile.EMT.shield.name=护盾方块
+tile.EMT.portablenode.name=便携式节点
+tile.EMT.essentiaGens.potentia.name=能量源质发电机
+tile.EMT.essentiaGens.ignis.name=火源质发电机
+tile.EMT.essentiaGens.auram.name=灵气源质发电机
+tile.EMT.essentiaGens.arbor.name=树木源质发电机
+tile.EMT.essentiaGens.aer.name=风源质发电机
+tile.EMT.emtmachines.wandrecharge.name=工业法杖充能站
+tile.EMT.emtmachines.etheralprocessor.name=天域加工机
+tile.EMT.emtsolars.compressed.name=压缩太阳能
+tile.EMT.emtsolars.doublecompressed.name=双重压缩太阳能
+tile.EMT.emtsolars.triplecompressed.name=三重压缩太阳能
+tile.EMT.emtsolars.water.name=水注魔太阳能 Tier1
+tile.EMT.emtsolars.doublewater.name=水注魔太阳能 Tier2
+tile.EMT.emtsolars.triplewater.name=水注魔太阳能 Tier3
+tile.EMT.emtsolars.dark.name=混沌注魔太阳能 Tier1
+tile.EMT.emtsolars.doubledark.name=混沌注魔太阳能 Tier2
+tile.EMT.emtsolars.tripledark.name=混沌压缩太阳能 Tier3
+tile.EMT.emtsolars.order.name=秩序注魔太阳能 Tier1
+tile.EMT.emtsolars.doubleorder.name=秩序注魔太阳能 Tier2
+tile.EMT.emtsolars.tripleorder.name=秩序注魔太阳能 Tier3
+tile.EMT.emtsolars.fire.name=火注魔太阳能 Tier1
+tile.EMT.emtsolars.doublefire.name=火注魔太阳能 Tier2
+tile.EMT.emtsolars.triplefire.name=火注魔太阳能 Tier3
+tile.EMT.emtsolars.air.name=风注魔太阳能 Tier1
+tile.EMT.emtsolars2.doubleair.name=风注魔太阳能 Tier2
+tile.EMT.emtsolars2.tripleair.name=风注魔太阳能 Tier3
+tile.EMT.emtsolars2.earth.name=地注魔太阳能 Tier1
+tile.EMT.emtsolars2.doubleearth.name=地注魔太阳能 Tier2
+tile.EMT.emtsolars2.tripleearth.name=地注魔太阳能 Tier3
+tile.EMT.essentiaGenerator.name=源质发电机
 
 =============Thaumonomicon Names=============
 emt.tag.Electric Magic Tools=谁说科技和魔法不能互相结合?
@@ -106,7 +166,7 @@ emt.tag.Potentia Generator=利用要素源质来发电
 emt.tag.Ignis Generator=如果你不能掌控那热量...
 emt.tag.Auram Generator=利用空气中的魔力
 emt.tag.Arbor Generator=让发电回到基础
-emt.tag.Saxum Generator=利用固化岩浆的热
+emt.tag.Aer Generator=压缩周围的风
 emt.tag.Chainsaw of the Stream=你只需要一个劲的砍树
 emt.tag.Drill of the Rockbreaker=疯狂挖矿
 emt.tag.Shield Block=魔法保护
@@ -162,7 +222,7 @@ emt.text.Potentia Generator=在许多的学习与研究后，你终于发现了�
 emt.text.Ignis Generator=就如你所想的，通过一点调整，你已经找到了代替火要素源质产生能量的方法。在机器内部，它会消耗火要素来加热水。通过这种热量产生的蒸汽驱动涡轮机运作，就像一个典型的发电机。
 emt.text.Auram Generator=尽管比你最初的想法用了更多的努力，你已经发现了一种用灵气要素源质产生电力的方法。这需要一个完全的机器改造，依靠灵气脉动的魔法能量来带动发电机工作。
 emt.text.Arbor Generator=总有许多多余的树木要素源质在你的身边。不需要更多了！通过修改最初的能量要素源质发电机，你已经发现了使用树木要素源质发电的方法。
-emt.text.Saxum Generator=You always thought that the Saxum essentia was radiating some kind of heat, a heat which could be used to make energy. And you have been proven right! You have modified your Potentia Generator to create some heat, used to make energy.
+emt.text.Aer Generator=你研究了蕴藏在风中的巨大能量, 并试着修改最初的能量源质发电机, 使其具有压缩风源质的能力, 并提供300EU的电力.
 emt.text.Chainsaw of the Stream=在研究了奔雷斧和神秘电锯后，你试着将它们两者的能力结合，得到了一个能轻松砍完一棵树的电子工具。
 emt.text.Drill of the Rockbreaker=在研究了炽心镐，后土铲和神秘电钻后，你试着将他们的能力结合而得到一个能开采3X3X1区域材料的电子工具，开采十分迅速。<BR><BR>这个非凡的设备能通过右击找出最近的矿物，当然那会消耗一些电力。
 emt.text.Shield Block=研究了盾牌核心制造出的方块后，你已发现了如何自己制作它们，再也不用需要核心来召唤。它们有很高的爆炸抗性，并且甚至能防止核弹的破坏。然而，在一次核爆炸试验中，尽管盾方块毫发无损，它周围的方块却不是。<BR><BR>这些方块不稳定并且破坏时不会掉落，就算你使用精准采集也是如此。
@@ -200,3 +260,51 @@ emt.text.Feather Wings=把羽毛黏上硬纸板再做成翅膀的形状听着是
 emt.text.Thaumium Reinforced Wings=注入魔力的神秘锭是众所周知的。因此，用神秘锭来强化你的纸板翼是个好主意。按下空格键会将你推得更高，如果一直按住则会缓慢下降。潜行则会快速下降。摔落伤害减免:50%.
 emt.text.Nanosuit Wings=利用神秘锭将魔法与纳米科技结合到你的飞行翼上.. 听着很符合逻辑。现在你可以推的比之前还要高，按住空格下落的也比之前要慢。摔落伤害减免:75%.
 emt.text.Quantum Wings=在探索完纳米科技所有的可能性后，你决定做最后一搏，量子。你可以在空中再跳几格的高度， 极好的防护，并且的下降的过程极大减缓了。然而，量子的不可预测又一次发生了。同时按住潜行键和空格键时你的下降会完全停止。你不知道为何会这样，但它就是这样。摔落伤害减免:100%.
+
+#=============Tooltips=============
+#This comes after a player name. The 's is depicting ownership.
+tooltip.EMT.hammer.electric=的雷神之锤
+tooltip.EMT.hammer.broken.thor=它曾经是属于托尔的雷神之锤
+tooltip.EMT.hammer.broken.danger=现在它充满着危险的能量
+tooltip.EMT.hammer.broken.plsNoRightClick=千万不要使用
+tooltip.EMT.hammer.broken.plsRightClick=右键使用
+tooltip.EMT.visDiscount=灵气减免
+tooltip.EMT.specialEffect=特殊效果
+tooltip.EMT.normalConditions=正常状态
+tooltip.EMT.euPerTick=EU/t
+tooltip.EMT.night=夜晚产能
+tooltip.EMT.forget=我忘记写下tooltip了吗?
+tooltip.EMT.raining=降雨时产能
+tooltip.EMT.output.triple=输出3倍电量
+tooltip.EMT.output.double=输出2倍电量
+tooltip.EMT.output.double.half=输出2.5倍电量
+tooltip.EMT.output.double.nether=在下界产能
+tooltip.EMT.output.double.lava=在岩浆中产能
+tooltip.EMT.output.double.half.height=在160层上方产能
+tooltip.EMT.output.double.half.low=在10层以下产能
+
+#=============Console Logging=============
+console.EMT.preInit.begin=谋略如何统治世界
+console.EMT.preInit.configRead=创建/读取配置文件中
+console.EMT.preInit.end=谋略完成
+
+console.EMT.init.begin=召集盟军
+console.EMT.init.loadProxies=读取proxies信息
+console.EMT.init.mobDrops=增加新的怪物掉落物
+console.EMT.init.dungeon=增加地牢物品
+console.EMT.init.recipes=增加合成配方
+console.EMT.init.entities=注册新的实体
+console.EMT.init.guiHandler=注册新的GUI
+console.EMT.init.end=盟军已汇聚一堂
+
+console.EMT.postInit.begin=即将占领世界
+console.EMT.postInit.recipes=增加合成配方
+console.EMT.postInit.uumatter=增加UU注魔配方
+console.EMT.postInit.end=世界已被我们占领. 敬请享受!
+
+console.EMT.config.refresh=正在刷新配置文件
+
+console.EMT.recipes.amberConflict=移除冲突的琥珀矿合成配方
+console.EMT.recipes.cinnabarConflict=移除冲突的朱砂矿合成配方
+
+console.EMT.modLoaded.GT=检测到格雷科技. 已禁用钻石电钻的合成公式
