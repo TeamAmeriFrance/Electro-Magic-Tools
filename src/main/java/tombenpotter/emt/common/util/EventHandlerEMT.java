@@ -14,6 +14,7 @@ package tombenpotter.emt.common.util;
 
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.player.EntityPlayer;
@@ -23,6 +24,7 @@ import thaumcraft.common.entities.monster.EntityTaintChicken;
 import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
 import tombenpotter.emt.common.module.ic2.IC2ModuleItemRegistry;
+import tombenpotter.emt.common.module.vanilla.items.ItemShardCaver;
 
 public class EventHandlerEMT {
 
@@ -53,6 +55,16 @@ public class EventHandlerEMT {
         if (eventArgs.modID.equals(ModInformation.modid)) {
             ConfigHandler.syncConfig();
             ElectroMagicTools.logger.info(TextHelper.localize("console.EMT.config.refresh"));
+        }
+    }
+
+    @SubscribeEvent
+    public void onCraftedEvent(PlayerEvent.ItemCraftedEvent event) {
+        for (int i = 0; i < event.craftMatrix.getSizeInventory(); i++) {
+            if (event.craftMatrix.getStackInSlot(i) != null && event.craftMatrix.getStackInSlot(i).getItem() instanceof ItemShardCaver && event.player != null) {
+                event.craftMatrix.getStackInSlot(i).stackSize = 2;
+                event.craftMatrix.getStackInSlot(i).damageItem(1, event.player);
+            }
         }
     }
 }

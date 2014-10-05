@@ -1,6 +1,7 @@
 package tombenpotter.emt.common.module.vanilla;
 
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class VanillaItemstacks {
     public static ItemStack woodenDrill = new ItemStack(VanillaItemsRegistry.woodenDrill);
@@ -68,4 +69,10 @@ public class VanillaItemstacks {
     public static ItemStack tinShard = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 31);
     public static ItemStack leadShard = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 32);
     public static ItemStack bronzeShard = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 33);
+
+    public static ItemStack woodenCarver = new ItemStack(VanillaItemsRegistry.woodCarver, 1, OreDictionary.WILDCARD_VALUE);
+    public static ItemStack stoneCarver = new ItemStack(VanillaItemsRegistry.stoneCarver, 1, OreDictionary.WILDCARD_VALUE);
+    public static ItemStack ironCarver = new ItemStack(VanillaItemsRegistry.ironCarver, 1, OreDictionary.WILDCARD_VALUE);
+    public static ItemStack obsidianCarver = new ItemStack(VanillaItemsRegistry.obsidianCarver, 1, OreDictionary.WILDCARD_VALUE);
+    public static ItemStack diamondCarver = new ItemStack(VanillaItemsRegistry.obsidianCarver, 1, OreDictionary.WILDCARD_VALUE);
 }

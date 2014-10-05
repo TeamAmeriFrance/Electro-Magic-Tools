@@ -166,6 +166,12 @@ item.EMT.material.shard.tin.name=Tin Shard
 item.EMT.material.shard.lead.name=Lead Shard
 item.EMT.material.shard.bronze.name=Bronze Shard
 
+item.EMT.carver.wood.name=Wooden Shard Carver
+item.EMT.carver.stone.name=Stone Shard Carver
+item.EMT.carver.iron.name=Iron Shard Carver
+item.EMT.carver.obsidian.name=Obsidian Shard Carver
+item.EMT.carver.diamond.name=Diamond Shard Carver
+
 #=============Block Names=============
 tile.EMT.shield.name=Shield Block
 tile.EMT.portablenode.name=Portable Node

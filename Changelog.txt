@@ -3,6 +3,7 @@ Changelog of the mod : Electric Magic Tools, a Thaumcraft 4/Industrial-Craft 2 a
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 Version 2.0.0Alpa5:
 Wild Material Shards have appeared! They are used in the tools' crafting recipes :D.
+And here come the carvers!
 
 Version 2.0.0Alpha4:
 Added some items to the vanilla module of the mod: Wooden, Stone, Iron, Golden and Diamond Drills.

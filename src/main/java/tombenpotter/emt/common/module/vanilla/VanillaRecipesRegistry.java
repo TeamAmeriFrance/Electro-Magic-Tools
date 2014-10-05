@@ -14,9 +14,12 @@ public class VanillaRecipesRegistry {
     public static IRecipe ironOmnitool, goldenOmnitool, diamondOmnitool, copperOmnitool, tinOmnitool, leadOmnitool, bronzeOmnitool;
     public static IRecipe woodenDrillTop, stoneDrillTop, ironDrillTop, goldenDrillTop, diamondDrillTop, copperDrillTop, tinDrillTop, leadDrillTop, bronzeDrillTop;
     public static IRecipe woodenChainsawTop, stoneChainsawTop, ironChainsawTop, goldenChainsawTop, diamondChainsawTop, copperChainsawTop, tinChainsawTop, leadChainsawTop, bronzeChainsawTop;
+    public static IRecipe woodenCarver, stoneCarver, ironCarver, obsidianCarver, diamondCarver;
 
     public static void registerRecipes() {
         addMiscRecipes();
+        addCarversRecipes();
+        addShardsRecipes();
         addDrillTopRecipes();
         addDrillRecipe();
         addChainsawTopRecipes();
@@ -24,6 +27,28 @@ public class VanillaRecipesRegistry {
     }
 
     public static void addMiscRecipes() {
+    }
+
+    public static void addCarversRecipes() {
+        for (int i = 0; i < OreDictionary.getOres("logWood").size(); i++) {
+            woodenCarver = GameRegistry.addShapedRecipe(VanillaItemstacks.woodenCarver, " X ", "YYY", 'X', Items.flint, 'Y', OreDictionary.getOres("logWood").get(i));
+        }
+        stoneCarver = GameRegistry.addShapedRecipe(VanillaItemstacks.stoneCarver, " X ", "YYY", 'X', Items.flint, 'Y', Blocks.stone);
+        ironCarver = GameRegistry.addShapedRecipe(VanillaItemstacks.ironCarver, " X ", "YYY", 'X', VanillaItemstacks.ironShard, 'Y', Blocks.stone);
+        obsidianCarver = GameRegistry.addShapedRecipe(VanillaItemstacks.obsidianCarver, " X ", "YYY", 'X', VanillaItemstacks.ironShard, 'Y', Blocks.obsidian);
+        diamondCarver = GameRegistry.addShapedRecipe(VanillaItemstacks.ironCarver, " X ", "YYY", "ZZZ", 'X', VanillaItemstacks.obsidianShard, 'Y', Items.diamond, 'Z', Blocks.obsidian);
+    }
+
+    public static void addShardsRecipes() {
+        addCarverRecipe(VanillaItemstacks.woodenShard, "logWood");
+        addCarverRecipe(VanillaItemstacks.stoneShard, "stone");
+        addCarverRecipe(VanillaItemstacks.ironShard, "ingotIron");
+        addCarverRecipe(VanillaItemstacks.goldenShard, "ingotGold");
+        addCarverRecipe(VanillaItemstacks.obsidianShard, new ItemStack(Blocks.obsidian));
+        addCarverRecipe(VanillaItemstacks.copperShard, "ingotCopper");
+        addCarverRecipe(VanillaItemstacks.tinShard, "ingotTin");
+        addCarverRecipe(VanillaItemstacks.leadShard, "ingotLead");
+        addCarverRecipe(VanillaItemstacks.bronzeShard, "ingotBronze");
     }
 
     public static void addDrillTopRecipes() {
@@ -47,7 +72,7 @@ public class VanillaRecipesRegistry {
         copperChainsawTop = chainsawTopRecipe(VanillaItemstacks.copperChainsawTop, "ingotCopper", VanillaItemstacks.copperShard);
         tinChainsawTop = chainsawTopRecipe(VanillaItemstacks.tinChainsawTop, "ingotTin", VanillaItemstacks.tinShard);
         leadChainsawTop = chainsawTopRecipe(VanillaItemstacks.leadChainsawTop, "ingotLead", VanillaItemstacks.leadShard);
-        bronzeDrill = chainsawTopRecipe(VanillaItemstacks.bronzeChainsawTop, "ingotBronze", VanillaItemstacks.bronzeShard);
+        bronzeChainsawTop = chainsawTopRecipe(VanillaItemstacks.bronzeChainsawTop, "ingotBronze", VanillaItemstacks.bronzeShard);
     }
 
     public static void addDrillRecipe() {
@@ -102,5 +127,23 @@ public class VanillaRecipesRegistry {
             return GameRegistry.addShapedRecipe(output, " Y ", "XYX", "XYX", 'X', OreDictionary.getOres(X).get(i), 'Y', Y);
         }
         return null;
+    }
+
+    public static void addCarverRecipe(ItemStack output, ItemStack input) {
+        GameRegistry.addShapelessRecipe(output, VanillaItemstacks.woodenCarver, input);
+        GameRegistry.addShapelessRecipe(output, VanillaItemstacks.stoneCarver, input);
+        GameRegistry.addShapelessRecipe(output, VanillaItemstacks.ironCarver, input);
+        GameRegistry.addShapelessRecipe(output, VanillaItemstacks.obsidianCarver, input);
+        GameRegistry.addShapelessRecipe(output, VanillaItemstacks.diamondCarver, input);
+    }
+
+    public static void addCarverRecipe(ItemStack output, String input) {
+        for (int i = 0; i < OreDictionary.getOres(input).size(); i++) {
+            GameRegistry.addShapelessRecipe(output, VanillaItemstacks.woodenCarver, OreDictionary.getOres(input).get(i));
+            GameRegistry.addShapelessRecipe(output, VanillaItemstacks.stoneCarver, OreDictionary.getOres(input).get(i));
+            GameRegistry.addShapelessRecipe(output, VanillaItemstacks.ironCarver, OreDictionary.getOres(input).get(i));
+            GameRegistry.addShapelessRecipe(output, VanillaItemstacks.obsidianCarver, OreDictionary.getOres(input).get(i));
+            GameRegistry.addShapelessRecipe(output, VanillaItemstacks.diamondCarver, OreDictionary.getOres(input).get(i));
+        }
     }
 }

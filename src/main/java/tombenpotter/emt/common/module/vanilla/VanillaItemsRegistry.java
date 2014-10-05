@@ -9,6 +9,7 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
 import tombenpotter.emt.ModInformation;
 import tombenpotter.emt.common.module.vanilla.items.ItemCraftingComponent;
+import tombenpotter.emt.common.module.vanilla.items.ItemShardCaver;
 import tombenpotter.emt.common.module.vanilla.items.tools.ItemVanillaChainsaw;
 import tombenpotter.emt.common.module.vanilla.items.tools.ItemVanillaDrill;
 import tombenpotter.emt.common.module.vanilla.items.tools.ItemVanillaOmnitool;
@@ -44,6 +45,7 @@ public class VanillaItemsRegistry {
     public static Item bronzeOmnitool;
 
     public static Item craftingComponent;
+    public static Item woodCarver, stoneCarver, ironCarver, obsidianCarver, diamondCarver;
 
     public static Item.ToolMaterial copperMaterial = EnumHelper.addToolMaterial("copperToolMaterial", 2, 300, 6.0F, 2.0F, 14);
     public static Item.ToolMaterial tinMaterial = EnumHelper.addToolMaterial("tinToolMatierial", 2, 200, 8.0F, 4F, 18);
@@ -53,6 +55,17 @@ public class VanillaItemsRegistry {
     public static void registerItems() {
         craftingComponent = new ItemCraftingComponent().setUnlocalizedName(ModInformation.modid + ".material");
         GameRegistry.registerItem(craftingComponent, "craftingComponents");
+
+        woodCarver = new ItemShardCaver(8).setUnlocalizedName(ModInformation.modid + ".carver.wood");
+        GameRegistry.registerItem(woodCarver, "woodCarver");
+        stoneCarver = new ItemShardCaver(32).setUnlocalizedName(ModInformation.modid + ".carver.stone");
+        GameRegistry.registerItem(stoneCarver, "stoneCarver");
+        ironCarver = new ItemShardCaver(128).setUnlocalizedName(ModInformation.modid + ".carver.iron");
+        GameRegistry.registerItem(ironCarver, "ironCarver");
+        obsidianCarver = new ItemShardCaver(256).setUnlocalizedName(ModInformation.modid + ".carver.obsidian");
+        GameRegistry.registerItem(obsidianCarver, "obsidianCarver");
+        diamondCarver = new ItemShardCaver(1204).setUnlocalizedName(ModInformation.modid + ".carver.diamond");
+        GameRegistry.registerItem(diamondCarver, "diamondCarver");
 
         woodenDrill = new ItemVanillaDrill(Item.ToolMaterial.WOOD, 75, ":drill_wood", new ItemStack(Item.getItemFromBlock(Blocks.planks))).setUnlocalizedName(ModInformation.modid + ".drill.wood");
         GameRegistry.registerItem(woodenDrill, "woodenDrill");
