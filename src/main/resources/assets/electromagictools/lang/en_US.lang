@@ -115,10 +115,18 @@ item.EMT.chainsaw.stone.name=Stone Chainsaw
 item.EMT.chainsaw.iron.name=Iron Chainsaw
 item.EMT.chainsaw.gold.name=Golden Chainsaw
 item.EMT.chainsaw.diamond.name=Diamond Chainsaw
+item.EMT.chainsaw.copper.name=Copper Chainsaw
+item.EMT.chainsaw.tin.name=Tin Chainsaw
+item.EMT.chainsaw.lead.name=Lead Chainsaw
+item.EMT.chainsaw.bronze.name=Bronze Chainsaw
 
 item.EMT.omnitool.iron.name=Iron Omnitool
 item.EMT.omnitool.gold.name=Golden Omnitool
 item.EMT.omnitool.diamond.name=Diamond Omnitool
+item.EMT.omnitool.copper.name=Copper Omnitool
+item.EMT.omnitool.tin.name=Tin Omnitool
+item.EMT.omnitool.lead.name=Lead Omnitool
+item.EMT.omnitool.bronze.name=Bronze Omnitool
 
 item.EMT.material.drillTop.wood.name=Wooden Drill Top
 item.EMT.material.drillTop.stone.name=Stone Drill Top
@@ -128,6 +136,7 @@ item.EMT.material.drillTop.diamond.name=Diamond Drill Top
 item.EMT.material.drillTop.tin.name=Tin Drill Top
 item.EMT.material.drillTop.copper.name=Copper Drill Top
 item.EMT.material.drillTop.lead.name=Lead Drill Top
+item.EMT.material.drillTop.bronze.name=Bronze Drill Top
 
 item.EMT.material.chainsawTop.wood.name=Wooden Chainsaw Top
 item.EMT.material.chainsawTop.stone.name=Stone Chainsaw Top
@@ -137,6 +146,25 @@ item.EMT.material.chainsawTop.diamond.name=Diamond Chainsaw Top
 item.EMT.material.chainsawTop.tin.name=Tin Chainsaw Top
 item.EMT.material.chainsawTop.copper.name=Copper Chainsaw Top
 item.EMT.material.chainsawTop.lead.name=Lead Chainsaw Top
+item.EMT.material.chainsawTop.bronze.name=Bronze Chainsaw Top
+
+item.EMT.material.omnitoolTop.iron.name=Iron Omnitool Top
+item.EMT.material.omnitoolTop.gold.name=Golden Omnitool Top
+item.EMT.material.omnitoolTop.diamond.name=Diamond Omnitool Top
+item.EMT.material.omnitoolTop.copper.name=Copper Omnitool Top
+item.EMT.material.omnitoolTop.tin.name=Tin Omnitool Top
+item.EMT.material.omnitoolTop.lead.name=Lead Omnitool Top
+item.EMT.material.omnitoolTop.bronze.name=Bronze Omnitool Top
+
+item.EMT.material.shard.wood.name=Wooden Shard
+item.EMT.material.shard.stone.name=Stone Shard
+item.EMT.material.shard.iron.name=Iron Shard
+item.EMT.material.shard.gold.name=Golden Shard
+item.EMT.material.shard.obsidian.name=Obsidian Shard
+item.EMT.material.shard.copper.name=Copper Shard
+item.EMT.material.shard.tin.name=Tin Shard
+item.EMT.material.shard.lead.name=Lead Shard
+item.EMT.material.shard.bronze.name=Bronze Shard
 
 #=============Block Names=============
 tile.EMT.shield.name=Shield Block

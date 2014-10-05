@@ -73,22 +73,30 @@ public class VanillaItemsRegistry {
         bronzeDrill = new ItemVanillaDrill(bronzeMaterial, 650, ":drill_bronze", OreDictionary.getOres("ingotBronze").get(0)).setUnlocalizedName(ModInformation.modid + ".drill.bronze");
         GameRegistry.registerItem(bronzeDrill, "bronzeDrill");
 
-        woodenChainsaw = new ItemVanillaChainsaw(Item.ToolMaterial.WOOD, 75, ":woodenChainsaw", Item.getItemFromBlock(Blocks.planks)).setUnlocalizedName(ModInformation.modid + ".chainsaw.wood");
+        woodenChainsaw = new ItemVanillaChainsaw(Item.ToolMaterial.WOOD, 75, ":chainsaw_wooden", Item.getItemFromBlock(Blocks.planks)).setUnlocalizedName(ModInformation.modid + ".chainsaw.wood");
         GameRegistry.registerItem(woodenChainsaw, "woodenChainsaw");
-        stoneChainsaw = new ItemVanillaChainsaw(Item.ToolMaterial.STONE, 165, ":stoneChainsaw", Item.getItemFromBlock(Blocks.cobblestone)).setUnlocalizedName(ModInformation.modid + ".chainsaw.stone");
+        stoneChainsaw = new ItemVanillaChainsaw(Item.ToolMaterial.STONE, 165, ":chainsaw_stone", Item.getItemFromBlock(Blocks.cobblestone)).setUnlocalizedName(ModInformation.modid + ".chainsaw.stone");
         GameRegistry.registerItem(stoneChainsaw, "stoneChainsaw");
-        ironChainsaw = new ItemVanillaChainsaw(Item.ToolMaterial.IRON, 315, ":ironChainsaw", Items.iron_ingot, 3F).setUnlocalizedName(ModInformation.modid + ".chainsaw.iron");
+        ironChainsaw = new ItemVanillaChainsaw(Item.ToolMaterial.IRON, 315, ":chainsaw_iron", Items.iron_ingot, 3F).setUnlocalizedName(ModInformation.modid + ".chainsaw.iron");
         GameRegistry.registerItem(ironChainsaw, "ironChainsaw");
-        goldenChainsaw = new ItemVanillaChainsaw(Item.ToolMaterial.GOLD, 55, ":goldenChainsaw", Items.gold_ingot).setUnlocalizedName(ModInformation.modid + ".chainsaw.gold");
+        goldenChainsaw = new ItemVanillaChainsaw(Item.ToolMaterial.GOLD, 55, ":chainsaw_gold", Items.gold_ingot).setUnlocalizedName(ModInformation.modid + ".chainsaw.gold");
         GameRegistry.registerItem(goldenChainsaw, "goldenChainsaw");
-        diamondChainsaw = new ItemVanillaChainsaw(Item.ToolMaterial.EMERALD, 2015, ":diamondChainsaw", Items.diamond, 6F).setUnlocalizedName(ModInformation.modid + ".chainsaw.diamond");
+        diamondChainsaw = new ItemVanillaChainsaw(Item.ToolMaterial.EMERALD, 2015, ":chainsaw_diamond", Items.diamond, 6F).setUnlocalizedName(ModInformation.modid + ".chainsaw.diamond");
         GameRegistry.registerItem(diamondChainsaw, "diamondChainsaw");
 
-        ironOmnitool = new ItemVanillaOmnitool(Item.ToolMaterial.IRON, 500, ":ironOmnitool", Items.iron_ingot).setUnlocalizedName(ModInformation.modid + ".omnitool.iron");
+        ironOmnitool = new ItemVanillaOmnitool(Item.ToolMaterial.IRON, 500, ":omnitool_iron", Items.iron_ingot).setUnlocalizedName(ModInformation.modid + ".omnitool.iron");
         GameRegistry.registerItem(ironOmnitool, "ironOmnitool");
-        goldenOmnitool = new ItemVanillaOmnitool(Item.ToolMaterial.GOLD, 100, ":goldenOmnitool", Items.gold_ingot).setUnlocalizedName(ModInformation.modid + ".omnitool.gold");
+        goldenOmnitool = new ItemVanillaOmnitool(Item.ToolMaterial.GOLD, 100, ":omnitool_gold", Items.gold_ingot).setUnlocalizedName(ModInformation.modid + ".omnitool.gold");
         GameRegistry.registerItem(goldenOmnitool, "goldenOmnitool");
-        diamondOmnitool = new ItemVanillaOmnitool(Item.ToolMaterial.EMERALD, 3900, ":diamondOmnitool", Items.diamond).setUnlocalizedName(ModInformation.modid + ".omnitool.diamond");
+        diamondOmnitool = new ItemVanillaOmnitool(Item.ToolMaterial.EMERALD, 3900, ":omnitool_diamond", Items.diamond).setUnlocalizedName(ModInformation.modid + ".omnitool.diamond");
         GameRegistry.registerItem(diamondOmnitool, "diamondOmnitool");
+        copperOmnitool = new ItemVanillaOmnitool(copperMaterial, 850, "omnitool_copper", OreDictionary.getOres("ingotCopper").get(0).getItem()).setUnlocalizedName(ModInformation.modid + ".omnitool.copper");
+        GameRegistry.registerItem(copperOmnitool, "copperOmnitool");
+        tinOmnitool = new ItemVanillaOmnitool(tinMaterial, 640, "omnitool_tin", OreDictionary.getOres("ingotTin").get(0).getItem()).setUnlocalizedName(ModInformation.modid + ".omnitool.tin");
+        GameRegistry.registerItem(tinOmnitool, "tinOmnitool");
+        leadOmnitool = new ItemVanillaOmnitool(leadMaterial, 700, "omnitool_lead", OreDictionary.getOres("ingotLead").get(0).getItem()).setUnlocalizedName(ModInformation.modid + ".omnitool.lead");
+        GameRegistry.registerItem(leadOmnitool, "leadOmnitool");
+        bronzeOmnitool = new ItemVanillaOmnitool(bronzeMaterial, 950, "omnitool_bronze", OreDictionary.getOres("ingotBronze").get(0).getItem()).setUnlocalizedName(ModInformation.modid + ".omnitool.bronze");
+        GameRegistry.registerItem(bronzeOmnitool, "bronzeOmnitool");
     }
 }

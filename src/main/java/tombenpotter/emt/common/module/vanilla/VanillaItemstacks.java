@@ -40,4 +40,32 @@ public class VanillaItemstacks {
     public static ItemStack tinDrillTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 6);
     public static ItemStack leadDrillTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 7);
     public static ItemStack bronzeDrillTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 8);
+
+    public static ItemStack woodenChainsawTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 9);
+    public static ItemStack stoneChainsawTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 10);
+    public static ItemStack ironChainsawTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 11);
+    public static ItemStack goldenChainsawTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 12);
+    public static ItemStack diamondChainsawTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 13);
+    public static ItemStack copperChainsawTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 14);
+    public static ItemStack tinChainsawTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 15);
+    public static ItemStack leadChainsawTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 16);
+    public static ItemStack bronzeChainsawTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 17);
+
+    public static ItemStack ironOmnitoolTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 18);
+    public static ItemStack goldenOmnitoolTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 19);
+    public static ItemStack diamondOmnitoolTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 20);
+    public static ItemStack copperOmnitoolTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 21);
+    public static ItemStack tinOmnitoolTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 22);
+    public static ItemStack leadOmnitoolTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 23);
+    public static ItemStack bronzeOmnitoolTop = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 24);
+
+    public static ItemStack woodenShard = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 25);
+    public static ItemStack stoneShard = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 26);
+    public static ItemStack ironShard = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 27);
+    public static ItemStack goldenShard = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 28);
+    public static ItemStack obsidianShard = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 29);
+    public static ItemStack copperShard = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 30);
+    public static ItemStack tinShard = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 31);
+    public static ItemStack leadShard = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 32);
+    public static ItemStack bronzeShard = new ItemStack(VanillaItemsRegistry.craftingComponent, 1, 33);
 }
