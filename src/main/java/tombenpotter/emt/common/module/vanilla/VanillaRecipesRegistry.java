@@ -45,10 +45,15 @@ public class VanillaRecipesRegistry {
         addCarverRecipe(VanillaItemstacks.ironShard, "ingotIron");
         addCarverRecipe(VanillaItemstacks.goldenShard, "ingotGold");
         addCarverRecipe(VanillaItemstacks.obsidianShard, new ItemStack(Blocks.obsidian));
-        addCarverRecipe(VanillaItemstacks.copperShard, "ingotCopper");
-        addCarverRecipe(VanillaItemstacks.tinShard, "ingotTin");
-        addCarverRecipe(VanillaItemstacks.leadShard, "ingotLead");
-        addCarverRecipe(VanillaItemstacks.bronzeShard, "ingotBronze");
+
+        if (isOreRegistered("ingotCopper"))
+            addCarverRecipe(VanillaItemstacks.copperShard, "ingotCopper");
+        if (isOreRegistered("ingotTin"))
+            addCarverRecipe(VanillaItemstacks.tinShard, "ingotTin");
+        if (isOreRegistered("ingotLead"))
+            addCarverRecipe(VanillaItemstacks.leadShard, "ingotLead");
+        if (isOreRegistered("ingotBronze"))
+            addCarverRecipe(VanillaItemstacks.bronzeShard, "ingotBronze");
     }
 
     public static void addDrillTopRecipes() {
@@ -57,10 +62,15 @@ public class VanillaRecipesRegistry {
         ironDrillTop = drillTopRecipe(VanillaItemstacks.ironDrillTop, "ingotIron", VanillaItemstacks.ironShard);
         goldenDrillTop = drillTopRecipe(VanillaItemstacks.goldenDrillTop, "ingotGold", VanillaItemstacks.goldenShard);
         diamondDrillTop = drillTopRecipe(VanillaItemstacks.diamondDrillTop, "gemDiamond", VanillaItemstacks.obsidianShard);
-        copperDrillTop = drillTopRecipe(VanillaItemstacks.copperDrillTop, "ingotCopper", VanillaItemstacks.copperShard);
-        tinDrillTop = drillTopRecipe(VanillaItemstacks.tinDrillTop, "ingotTin", VanillaItemstacks.tinShard);
-        leadDrillTop = drillTopRecipe(VanillaItemstacks.leadDrillTop, "ingotLead", VanillaItemstacks.leadShard);
-        bronzeDrillTop = drillTopRecipe(VanillaItemstacks.bronzeDrillTop, "ingotBronze", VanillaItemstacks.bronzeShard);
+
+        if (isOreRegistered("ingotCopper"))
+            copperDrillTop = drillTopRecipe(VanillaItemstacks.copperDrillTop, "ingotCopper", VanillaItemstacks.copperShard);
+        if (isOreRegistered("ingotTin"))
+            tinDrillTop = drillTopRecipe(VanillaItemstacks.tinDrillTop, "ingotTin", VanillaItemstacks.tinShard);
+        if (isOreRegistered("ingotLead"))
+            leadDrillTop = drillTopRecipe(VanillaItemstacks.leadDrillTop, "ingotLead", VanillaItemstacks.leadShard);
+        if (isOreRegistered("ingotBronze"))
+            bronzeDrillTop = drillTopRecipe(VanillaItemstacks.bronzeDrillTop, "ingotBronze", VanillaItemstacks.bronzeShard);
     }
 
     public static void addChainsawTopRecipes() {
@@ -69,10 +79,15 @@ public class VanillaRecipesRegistry {
         ironChainsawTop = chainsawTopRecipe(VanillaItemstacks.ironChainsawTop, "ingotIron", VanillaItemstacks.ironShard);
         goldenChainsawTop = chainsawTopRecipe(VanillaItemstacks.goldenChainsawTop, "ingotGold", VanillaItemstacks.goldenShard);
         diamondChainsawTop = chainsawTopRecipe(VanillaItemstacks.diamondChainsawTop, "gemDiamond", VanillaItemstacks.obsidianShard);
-        copperChainsawTop = chainsawTopRecipe(VanillaItemstacks.copperChainsawTop, "ingotCopper", VanillaItemstacks.copperShard);
-        tinChainsawTop = chainsawTopRecipe(VanillaItemstacks.tinChainsawTop, "ingotTin", VanillaItemstacks.tinShard);
-        leadChainsawTop = chainsawTopRecipe(VanillaItemstacks.leadChainsawTop, "ingotLead", VanillaItemstacks.leadShard);
-        bronzeChainsawTop = chainsawTopRecipe(VanillaItemstacks.bronzeChainsawTop, "ingotBronze", VanillaItemstacks.bronzeShard);
+
+        if (isOreRegistered("ingotCopper"))
+            copperChainsawTop = chainsawTopRecipe(VanillaItemstacks.copperChainsawTop, "ingotCopper", VanillaItemstacks.copperShard);
+        if (isOreRegistered("ingotTin"))
+            tinChainsawTop = chainsawTopRecipe(VanillaItemstacks.tinChainsawTop, "ingotTin", VanillaItemstacks.tinShard);
+        if (isOreRegistered("ingotLead"))
+            leadChainsawTop = chainsawTopRecipe(VanillaItemstacks.leadChainsawTop, "ingotLead", VanillaItemstacks.leadShard);
+        if (isOreRegistered("ingotBronze"))
+            bronzeChainsawTop = chainsawTopRecipe(VanillaItemstacks.bronzeChainsawTop, "ingotBronze", VanillaItemstacks.bronzeShard);
     }
 
     public static void addDrillRecipe() {
@@ -81,10 +96,15 @@ public class VanillaRecipesRegistry {
         ironDrill = toolRecipe(VanillaItemstacks.ironDrill, VanillaItemstacks.ironDrillTop, "ingotIron", new ItemStack(Items.leather));
         goldenDrill = toolRecipe(VanillaItemstacks.goldenDrill, VanillaItemstacks.goldenDrillTop, "ingotGold", new ItemStack(Blocks.obsidian));
         diamondDrill = toolRecipe(VanillaItemstacks.diamondDrill, VanillaItemstacks.diamondDrillTop, "gemDiamond", "ingotGold");
-        copperDrill = toolRecipe(VanillaItemstacks.copperDrill, VanillaItemstacks.copperDrillTop, "ingotCopper", "ingotTin");
-        tinDrill = toolRecipe(VanillaItemstacks.tinDrill, VanillaItemstacks.tinDrillTop, "ingotTin", "ingotGold");
-        leadDrill = toolRecipe(VanillaItemstacks.leadDrill, VanillaItemstacks.leadDrillTop, "ingotLead", "ingotIron");
-        bronzeDrill = toolRecipe(VanillaItemstacks.bronzeDrill, VanillaItemstacks.bronzeDrillTop, "ingotBronze", new ItemStack(Blocks.obsidian));
+
+        if (isOreRegistered("ingotCopper") && isOreRegistered("ingotTin"))
+            copperDrill = toolRecipe(VanillaItemstacks.copperDrill, VanillaItemstacks.copperDrillTop, "ingotCopper", "ingotTin");
+        if (isOreRegistered("ingotTin"))
+            tinDrill = toolRecipe(VanillaItemstacks.tinDrill, VanillaItemstacks.tinDrillTop, "ingotTin", "ingotGold");
+        if (isOreRegistered("ingotLead"))
+            leadDrill = toolRecipe(VanillaItemstacks.leadDrill, VanillaItemstacks.leadDrillTop, "ingotLead", "ingotIron");
+        if (isOreRegistered("ingotBronze"))
+            bronzeDrill = toolRecipe(VanillaItemstacks.bronzeDrill, VanillaItemstacks.bronzeDrillTop, "ingotBronze", new ItemStack(Blocks.obsidian));
     }
 
     public static void addChainsawRecipes() {
@@ -93,38 +113,51 @@ public class VanillaRecipesRegistry {
         ironChainsaw = toolRecipe(VanillaItemstacks.ironChainsaw, VanillaItemstacks.ironChainsawTop, "ingotIron", new ItemStack(Items.leather));
         goldenChainsaw = toolRecipe(VanillaItemstacks.goldenChainsaw, VanillaItemstacks.goldenChainsawTop, "ingotGold", new ItemStack(Blocks.obsidian));
         diamondChainsaw = toolRecipe(VanillaItemstacks.diamondChainsaw, VanillaItemstacks.diamondChainsawTop, "gemDiamond", "ingotGold");
-        copperChainsaw = toolRecipe(VanillaItemstacks.copperChainsaw, VanillaItemstacks.copperChainsawTop, "ingotCopper", "ingotTin");
-        tinChainsaw = toolRecipe(VanillaItemstacks.tinChainsaw, VanillaItemstacks.tinChainsawTop, "ingotTin", "ingotGold");
-        leadChainsaw = toolRecipe(VanillaItemstacks.leadChainsaw, VanillaItemstacks.leadChainsawTop, "ingotLead", "ingotIron");
-        bronzeChainsaw = toolRecipe(VanillaItemstacks.bronzeChainsaw, VanillaItemstacks.bronzeChainsawTop, "ingotBronze", new ItemStack(Blocks.obsidian));
+
+        if (isOreRegistered("ingotCopper") && isOreRegistered("ingotTin"))
+            copperChainsaw = toolRecipe(VanillaItemstacks.copperChainsaw, VanillaItemstacks.copperChainsawTop, "ingotCopper", "ingotTin");
+        if (isOreRegistered("ingotTin"))
+            tinChainsaw = toolRecipe(VanillaItemstacks.tinChainsaw, VanillaItemstacks.tinChainsawTop, "ingotTin", "ingotGold");
+        if (isOreRegistered("ingotLead"))
+            leadChainsaw = toolRecipe(VanillaItemstacks.leadChainsaw, VanillaItemstacks.leadChainsawTop, "ingotLead", "ingotIron");
+        if (isOreRegistered("ingotBronze"))
+            bronzeChainsaw = toolRecipe(VanillaItemstacks.bronzeChainsaw, VanillaItemstacks.bronzeChainsawTop, "ingotBronze", new ItemStack(Blocks.obsidian));
     }
 
     public static IRecipe toolRecipe(ItemStack output, ItemStack X, String Y, ItemStack Z) {
-        for (int i = 0; i < OreDictionary.getOres(Y).size(); i++) {
-            return GameRegistry.addShapedRecipe(output, " X ", " Y ", "YZY", 'X', X, 'Y', OreDictionary.getOres(Y).get(i), 'Z', Z);
+        if (isOreRegistered(Y)) {
+            for (int i = 0; i < OreDictionary.getOres(Y).size(); i++) {
+                return GameRegistry.addShapedRecipe(output, " X ", " Y ", "YZY", 'X', X, 'Y', OreDictionary.getOres(Y).get(i), 'Z', Z);
+            }
         }
         return null;
     }
 
     public static IRecipe toolRecipe(ItemStack output, ItemStack X, String Y, String Z) {
-        for (int i = 0; i < OreDictionary.getOres(Y).size(); i++) {
-            for (int j = 0; j < OreDictionary.getOres(Z).size(); j++) {
-                return GameRegistry.addShapedRecipe(output, " X ", " Y ", "YZY", 'X', X, 'Y', OreDictionary.getOres(Y).get(j), 'Z', OreDictionary.getOres(Z).get(i));
+        if (isOreRegistered(Y) && isOreRegistered(Z)) {
+            for (int i = 0; i < OreDictionary.getOres(Y).size(); i++) {
+                for (int j = 0; j < OreDictionary.getOres(Z).size(); j++) {
+                    return GameRegistry.addShapedRecipe(output, " X ", " Y ", "YZY", 'X', X, 'Y', OreDictionary.getOres(Y).get(j), 'Z', OreDictionary.getOres(Z).get(i));
+                }
             }
         }
         return null;
     }
 
     public static IRecipe drillTopRecipe(ItemStack output, String X, ItemStack Y) {
-        for (int i = 0; i < OreDictionary.getOres(X).size(); i++) {
-            return GameRegistry.addShapedRecipe(output, " Y ", "XXX", 'X', OreDictionary.getOres(X).get(i), 'Y', Y);
+        if (isOreRegistered(X)) {
+            for (int i = 0; i < OreDictionary.getOres(X).size(); i++) {
+                return GameRegistry.addShapedRecipe(output, " Y ", "XXX", 'X', OreDictionary.getOres(X).get(i), 'Y', Y);
+            }
         }
         return null;
     }
 
     public static IRecipe chainsawTopRecipe(ItemStack output, String X, ItemStack Y) {
-        for (int i = 0; i < OreDictionary.getOres(X).size(); i++) {
-            return GameRegistry.addShapedRecipe(output, " Y ", "XYX", "XYX", 'X', OreDictionary.getOres(X).get(i), 'Y', Y);
+        if (isOreRegistered(X)) {
+            for (int i = 0; i < OreDictionary.getOres(X).size(); i++) {
+                return GameRegistry.addShapedRecipe(output, " Y ", "XYX", "XYX", 'X', OreDictionary.getOres(X).get(i), 'Y', Y);
+            }
         }
         return null;
     }
@@ -138,12 +171,18 @@ public class VanillaRecipesRegistry {
     }
 
     public static void addCarverRecipe(ItemStack output, String input) {
-        for (int i = 0; i < OreDictionary.getOres(input).size(); i++) {
-            GameRegistry.addShapelessRecipe(output, VanillaItemstacks.woodenCarver, OreDictionary.getOres(input).get(i));
-            GameRegistry.addShapelessRecipe(output, VanillaItemstacks.stoneCarver, OreDictionary.getOres(input).get(i));
-            GameRegistry.addShapelessRecipe(output, VanillaItemstacks.ironCarver, OreDictionary.getOres(input).get(i));
-            GameRegistry.addShapelessRecipe(output, VanillaItemstacks.obsidianCarver, OreDictionary.getOres(input).get(i));
-            GameRegistry.addShapelessRecipe(output, VanillaItemstacks.diamondCarver, OreDictionary.getOres(input).get(i));
+        if (isOreRegistered(input)) {
+            for (int i = 0; i < OreDictionary.getOres(input).size(); i++) {
+                GameRegistry.addShapelessRecipe(output, VanillaItemstacks.woodenCarver, OreDictionary.getOres(input).get(i));
+                GameRegistry.addShapelessRecipe(output, VanillaItemstacks.stoneCarver, OreDictionary.getOres(input).get(i));
+                GameRegistry.addShapelessRecipe(output, VanillaItemstacks.ironCarver, OreDictionary.getOres(input).get(i));
+                GameRegistry.addShapelessRecipe(output, VanillaItemstacks.obsidianCarver, OreDictionary.getOres(input).get(i));
+                GameRegistry.addShapelessRecipe(output, VanillaItemstacks.diamondCarver, OreDictionary.getOres(input).get(i));
+            }
         }
+    }
+
+    public static boolean isOreRegistered(String ore) {
+        return !OreDictionary.getOres(ore).isEmpty();
     }
 }

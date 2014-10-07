@@ -24,7 +24,7 @@ import thaumcraft.common.entities.monster.EntityTaintChicken;
 import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
 import tombenpotter.emt.common.module.ic2.IC2ModuleItemRegistry;
-import tombenpotter.emt.common.module.vanilla.items.ItemShardCaver;
+import tombenpotter.emt.common.module.vanilla.items.ItemShardCarver;
 
 public class EventHandlerEMT {
 
@@ -61,7 +61,7 @@ public class EventHandlerEMT {
     @SubscribeEvent
     public void onCraftedEvent(PlayerEvent.ItemCraftedEvent event) {
         for (int i = 0; i < event.craftMatrix.getSizeInventory(); i++) {
-            if (event.craftMatrix.getStackInSlot(i) != null && event.craftMatrix.getStackInSlot(i).getItem() instanceof ItemShardCaver && event.player != null) {
+            if (event.craftMatrix.getStackInSlot(i) != null && event.craftMatrix.getStackInSlot(i).getItem() instanceof ItemShardCarver && event.player != null) {
                 event.craftMatrix.getStackInSlot(i).stackSize = 2;
                 event.craftMatrix.getStackInSlot(i).damageItem(1, event.player);
             }

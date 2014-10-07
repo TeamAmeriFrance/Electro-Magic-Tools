@@ -9,7 +9,7 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
 import tombenpotter.emt.ModInformation;
 import tombenpotter.emt.common.module.vanilla.items.ItemCraftingComponent;
-import tombenpotter.emt.common.module.vanilla.items.ItemShardCaver;
+import tombenpotter.emt.common.module.vanilla.items.ItemShardCarver;
 import tombenpotter.emt.common.module.vanilla.items.tools.ItemVanillaChainsaw;
 import tombenpotter.emt.common.module.vanilla.items.tools.ItemVanillaDrill;
 import tombenpotter.emt.common.module.vanilla.items.tools.ItemVanillaOmnitool;
@@ -56,15 +56,15 @@ public class VanillaItemsRegistry {
         craftingComponent = new ItemCraftingComponent().setUnlocalizedName(ModInformation.modid + ".material");
         GameRegistry.registerItem(craftingComponent, "craftingComponents");
 
-        woodCarver = new ItemShardCaver(8).setUnlocalizedName(ModInformation.modid + ".carver.wood");
+        woodCarver = new ItemShardCarver(8).setUnlocalizedName(ModInformation.modid + ".carver.wood");
         GameRegistry.registerItem(woodCarver, "woodCarver");
-        stoneCarver = new ItemShardCaver(32).setUnlocalizedName(ModInformation.modid + ".carver.stone");
+        stoneCarver = new ItemShardCarver(32).setUnlocalizedName(ModInformation.modid + ".carver.stone");
         GameRegistry.registerItem(stoneCarver, "stoneCarver");
-        ironCarver = new ItemShardCaver(128).setUnlocalizedName(ModInformation.modid + ".carver.iron");
+        ironCarver = new ItemShardCarver(128).setUnlocalizedName(ModInformation.modid + ".carver.iron");
         GameRegistry.registerItem(ironCarver, "ironCarver");
-        obsidianCarver = new ItemShardCaver(256).setUnlocalizedName(ModInformation.modid + ".carver.obsidian");
+        obsidianCarver = new ItemShardCarver(256).setUnlocalizedName(ModInformation.modid + ".carver.obsidian");
         GameRegistry.registerItem(obsidianCarver, "obsidianCarver");
-        diamondCarver = new ItemShardCaver(1204).setUnlocalizedName(ModInformation.modid + ".carver.diamond");
+        diamondCarver = new ItemShardCarver(1204).setUnlocalizedName(ModInformation.modid + ".carver.diamond");
         GameRegistry.registerItem(diamondCarver, "diamondCarver");
 
         woodenDrill = new ItemVanillaDrill(Item.ToolMaterial.WOOD, 75, ":drill_wood", new ItemStack(Item.getItemFromBlock(Blocks.planks))).setUnlocalizedName(ModInformation.modid + ".drill.wood");
@@ -96,6 +96,14 @@ public class VanillaItemsRegistry {
         GameRegistry.registerItem(goldenChainsaw, "goldenChainsaw");
         diamondChainsaw = new ItemVanillaChainsaw(Item.ToolMaterial.EMERALD, 2015, ":chainsaw_diamond", Items.diamond, 6F).setUnlocalizedName(ModInformation.modid + ".chainsaw.diamond");
         GameRegistry.registerItem(diamondChainsaw, "diamondChainsaw");
+        copperChainsaw = new ItemVanillaChainsaw(copperMaterial, 450, ":chainsaw_copper", OreDictionary.getOres("ingotCopper").get(0).getItem(), 3F).setUnlocalizedName(ModInformation.modid + ".chainsaw.copper");
+        GameRegistry.registerItem(copperChainsaw, "copperChainsaw");
+        tinChainsaw = new ItemVanillaChainsaw(tinMaterial, 350, ":chainsaw_tin", OreDictionary.getOres("ingotTin").get(0).getItem(), 5F).setUnlocalizedName(ModInformation.modid + ".chainsaw.tin");
+        GameRegistry.registerItem(tinChainsaw, "tinChainsaw");
+        leadChainsaw = new ItemVanillaChainsaw(leadMaterial, 400, ":chainsaw_lead", OreDictionary.getOres("ingotLead").get(0).getItem(), 3.5F).setUnlocalizedName(ModInformation.modid + ".chainsaw.lead");
+        GameRegistry.registerItem(leadChainsaw, "leadChainsaw");
+        bronzeChainsaw = new ItemVanillaChainsaw(bronzeMaterial, 650, ":chainsaw_bronze", OreDictionary.getOres("ingotBronze").get(0).getItem(), 4F).setUnlocalizedName(ModInformation.modid + ".chainsaw.bronze");
+        GameRegistry.registerItem(bronzeChainsaw, "bronzeChainsaw");
 
         ironOmnitool = new ItemVanillaOmnitool(Item.ToolMaterial.IRON, 500, ":omnitool_iron", Items.iron_ingot).setUnlocalizedName(ModInformation.modid + ".omnitool.iron");
         GameRegistry.registerItem(ironOmnitool, "ironOmnitool");
