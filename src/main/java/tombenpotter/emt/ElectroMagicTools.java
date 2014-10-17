@@ -27,7 +27,7 @@ import net.minecraftforge.common.MinecraftForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import tombenpotter.emt.common.commands.CommandOutputs;
-import tombenpotter.emt.common.module.base.EMTEntityRegistry;
+import tombenpotter.emt.common.modules.base.entities.BaseEntityRegistry;
 import tombenpotter.emt.common.module.ic2.recipes.EMTInitRecipes;
 import tombenpotter.emt.common.module.ic2.recipes.EMTPostInitRecipes;
 import tombenpotter.emt.common.module.ic2.recipes.UuMInfusionRecipes;
@@ -78,7 +78,7 @@ public class ElectroMagicTools {
         ElectroMagicTools.logger.info(localize("console.EMT.init.recipes"));
         EMTInitRecipes.add();
         ElectroMagicTools.logger.info(localize("console.EMT.init.entities"));
-        EMTEntityRegistry.registerEMTEntities();
+        BaseEntityRegistry.registerEMTEntities();
         ElectroMagicTools.logger.info(localize("console.EMT.init.guiHandler"));
         NetworkRegistry.INSTANCE.registerGuiHandler(this, proxy);
 

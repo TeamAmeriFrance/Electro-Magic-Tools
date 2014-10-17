@@ -1,6 +1,9 @@
 package tombenpotter.emt.common.modules.base.items;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
@@ -24,12 +27,19 @@ public class ItemBaseOmnitool extends ItemPickaxe {
 
     public String textureName;
 
-    public ItemBaseOmnitool(ToolMaterial material, int maxDamage, String unlocName, String textureName) {
-	    super(material);
-	    this.setCreativeTab(ElectroMagicTools.tabEMT);
-	    this.setMaxDamage(maxDamage);
-	    this.setTextureName(ModInformation.texturePath + ":" + textureName);
-	    this.efficiencyOnProperMaterial = this.toolMaterial.getEfficiencyOnProperMaterial();
+    public ItemBaseOmnitool(ToolMaterial material, int maxDamage, String textureName) {
+        super(material);
+        this.setCreativeTab(ElectroMagicTools.tabEMT);
+        this.setMaxStackSize(1);
+        this.setMaxDamage(maxDamage);
+        this.textureName = textureName;
+        this.efficiencyOnProperMaterial = this.toolMaterial.getEfficiencyOnProperMaterial();
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerIcons(IIconRegister iconRegister) {
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":tools/omnitools" + textureName);
     }
 
     @Override
@@ -71,14 +81,11 @@ public class ItemBaseOmnitool extends ItemPickaxe {
         return false;
     }
 
-	@Override
-	public int getItemEnchantability() {
-		if (!ConfigHandler.enchanting) {
-			return 0;
-		} else {
-			return toolMaterial.getEnchantability();
-		}
-	}
+    @Override
+    public int getItemEnchantability() {
+        if (ConfigHandler.enchanting == false) return 0;
+        else return toolMaterial.getEnchantability();
+    }
 
     @Override
     public boolean isBookEnchantable(ItemStack itemstack1, ItemStack itemstack2) {

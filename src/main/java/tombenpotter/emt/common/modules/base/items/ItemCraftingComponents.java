@@ -1,4 +1,4 @@
-package tombenpotter.emt.common.module.vanilla.items;
+package tombenpotter.emt.common.modules.base.items;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -7,12 +7,11 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
-import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
 
 import java.util.List;
 
-public class ItemCraftingComponent extends Item {
+public class ItemCraftingComponents extends ItemBase {
 
     public IIcon[] icon = new IIcon[100];
     public final String drillTop = "drillTop";
@@ -20,10 +19,10 @@ public class ItemCraftingComponent extends Item {
     public final String omnitoolTop = "omnitoolTop";
     public final String shard = "shard";
 
-    public ItemCraftingComponent() {
+    public ItemCraftingComponents(String unlocName) {
+        super(unlocName);
         this.setMaxDamage(0);
         this.setHasSubtypes(true);
-        this.setCreativeTab(ElectroMagicTools.tabEMT);
     }
 
     @Override

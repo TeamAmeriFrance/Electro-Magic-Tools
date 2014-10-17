@@ -1,11 +1,11 @@
-package tombenpotter.emt.common.module.vanilla.items.tools;
+package tombenpotter.emt.common.modules.base.items.tools;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import tombenpotter.emt.common.module.base.items.tools.ItemBaseChainsaw;
+import tombenpotter.emt.common.modules.base.items.ItemBaseChainsaw;
 import tombenpotter.emt.common.util.IRefillable;
 
 public class ItemVanillaChainsaw extends ItemBaseChainsaw implements IRefillable {

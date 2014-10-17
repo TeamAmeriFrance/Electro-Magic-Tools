@@ -10,7 +10,7 @@
  * http://www.minecraftforum.net/topic/1585216-
  ******************************************************************************/
 
-package tombenpotter.emt.common.module.base.entities;
+package tombenpotter.emt.common.modules.base.entities;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

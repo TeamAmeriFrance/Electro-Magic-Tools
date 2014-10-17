@@ -30,7 +30,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
-import tombenpotter.emt.common.module.base.entities.EntityArcher;
+import tombenpotter.emt.common.modules.base.entities.EntityArcher;
 import tombenpotter.emt.common.util.ConfigHandler;
 import tombenpotter.emt.common.util.TextHelper;
 

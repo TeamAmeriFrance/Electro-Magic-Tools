@@ -1,4 +1,4 @@
-package tombenpotter.emt.common.module.vanilla.items;
+package tombenpotter.emt.common.modules.base.items;
 
 import net.minecraft.item.Item;
 import tombenpotter.emt.ElectroMagicTools;

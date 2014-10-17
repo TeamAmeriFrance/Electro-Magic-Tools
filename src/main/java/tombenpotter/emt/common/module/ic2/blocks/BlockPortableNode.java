@@ -27,7 +27,7 @@ import net.minecraft.world.World;
 import thaumcraft.common.blocks.BlockAiry;
 import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
-import tombenpotter.emt.common.module.base.tile.TileEntityPortableNode;
+import tombenpotter.emt.common.modules.base.tile.TileEntityPortableNode;
 
 import java.util.List;
 import java.util.Random;

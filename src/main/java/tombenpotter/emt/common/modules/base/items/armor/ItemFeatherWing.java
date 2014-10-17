@@ -1,54 +1,48 @@
-package tombenpotter.emt.common.module.base.items;
+package tombenpotter.emt.common.modules.base.items.armor;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import thaumcraft.api.IRepairable;
-import thaumcraft.api.IVisDiscountGear;
-import thaumcraft.api.aspects.Aspect;
 import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
-import tombenpotter.emt.common.util.TextHelper;
+import tombenpotter.emt.client.model.ModelWings;
 
-import java.util.List;
+public class ItemFeatherWing extends ItemArmor {
 
-public class ItemThaumiumReinforcedWing extends ItemFeatherWing implements IVisDiscountGear, IRepairable {
+    public int visDiscount = 0;
 
-    public ItemThaumiumReinforcedWing(ArmorMaterial material, int par3, int par4) {
+    public ItemFeatherWing(ArmorMaterial material, int par3, int par4) {
         super(material, par3, par4);
         this.setMaxStackSize(1);
-        this.setMaxDamage(250);
+        this.setMaxDamage(120);
         this.setCreativeTab(ElectroMagicTools.tabEMT);
         this.isDamageable();
-        visDiscount = 4;
-    }
-
-    @Override
-    public int getVisDiscount(ItemStack stack, EntityPlayer player, Aspect aspect) {
-        return visDiscount;
     }
 
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":armor/wing_thaumium");
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":armor/wing_feather");
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-        return ModInformation.texturePath + ":textures/models/thaumiumwing.png";
+        return ModInformation.texturePath + ":textures/models/featherwing.png";
     }
 
-    @SuppressWarnings({"unchecked", "rawtypes"})
     @Override
-    public void addInformation(ItemStack stack, EntityPlayer par2EntityPlayer, List list, boolean par4) {
-        list.add(TextHelper.localize("tooltip.EMT.visDiscount") + ": " + String.valueOf(visDiscount) + "%");
+    @SideOnly(Side.CLIENT)
+    public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, int armorSlot) {
+        return new ModelWings();
     }
 
     @Override
@@ -58,10 +52,10 @@ public class ItemThaumiumReinforcedWing extends ItemFeatherWing implements IVisD
             boolean isHoldingJump = Minecraft.getMinecraft().gameSettings.keyBindJump.getIsKeyPressed();
             boolean isSneaking = Minecraft.getMinecraft().gameSettings.keyBindSneak.getIsKeyPressed();
 
-            if (isJumping) player.motionY = 0.5;
+            if (isJumping) player.motionY = 0.25;
 
             if (isHoldingJump && !player.onGround && player.motionY < 0 && !player.capabilities.isCreativeMode)
-                player.motionY *= 0.5;
+                player.motionY *= 0.9;
 
             if (player.isInWater() && !player.capabilities.isCreativeMode) player.motionY = -0.6;
 
@@ -69,7 +63,6 @@ public class ItemThaumiumReinforcedWing extends ItemFeatherWing implements IVisD
                 player.motionY = -0.3;
 
             if (isSneaking && !player.onGround) player.motionY = -0.6;
-
         }
         if (player.fallDistance > 0.0F) player.fallDistance = 0;
     }

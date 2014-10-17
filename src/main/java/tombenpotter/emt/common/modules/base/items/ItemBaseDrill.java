@@ -1,6 +1,9 @@
 package tombenpotter.emt.common.modules.base.items;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemPickaxe;
@@ -15,12 +18,19 @@ public class ItemBaseDrill extends ItemPickaxe {
 
     public String textureName;
 
-    public ItemBaseDrill(ToolMaterial material, int maxDamage, String unlocName, String textureName) {
+    public ItemBaseDrill(ToolMaterial material, int maxDamage, String textureName) {
         super(material);
         this.setCreativeTab(ElectroMagicTools.tabEMT);
+        this.setMaxStackSize(1);
         this.setMaxDamage(maxDamage);
-	    this.setTextureName(ModInformation.texturePath + ":" + textureName);
+        this.textureName = textureName;
         this.efficiencyOnProperMaterial = this.toolMaterial.getEfficiencyOnProperMaterial();
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerIcons(IIconRegister iconRegister) {
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":tools/drills/" + textureName);
     }
 
     @Override
@@ -68,11 +78,8 @@ public class ItemBaseDrill extends ItemPickaxe {
 
     @Override
     public int getItemEnchantability() {
-        if (!ConfigHandler.enchanting) {
-	        return 0;
-        } else {
-	        return toolMaterial.getEnchantability();
-        }
+        if (ConfigHandler.enchanting == false) return 0;
+        else return toolMaterial.getEnchantability();
     }
 
     @Override

@@ -13,7 +13,7 @@
 package tombenpotter.emt.common.module.ic2;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import tombenpotter.emt.common.module.base.tile.TileEntityPortableNode;
+import tombenpotter.emt.common.modules.base.tile.TileEntityPortableNode;
 import tombenpotter.emt.common.module.ic2.tile.TileEntityEtherealMacerator;
 import tombenpotter.emt.common.module.ic2.tile.TileEntityIndustrialWandRecharge;
 import tombenpotter.emt.common.module.ic2.tile.generators.*;

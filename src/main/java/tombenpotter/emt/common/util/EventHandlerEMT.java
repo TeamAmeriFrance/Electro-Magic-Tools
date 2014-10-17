@@ -24,7 +24,7 @@ import thaumcraft.common.entities.monster.EntityTaintChicken;
 import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
 import tombenpotter.emt.common.module.ic2.IC2ModuleItemRegistry;
-import tombenpotter.emt.common.module.vanilla.items.ItemShardCarver;
+import tombenpotter.emt.common.modules.base.items.ItemShardCarver;
 
 public class EventHandlerEMT {
 

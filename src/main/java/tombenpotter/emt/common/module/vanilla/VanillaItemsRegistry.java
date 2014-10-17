@@ -8,44 +8,25 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
 import tombenpotter.emt.ModInformation;
-import tombenpotter.emt.common.module.vanilla.items.ItemCraftingComponent;
-import tombenpotter.emt.common.module.vanilla.items.ItemShardCarver;
-import tombenpotter.emt.common.module.vanilla.items.tools.ItemVanillaChainsaw;
-import tombenpotter.emt.common.module.vanilla.items.tools.ItemVanillaDrill;
-import tombenpotter.emt.common.module.vanilla.items.tools.ItemVanillaOmnitool;
+import tombenpotter.emt.common.modules.base.items.ItemBaseBaubles;
+import tombenpotter.emt.common.modules.base.items.ItemCraftingComponents;
+import tombenpotter.emt.common.modules.base.items.ItemMaterials;
+import tombenpotter.emt.common.modules.base.items.ItemShardCarver;
+import tombenpotter.emt.common.modules.base.items.foci.ItemChristmasFocus;
+import tombenpotter.emt.common.modules.base.items.tools.*;
 
 public class VanillaItemsRegistry {
 
-    public static Item woodenDrill;
-    public static Item stoneDrill;
-    public static Item ironDrill;
-    public static Item goldenDrill;
-    public static Item diamondDrill;
-    public static Item copperDrill;
-    public static Item tinDrill;
-    public static Item leadDrill;
-    public static Item bronzeDrill;
-
-    public static Item woodenChainsaw;
-    public static Item stoneChainsaw;
-    public static Item ironChainsaw;
-    public static Item goldenChainsaw;
-    public static Item diamondChainsaw;
-    public static Item copperChainsaw;
-    public static Item tinChainsaw;
-    public static Item leadChainsaw;
-    public static Item bronzeChainsaw;
-
-    public static Item ironOmnitool;
-    public static Item goldenOmnitool;
-    public static Item diamondOmnitool;
-    public static Item copperOmnitool;
-    public static Item tinOmnitool;
-    public static Item leadOmnitool;
-    public static Item bronzeOmnitool;
-
-    public static Item craftingComponent;
+    public static Item woodenDrill, stoneDrill, ironDrill, goldenDrill, diamondDrill, copperDrill, tinDrill, leadDrill, bronzeDrill;
+    public static Item woodenChainsaw, stoneChainsaw, ironChainsaw, goldenChainsaw, diamondChainsaw, copperChainsaw, tinChainsaw, leadChainsaw, bronzeChainsaw;
+    public static Item ironOmnitool, goldenOmnitool, diamondOmnitool, copperOmnitool, tinOmnitool, leadOmnitool, bronzeOmnitool;
     public static Item woodCarver, stoneCarver, ironCarver, obsidianCarver, diamondCarver;
+    public static Item baseBaubles, materials, craftingComponents;
+
+    public static Item thorHammer;
+    public static Item thorHammerBroken;
+
+    public static Item focusChristmas;
 
     public static Item.ToolMaterial copperMaterial = EnumHelper.addToolMaterial("copperToolMaterial", 2, 300, 6.0F, 2.0F, 14);
     public static Item.ToolMaterial tinMaterial = EnumHelper.addToolMaterial("tinToolMatierial", 2, 200, 8.0F, 4F, 18);
@@ -53,8 +34,18 @@ public class VanillaItemsRegistry {
     public static Item.ToolMaterial bronzeMaterial = EnumHelper.addToolMaterial("bronzeToolMaterial", 2, 350, 7.0F, 3.0F, 16);
 
     public static void registerItems() {
-        craftingComponent = new ItemCraftingComponent().setUnlocalizedName(ModInformation.modid + ".material");
-        GameRegistry.registerItem(craftingComponent, "craftingComponents");
+        craftingComponents = new ItemCraftingComponents("components");
+        GameRegistry.registerItem(craftingComponents, "craftingComponents");
+        baseBaubles = new ItemBaseBaubles();
+        GameRegistry.registerItem(baseBaubles, "BaseBaubles");
+        materials = new ItemMaterials();
+        GameRegistry.registerItem(materials, "Materials");
+        thorHammer = new ItemThorHammer();
+        GameRegistry.registerItem(thorHammer, "ThorHammer");
+        thorHammerBroken = new ItemThorHammerBroken();
+        GameRegistry.registerItem(thorHammerBroken, "ThorHammerBroken");
+        focusChristmas = new ItemChristmasFocus();
+        GameRegistry.registerItem(focusChristmas, "FocusChristmas");
 
         woodCarver = new ItemShardCarver(8).setUnlocalizedName(ModInformation.modid + ".carver.wood");
         GameRegistry.registerItem(woodCarver, "woodCarver");

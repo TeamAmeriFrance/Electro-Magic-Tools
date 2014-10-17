@@ -10,9 +10,8 @@
  * http://www.minecraftforum.net/topic/1585216-
  ******************************************************************************/
 
-package tombenpotter.emt.common.module.base.items.foci;
+package tombenpotter.emt.common.modules.base.items.foci;
 
-import net.minecraft.entity.monster.EntitySnowman;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MovingObjectPosition;
@@ -20,18 +19,19 @@ import net.minecraft.world.World;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.items.wands.ItemWandCasting;
+import tombenpotter.emt.common.modules.base.entities.EntityLaser;
 
-public class ItemChristmasFocus extends ItemBaseFocus {
+public class ItemExplosionFocus extends tombenpotter.emt.common.module.base.items.foci.ItemBaseFocus {
 
-    private static final AspectList visCost = new AspectList().add(Aspect.ORDER, 500).add(Aspect.AIR, 500);
+    private static final AspectList visCost = new AspectList().add(Aspect.FIRE, 200).add(Aspect.ENTROPY, 200);
 
-    public ItemChristmasFocus() {
-        super("focus.christmas", "focus_christmas");
+    public ItemExplosionFocus() {
+        super("focus.explosion", "focus_explosion");
     }
 
     @Override
     public int getFocusColor() {
-        return 99999999;
+        return 9990;
     }
 
     @Override
@@ -41,25 +41,18 @@ public class ItemChristmasFocus extends ItemBaseFocus {
 
     @Override
     public String getSortingHelper(ItemStack itemstack) {
-        return "CHRISTMAS";
+        return "EXPLOSION";
     }
 
     @Override
-    public ItemStack onFocusRightClick(ItemStack itemstack, World world, EntityPlayer player, MovingObjectPosition mop) {
+    public ItemStack onFocusRightClick(ItemStack itemstack, World world, EntityPlayer player, MovingObjectPosition movingobjectposition) {
         ItemWandCasting wand = (ItemWandCasting) itemstack.getItem();
-        if ((mop != null) && (mop.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK)) {
-            int x = mop.blockX;
-            int y = mop.blockY + 1;
-            int z = mop.blockZ;
-            if (wand.consumeAllVis(itemstack, player, getVisCost(), true, true)) {
-                if (!world.isRemote) {
-                    EntitySnowman snowman;
-                    snowman = new EntitySnowman(world);
-                    snowman.setPosition(x, y, z);
-                    world.spawnEntityInWorld(snowman);
-                }
+        if (wand.consumeAllVis(itemstack, player, getVisCost(), true, true)) {
+            if (!world.isRemote) {
+                EntityLaser laser;
+                laser = new EntityLaser(world, player, 2);
+                world.spawnEntityInWorld(laser);
             }
-            player.swingItem();
         }
         return itemstack;
     }

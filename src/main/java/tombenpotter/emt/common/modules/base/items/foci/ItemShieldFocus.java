@@ -10,7 +10,7 @@
  * http://www.minecraftforum.net/topic/1585216-
  ******************************************************************************/
 
-package tombenpotter.emt.common.module.base.items.foci;
+package tombenpotter.emt.common.modules.base.items.foci;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -20,9 +20,10 @@ import net.minecraft.world.World;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.items.wands.ItemWandCasting;
+import tombenpotter.emt.common.module.base.items.foci.*;
 import tombenpotter.emt.common.module.ic2.IC2ModuleBlockRegistry;
 
-public class ItemShieldFocus extends ItemBaseFocus {
+public class ItemShieldFocus extends tombenpotter.emt.common.module.base.items.foci.ItemBaseFocus {
 
     private static final AspectList visCost = new AspectList().add(Aspect.ORDER, 10).add(Aspect.WATER, 10).add(Aspect.AIR, 10);
 

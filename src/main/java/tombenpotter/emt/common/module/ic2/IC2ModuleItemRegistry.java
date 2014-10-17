@@ -19,9 +19,12 @@ import net.minecraftforge.common.util.EnumHelper;
 import thaumcraft.api.ThaumcraftApi;
 import tombenpotter.emt.ModInformation;
 import tombenpotter.emt.common.module.base.items.*;
-import tombenpotter.emt.common.module.base.items.foci.ItemChristmasFocus;
-import tombenpotter.emt.common.module.base.items.foci.ItemExplosionFocus;
-import tombenpotter.emt.common.module.base.items.foci.ItemShieldFocus;
+import tombenpotter.emt.common.modules.base.items.ItemMaterials;
+import tombenpotter.emt.common.modules.base.items.armor.ItemFeatherWing;
+import tombenpotter.emt.common.modules.base.items.armor.ItemThaumiumReinforcedWing;
+import tombenpotter.emt.common.modules.base.items.foci.ItemChristmasFocus;
+import tombenpotter.emt.common.modules.base.items.foci.ItemExplosionFocus;
+import tombenpotter.emt.common.modules.base.items.foci.ItemShieldFocus;
 import tombenpotter.emt.common.module.ic2.items.ItemElectricScribingTools;
 import tombenpotter.emt.common.module.ic2.items.armor.boots.ItemElectricBootsTraveller;
 import tombenpotter.emt.common.module.ic2.items.armor.boots.ItemNanoBootsTraveller;
@@ -44,6 +47,8 @@ import tombenpotter.emt.common.module.ic2.items.tools.drills.ItemThaumiumDrill;
 import tombenpotter.emt.common.module.ic2.items.tools.omnitools.ItemOmnitoolDiamond;
 import tombenpotter.emt.common.module.ic2.items.tools.omnitools.ItemOmnitoolIron;
 import tombenpotter.emt.common.module.ic2.items.tools.omnitools.ItemOmnitoolThaumium;
+import tombenpotter.emt.common.modules.base.items.tools.ItemThorHammerBroken;
+import tombenpotter.emt.common.modules.base.items.tools.ItemThorHammer;
 
 public class IC2ModuleItemRegistry {
 
@@ -82,7 +87,7 @@ public class IC2ModuleItemRegistry {
     public static ItemArmor.ArmorMaterial featherWingMaterial = EnumHelper.addArmorMaterial("FEATEHRWiNG", 1, new int[]{2, 2, 2, 2}, 6);
 
     public static void registerItems() {
-        itemEMTItems = new ItemEMTItems().setUnlocalizedName(ModInformation.modid + ".emtitems");
+        itemEMTItems = new ItemMaterials().setUnlocalizedName(ModInformation.modid + ".emtitems");
         GameRegistry.registerItem(itemEMTItems, "EMTItems");
         emtBauble = new ItemEMTBaubles().setUnlocalizedName(ModInformation.modid + ".emtbauble");
         GameRegistry.registerItem(emtBauble, "EMTBaubles");
@@ -115,7 +120,7 @@ public class IC2ModuleItemRegistry {
         quantumWing = new ItemQuantumWing(ItemArmor.ArmorMaterial.DIAMOND, 7, 1).setUnlocalizedName(ModInformation.modid + ".wing.quantum");
         GameRegistry.registerItem(quantumWing, "QuantumWing");
 
-        taintedThorHammer = new ItemTaintedThorHammer().setUnlocalizedName(ModInformation.modid + ".hammer.broken");
+        taintedThorHammer = new ItemThorHammerBroken().setUnlocalizedName(ModInformation.modid + ".hammer.broken");
         GameRegistry.registerItem(taintedThorHammer, "TaintedMjolnir");
         thorHammer = new ItemThorHammer().setUnlocalizedName(ModInformation.modid + ".hammer");
         GameRegistry.registerItem(thorHammer, "Mjolnir");

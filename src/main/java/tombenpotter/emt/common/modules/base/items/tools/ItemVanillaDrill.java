@@ -1,9 +1,9 @@
-package tombenpotter.emt.common.module.vanilla.items.tools;
+package tombenpotter.emt.common.modules.base.items.tools;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import tombenpotter.emt.common.module.base.items.tools.ItemBaseDrill;
+import tombenpotter.emt.common.modules.base.items.ItemBaseDrill;
 import tombenpotter.emt.common.util.IRefillable;
 
 public class ItemVanillaDrill extends ItemBaseDrill implements IRefillable {

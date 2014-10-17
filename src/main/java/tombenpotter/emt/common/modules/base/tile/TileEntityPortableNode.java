@@ -10,7 +10,7 @@
  * http://www.minecraftforum.net/topic/1585216-
  ******************************************************************************/
 
-package tombenpotter.emt.common.module.base.tile;
+package tombenpotter.emt.common.modules.base.tile;
 
 import thaumcraft.api.nodes.NodeModifier;
 import thaumcraft.api.nodes.NodeType;

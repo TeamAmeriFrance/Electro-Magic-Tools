@@ -18,7 +18,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ISpecialArmor;
 import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
-import tombenpotter.emt.common.module.base.items.ItemThaumiumReinforcedWing;
+import tombenpotter.emt.common.modules.base.items.armor.ItemThaumiumReinforcedWing;
 import tombenpotter.emt.common.util.ConfigHandler;
 
 import java.util.List;
