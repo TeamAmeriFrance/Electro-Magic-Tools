@@ -30,7 +30,7 @@ public class ItemBaseDrill extends ItemPickaxe {
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + textureName);
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":tools/drills/" + textureName);
     }
 
     @Override

@@ -39,7 +39,7 @@ public class ItemBaseChainsaw extends ItemAxe {
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + textureName);
+        this.itemIcon = iconRegister.registerIcon(ModInformation.texturePath + ":tools/chainsaws" + textureName);
     }
 
     @Override
