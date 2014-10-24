@@ -23,7 +23,7 @@ import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import thaumcraft.common.entities.monster.EntityTaintChicken;
 import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
-import tombenpotter.emt.common.module.ic2.IC2ModuleItemRegistry;
+import tombenpotter.emt.common.modules.ic2.items.IC2ItemRegistry;
 import tombenpotter.emt.common.modules.base.items.ItemShardCarver;
 
 public class EventHandlerEMT {
@@ -34,19 +34,19 @@ public class EventHandlerEMT {
             if (event.entityLiving instanceof EntityCreeper) {
                 EntityCreeper creeper = (EntityCreeper) event.entityLiving;
                 if (creeper.getPowered()) {
-                    event.drops.add(new EntityItem(event.entityLiving.worldObj, event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, new ItemStack(IC2ModuleItemRegistry.itemEMTItems, 1, 6)));
+                    event.drops.add(new EntityItem(event.entityLiving.worldObj, event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, new ItemStack(IC2ItemRegistry.itemEMTItems, 1, 6)));
                 }
             }
             if (event.entityLiving instanceof EntityTaintChicken) {
-                event.drops.add(new EntityItem(event.entityLiving.worldObj, event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, new ItemStack(IC2ModuleItemRegistry.itemEMTItems, 1, 14)));
+                event.drops.add(new EntityItem(event.entityLiving.worldObj, event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, new ItemStack(IC2ItemRegistry.itemEMTItems, 1, 14)));
             }
         }
 
         if (event.entityLiving instanceof EntityCreeper) {
-            event.entityLiving.entityDropItem(new ItemStack(IC2ModuleItemRegistry.itemEMTItems, 6), 1);
+            event.entityLiving.entityDropItem(new ItemStack(IC2ItemRegistry.itemEMTItems, 6), 1);
         }
         if (event.entityLiving instanceof EntityTaintChicken) {
-            event.entityLiving.entityDropItem(new ItemStack(IC2ModuleItemRegistry.itemEMTItems, 14), 1);
+            event.entityLiving.entityDropItem(new ItemStack(IC2ItemRegistry.itemEMTItems, 14), 1);
         }
     }
 

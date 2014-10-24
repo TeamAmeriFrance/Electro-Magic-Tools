@@ -15,7 +15,7 @@ package tombenpotter.emt.common.util;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import tombenpotter.emt.common.module.ic2.IC2ModuleItemRegistry;
+import tombenpotter.emt.common.modules.ic2.items.IC2ItemRegistry;
 
 public class CreativeTabEMT extends CreativeTabs {
 
@@ -26,7 +26,7 @@ public class CreativeTabEMT extends CreativeTabs {
 
     @Override
     public ItemStack getIconItemStack() {
-        return new ItemStack(IC2ModuleItemRegistry.thorHammer);
+        return new ItemStack(IC2ItemRegistry.thorHammer);
     }
 
     @Override

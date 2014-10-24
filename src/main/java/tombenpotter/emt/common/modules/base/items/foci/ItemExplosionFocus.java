@@ -21,7 +21,7 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.items.wands.ItemWandCasting;
 import tombenpotter.emt.common.modules.base.entities.EntityLaser;
 
-public class ItemExplosionFocus extends tombenpotter.emt.common.module.base.items.foci.ItemBaseFocus {
+public class ItemExplosionFocus extends ItemBaseFocus {
 
     private static final AspectList visCost = new AspectList().add(Aspect.FIRE, 200).add(Aspect.ENTROPY, 200);
 

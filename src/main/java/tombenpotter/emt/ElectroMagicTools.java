@@ -27,10 +27,9 @@ import net.minecraftforge.common.MinecraftForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import tombenpotter.emt.common.commands.CommandOutputs;
+import tombenpotter.emt.common.modules.ModuleRegistry;
 import tombenpotter.emt.common.modules.base.entities.BaseEntityRegistry;
-import tombenpotter.emt.common.module.ic2.recipes.EMTInitRecipes;
-import tombenpotter.emt.common.module.ic2.recipes.EMTPostInitRecipes;
-import tombenpotter.emt.common.module.ic2.recipes.UuMInfusionRecipes;
+import tombenpotter.emt.common.modules.ic2.IC2RecipeRegistry;
 import tombenpotter.emt.common.util.*;
 import tombenpotter.emt.proxies.CommonProxy;
 
@@ -55,12 +54,9 @@ public class ElectroMagicTools {
 
         ConfigHandler.init(event.getSuggestedConfigurationFile());
         FMLCommonHandler.instance().bus().register(new EventHandlerEMT());
-        RegistryHandler.registerIc2Registrys();
-        RegistryHandler.registerVanillaRegistrys();
+	    ModuleRegistry.registerModules();
         EssentiasOutputs.addPrimalOutputs();
         EssentiasOutputs.addOutputs();
-
-//	    ModuleRegistry.RegisterModules();
 
         ElectroMagicTools.logger.info(localize("console.EMT.preInit.end"));
     }
@@ -75,8 +71,7 @@ public class ElectroMagicTools {
         MinecraftForge.EVENT_BUS.register(new EntityEventHandler());
         ElectroMagicTools.logger.info(localize("console.EMT.init.loot"));
         DungeonChestGenerator.generateLoot();
-        ElectroMagicTools.logger.info(localize("console.EMT.init.recipes"));
-        EMTInitRecipes.add();
+
         ElectroMagicTools.logger.info(localize("console.EMT.init.entities"));
         BaseEntityRegistry.registerEMTEntities();
         ElectroMagicTools.logger.info(localize("console.EMT.init.guiHandler"));
@@ -90,9 +85,9 @@ public class ElectroMagicTools {
         ElectroMagicTools.logger.info(localize("console.EMT.postInit.begin"));
 
         ElectroMagicTools.logger.info(localize("console.EMT.postInit.recipes"));
-        EMTPostInitRecipes.add();
+	    IC2RecipeRegistry.registerLateRecipes();
         ElectroMagicTools.logger.info(localize("console.EMT.postInit.uumatter"));
-        UuMInfusionRecipes.add();
+	    IC2RecipeRegistry.registerUUMInfusionRecipes();
         RegistryHandler.registerIc2PostRegistrys();
 
         ElectroMagicTools.logger.info(localize("console.EMT.postInit.end"));

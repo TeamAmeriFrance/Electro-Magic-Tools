@@ -6,7 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import thaumcraft.common.entities.monster.EntityTaintChicken;
-import tombenpotter.emt.common.module.ic2.IC2ModuleItemRegistry;
+import tombenpotter.emt.common.modules.ic2.items.IC2ItemRegistry;
 
 public class EntityEventHandler {
 
@@ -17,11 +17,11 @@ public class EntityEventHandler {
             if (event.entityLiving instanceof EntityCreeper) {
                 EntityCreeper creeper = (EntityCreeper) event.entityLiving;
                 if (creeper.getPowered()) {
-                    event.entityLiving.entityDropItem(new ItemStack(IC2ModuleItemRegistry.itemEMTItems, 1, 6), 1);
+                    event.entityLiving.entityDropItem(new ItemStack(IC2ItemRegistry.itemEMTItems, 1, 6), 1);
                 }
             }
             if (event.entityLiving instanceof EntityTaintChicken) {
-                event.entityLiving.entityDropItem(new ItemStack(IC2ModuleItemRegistry.itemEMTItems, 1, 14), 1);
+                event.entityLiving.entityDropItem(new ItemStack(IC2ItemRegistry.itemEMTItems, 1, 14), 1);
             }
         }
     }

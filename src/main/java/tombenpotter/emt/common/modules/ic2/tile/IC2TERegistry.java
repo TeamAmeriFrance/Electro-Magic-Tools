@@ -10,7 +10,7 @@
  * http://www.minecraftforum.net/topic/1585216-
  ******************************************************************************/
 
-package tombenpotter.emt.common.module.ic2;
+package tombenpotter.emt.common.modules.ic2.tile;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import tombenpotter.emt.common.modules.base.tile.TileEntityPortableNode;
@@ -39,7 +39,7 @@ import tombenpotter.emt.common.module.ic2.tile.solars.water.TileEntityDoubleWate
 import tombenpotter.emt.common.module.ic2.tile.solars.water.TileEntityTripleWaterSolar;
 import tombenpotter.emt.common.module.ic2.tile.solars.water.TileEntityWaterSolar;
 
-public class IC2ModuleTERegistry {
+public class IC2TERegistry {
 
     public static void registerTEs() {
 

@@ -14,7 +14,7 @@ package tombenpotter.emt.common.module.ic2.tile.solars.compressed;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import tombenpotter.emt.common.module.ic2.IC2ModuleBlockRegistry;
+import tombenpotter.emt.common.modules.ic2.blocks.IC2BlockRegistry;
 import tombenpotter.emt.common.module.ic2.tile.solars.TileEntitySolarBase;
 import tombenpotter.emt.common.util.ConfigHandler;
 
@@ -26,6 +26,6 @@ public class TileEntityCompressedSolar extends TileEntitySolarBase {
 
     @Override
     public ItemStack getWrenchDrop(EntityPlayer entityPlayer) {
-        return new ItemStack(IC2ModuleBlockRegistry.emtSolars, 1, 0);
+        return new ItemStack(IC2BlockRegistry.emtSolars, 1, 0);
     }
 }

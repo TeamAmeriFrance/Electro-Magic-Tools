@@ -14,7 +14,7 @@ package tombenpotter.emt.common.module.ic2.tile.solars.fire;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import tombenpotter.emt.common.module.ic2.IC2ModuleBlockRegistry;
+import tombenpotter.emt.common.modules.ic2.blocks.IC2BlockRegistry;
 import tombenpotter.emt.common.util.ConfigHandler;
 
 public class TileEntityTripleFireSolar extends TileEntityFireSolar {
@@ -25,6 +25,6 @@ public class TileEntityTripleFireSolar extends TileEntityFireSolar {
 
     @Override
     public ItemStack getWrenchDrop(EntityPlayer entityPlayer) {
-        return new ItemStack(IC2ModuleBlockRegistry.emtSolars, 1, 14);
+        return new ItemStack(IC2BlockRegistry.emtSolars, 1, 14);
     }
 }

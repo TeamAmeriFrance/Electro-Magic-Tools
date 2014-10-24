@@ -20,9 +20,8 @@ import net.minecraft.world.World;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.items.wands.ItemWandCasting;
-import tombenpotter.emt.common.module.base.items.foci.*;
 
-public class ItemChristmasFocus extends tombenpotter.emt.common.module.base.items.foci.ItemBaseFocus {
+public class ItemChristmasFocus extends ItemBaseFocus {
 
     private static final AspectList visCost = new AspectList().add(Aspect.ORDER, 500).add(Aspect.AIR, 500);
 

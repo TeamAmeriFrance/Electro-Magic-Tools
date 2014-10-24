@@ -25,7 +25,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.common.config.ConfigItems;
-import tombenpotter.emt.common.module.ic2.IC2ModuleBlockRegistry;
+import tombenpotter.emt.common.modules.ic2.blocks.IC2BlockRegistry;
 import tombenpotter.emt.common.util.ConfigHandler;
 
 public class TileEntityEtherealMacerator extends TileEntityEMT implements ISidedInventory, IWrenchable {
@@ -276,7 +276,7 @@ public class TileEntityEtherealMacerator extends TileEntityEMT implements ISided
 
     @Override
     public ItemStack getWrenchDrop(EntityPlayer entityPlayer) {
-        return new ItemStack(IC2ModuleBlockRegistry.emtMachines, 1, 1);
+        return new ItemStack(IC2BlockRegistry.emtMachines, 1, 1);
     }
 
     @Override

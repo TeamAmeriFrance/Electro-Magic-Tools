@@ -1,4 +1,4 @@
-package tombenpotter.emt.common.module.vanilla;
+package tombenpotter.emt.common.modules.base.items;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
@@ -8,14 +8,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
 import tombenpotter.emt.ModInformation;
-import tombenpotter.emt.common.modules.base.items.ItemBaseBaubles;
-import tombenpotter.emt.common.modules.base.items.ItemCraftingComponents;
-import tombenpotter.emt.common.modules.base.items.ItemMaterials;
-import tombenpotter.emt.common.modules.base.items.ItemShardCarver;
 import tombenpotter.emt.common.modules.base.items.foci.ItemChristmasFocus;
 import tombenpotter.emt.common.modules.base.items.tools.*;
 
-public class VanillaItemsRegistry {
+public class BaseItemRegistry {
 
     public static Item woodenDrill, stoneDrill, ironDrill, goldenDrill, diamondDrill, copperDrill, tinDrill, leadDrill, bronzeDrill;
     public static Item woodenChainsaw, stoneChainsaw, ironChainsaw, goldenChainsaw, diamondChainsaw, copperChainsaw, tinChainsaw, leadChainsaw, bronzeChainsaw;

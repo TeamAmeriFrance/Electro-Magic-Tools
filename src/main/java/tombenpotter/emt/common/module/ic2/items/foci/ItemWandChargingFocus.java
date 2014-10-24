@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.items.wands.ItemWandCasting;
-import tombenpotter.emt.common.module.base.items.foci.ItemBaseFocus;
+import tombenpotter.emt.common.modules.base.items.foci.ItemBaseFocus;
 import tombenpotter.emt.common.util.ConfigHandler;
 
 public class ItemWandChargingFocus extends ItemBaseFocus {

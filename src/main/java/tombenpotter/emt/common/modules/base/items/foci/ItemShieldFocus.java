@@ -20,10 +20,9 @@ import net.minecraft.world.World;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.items.wands.ItemWandCasting;
-import tombenpotter.emt.common.module.base.items.foci.*;
-import tombenpotter.emt.common.module.ic2.IC2ModuleBlockRegistry;
+import tombenpotter.emt.common.modules.ic2.blocks.IC2BlockRegistry;
 
-public class ItemShieldFocus extends tombenpotter.emt.common.module.base.items.foci.ItemBaseFocus {
+public class ItemShieldFocus extends ItemBaseFocus {
 
     private static final AspectList visCost = new AspectList().add(Aspect.ORDER, 10).add(Aspect.WATER, 10).add(Aspect.AIR, 10);
 
@@ -65,18 +64,18 @@ public class ItemShieldFocus extends tombenpotter.emt.common.module.base.items.f
 
             // Player Level
             if (player.worldObj.isAirBlock(x + 1, y, z) && player.worldObj.isAirBlock(x - 1, y, z) && player.worldObj.isAirBlock(x, y, z + 1) && player.worldObj.isAirBlock(x, y, z - 1)) {
-                player.worldObj.setBlock(x + 1, y, z, IC2ModuleBlockRegistry.shield);
-                player.worldObj.setBlock(x - 1, y, z, IC2ModuleBlockRegistry.shield);
-                player.worldObj.setBlock(x, y, z + 1, IC2ModuleBlockRegistry.shield);
-                player.worldObj.setBlock(x, y, z - 1, IC2ModuleBlockRegistry.shield);
+                player.worldObj.setBlock(x + 1, y, z, IC2BlockRegistry.shield);
+                player.worldObj.setBlock(x - 1, y, z, IC2BlockRegistry.shield);
+                player.worldObj.setBlock(x, y, z + 1, IC2BlockRegistry.shield);
+                player.worldObj.setBlock(x, y, z - 1, IC2BlockRegistry.shield);
             }
 
             // Above the player
             if (player.worldObj.isAirBlock(x + 1, y + 1, z) && player.worldObj.isAirBlock(x - 1, y + 1, z) && player.worldObj.isAirBlock(x, y + 1, z + 1) && player.worldObj.isAirBlock(x, y + 1, z - 1)) {
-                player.worldObj.setBlock(x + 1, y + 1, z, IC2ModuleBlockRegistry.shield);
-                player.worldObj.setBlock(x - 1, y + 1, z, IC2ModuleBlockRegistry.shield);
-                player.worldObj.setBlock(x, y + 1, z + 1, IC2ModuleBlockRegistry.shield);
-                player.worldObj.setBlock(x, y + 1, z - 1, IC2ModuleBlockRegistry.shield);
+                player.worldObj.setBlock(x + 1, y + 1, z, IC2BlockRegistry.shield);
+                player.worldObj.setBlock(x - 1, y + 1, z, IC2BlockRegistry.shield);
+                player.worldObj.setBlock(x, y + 1, z + 1, IC2BlockRegistry.shield);
+                player.worldObj.setBlock(x, y + 1, z - 1, IC2BlockRegistry.shield);
             }
         }
     }
@@ -88,7 +87,7 @@ public class ItemShieldFocus extends tombenpotter.emt.common.module.base.items.f
         int z = MathHelper.floor_double(player.posZ);
 
         // Player Level
-        if ((player.worldObj.getBlock(x + 1, y, z) == IC2ModuleBlockRegistry.shield) && (player.worldObj.getBlock(x - 1, y, z) == IC2ModuleBlockRegistry.shield) && (player.worldObj.getBlock(x, y, z + 1) == IC2ModuleBlockRegistry.shield) && (player.worldObj.getBlock(x, y, z - 1) == IC2ModuleBlockRegistry.shield)) {
+        if ((player.worldObj.getBlock(x + 1, y, z) == IC2BlockRegistry.shield) && (player.worldObj.getBlock(x - 1, y, z) == IC2BlockRegistry.shield) && (player.worldObj.getBlock(x, y, z + 1) == IC2BlockRegistry.shield) && (player.worldObj.getBlock(x, y, z - 1) == IC2BlockRegistry.shield)) {
             player.worldObj.setBlockToAir(x + 1, y, z);
             player.worldObj.setBlockToAir(x - 1, y, z);
             player.worldObj.setBlockToAir(x, y, z + 1);
@@ -96,7 +95,7 @@ public class ItemShieldFocus extends tombenpotter.emt.common.module.base.items.f
         }
 
         // Above the player
-        if ((player.worldObj.getBlock(x + 1, y + 1, z) == IC2ModuleBlockRegistry.shield) && (player.worldObj.getBlock(x - 1, y + 1, z) == IC2ModuleBlockRegistry.shield) && (player.worldObj.getBlock(x, y + 1, z + 1) == IC2ModuleBlockRegistry.shield) && (player.worldObj.getBlock(x, y + 1, z - 1) == IC2ModuleBlockRegistry.shield)) {
+        if ((player.worldObj.getBlock(x + 1, y + 1, z) == IC2BlockRegistry.shield) && (player.worldObj.getBlock(x - 1, y + 1, z) == IC2BlockRegistry.shield) && (player.worldObj.getBlock(x, y + 1, z + 1) == IC2BlockRegistry.shield) && (player.worldObj.getBlock(x, y + 1, z - 1) == IC2BlockRegistry.shield)) {
             player.worldObj.setBlockToAir(x + 1, y + 1, z);
             player.worldObj.setBlockToAir(x - 1, y + 1, z);
             player.worldObj.setBlockToAir(x, y + 1, z + 1);
