@@ -333,7 +333,7 @@ console.EMT.init.end=盟军已汇聚一堂
 
 console.EMT.postInit.begin=即将占领世界
 console.EMT.postInit.recipes=增加合成配方
-console.EMT.postInit.uumatter=增加UU注魔配方
+console.EMT.postInit.recipes.uumatter=增加UU注魔配方
 console.EMT.postInit.end=世界已被我们占领. 敬请享受!
 
 console.EMT.config.refresh=正在刷新配置文件

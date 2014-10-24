@@ -25,7 +25,7 @@ public class ModuleRegistry {
 		if (ConfigHandler.enableIC2Module) {
 			IC2BlockRegistry.registerBlocks();
 			IC2ItemRegistry.registerItems();
-			ElectroMagicTools.logger.info(localize("console.EMT.init.recipes.ic2"));
+			ElectroMagicTools.logger.info(localize("console.EMT.init.recipes"));
 			IC2RecipeRegistry.registerEarlyRecipes();
 		}
 
@@ -35,4 +35,18 @@ public class ModuleRegistry {
 			TERecipeRegistry.registerTERecipes();
 		}
     }
+
+	public static void registerLateModules() {
+
+		if (ConfigHandler.enableIC2Module) {
+			ElectroMagicTools.logger.info(localize("console.EMT.postInit.recipes"));
+			IC2RecipeRegistry.registerLateRecipes();
+			ElectroMagicTools.logger.info(localize("console.EMT.postInit.recipes.uumatter"));
+			IC2RecipeRegistry.registerUUMInfusionRecipes();
+		}
+
+		if (ConfigHandler.enableTEModule) {
+			// do stuff
+		}
+	}
 }

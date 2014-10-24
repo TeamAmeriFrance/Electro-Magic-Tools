@@ -333,7 +333,7 @@ console.EMT.init.end=Allies gathered.
 
 console.EMT.postInit.begin=Starting the world takeover
 console.EMT.postInit.recipes=Adding PostInit recipes
-console.EMT.postInit.uumatter=Adding the UU-Matter Infusion recipes
+console.EMT.postInit.recipes.uumatter=Adding the UU-Matter Infusion recipes
 console.EMT.postInit.end=World takeover complete. Enjoy!
 
 console.EMT.config.refresh=Refreshing configuration file.

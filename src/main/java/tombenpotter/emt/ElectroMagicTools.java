@@ -29,7 +29,6 @@ import org.apache.logging.log4j.Logger;
 import tombenpotter.emt.common.commands.CommandOutputs;
 import tombenpotter.emt.common.modules.ModuleRegistry;
 import tombenpotter.emt.common.modules.base.entities.BaseEntityRegistry;
-import tombenpotter.emt.common.modules.ic2.IC2RecipeRegistry;
 import tombenpotter.emt.common.util.*;
 import tombenpotter.emt.proxies.CommonProxy;
 
@@ -84,10 +83,7 @@ public class ElectroMagicTools {
     public void postInit(FMLPostInitializationEvent event) {
         ElectroMagicTools.logger.info(localize("console.EMT.postInit.begin"));
 
-        ElectroMagicTools.logger.info(localize("console.EMT.postInit.recipes"));
-	    IC2RecipeRegistry.registerLateRecipes();
-        ElectroMagicTools.logger.info(localize("console.EMT.postInit.uumatter"));
-	    IC2RecipeRegistry.registerUUMInfusionRecipes();
+	    ModuleRegistry.registerLateModules();
         RegistryHandler.registerIc2PostRegistrys();
 
         ElectroMagicTools.logger.info(localize("console.EMT.postInit.end"));
