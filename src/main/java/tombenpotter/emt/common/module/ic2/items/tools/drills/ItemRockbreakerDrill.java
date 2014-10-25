@@ -37,7 +37,7 @@ import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.event.ForgeEventFactory;
 import thaumcraft.common.Thaumcraft;
 import thaumcraft.common.entities.EntityFollowingItem;
-import thaumcraft.common.lib.Utils;
+import thaumcraft.common.lib.utils.BlockUtils;
 import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
 import tombenpotter.emt.common.util.ConfigHandler;
@@ -86,7 +86,7 @@ public class ItemRockbreakerDrill extends ItemThaumiumDrill {
 
     @Override
     public boolean onBlockStartBreak(ItemStack itemstack, int X, int Y, int Z, EntityPlayer player) {
-        MovingObjectPosition movingobjectposition = Utils.getTargetBlock(((Entity) (player)).worldObj, player, true);
+        MovingObjectPosition movingobjectposition = BlockUtils.getTargetBlock(((Entity) (player)).worldObj, player, true);
         if (movingobjectposition != null && movingobjectposition.typeOfHit == MovingObjectType.BLOCK) {
             side = movingobjectposition.sideHit;
         }

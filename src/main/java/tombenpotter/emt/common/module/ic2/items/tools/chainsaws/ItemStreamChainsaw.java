@@ -24,9 +24,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import thaumcraft.common.lib.Utils;
 import thaumcraft.common.lib.network.PacketHandler;
 import thaumcraft.common.lib.network.fx.PacketFXBlockBubble;
+import thaumcraft.common.lib.utils.BlockUtils;
+import thaumcraft.common.lib.utils.Utils;
 import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
 
@@ -69,7 +70,7 @@ public class ItemStreamChainsaw extends ItemThaumiumChainsaw {
         Block bi = world.getBlock(x, y, z);
         if ((!player.isSneaking()) && (Utils.isWoodLog(world, x, y, z))) {
             if (!world.isRemote) {
-                if (Utils.breakFurthestBlock(world, x, y, z, bi, player)) {
+                if (BlockUtils.breakFurthestBlock(world, x, y, z, bi, player)) {
                     world.playSoundEffect(x, y, z, "thaumcraft:bubble", 0.15F, 1.0F);
                     ElectricItem.manager.use(itemstack, cost, player);
                     this.alternateServer = (!this.alternateServer);
@@ -89,7 +90,7 @@ public class ItemStreamChainsaw extends ItemThaumiumChainsaw {
         Block bi = world.getBlock(x, y, z);
         if ((!player.isSneaking()) && (Utils.isWoodLog(world, x, y, z))) {
             if (!world.isRemote) {
-                Utils.breakFurthestBlock(world, x, y, z, bi, player);
+                BlockUtils.breakFurthestBlock(world, x, y, z, bi, player);
                 PacketHandler.INSTANCE.sendToAllAround(new PacketFXBlockBubble(x, y, z, new Color(0.33F, 0.33F, 1.0F).getRGB()), new NetworkRegistry.TargetPoint(world.provider.dimensionId, x, y, z, 32.0D));
 
                 world.playSoundEffect(x, y, z, "thaumcraft:bubble", 0.15F, 1.0F);

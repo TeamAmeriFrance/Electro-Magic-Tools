@@ -31,7 +31,7 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.common.config.Config;
-import thaumcraft.common.lib.InventoryHelper;
+import thaumcraft.common.lib.utils.InventoryUtils;
 import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
 
@@ -214,7 +214,7 @@ public class ItemMaterials extends Item {
         if ((!entity.worldObj.isRemote) && ((stack.getItemDamage() == 14)) && ((entity instanceof EntityLivingBase)) && (!((EntityLivingBase) entity).isEntityUndead()) && (!((EntityLivingBase) entity).isPotionActive(Config.potionTaintPoisonID)) && (world.rand.nextInt(4321) <= stack.stackSize)) {
             ((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Config.potionTaintPoisonID, 120, 0, false));
             if ((entity instanceof EntityPlayer)) {
-                InventoryHelper.consumeInventoryItem((EntityPlayer) entity, stack.getItem(), stack.getItemDamage());
+                InventoryUtils.consumeInventoryItem((EntityPlayer) entity, stack.getItem(), stack.getItemDamage());
             }
         }
     }
