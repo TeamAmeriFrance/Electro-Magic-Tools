@@ -12,7 +12,29 @@ gui.EMT.inventory=物品栏
 gui.EMT.book.aspect.output.eu.title=源质发电机
 gui.EMT.book.aspect.output.essentia.eu=源质发电功率
 
-#=============Enity Names=============
+#=============Tooltips=============
+#This comes after a player name. The 's is depicting ownership.
+tooltip.EMT.hammer.electric=的雷神之锤
+tooltip.EMT.hammer.broken.thor=它曾经是属于托尔的雷神之锤
+tooltip.EMT.hammer.broken.danger=现在它充满着危险的能量
+tooltip.EMT.hammer.broken.plsNoRightClick=千万不要使用
+tooltip.EMT.hammer.broken.plsRightClick=右键使用
+tooltip.EMT.visDiscount=灵气减免
+tooltip.EMT.specialEffect=特殊效果
+tooltip.EMT.normalConditions=普通状态
+tooltip.EMT.euPerTick=EU/t
+tooltip.EMT.night=夜晚时发电量
+tooltip.EMT.forget=我忘记写下提示信息了吗?
+tooltip.EMT.raining=降雨时发电量
+tooltip.EMT.output.triple=输出3倍电量
+tooltip.EMT.output.double=输出2倍电量
+tooltip.EMT.output.double.half=输出2.5倍电量
+tooltip.EMT.output.double.nether=处于下界时发电量
+tooltip.EMT.output.double.lava=处于岩浆中发电量
+tooltip.EMT.output.double.half.height=处于160层上方发电量
+tooltip.EMT.output.double.half.low=处于10层以下发电量
+
+#=============Entity Names=============
 entity.Tombenpotter's Electro-Magic Tools.entityLaser.name=激光
 entity.Tombenpotter's Electro-Magic Tools.entityArcher.name=守卫雪人
 
@@ -106,49 +128,49 @@ item.EMT.omnitool.tin.name=锡钻锯
 item.EMT.omnitool.lead.name=铅钻锯
 item.EMT.omnitool.bronze.name=青铜钻锯
 
-item.EMT.material.drillTop.wood.name=木钻头
-item.EMT.material.drillTop.stone.name=石钻头
-item.EMT.material.drillTop.iron.name=铁钻头
-item.EMT.material.drillTop.gold.name=金钻头
-item.EMT.material.drillTop.diamond.name=钻石钻头
-item.EMT.material.drillTop.tin.name=锡钻头
-item.EMT.material.drillTop.copper.name=铜钻头
-item.EMT.material.drillTop.lead.name=铅钻头
-item.EMT.material.drillTop.bronze.name=青铜钻头
+item.EMT.module.base.components.drillTop.wood.name=木钻头
+item.EMT.module.base.components.drillTop.stone.name=石钻头
+item.EMT.module.base.components.drillTop.iron.name=铁钻头
+item.EMT.module.base.components.drillTop.gold.name=金钻头
+item.EMT.module.base.components.drillTop.diamond.name=钻石钻头
+item.EMT.module.base.components.drillTop.tin.name=锡钻头
+item.EMT.module.base.components.drillTop.copper.name=铜钻头
+item.EMT.module.base.components.drillTop.lead.name=铅钻头
+item.EMT.module.base.components.drillTop.bronze.name=青铜钻头
 
-item.EMT.material.chainsawTop.wood.name=木锯刃
-item.EMT.material.chainsawTop.stone.name=石锯刃
-item.EMT.material.chainsawTop.iron.name=铁锯刃
-item.EMT.material.chainsawTop.gold.name=金锯刃
-item.EMT.material.chainsawTop.diamond.name=钻石锯刃
-item.EMT.material.chainsawTop.tin.name=锡锯刃
-item.EMT.material.chainsawTop.copper.name=铜锯刃
-item.EMT.material.chainsawTop.lead.name=铅锯刃
-item.EMT.material.chainsawTop.bronze.name=青铜锯刃
+item.EMT.module.base.components.chainsawTop.wood.name=木锯刃
+item.EMT.module.base.components.chainsawTop.stone.name=石锯刃
+item.EMT.module.base.components.chainsawTop.iron.name=铁锯刃
+item.EMT.module.base.components.chainsawTop.gold.name=金锯刃
+item.EMT.module.base.components.chainsawTop.diamond.name=钻石锯刃
+item.EMT.module.base.components.chainsawTop.tin.name=锡锯刃
+item.EMT.module.base.components.chainsawTop.copper.name=铜锯刃
+item.EMT.module.base.components.chainsawTop.lead.name=铅锯刃
+item.EMT.module.base.components.chainsawTop.bronze.name=青铜锯刃
 
-item.EMT.material.omnitoolTop.iron.name=铁钻锯头
-item.EMT.material.omnitoolTop.gold.name=金钻锯头
-item.EMT.material.omnitoolTop.diamond.name=钻石钻锯头
-item.EMT.material.omnitoolTop.copper.name=铜钻锯头
-item.EMT.material.omnitoolTop.tin.name=锡钻锯头
-item.EMT.material.omnitoolTop.lead.name=铅钻锯头
-item.EMT.material.omnitoolTop.bronze.name=青铜钻锯头
+item.EMT.module.base.components.omnitoolTop.iron.name=铁钻锯头
+item.EMT.module.base.components.omnitoolTop.gold.name=金钻锯头
+item.EMT.module.base.components.omnitoolTop.diamond.name=钻石钻锯头
+item.EMT.module.base.components.omnitoolTop.copper.name=铜钻锯头
+item.EMT.module.base.components.omnitoolTop.tin.name=锡钻锯头
+item.EMT.module.base.components.omnitoolTop.lead.name=铅钻锯头
+item.EMT.module.base.components.omnitoolTop.bronze.name=青铜钻锯头
 
-item.EMT.material.shard.wood.name=木锯片
-item.EMT.material.shard.stone.name=石锯片
-item.EMT.material.shard.iron.name=铁锯片
-item.EMT.material.shard.gold.name=金锯片
-item.EMT.material.shard.obsidian.name=黑曜石锯片
-item.EMT.material.shard.copper.name=铜锯片
-item.EMT.material.shard.tin.name=锡锯片
-item.EMT.material.shard.lead.name=铅锯片
-item.EMT.material.shard.bronze.name=青铜锯片
+item.EMT.module.base.components.shard.wood.name=木锯片
+item.EMT.module.base.components.shard.stone.name=石锯片
+item.EMT.module.base.components.shard.iron.name=铁锯片
+item.EMT.module.base.components.shard.gold.name=金锯片
+item.EMT.module.base.components.shard.obsidian.name=黑曜石锯片
+item.EMT.module.base.components.shard.copper.name=铜锯片
+item.EMT.module.base.components.shard.tin.name=锡锯片
+item.EMT.module.base.components.shard.lead.name=铅锯片
+item.EMT.module.base.components.shard.bronze.name=青铜锯片
 
-item.EMT.carver.wood.name=木锯片刻模
-item.EMT.carver.stone.name=石锯片刻模
-item.EMT.carver.iron.name=铁锯片刻模
-item.EMT.carver.obsidian.name=黑曜石锯片刻模
-item.EMT.carver.diamond.name=钻石锯片刻模
+item.EMT.carver.wood.name=木锯片模板
+item.EMT.carver.stone.name=石锯片模板
+item.EMT.carver.iron.name=铁锯片模板
+item.EMT.carver.obsidian.name=黑曜石锯片模板
+item.EMT.carver.diamond.name=钻石锯片模板
 
 #=============Block Names=============
 tile.EMT.shield.name=护盾方块
@@ -295,28 +317,6 @@ emt.text.Thaumium Reinforced Wings=注入魔力的神秘锭是众所周知的。
 emt.text.Nanosuit Wings=利用神秘锭将魔法与纳米科技结合到你的飞行翼上.. 听着很符合逻辑。现在你可以推的比之前还要高，按住空格下落的也比之前要慢。摔落伤害减免:75%.
 emt.text.Quantum Wings=在探索完纳米科技所有的可能性后，你决定做最后一搏，量子。你可以在空中再跳几格的高度， 极好的防护，并且的下降的过程极大减缓了。然而，量子的不可预测又一次发生了。同时按住潜行键和空格键时你的下降会完全停止。你不知道为何会这样，但它就是这样。摔落伤害减免:100%.
 
-#=============Tooltips=============
-#This comes after a player name. The 's is depicting ownership.
-tooltip.EMT.hammer.electric=的雷神之锤
-tooltip.EMT.hammer.broken.thor=它曾经是属于托尔的雷神之锤
-tooltip.EMT.hammer.broken.danger=现在它充满着危险的能量
-tooltip.EMT.hammer.broken.plsNoRightClick=千万不要使用
-tooltip.EMT.hammer.broken.plsRightClick=右键使用
-tooltip.EMT.visDiscount=灵气减免
-tooltip.EMT.specialEffect=特殊效果
-tooltip.EMT.normalConditions=普通状态
-tooltip.EMT.euPerTick=EU/t
-tooltip.EMT.night=夜晚时发电量
-tooltip.EMT.forget=我忘记写下提示信息了吗?
-tooltip.EMT.raining=降雨时发电量
-tooltip.EMT.output.triple=输出3倍电量
-tooltip.EMT.output.double=输出2倍电量
-tooltip.EMT.output.double.half=输出2.5倍电量
-tooltip.EMT.output.double.nether=处于下界时发电量
-tooltip.EMT.output.double.lava=处于岩浆中发电量
-tooltip.EMT.output.double.half.height=处于160层上方发电量
-tooltip.EMT.output.double.half.low=处于10层以下发电量
-
 #=============Console Logging=============
 console.EMT.preInit.begin=谋略如何统治世界
 console.EMT.preInit.configRead=创建/读取配置文件中
@@ -324,16 +324,16 @@ console.EMT.preInit.end=谋略完成
 
 console.EMT.init.begin=召集盟军
 console.EMT.init.loadProxies=读取proxies信息
-console.EMT.init.mobDrops=增加新的怪物掉落物
+console.EMT.init.mobDrops=添加新的怪物掉落物
 console.EMT.init.dungeon=增加地牢物品
-console.EMT.init.recipes=增加合成配方
+console.EMT.init.recipes=添加合成配方
 console.EMT.init.entities=注册新的实体
 console.EMT.init.guiHandler=注册新的GUI
 console.EMT.init.end=盟军已汇聚一堂
 
 console.EMT.postInit.begin=即将占领世界
 console.EMT.postInit.recipes=增加合成配方
-console.EMT.postInit.recipes.uumatter=增加UU注魔配方
+console.EMT.postInit.recipes.uumatter=添加UU注魔配方
 console.EMT.postInit.end=世界已被我们占领. 敬请享受!
 
 console.EMT.config.refresh=正在刷新配置文件
