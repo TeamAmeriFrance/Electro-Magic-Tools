@@ -18,7 +18,7 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
-import tombenpotter.emt.common.module.ic2.tile.TileEntityIndustrialWandRecharge;
+import tombenpotter.emt.common.modules.ic2.tile.TileEntityIndustrialWandRecharge;
 
 public class ContainerIndustrialWandRecharge extends Container {
 

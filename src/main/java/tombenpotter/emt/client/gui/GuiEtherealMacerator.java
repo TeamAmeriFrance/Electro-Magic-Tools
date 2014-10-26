@@ -19,7 +19,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 import tombenpotter.emt.ModInformation;
 import tombenpotter.emt.client.gui.container.ContainerEtheralMacerator;
-import tombenpotter.emt.common.module.ic2.tile.TileEntityEtherealMacerator;
+import tombenpotter.emt.common.modules.ic2.tile.TileEntityEtherealMacerator;
 import tombenpotter.emt.common.util.TextHelper;
 
 public class GuiEtherealMacerator extends GuiContainer {

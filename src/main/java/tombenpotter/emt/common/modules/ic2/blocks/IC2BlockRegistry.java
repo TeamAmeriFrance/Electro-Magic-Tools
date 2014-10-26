@@ -15,8 +15,8 @@ package tombenpotter.emt.common.modules.ic2.blocks;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import tombenpotter.emt.ModInformation;
-import tombenpotter.emt.common.module.ic2.blocks.*;
-import tombenpotter.emt.common.module.ic2.items.blocks.*;
+import tombenpotter.emt.common.modules.ic2.items.blocks.*;
+import tombenpotter.emt.common.modules.base.blocks.BlockPortableNode;
 
 public class IC2BlockRegistry {
 

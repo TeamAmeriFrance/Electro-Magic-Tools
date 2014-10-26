@@ -20,8 +20,8 @@ import tombenpotter.emt.client.gui.GuiEtherealMacerator;
 import tombenpotter.emt.client.gui.GuiIndustrialWandRecharger;
 import tombenpotter.emt.client.gui.container.ContainerEtheralMacerator;
 import tombenpotter.emt.client.gui.container.ContainerIndustrialWandRecharge;
-import tombenpotter.emt.common.module.ic2.tile.TileEntityEtherealMacerator;
-import tombenpotter.emt.common.module.ic2.tile.TileEntityIndustrialWandRecharge;
+import tombenpotter.emt.common.modules.ic2.tile.TileEntityEtherealMacerator;
+import tombenpotter.emt.common.modules.ic2.tile.TileEntityIndustrialWandRecharge;
 
 public class CommonProxy implements IGuiHandler {
 

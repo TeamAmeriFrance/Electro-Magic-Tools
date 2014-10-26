@@ -1,6 +1,13 @@
 Changelog of the mod : Electric Magic Tools, a Thaumcraft 4/Industrial-Craft 2 addon
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
+Version 2.0.0Alpha-Build 29:
+Hopefully no more duplicate packages or stuff. I hope.
+
+Version 2.0.0Alpha-Build 28:
+Started updating changelog again. Oops :p
+Fixed the TileEntities not getting registered.
+
 Version 2.0.0Alpa5:
 Wild Material Shards have appeared! They are used in the tools' crafting recipes :D.
 And here come the carvers!

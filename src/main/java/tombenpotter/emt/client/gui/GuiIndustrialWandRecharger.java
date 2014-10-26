@@ -19,7 +19,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 import tombenpotter.emt.ModInformation;
 import tombenpotter.emt.client.gui.container.ContainerIndustrialWandRecharge;
-import tombenpotter.emt.common.module.ic2.tile.TileEntityIndustrialWandRecharge;
+import tombenpotter.emt.common.modules.ic2.tile.TileEntityIndustrialWandRecharge;
 import tombenpotter.emt.common.util.TextHelper;
 
 public class GuiIndustrialWandRecharger extends GuiContainer {
