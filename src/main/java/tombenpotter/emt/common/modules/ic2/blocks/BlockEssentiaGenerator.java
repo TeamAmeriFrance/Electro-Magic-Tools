@@ -11,9 +11,10 @@ import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.IEssentiaContainerItem;
 import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
+import tombenpotter.emt.common.modules.base.blocks.BlockBaseContainer;
 import tombenpotter.emt.common.modules.ic2.tile.generators.TileEntityEssentiaGenerator;
 
-public class BlockEssentiaGenerator extends BlockEMT {
+public class BlockEssentiaGenerator extends BlockBaseContainer {
 
     public BlockEssentiaGenerator() {
         super(Material.iron);

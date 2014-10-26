@@ -5,7 +5,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.util.ForgeDirection;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.common.lib.events.EssentiaHandler;
-import tombenpotter.emt.common.modules.ic2.tile.TileEntityEMT;
+import tombenpotter.emt.common.modules.base.tile.TileEntityEMT;
 import tombenpotter.emt.common.util.ConfigHandler;
 
 public abstract class TileEntityBaseGenerator extends TileEntityEMT {

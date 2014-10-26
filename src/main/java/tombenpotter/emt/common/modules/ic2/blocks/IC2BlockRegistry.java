@@ -16,7 +16,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import tombenpotter.emt.ModInformation;
 import tombenpotter.emt.common.modules.ic2.items.blocks.*;
-import tombenpotter.emt.common.modules.base.blocks.BlockPortableNode;
 
 public class IC2BlockRegistry {
 
@@ -25,15 +24,11 @@ public class IC2BlockRegistry {
     public static Block emtSolars;
     public static Block emtMachines;
     public static Block emtSolars2;
-    public static Block portableNode;
     public static Block essentiaGenerator;
 
     public static void registerBlocks() {
         shield = new BlockShield().setBlockName(ModInformation.modid + ".shield");
         GameRegistry.registerBlock(shield, "ShieldBlock");
-
-        portableNode = new BlockPortableNode().setBlockName(ModInformation.modid + ".portablenode");
-        GameRegistry.registerBlock(portableNode, "PortableNode");
 
         emtSolars = new BlockEMTSolars().setBlockName(ModInformation.modid + ".emtsolars");
         GameRegistry.registerBlock(emtSolars, ItemBlockEMTSolars.class, "EMTSolars");

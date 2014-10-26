@@ -4,6 +4,7 @@ import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.common.modules.base.BaseRecipeRegistry;
 import tombenpotter.emt.common.modules.base.blocks.BaseBlockRegistry;
 import tombenpotter.emt.common.modules.base.items.BaseItemRegistry;
+import tombenpotter.emt.common.modules.base.tile.BaseTileRegistry;
 import tombenpotter.emt.common.modules.ic2.IC2RecipeRegistry;
 import tombenpotter.emt.common.modules.ic2.blocks.IC2BlockRegistry;
 import tombenpotter.emt.common.modules.ic2.items.IC2ItemRegistry;
@@ -21,6 +22,7 @@ public class ModuleRegistry {
 
         BaseBlockRegistry.registerBaseBlocks();
         BaseItemRegistry.registerItems();
+        BaseTileRegistry.registerBaseTiles();
         BaseRecipeRegistry.registerRecipes();
 
         if (ConfigHandler.enableIC2Module) {

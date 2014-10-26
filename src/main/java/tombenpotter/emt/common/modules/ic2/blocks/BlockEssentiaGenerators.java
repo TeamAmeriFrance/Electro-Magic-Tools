@@ -23,12 +23,13 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
+import tombenpotter.emt.common.modules.base.blocks.BlockBaseContainer;
 import tombenpotter.emt.common.modules.ic2.tile.generators.*;
 
 import java.util.List;
 import java.util.Random;
 
-public class BlockEssentiaGenerators extends BlockEMT {
+public class BlockEssentiaGenerators extends BlockBaseContainer {
 
     public BlockEssentiaGenerators() {
         super(Material.iron);

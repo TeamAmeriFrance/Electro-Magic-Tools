@@ -25,6 +25,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.common.config.ConfigItems;
+import tombenpotter.emt.common.modules.base.tile.TileEntityEMT;
 import tombenpotter.emt.common.modules.ic2.blocks.IC2BlockRegistry;
 import tombenpotter.emt.common.util.ConfigHandler;
 

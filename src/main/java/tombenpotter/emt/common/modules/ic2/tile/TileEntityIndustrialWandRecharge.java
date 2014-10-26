@@ -20,6 +20,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.common.items.wands.ItemWandCasting;
+import tombenpotter.emt.common.modules.base.tile.TileEntityEMT;
 import tombenpotter.emt.common.util.ConfigHandler;
 
 public class TileEntityIndustrialWandRecharge extends TileEntityEMT implements IInventory {

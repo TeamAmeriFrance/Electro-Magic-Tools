@@ -4,7 +4,7 @@ import ic2.api.energy.prefab.BasicSource;
 import ic2.api.tile.IWrenchable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
-import tombenpotter.emt.common.modules.ic2.tile.TileEntityEMT;
+import tombenpotter.emt.common.modules.base.tile.TileEntityEMT;
 
 import java.util.Random;
 

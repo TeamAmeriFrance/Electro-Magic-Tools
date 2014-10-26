@@ -38,8 +38,6 @@ public class BlockEMTMachines extends BlockEMT {
 
     public BlockEMTMachines() {
         super(Material.iron);
-        this.setCreativeTab(ElectroMagicTools.tabEMT);
-        this.setHardness(4.0F);
     }
 
     @Override

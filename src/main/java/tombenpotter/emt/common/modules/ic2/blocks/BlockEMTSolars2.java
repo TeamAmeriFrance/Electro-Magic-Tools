@@ -24,6 +24,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
+import tombenpotter.emt.common.modules.base.blocks.BlockBaseContainer;
 import tombenpotter.emt.common.modules.ic2.tile.solars.air.TileEntityDoubleAirSolar;
 import tombenpotter.emt.common.modules.ic2.tile.solars.air.TileEntityTripleAirSolar;
 import tombenpotter.emt.common.modules.ic2.tile.solars.earth.TileEntityDoubleEarthSolar;
@@ -32,7 +33,7 @@ import tombenpotter.emt.common.modules.ic2.tile.solars.earth.TileEntityTripleEar
 
 import java.util.List;
 
-public class BlockEMTSolars2 extends BlockEMT {
+public class BlockEMTSolars2 extends BlockBaseContainer {
 
     public BlockEMTSolars2() {
         super(Material.iron);

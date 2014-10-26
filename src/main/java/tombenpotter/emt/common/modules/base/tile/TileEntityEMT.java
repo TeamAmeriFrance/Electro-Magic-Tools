@@ -1,4 +1,4 @@
-package tombenpotter.emt.common.modules.ic2.tile;
+package tombenpotter.emt.common.modules.base.tile;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
@@ -43,10 +43,10 @@ public abstract class TileEntityEMT extends TileEntity {
 
     @Override
     public void markDirty() {
-        super.markDirty(); // Mark dirty for gamesave
+        super.markDirty();
         if (worldObj.isRemote) {
             return;
         }
-        this.worldObj.markBlockForUpdate(xCoord, yCoord, zCoord); // Update block + TE via Network
+        this.worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
     }
 }

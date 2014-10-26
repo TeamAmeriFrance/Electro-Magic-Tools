@@ -13,7 +13,6 @@
 package tombenpotter.emt.common.modules.ic2.tile;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import tombenpotter.emt.common.modules.base.tile.TileEntityPortableNode;
 import tombenpotter.emt.common.modules.ic2.tile.generators.*;
 import tombenpotter.emt.common.modules.ic2.tile.solars.air.TileEntityAirSolar;
 import tombenpotter.emt.common.modules.ic2.tile.solars.air.TileEntityDoubleAirSolar;
@@ -69,7 +68,6 @@ public class IC2TileRegistry {
         GameRegistry.registerTileEntity(TileEntityEarthSolar.class, "tileentityearthsolar");
         GameRegistry.registerTileEntity(TileEntityDoubleEarthSolar.class, "tileentitydoubleearthsolar");
         GameRegistry.registerTileEntity(TileEntityTripleEarthSolar.class, "tileentitytripleearthsolar");
-        GameRegistry.registerTileEntity(TileEntityPortableNode.class, "tileentityportablenode");
         GameRegistry.registerTileEntity(TileEntityEssentiaGenerator.class, "tileentityessentiagenerator");
     }
 }

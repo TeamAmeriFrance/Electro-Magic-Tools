@@ -1,4 +1,4 @@
-package tombenpotter.emt.common.modules.ic2.blocks;
+package tombenpotter.emt.common.modules.base.blocks;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -11,17 +11,25 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import tombenpotter.emt.ElectroMagicTools;
+import tombenpotter.emt.ModInformation;
 import tombenpotter.emt.common.modules.base.tile.TileEntityEMT;
 
-public abstract class BlockEMT extends BlockContainer {
+public abstract class BlockBaseContainer extends BlockContainer {
+
     public IIcon[] top = new IIcon[16];
     public IIcon[] bottom = new IIcon[16];
     public IIcon[] side = new IIcon[16];
     public IIcon[] frontOff = new IIcon[16];
     public IIcon[] frontOn = new IIcon[16];
 
-    protected BlockEMT(Material material) {
+    public BlockBaseContainer(String unlocName, Material material, SoundType soundType, float hardness) {
         super(material);
+
+        setBlockName(ModInformation.modid + ".module.base." + unlocName);
+        setCreativeTab(ElectroMagicTools.tabEMT);
+        setStepSound(soundType);
+        setHardness(hardness);
     }
 
     @Override
@@ -34,6 +42,7 @@ public abstract class BlockEMT extends BlockContainer {
     public IIcon getIcon(IBlockAccess access, int x, int y, int z, int side) {
         TileEntityEMT tile = (TileEntityEMT) access.getTileEntity(x, y, z);
         int i = access.getBlockMetadata(x, y, z);
+
         if (side == 0) {
             return this.bottom[i];
         } else if (side == 1) {
@@ -65,6 +74,7 @@ public abstract class BlockEMT extends BlockContainer {
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entity, ItemStack itemStack) {
         int facing = MathHelper.floor_double(entity.rotationYaw * 4.0F / 360.0F + 0.5D) & 3;
         TileEntityEMT tile = (TileEntityEMT) world.getTileEntity(x, y, z);
+
         if (facing == 0)
             tile.facing = 2;
         else if (facing == 1)
