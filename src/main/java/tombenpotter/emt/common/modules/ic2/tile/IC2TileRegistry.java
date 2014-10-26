@@ -39,7 +39,7 @@ import tombenpotter.emt.common.module.ic2.tile.solars.water.TileEntityDoubleWate
 import tombenpotter.emt.common.module.ic2.tile.solars.water.TileEntityTripleWaterSolar;
 import tombenpotter.emt.common.module.ic2.tile.solars.water.TileEntityWaterSolar;
 
-public class IC2TERegistry {
+public class IC2TileRegistry {
 
     public static void registerTEs() {
 
