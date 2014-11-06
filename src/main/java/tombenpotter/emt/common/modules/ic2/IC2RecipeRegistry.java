@@ -32,6 +32,7 @@ import thaumcraft.api.crafting.ShapelessArcaneRecipe;
 import thaumcraft.common.config.ConfigBlocks;
 import thaumcraft.common.config.ConfigItems;
 import tombenpotter.emt.ElectroMagicTools;
+import tombenpotter.emt.common.modules.base.blocks.BaseBlockRegistry;
 import tombenpotter.emt.common.modules.ic2.blocks.IC2BlockRegistry;
 import tombenpotter.emt.common.modules.ic2.items.IC2ItemRegistry;
 import tombenpotter.emt.common.util.ConfigHandler;
@@ -290,7 +291,7 @@ public class IC2RecipeRegistry {
 
 		tripleEarthSolar = ThaumcraftApi.addCrucibleRecipe("Earth Infused Solar Panels", new ItemStack(IC2BlockRegistry.emtSolars2, 1, 4), new ItemStack(IC2BlockRegistry.emtSolars, 1, 2), CraftingAspects.earthSolars);
 
-		portableNode = ThaumcraftApi.addCrucibleRecipe("Portable Node", new ItemStack(IC2BlockRegistry.portableNode), new ItemStack(ConfigItems.itemJarFilled), CraftingAspects.portableNode);
+		portableNode = ThaumcraftApi.addCrucibleRecipe("Portable Node", new ItemStack(BaseBlockRegistry.portableNode), new ItemStack(ConfigItems.itemJarFilled), CraftingAspects.portableNode);
 
 		/** IC2 Stuff related recipes **/
 

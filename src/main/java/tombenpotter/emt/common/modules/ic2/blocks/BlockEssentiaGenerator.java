@@ -9,17 +9,13 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.IEssentiaContainerItem;
-import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
-import tombenpotter.emt.common.modules.base.blocks.BlockBaseContainer;
 import tombenpotter.emt.common.modules.ic2.tile.generators.TileEntityEssentiaGenerator;
 
-public class BlockEssentiaGenerator extends BlockBaseContainer {
+public class BlockEssentiaGenerator extends BlockIC2Container {
 
     public BlockEssentiaGenerator() {
-        super(Material.iron);
-        this.setCreativeTab(ElectroMagicTools.tabEMT);
-        this.setHardness(4.0F);
+        super("generator.essentia", Material.iron, soundTypeMetal, 4.0F);
     }
 
     @Override

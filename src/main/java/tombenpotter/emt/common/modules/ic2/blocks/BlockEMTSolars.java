@@ -22,9 +22,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import tombenpotter.emt.ElectroMagicTools;
 import tombenpotter.emt.ModInformation;
-import tombenpotter.emt.common.modules.base.blocks.BlockBaseContainer;
 import tombenpotter.emt.common.modules.ic2.tile.solars.air.TileEntityAirSolar;
 import tombenpotter.emt.common.modules.ic2.tile.solars.compressed.TileEntityCompressedSolar;
 import tombenpotter.emt.common.modules.ic2.tile.solars.compressed.TileEntityDoubleCompressedSolar;
@@ -44,12 +42,10 @@ import tombenpotter.emt.common.modules.ic2.tile.solars.water.TileEntityWaterSola
 
 import java.util.List;
 
-public class BlockEMTSolars extends BlockBaseContainer {
+public class BlockEMTSolars extends BlockIC2Container {
 
     public BlockEMTSolars() {
-        super(Material.iron);
-        this.setCreativeTab(ElectroMagicTools.tabEMT);
-        this.setHardness(4.0F);
+        super("solars", Material.iron, soundTypeMetal, 4.0F);
     }
 
     @Override

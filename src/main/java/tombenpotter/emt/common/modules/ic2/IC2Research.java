@@ -19,6 +19,7 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
+import tombenpotter.emt.common.modules.base.blocks.BaseBlockRegistry;
 import tombenpotter.emt.common.modules.ic2.blocks.IC2BlockRegistry;
 import tombenpotter.emt.common.modules.ic2.items.IC2ItemRegistry;
 import tombenpotter.emt.common.util.ConfigHandler;
@@ -343,7 +344,7 @@ public class IC2Research {
 
         if (ConfigHandler.portableNodeResarch == false) {
             text = "1";
-            research = new EMTResearchItem("Portable Node", "EMT", ResearchAspects.portableNode, 2, 5, 3, new ItemStack(IC2BlockRegistry.portableNode)).setParents("Electric Magic Tools").setConcealed().registerResearchItem();
+            research = new EMTResearchItem("Portable Node", "EMT", ResearchAspects.portableNode, 2, 5, 3, new ItemStack(BaseBlockRegistry.portableNode)).setParents("Electric Magic Tools").setConcealed().registerResearchItem();
             research.setPages(new ResearchPage(text), new ResearchPage(IC2RecipeRegistry.portableNode));
         }
 

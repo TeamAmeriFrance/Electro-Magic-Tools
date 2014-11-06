@@ -6,8 +6,8 @@ import net.minecraft.world.World;
 
 public class BlockToolRefiller extends BlockBaseContainer {
 
-    public BlockToolRefiller(String unlocName, Material material, SoundType soundType, float hardness) {
-        super(unlocName, material, soundType, hardness);
+    public BlockToolRefiller() {
+        super("toolRefiller", Material.iron, soundTypeMetal, 4.0F);
     }
 
     @Override
