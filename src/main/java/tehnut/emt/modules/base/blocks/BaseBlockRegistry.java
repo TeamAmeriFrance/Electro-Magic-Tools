@@ -1,0 +1,16 @@
+package tehnut.emt.modules.base.blocks;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+
+public class BaseBlockRegistry {
+
+	// Blocks
+	public static Block shieldBlock;
+
+	public static void registerBlocks() {
+
+		shieldBlock = new BlockShield();
+		GameRegistry.registerBlock(shieldBlock, "BlockShield");
+	}
+}

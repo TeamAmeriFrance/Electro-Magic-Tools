@@ -13,21 +13,14 @@ buildscript {
 apply plugin: 'forge'
 apply plugin: 'maven-publish'
 
-ext.configFile = file "build.properties"
-configFile.withReader {
-    def prop = new Properties()
-    prop.load(it)
-    project.ext.config = new ConfigSlurper().parse prop
-}
-
 def build_number = 'CUSTOM'
 
 if (System.getenv('BUILD_NUMBER') != null)
     build_number = System.getenv('BUILD_NUMBER')
 
-version = config.mc_version + "-" + config.mod_version + "-${build_number}"
-group= config.package_group
-archivesBaseName = config.mod_name
+group = package_group
+archivesBaseName = mod_name
+version = "${mc_version}-${mod_version}-${build_number}"
 
 import org.ajoberstar.grgit.Grgit
 
@@ -37,8 +30,17 @@ if (new File(projectDir, '.git').exists()) {
     gitHash = repo.log().find().abbreviatedId
 }
 
+// IC2 Maven does not want to work, so you will have to manually download the deobf :(
+repositories {
+//    maven { url 'http://maven.ic2.player.to/' }
+}
+
+dependencies {
+//    compile "net.industrial-craft:industrialcraft-2:${ic2_version}"
+}
+
 minecraft {
-    version = config.mc_version + "-" + config.forge_version
+    version = "${mc_version}-${forge_version}"
     runDir = "run"
 
     if (project.hasProperty('mappings_version'))
@@ -58,11 +60,11 @@ processResources {
     from(sourceSets.main.resources.srcDirs) {
         exclude '**/*.info'
         exclude '**/*.properties'
-		exclude '**/*.db'
     }
 }
 
 jar {
+    classifier = 'universal'
     manifest.mainAttributes(
             "Built-By": System.getProperty('user.name'),
             "Created-By": "${System.getProperty('java.vm.version')} + (${System.getProperty('java.vm.vendor')})",
