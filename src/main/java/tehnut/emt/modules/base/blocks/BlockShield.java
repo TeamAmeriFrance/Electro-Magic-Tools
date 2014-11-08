@@ -2,6 +2,7 @@ package tehnut.emt.modules.base.blocks;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureType;
@@ -37,6 +38,15 @@ public class BlockShield extends BlockBase {
 	@Override
 	public boolean renderAsNormalBlock() {
 		return false;
+	}
+
+	@Override
+	public boolean shouldSideBeRendered(IBlockAccess blockAccess, int x, int y, int z, int side) {
+		Block block = blockAccess.getBlock(x, y, z);
+		if (block == this || block == BaseBlockRegistry.shieldBlock) {
+			return false;
+		}
+		return super.shouldSideBeRendered(blockAccess, x, y, z, side);
 	}
 
 	@Override
