@@ -15,6 +15,7 @@ import tehnut.emt.gui.GuiHandler;
 import tehnut.emt.modules.ModuleRegistry;
 import tehnut.emt.proxies.CommonProxy;
 import tehnut.emt.util.EventHandler;
+import tehnut.emt.util.LootHandler;
 import tehnut.emt.util.OreDictHandler;
 
 @Mod(modid = ModInformation.ID, name = ModInformation.NAME, version = ModInformation.VERSION, dependencies = ModInformation.DEPEND, guiFactory = ModInformation.GUIFACTORY)
@@ -44,6 +45,7 @@ public class ElectroMagicTools {
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
 
+		LootHandler.addLootToChests();
 		ModuleRegistry.registerMidModules();
 	}
 

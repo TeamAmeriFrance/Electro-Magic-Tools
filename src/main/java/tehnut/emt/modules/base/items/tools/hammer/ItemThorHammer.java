@@ -30,7 +30,6 @@ public class ItemThorHammer extends ItemSword implements IRepairable {
 
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
-		player.swingItem();
 		float f = 1.0F;
 		float f1 = player.prevRotationPitch + ((player.rotationPitch - player.prevRotationPitch) * f);
 		float f2 = player.prevRotationYaw + ((player.rotationYaw - player.prevRotationYaw) * f);
@@ -56,12 +55,14 @@ public class ItemThorHammer extends ItemSword implements IRepairable {
 			int j = movingobjectposition.blockY;
 			int k = movingobjectposition.blockZ;
 			world.spawnEntityInWorld(new EntityLightningBolt(world, i, j, k));
+			player.swingItem();
 		} else if (movingobjectposition.typeOfHit == MovingObjectPosition.MovingObjectType.ENTITY) {
 			Entity entityhit = movingobjectposition.entityHit;
 			double x = entityhit.posX;
 			double y = entityhit.posY;
 			double z = entityhit.posZ;
 			world.spawnEntityInWorld(new EntityLightningBolt(world, x, y, z));
+			player.swingItem();
 		}
 		if (player.capabilities.isCreativeMode) {
 			return itemstack;

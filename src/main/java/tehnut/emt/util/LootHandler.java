@@ -8,7 +8,7 @@ import tehnut.emt.modules.base.items.BaseItemRegistry;
 
 public class LootHandler {
 
-	public static void generateLoot() {
+	public static void addLootToChests() {
 		if (!ConfigHandler.thorHammerResearch) {
 			ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(BaseItemRegistry.thorHammerBroken), 0, 1, ConfigHandler.chanceTaintedMjolnir));
 		}
