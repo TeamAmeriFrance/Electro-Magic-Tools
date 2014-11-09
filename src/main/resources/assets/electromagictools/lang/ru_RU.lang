@@ -14,7 +14,7 @@ gui.EMT.book.aspect.output.essentia.eu=Выход EU за эссенцию
 
 #=============Tooltips=============
 #This comes after a player name. The 's is depicting ownership.
-tooltip.EMT.hammer.electric= - владелец этого молота
+tooltip.EMT.hammer.electric=Молот игрока %player%
 tooltip.EMT.hammer.broken.thor=Это был молот Тора.
 tooltip.EMT.hammer.broken.danger=Сейчас он очень опасен.
 tooltip.EMT.hammer.broken.plsNoRightClick=Не нажимайте ПКМ.
