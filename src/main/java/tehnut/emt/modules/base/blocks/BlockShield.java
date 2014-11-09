@@ -15,8 +15,8 @@ import java.util.Random;
 public class BlockShield extends BlockBase {
 
 	public BlockShield() {
-		super("shield", Material.iron, "shield", soundTypeMetal, 1F);
-		this.setResistance(Integer.MAX_VALUE);
+		super("shield", Material.glass, "shield", soundTypeGlass, 1F);
+		setResistance(Integer.MAX_VALUE);
 	}
 
 	@Override

@@ -62,8 +62,14 @@ public class ItemShieldFocus extends ItemFocusBase {
 			if (player.worldObj.isAirBlock(x + 1, y + 1, z) && player.worldObj.isAirBlock(x - 1, y + 1, z) && player.worldObj.isAirBlock(x, y + 1, z + 1) && player.worldObj.isAirBlock(x, y + 1, z - 1)) {
 				player.worldObj.setBlock(x + 1, y + 1, z, BaseBlockRegistry.shieldBlock);
 				player.worldObj.setBlock(x - 1, y + 1, z, BaseBlockRegistry.shieldBlock);
+				player.worldObj.setBlock(x, y + 2, z, BaseBlockRegistry.shieldBlock);
 				player.worldObj.setBlock(x, y + 1, z + 1, BaseBlockRegistry.shieldBlock);
 				player.worldObj.setBlock(x, y + 1, z - 1, BaseBlockRegistry.shieldBlock);
+			}
+
+			// Underneath the player
+			if (player.worldObj.isAirBlock(x, y - 1, z)) {
+				player.worldObj.setBlock(x, y - 1, z, BaseBlockRegistry.shieldBlock);
 			}
 		}
 	}
@@ -86,8 +92,14 @@ public class ItemShieldFocus extends ItemFocusBase {
 		if ((player.worldObj.getBlock(x + 1, y + 1, z) == BaseBlockRegistry.shieldBlock) && (player.worldObj.getBlock(x - 1, y + 1, z) == BaseBlockRegistry.shieldBlock) && (player.worldObj.getBlock(x, y + 1, z + 1) == BaseBlockRegistry.shieldBlock) && (player.worldObj.getBlock(x, y + 1, z - 1) == BaseBlockRegistry.shieldBlock)) {
 			player.worldObj.setBlockToAir(x + 1, y + 1, z);
 			player.worldObj.setBlockToAir(x - 1, y + 1, z);
+			player.worldObj.setBlockToAir(x, y + 2, z);
 			player.worldObj.setBlockToAir(x, y + 1, z + 1);
 			player.worldObj.setBlockToAir(x, y + 1, z - 1);
+		}
+
+		// Underneath the player
+		if (player.worldObj.getBlock(x, y - 1, z) == BaseBlockRegistry.shieldBlock) {
+			player.worldObj.setBlockToAir(x, y - 1, z);
 		}
 
 		ItemStack milk = (new ItemStack(Items.milk_bucket));
