@@ -81,7 +81,7 @@ public class ItemElectricThorHammer extends ItemSword implements IElectricItem {
     @SuppressWarnings({"rawtypes", "unchecked"})
     @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
-        list.add(player.getCommandSenderName() + TextHelper.localize("tooltip.EMT.hammer.electric"));
+        list.add(TextHelper.localize("tooltip.EMT.hammer.electric").replace("%player%", player.getCommandSenderName()));
     }
 
     @Override

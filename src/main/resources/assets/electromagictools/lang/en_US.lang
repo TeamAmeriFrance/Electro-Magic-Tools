@@ -14,7 +14,7 @@ gui.EMT.book.aspect.output.essentia.eu=EU Output per Essentia
 
 #=============Tooltips=============
 #This comes after a player name. The 's is depicting ownership.
-tooltip.EMT.hammer.electric='s Hammer
+tooltip.EMT.hammer.electric=%player%'s Hammer
 tooltip.EMT.hammer.broken.thor=It was once the Hammer of Thor.
 tooltip.EMT.hammer.broken.danger=It is now very dangerous.
 tooltip.EMT.hammer.broken.plsNoRightClick=Do NOT right-click.
