@@ -23,7 +23,7 @@ public abstract class ItemBaseFocus extends Item implements IWandFocus {
 	public ItemBaseFocus(String unlocName, String textureName) {
 		super();
 
-		setUnlocalizedName(ModInformation.modid + ".module.base.focus." + unlocName);
+		setUnlocalizedName(ModInformation.modid + ".module." + unlocName);
 		setTextureName(ModInformation.texturePath + ":" + textureName);
 		setCreativeTab(ElectroMagicTools.tabEMT);
 		setMaxDamage(1);

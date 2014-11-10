@@ -29,7 +29,7 @@ public class ItemChargeFocus extends ItemBaseFocus {
     private static final AspectList visCost = new AspectList().add(Aspect.FIRE, 10).add(Aspect.WATER, 10).add(Aspect.AIR, 10).add(Aspect.EARTH, 10).add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 10);
 
     public ItemChargeFocus() {
-        super("focus.charge", "focus_charge");
+        super("ic2.focus.charge", "focus_charge");
     }
 
     @Override

@@ -94,11 +94,11 @@ item.EMT.chainsaw.stream.name=Chainsaw of the Stream
 item.EMT.drill.rockbreaker.name=Drill of the Rockbreaker
 item.EMT.hoeofgrowth.electric.name=Electric Hoe of Growth
 
-item.EMT.focus.explosion.name=Wand Focus: Explosion
-item.EMT.focus.christmas.name=Wand Focus: Kris-tmas
-item.EMT.focus.shield.name=Wand Focus: Shield
-item.EMT.focus.charge.name=Wand Focus: Charging
-item.EMT.focus.charge.wand.name=Wand Focus: Wand Charging
+item.EMT.module.base.focus.explosion.name=Wand Focus: Explosion
+item.EMT.module.base.focus.christmas.name=Wand Focus: Kris-tmas
+item.EMT.module.base.focus.shield.name=Wand Focus: Shield
+item.EMT.module.ic2.focus.charge.name=Wand Focus: Charging
+item.EMT.module.ic2.focus.charge.wand.name=Wand Focus: Wand Charging
 
 item.EMT.drill.wood.name=Wooden Drill
 item.EMT.drill.stone.name=Stone Drill

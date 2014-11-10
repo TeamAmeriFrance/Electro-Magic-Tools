@@ -14,7 +14,7 @@ public class ItemWandChargingFocus extends ItemBaseFocus {
     AspectList visCost = new AspectList().add(Aspect.FIRE, 10).add(Aspect.WATER, 10).add(Aspect.AIR, 10).add(Aspect.EARTH, 10).add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 10);
 
     public ItemWandChargingFocus() {
-        super("focus.charge.wand", "focus_wandCharge");
+        super("ic2.focus.charge.wand", "focus_wandCharge");
     }
 
     @Override
