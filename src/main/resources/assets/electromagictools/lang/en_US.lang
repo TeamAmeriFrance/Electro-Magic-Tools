@@ -13,8 +13,13 @@ item.EMT.module.base.focus.shield.name=Wand Focus: Shield
 item.EMT.module.base.hammer.name=Mjolnir
 item.EMT.module.base.hammer.broken.name=Broken Relic of Mjolnir
 
+item.EMT.module.base.wing.feather.name=Feather Wings
+item.EMT.module.base.wing.thaumium.name=Thaumium Wings
+
 # Blocks
 tile.EMT.module.base.shield.name=Block of Shield
+tile.EMT.module.base.node.portable.name=Portable Node
+tile.EMT.module.base.toolRefiller.name=Tool Refiller
 
 # Thaumonomicon Page Title
 
@@ -30,6 +35,8 @@ tooltip.EMT.hammer.broken.plsNoRightClick=Do NOT right-click.
 tooltip.EMT.hammer.broken.plsRightClick=Do right-click.
 # This comes after a player name. The 's is depicting ownership.
 tooltip.EMT.hammer.owned='s Hammer
+
+tooltip.EMT.visDiscount=Vis Discount
 
 # Console
 console.EMT.config.refresh=Refreshing configuration file.

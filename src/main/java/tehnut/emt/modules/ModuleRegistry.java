@@ -4,6 +4,7 @@ import tehnut.emt.ConfigHandler;
 import tehnut.emt.modules.base.BaseRecipeRegistry;
 import tehnut.emt.modules.base.blocks.BaseBlockRegistry;
 import tehnut.emt.modules.base.items.BaseItemRegistry;
+import tehnut.emt.modules.base.tile.BaseTileRegistry;
 
 public class ModuleRegistry {
 
@@ -12,6 +13,7 @@ public class ModuleRegistry {
 		BaseBlockRegistry.registerBlocks();
 		BaseItemRegistry.registerItems();
 		BaseRecipeRegistry.registerBaseRecipes();
+		BaseTileRegistry.registerBaseTiles();
 
 		if (ConfigHandler.enableIC2Module) {
 			// Do stuff
