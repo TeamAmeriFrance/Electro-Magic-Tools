@@ -7,6 +7,24 @@ gui.EMT.config.title=Electro-Magic Tools Configuration
 # Items
 item.EMT.module.base.bauble.oneRing.name=The One Ring
 
+item.EMT.module.base.materials.oreClusterUranium.name=Uranium Native Cluster
+item.EMT.module.base.materials.crushedOreAmber.name=Crushed Amber Ore
+item.EMT.module.base.materials.purifiedOreAmber.name=Purified Amber Ore
+item.EMT.module.base.materials.crushedOreCinnabar.name=Crushed Cinnabar Ore
+item.EMT.module.base.materials.purifiedOreCinnabar.name=Purified Cinnabar Ore
+item.EMT.module.base.materials.thaumiumPlate.name=Thaumium Plate
+item.EMT.module.base.materials.lightningSummoner.name=Lightning Summoner
+item.EMT.module.base.materials.featherMesh.name=Feather Mesh
+item.EMT.module.base.materials.glue.name=Glue
+item.EMT.module.base.materials.ductTape.name=Duct Tape
+item.EMT.module.base.materials.rubberBall.name=Rubber Ball
+item.EMT.module.base.materials.cardboard.name=Cardboard Sheet
+item.EMT.module.base.materials.featherGluedCardboardWing.name=Feather Glued Cardboard Wing
+item.EMT.module.base.materials.denseIronSheet.name=Dense Iron Sheet
+item.EMT.module.base.materials.taintedFeather.name=Tainted Feather
+item.EMT.module.base.materials.thaumiumWing.name=Thaumium Reinforced Wing
+item.EMT.module.base.materials.uumatterDrop.name=Crystallized UU-Matter Drop
+
 item.EMT.module.base.focus.christmas.name=Wand Focus: Kris-mas
 item.EMT.module.base.focus.shield.name=Wand Focus: Shield
 

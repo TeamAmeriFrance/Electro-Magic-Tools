@@ -20,6 +20,8 @@ public class BaseItemRegistry {
 	// Items
 	public static Item baseBaubles;
 
+	public static Item materials;
+
 	public static Item focusChristmas;
 	public static Item focusShield;
 
@@ -33,6 +35,9 @@ public class BaseItemRegistry {
 
 		baseBaubles = new ItemBaseBaubles();
 		GameRegistry.registerItem(baseBaubles, "ItemBaseBaubles");
+
+		materials = new ItemBaseMaterials();
+		GameRegistry.registerItem(materials, "ItemBaseMaterials");
 
 		focusChristmas = new ItemChristmasFocus();
 		GameRegistry.registerItem(focusChristmas, "ItemFocusChristmas");
