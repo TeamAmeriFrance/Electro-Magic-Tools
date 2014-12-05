@@ -9,11 +9,11 @@ import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.items.wands.ItemWandCasting;
 
-public class ItemChristmasFocus extends ItemFocusBase {
+public class ItemFocusChristmas extends ItemFocusBase {
 
 	private static final AspectList visCost = new AspectList().add(Aspect.ORDER, 500).add(Aspect.AIR, 500);
 
-	public ItemChristmasFocus() {
+	public ItemFocusChristmas() {
 		super("christmas", "focus_christmas");
 	}
 

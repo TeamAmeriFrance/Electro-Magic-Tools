@@ -1,4 +1,4 @@
-package tehnut.emt.modules.base.items.tools;
+package tehnut.emt.modules.tools;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;

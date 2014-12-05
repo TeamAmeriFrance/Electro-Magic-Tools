@@ -19,7 +19,7 @@ public class ItemNanoGoggles extends ItemElectricGoggles {
 
 	public ItemNanoGoggles() {
 		super(ArmorMaterial.DIAMOND);
-		setUnlocalizedName(ModInformation.ID + "module.ic2.goggles.nano");
+		setUnlocalizedName(ModInformation.ID + ".module.ic2.goggles.nano");
 		setCreativeTab(ElectroMagicTools.tabEMT);
 		visDiscount = 6;
 		tier = 3;

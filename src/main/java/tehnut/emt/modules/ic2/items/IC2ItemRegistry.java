@@ -10,11 +10,18 @@ import tehnut.emt.modules.ic2.items.armor.goggles.ItemElectricGoggles;
 import tehnut.emt.modules.ic2.items.armor.goggles.ItemNanoGoggles;
 import tehnut.emt.modules.ic2.items.armor.goggles.ItemQuantumGoggles;
 import tehnut.emt.modules.ic2.items.armor.goggles.ItemSolarGoggles;
+import tehnut.emt.modules.ic2.items.armor.wings.ItemNanoWing;
+import tehnut.emt.modules.ic2.items.armor.wings.ItemQuantumWing;
+import tehnut.emt.modules.ic2.items.foci.ItemFocusCharge;
+import tehnut.emt.modules.ic2.items.foci.ItemFocusWandCharge;
 import tehnut.emt.modules.ic2.items.tools.ItemElectricScribingTools;
 
 public class IC2ItemRegistry {
 
 	public static Item baubleIC2;
+
+	public static Item focusCharge;
+	public static Item focusWandCharge;
 
 	public static Item toolScribingElectric;
 
@@ -22,6 +29,9 @@ public class IC2ItemRegistry {
 	public static Item armorNanoGoggles;
 	public static Item armorQuantumGoggles;
 	public static Item armorSolarGoggles;
+
+	public static Item armorNanoWing;
+	public static Item armorQuantumWing;
 
 	public static Item armorElectricBoots;
 	public static Item armorNanoBoots;
@@ -31,6 +41,11 @@ public class IC2ItemRegistry {
 
 		baubleIC2 = new ItemIC2Baubles();
 		GameRegistry.registerItem(baubleIC2, "ItemIC2Baubles");
+
+		focusCharge = new ItemFocusCharge();
+		GameRegistry.registerItem(focusCharge, "ItemFocusCharge");
+		focusWandCharge = new ItemFocusWandCharge();
+		GameRegistry.registerItem(focusWandCharge, "ItemFocusWandCharge");
 
 		toolScribingElectric = new ItemElectricScribingTools();
 		GameRegistry.registerItem(toolScribingElectric, "ItemElectricScribingTools");
@@ -43,6 +58,11 @@ public class IC2ItemRegistry {
 		GameRegistry.registerItem(armorQuantumGoggles, "ItemQuantumGoggles");
 		armorSolarGoggles = new ItemSolarGoggles();
 		GameRegistry.registerItem(armorSolarGoggles, "ItemSolarGoggles");
+
+		armorNanoWing = new ItemNanoWing();
+		GameRegistry.registerItem(armorNanoWing, "ItemNanoWing");
+		armorQuantumWing = new ItemQuantumWing();
+		GameRegistry.registerItem(armorQuantumWing, "ItemQuantumWing");
 
 		armorElectricBoots = new ItemElectricBootsTraveller();
 		GameRegistry.registerItem(armorElectricBoots, "ItemElectricBootsTraveller");

@@ -70,6 +70,8 @@ public class ConfigHandler {
 	public static double nanoBootsJump;
 	public static double quantumBootsSpeed;
 	public static double quantumBootsJump;
+	public static int chargeFocusProduction;
+	public static int wandChargeFocusCost;
 
 	public static boolean oneRingSpawn;
 	public static int chanceOneRing;
@@ -79,6 +81,7 @@ public class ConfigHandler {
 
 	public static boolean enableIC2Module;
 	public static boolean enableTEModule;
+	public static boolean enableToolModule;
 
 	public static void init(File file) {
 		config = new Configuration(file);
@@ -148,19 +151,22 @@ public class ConfigHandler {
 		nanoBootsJump = config.get(values, "nanoBootsJump", 0.6, "Watch out, that goes up REALLY quickly. Default is 0.6").getDouble();
 		quantumBootsSpeed = config.get(values, "quantumBootsSpeed", 0.5, "Watch out, that goes up REALLY quickly. Default is 0.5").getDouble();
 		quantumBootsJump = config.get(values, "quantumBootsJump", 0.9, "Watch out, that goes up REALLY quickly. Default is 0.9").getDouble();
+		chargeFocusProduction = config.get(values, "chargeFocusProduction", 64, "EU/t that the Wand Focus: Charging will produce. Default is 64.").getInt();
+		wandChargeFocusCost = config.get(values, "wandChargeFocusCost", 40000, "EU/vis restored. Default is 40000.").getInt();
 
 		// Misc Options
-		oneRingSpawn = config.get(misc, "Disable One Ring in dungeon chests", false, "There is no other way to get this item.").getBoolean(oneRingSpawn);
-		chanceTaintedMjolnir = config.get(misc, "Tainted Mjolnir spawning change", 25, "If you have a lot of mods adding dungeon loot, you should definetely increase this").getInt();
-		chanceOneRing = config.get(misc, "One Ring spawning chance", 15, "If you have a lot of mods adding dungeon loot, you should definetely increase this").getInt();
-		allowEnchanting = config.get(misc, "Allow enchanting of tools", false, "Very low enchantability for tools.").getBoolean(allowEnchanting);
-		nightVisionOff = config.get(misc, "Disable nightvision helmets", false, "This was added because of mods making you totally blind if using nightvision. For example, enable that when in the Deep Dark.").getBoolean(nightVisionOff);
+		oneRingSpawn = config.get(misc, "oneRingSpawn", false, "There is no other way to get this item.").getBoolean(oneRingSpawn);
+		chanceTaintedMjolnir = config.get(misc, "chanceTaintedMjolnir", 25, "If you have a lot of mods adding dungeon loot, you should definetely increase this").getInt();
+		chanceOneRing = config.get(misc, "chanceOneRing", 15, "If you have a lot of mods adding dungeon loot, you should definetely increase this").getInt();
+		allowEnchanting = config.get(misc, "allowEnchanting", false, "Very low enchantability for tools.").getBoolean(allowEnchanting);
+		nightVisionOff = config.get(misc, "nightVisionOff", false, "This was added because of mods making you totally blind if using nightvision. For example, enable that when in the Deep Dark.").getBoolean(nightVisionOff);
 
 		// Generator Outputs
 
 		// Modules
 		enableIC2Module = config.get(modules, "enableIC2Module", true).getBoolean(enableIC2Module);
 		enableTEModule = config.get(modules, "enableTEModule", false).getBoolean(enableTEModule);
+		enableToolModule = config.get(modules, "enableToolModule", false).getBoolean(enableToolModule);
 
 		config.save();
 	}

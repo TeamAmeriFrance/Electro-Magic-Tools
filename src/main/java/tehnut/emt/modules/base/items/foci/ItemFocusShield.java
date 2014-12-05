@@ -10,11 +10,11 @@ import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.items.wands.ItemWandCasting;
 
-public class ItemShieldFocus extends ItemFocusBase {
+public class ItemFocusShield extends ItemFocusBase {
 
 	private static final AspectList visCost = new AspectList().add(Aspect.ORDER, 10).add(Aspect.WATER, 10).add(Aspect.AIR, 10);
 
-	public ItemShieldFocus() {
+	public ItemFocusShield() {
 		super("shield", "focus_shield");
 	}
 

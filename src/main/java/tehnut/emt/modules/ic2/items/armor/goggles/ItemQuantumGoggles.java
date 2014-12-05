@@ -28,7 +28,7 @@ public class ItemQuantumGoggles extends ItemNanoGoggles {
 
 	public ItemQuantumGoggles() {
 		super();
-		setUnlocalizedName(ModInformation.ID + "module.ic2.goggles.quantum");
+		setUnlocalizedName(ModInformation.ID + ".module.ic2.goggles.quantum");
 		setCreativeTab(ElectroMagicTools.tabEMT);
 		maxCharge = 10000000;
 		tier = 3;

@@ -33,14 +33,18 @@ item.EMT.module.base.wing.thaumium.name=Thaumium Wings
 
 item.EMT.module.ic2.bauble.euMaker.armor.name=Armor Charging Ring
 item.EMT.module.ic2.bauble.euMaker.inventory.name=Inventory Charging Ring
-item.EMT.module.ic2.scribingtools.electric.name=Electric Scribing Tools
-item.EMT.module.ic2.boots.traveller.electric.name=Electric Boots of the Traveller
-item.EMT.module.ic2.boots.traveller.nano.name=Nano Boots of the Traveller
-item.EMT.module.ic2.boots.traveller.quantum.name=Quantum Boots of the Traveller
+item.EMT.module.ic2.focus.charge.name=Wand Focus: Charging
+item.EMT.module.ic2.focus.charge.wand.name=Wand Focus: Wand Charging
 item.EMT.module.ic2.goggles.electric.name=Electric Goggles of Revealing
 item.EMT.module.ic2.goggles.nano.name=Nano Goggles of Revealing
 item.EMT.module.ic2.goggles.quantum.name=Quantum Goggles of Revealing
 item.EMT.module.ic2.goggles.solar.name=Solar Helmet of Revealing
+item.EMT.module.ic2.wing.nano.name=Nano Wings
+item.EMT.module.ic2.wing.quantum.name=Quantum Wings
+item.EMT.module.ic2.scribingtools.electric.name=Electric Scribing Tools
+item.EMT.module.ic2.boots.traveller.electric.name=Electric Boots of the Traveller
+item.EMT.module.ic2.boots.traveller.nano.name=Nano Boots of the Traveller
+item.EMT.module.ic2.boots.traveller.quantum.name=Quantum Boots of the Traveller
 
 # Blocks
 tile.EMT.module.base.shield.name=Block of Shield
