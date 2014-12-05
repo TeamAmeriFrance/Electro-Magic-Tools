@@ -64,10 +64,18 @@ public class ConfigHandler {
 	public static boolean quantumWingsResearch;
 	public static boolean aerGeneratorResearch;
 
+	public static int armorBaubleProduction;
+	public static int inventoryBaubleProduction;
+	public static double nanoBootsSpeed;
+	public static double nanoBootsJump;
+	public static double quantumBootsSpeed;
+	public static double quantumBootsJump;
+
 	public static boolean oneRingSpawn;
 	public static int chanceOneRing;
 	public static int chanceTaintedMjolnir;
 	public static boolean allowEnchanting;
+	public static boolean nightVisionOff;
 
 	public static boolean enableIC2Module;
 	public static boolean enableTEModule;
@@ -134,12 +142,19 @@ public class ConfigHandler {
 		aerGeneratorResearch = config.get(research, "Aer Generator", false).getBoolean(aerGeneratorResearch);
 
 		// Numeric Values
+		armorBaubleProduction = config.get(values, "armorBaubleProduction", 32, "EU/t the ring will charge at. Default is 32.").getInt();
+		inventoryBaubleProduction = config.get(values, "inventoryBaubleProduction", 32, "EU/t the ring will charge at. Default is 32.").getInt();
+		nanoBootsSpeed = config.get(values, "nanoBootsSpeed", 0.25, "Watch out, that goes up REALLY quickly. Default is 0.25").getDouble();
+		nanoBootsJump = config.get(values, "nanoBootsJump", 0.6, "Watch out, that goes up REALLY quickly. Default is 0.6").getDouble();
+		quantumBootsSpeed = config.get(values, "quantumBootsSpeed", 0.5, "Watch out, that goes up REALLY quickly. Default is 0.5").getDouble();
+		quantumBootsJump = config.get(values, "quantumBootsJump", 0.9, "Watch out, that goes up REALLY quickly. Default is 0.9").getDouble();
 
 		// Misc Options
 		oneRingSpawn = config.get(misc, "Disable One Ring in dungeon chests", false, "There is no other way to get this item.").getBoolean(oneRingSpawn);
 		chanceTaintedMjolnir = config.get(misc, "Tainted Mjolnir spawning change", 25, "If you have a lot of mods adding dungeon loot, you should definetely increase this").getInt();
 		chanceOneRing = config.get(misc, "One Ring spawning chance", 15, "If you have a lot of mods adding dungeon loot, you should definetely increase this").getInt();
 		allowEnchanting = config.get(misc, "Allow enchanting of tools", false, "Very low enchantability for tools.").getBoolean(allowEnchanting);
+		nightVisionOff = config.get(misc, "Disable nightvision helmets", false, "This was added because of mods making you totally blind if using nightvision. For example, enable that when in the Deep Dark.").getBoolean(nightVisionOff);
 
 		// Generator Outputs
 

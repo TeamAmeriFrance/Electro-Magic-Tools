@@ -5,6 +5,10 @@ import tehnut.emt.modules.base.BaseRecipeRegistry;
 import tehnut.emt.modules.base.blocks.BaseBlockRegistry;
 import tehnut.emt.modules.base.items.BaseItemRegistry;
 import tehnut.emt.modules.base.tile.BaseTileRegistry;
+import tehnut.emt.modules.ic2.IC2RecipeRegistry;
+import tehnut.emt.modules.ic2.blocks.IC2BlockRegistry;
+import tehnut.emt.modules.ic2.items.IC2ItemRegistry;
+import tehnut.emt.modules.ic2.tile.IC2TileRegistry;
 
 public class ModuleRegistry {
 
@@ -12,11 +16,14 @@ public class ModuleRegistry {
 
 		BaseBlockRegistry.registerBlocks();
 		BaseItemRegistry.registerItems();
-		BaseRecipeRegistry.registerBaseRecipes();
 		BaseTileRegistry.registerBaseTiles();
+		BaseRecipeRegistry.init();
 
 		if (ConfigHandler.enableIC2Module) {
-			// Do stuff
+			IC2BlockRegistry.registerBlocks();
+			IC2ItemRegistry.registerItems();
+			IC2TileRegistry.registerTiles();
+			IC2RecipeRegistry.init();
 		}
 
 		if (ConfigHandler.enableTEModule) {

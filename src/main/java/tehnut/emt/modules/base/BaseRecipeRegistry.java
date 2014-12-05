@@ -18,7 +18,7 @@ public class BaseRecipeRegistry {
 	public static IRecipe woodenChainsawTop, stoneChainsawTop, ironChainsawTop, goldenChainsawTop, diamondChainsawTop, copperChainsawTop, tinChainsawTop, leadChainsawTop, bronzeChainsawTop;
 	public static IRecipe woodenCarver, stoneCarver, ironCarver, obsidianCarver, diamondCarver;
 
-	public static void registerBaseRecipes() {
+	public static void init() {
 		registerShapedRecipes();
 		registerShaplessRecipes();
 		addChainsawRecipes();
