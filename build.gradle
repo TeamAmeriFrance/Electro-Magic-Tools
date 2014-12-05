@@ -32,11 +32,13 @@ if (new File(projectDir, '.git').exists()) {
 
 // IC2 Maven does not want to work, so you will have to manually download the deobf :(
 repositories {
-//    maven { url 'http://maven.ic2.player.to/' }
+//  maven { url 'http://maven.ic2.player.to/' }
+	maven { url 'http://maven.tterrag.com/' }
 }
 
 dependencies {
-//    compile "net.industrial-craft:industrialcraft-2:${ic2_version}"
+//  compile "net.industrial-craft:industrialcraft-2:${ic2_version}"
+	compile "tterrag.core:ttCore:${ttCore_version}"
 }
 
 minecraft {

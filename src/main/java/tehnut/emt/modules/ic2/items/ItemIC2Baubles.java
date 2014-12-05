@@ -22,35 +22,19 @@ import java.util.Random;
 public class ItemIC2Baubles extends ItemIC2 implements IBauble {
 
 	public IIcon[] icon = new IIcon[16];
-	public static int wornTick;
 	public Random random = new Random();
+	private static final String[] names = { "euMaker.armor", "euMaker.inventory" };
 
 	public ItemIC2Baubles() {
 		super("bauble");
 		this.setHasSubtypes(true);
 		this.setMaxDamage(0);
 		this.setMaxStackSize(1);
-
-		wornTick = 0;
 	}
 
 	@Override
-	public String getUnlocalizedName(ItemStack itemstack) {
-		String name = "";
-		switch (itemstack.getItemDamage()) {
-			case 0: {
-				name = "euMaker.armor";
-				break;
-			}
-			case 1: {
-				name = "euMaker.inventory";
-				break;
-			}
-			default:
-				name = "nothing";
-				break;
-		}
-		return getUnlocalizedName() + "." + name;
+	public String getUnlocalizedName(ItemStack stack) {
+		return getUnlocalizedName() + "." + names[stack.getItemDamage() % names.length];
 	}
 
 	@SideOnly(Side.CLIENT)

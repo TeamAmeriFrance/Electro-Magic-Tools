@@ -1,34 +1,29 @@
 package tehnut.emt.gui;
 
-import cpw.mods.fml.client.config.GuiConfig;
-import cpw.mods.fml.client.config.IConfigElement;
+import net.minecraft.client.gui.GuiScreen;
+import tehnut.emt.ConfigHandler;
 import tehnut.emt.ModInformation;
 import tehnut.emt.util.TextHelper;
-import net.minecraft.client.gui.GuiScreen;
-import net.minecraftforge.common.config.ConfigCategory;
-import net.minecraftforge.common.config.ConfigElement;
+import tterrag.core.api.common.config.IConfigHandler;
+import tterrag.core.client.config.BaseConfigGui;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static tehnut.emt.ConfigHandler.*;
-
-public class ConfigGui extends GuiConfig {
-
+public class ConfigGui extends BaseConfigGui {
 	public ConfigGui(GuiScreen parentScreen) {
-		super(parentScreen, getConfigElements(parentScreen), ModInformation.ID, false, false, TextHelper.localize("gui.EMT.config.title"));
+		super(parentScreen);
 	}
 
-	@SuppressWarnings("rawtypes")
-	private static List<IConfigElement> getConfigElements(GuiScreen parent) {
-		List<IConfigElement> list = new ArrayList<IConfigElement>();
+	@Override
+	protected IConfigHandler getConfigHandler() {
+		return ConfigHandler.INSTANCE;
+	}
 
-		list.add(new ConfigElement<ConfigCategory>(config.getCategory(modules.toLowerCase())));
-		list.add(new ConfigElement<ConfigCategory>(config.getCategory(research.toLowerCase())));
-		list.add(new ConfigElement<ConfigCategory>(config.getCategory(values.toLowerCase())));
-		list.add(new ConfigElement<ConfigCategory>(config.getCategory(misc.toLowerCase())));
-		list.add(new ConfigElement<ConfigCategory>(config.getCategory(generators.toLowerCase())));
+	@Override
+	protected String getTitle() {
+		return TextHelper.localize("EMT.config.title");
+	}
 
-		return list;
+	@Override
+	protected String getLangPrefix() {
+		return ModInformation.ID + ".config.";
 	}
 }

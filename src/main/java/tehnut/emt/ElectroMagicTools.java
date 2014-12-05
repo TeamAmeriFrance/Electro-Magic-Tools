@@ -5,18 +5,17 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraftforge.common.MinecraftForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import tehnut.emt.gui.CreativeTabEMT;
-import tehnut.emt.gui.GuiHandler;
 import tehnut.emt.modules.ModuleRegistry;
 import tehnut.emt.proxies.CommonProxy;
-import tehnut.emt.util.EventHandler;
 import tehnut.emt.util.LootHandler;
 import tehnut.emt.util.OreDictHandler;
+import tterrag.core.common.Handlers;
+
+import java.io.File;
 
 @Mod(modid = ModInformation.ID, name = ModInformation.NAME, version = ModInformation.VERSION, dependencies = ModInformation.DEPEND, guiFactory = ModInformation.GUIFACTORY)
 public class ElectroMagicTools {
@@ -33,13 +32,12 @@ public class ElectroMagicTools {
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 
-		ConfigHandler.init(event.getSuggestedConfigurationFile());
+		ConfigHandler.INSTANCE.initialize(new File(event.getModConfigurationDirectory() + "/" + "ElectroMagicTools" + ".cfg"));
 
 		ModuleRegistry.registerEarlyModules();
 
 		OreDictHandler.registerOreDict();
-		MinecraftForge.EVENT_BUS.register(new EventHandler());
-		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
+		Handlers.addPackage("tehnut.emt");
 	}
 
 	@Mod.EventHandler

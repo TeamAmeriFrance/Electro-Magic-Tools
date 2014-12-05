@@ -1,9 +1,6 @@
 # Creative Tab
 itemGroup.EMT.creativeTab=Electro-Magic Tools
 
-# Gui
-gui.EMT.config.title=Electro-Magic Tools Configuration
-
 # Items
 item.EMT.module.base.bauble.oneRing.name=The One Ring
 
@@ -71,3 +68,16 @@ tooltip.EMT.visDiscount=Vis Discount
 
 # Console
 console.EMT.config.refresh=Refreshing configuration file.
+
+# Config
+EMT.config.title=Electro-Magic Tools Configuration
+EMT.config.section.values=Value Settings
+EMT.config.section.values.tooltip=The only way to change some numbers that my machines uses.
+EMT.config.section.research=Research Settings
+EMT.config.section.research.tooltip=The only way to disable some researches. Be careful, if you disable some researches, all researches linked to it will be removed too. Really, don't touch that unless you know exactly what you are doing. If a research is part of a disabled module, don't worry about it.
+EMT.config.section.generators=Generator Values
+EMT.config.section.generators.tooltip=Change outputs linked to different Essentias here
+EMT.config.section.misc=Miscellaneous Settings
+EMT.config.section.misc.tooltip=Options that don't fit into the other categories.
+EMT.config.section.modules=Module Settings
+EMT.config.section.modules.tooltip=Select the modules to play with.
