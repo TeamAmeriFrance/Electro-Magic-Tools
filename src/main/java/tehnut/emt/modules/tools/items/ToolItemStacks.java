@@ -1,4 +1,4 @@
-package tehnut.emt.modules.tools;
+package tehnut.emt.modules.tools.items;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;

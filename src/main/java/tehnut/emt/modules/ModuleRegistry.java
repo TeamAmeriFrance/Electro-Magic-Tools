@@ -9,7 +9,7 @@ import tehnut.emt.modules.ic2.IC2RecipeRegistry;
 import tehnut.emt.modules.ic2.blocks.IC2BlockRegistry;
 import tehnut.emt.modules.ic2.items.IC2ItemRegistry;
 import tehnut.emt.modules.ic2.tile.IC2TileRegistry;
-import tehnut.emt.modules.tools.ToolItemRegistry;
+import tehnut.emt.modules.tools.items.ToolItemRegistry;
 import tehnut.emt.modules.tools.ToolRecipeRegistry;
 
 public class ModuleRegistry {

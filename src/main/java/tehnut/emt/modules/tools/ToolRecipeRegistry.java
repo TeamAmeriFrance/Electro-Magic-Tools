@@ -6,6 +6,8 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.oredict.OreDictionary;
+import tehnut.emt.modules.tools.items.ToolItemRegistry;
+import tehnut.emt.modules.tools.items.ToolItemStacks;
 
 public class ToolRecipeRegistry {
 

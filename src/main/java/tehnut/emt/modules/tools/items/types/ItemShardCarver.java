@@ -1,4 +1,4 @@
-package tehnut.emt.modules.tools;
+package tehnut.emt.modules.tools.items.types;
 
 import net.minecraft.item.Item;
 import tehnut.emt.ElectroMagicTools;

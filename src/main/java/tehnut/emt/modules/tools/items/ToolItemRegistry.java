@@ -1,4 +1,4 @@
-package tehnut.emt.modules.tools;
+package tehnut.emt.modules.tools.items;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
@@ -8,6 +8,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
 import tehnut.emt.ModInformation;
+import tehnut.emt.modules.tools.items.types.ItemShardCarver;
+import tehnut.emt.modules.tools.items.types.ItemVanillaChainsaw;
+import tehnut.emt.modules.tools.items.types.ItemVanillaDrill;
+import tehnut.emt.modules.tools.items.types.ItemVanillaOmnitool;
 
 public class ToolItemRegistry {
 
@@ -26,8 +30,8 @@ public class ToolItemRegistry {
 	public static Item woodCarver, stoneCarver, ironCarver, obsidianCarver, diamondCarver;
 	
 	public static void registerItems() {
-		toolComponents = new ItemBaseToolComponents();
-		GameRegistry.registerItem(toolComponents, "ItemBaseToolComponents");
+		toolComponents = new ItemToolComponents();
+		GameRegistry.registerItem(toolComponents, "ItemToolComponents");
 
 		woodCarver = new ItemShardCarver(8).setUnlocalizedName(ModInformation.ID + ".module.tools.carver.wood");
 		GameRegistry.registerItem(woodCarver, "woodCarver");

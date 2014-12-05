@@ -1,4 +1,4 @@
-package tehnut.emt.modules.tools;
+package tehnut.emt.modules.tools.items;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -12,7 +12,7 @@ import tehnut.emt.modules.base.items.ItemBase;
 
 import java.util.List;
 
-public class ItemBaseToolComponents extends ItemBase {
+public class ItemToolComponents extends ItemBase {
 
 	public IIcon[] icon = new IIcon[128];
 	public final String drillTop = "drillTop";
@@ -20,7 +20,7 @@ public class ItemBaseToolComponents extends ItemBase {
 	public final String omnitoolTop = "omnitoolTop";
 	public final String shard = "shard";
 
-	public ItemBaseToolComponents() {
+	public ItemToolComponents() {
 		super("tool.component");
 		this.setHasSubtypes(true);
 	}

@@ -1,4 +1,4 @@
-package tehnut.emt.modules.tools;
+package tehnut.emt.modules.tools.items.types;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;

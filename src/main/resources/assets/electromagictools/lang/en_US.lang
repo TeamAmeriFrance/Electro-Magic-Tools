@@ -35,15 +35,16 @@ item.EMT.module.ic2.bauble.euMaker.armor.name=Armor Charging Ring
 item.EMT.module.ic2.bauble.euMaker.inventory.name=Inventory Charging Ring
 item.EMT.module.ic2.focus.charge.name=Wand Focus: Charging
 item.EMT.module.ic2.focus.charge.wand.name=Wand Focus: Wand Charging
+item.EMT.module.ic2.scribingtools.electric.name=Electric Scribing Tools
+item.EMT.module.ic2.hammer.electric.name=Supercharged Mjolnir
 item.EMT.module.ic2.goggles.electric.name=Electric Goggles of Revealing
-item.EMT.module.ic2.goggles.nano.name=Nano Goggles of Revealing
+item.EMT.module.ic2.goggles.nano.name=Nanosuit Goggles of Revealing
 item.EMT.module.ic2.goggles.quantum.name=Quantum Goggles of Revealing
 item.EMT.module.ic2.goggles.solar.name=Solar Helmet of Revealing
-item.EMT.module.ic2.wing.nano.name=Nano Wings
+item.EMT.module.ic2.wing.nano.name=Nanosuit Wings
 item.EMT.module.ic2.wing.quantum.name=Quantum Wings
-item.EMT.module.ic2.scribingtools.electric.name=Electric Scribing Tools
 item.EMT.module.ic2.boots.traveller.electric.name=Electric Boots of the Traveller
-item.EMT.module.ic2.boots.traveller.nano.name=Nano Boots of the Traveller
+item.EMT.module.ic2.boots.traveller.nano.name=Nanosuit Boots of the Traveller
 item.EMT.module.ic2.boots.traveller.quantum.name=Quantum Boots of the Traveller
 
 # Blocks
@@ -64,7 +65,7 @@ tooltip.EMT.hammer.broken.danger=It is now very dangerous.
 tooltip.EMT.hammer.broken.plsNoRightClick=Do NOT right-click.
 tooltip.EMT.hammer.broken.plsRightClick=Do right-click.
 # This comes after a player name. The 's is depicting ownership.
-tooltip.EMT.hammer.owned='s Hammer
+tooltip.EMT.hammer.owned=%s's Hammer
 
 tooltip.EMT.visDiscount=Vis Discount
 

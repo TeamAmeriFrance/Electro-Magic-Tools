@@ -15,6 +15,7 @@ import tehnut.emt.modules.ic2.items.armor.wings.ItemQuantumWing;
 import tehnut.emt.modules.ic2.items.foci.ItemFocusCharge;
 import tehnut.emt.modules.ic2.items.foci.ItemFocusWandCharge;
 import tehnut.emt.modules.ic2.items.tools.ItemElectricScribingTools;
+import tehnut.emt.modules.ic2.items.tools.ItemElectricThorHammer;
 
 public class IC2ItemRegistry {
 
@@ -24,6 +25,8 @@ public class IC2ItemRegistry {
 	public static Item focusWandCharge;
 
 	public static Item toolScribingElectric;
+
+	public static Item weaponHammerElectric;
 
 	public static Item armorElectricGoggles;
 	public static Item armorNanoGoggles;
@@ -49,6 +52,9 @@ public class IC2ItemRegistry {
 
 		toolScribingElectric = new ItemElectricScribingTools();
 		GameRegistry.registerItem(toolScribingElectric, "ItemElectricScribingTools");
+
+		weaponHammerElectric = new ItemElectricThorHammer();
+		GameRegistry.registerItem(weaponHammerElectric, "ItemElectricThorHammer");
 
 		armorElectricGoggles = new ItemElectricGoggles(ItemArmor.ArmorMaterial.IRON);
 		GameRegistry.registerItem(armorElectricGoggles, "ItemElectricGoggles");
