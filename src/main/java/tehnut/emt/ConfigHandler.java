@@ -21,9 +21,9 @@ public class ConfigHandler {
 	public static boolean thaumiumOmnitoolResearch;
 	public static boolean rockbreakerDrillResearch;
 	public static boolean streamChainsawResearch;
-	public static boolean electricGooglesResearch;
-	public static boolean nanoGooglesResearch;
-	public static boolean quantumGooglesResearch;
+	public static boolean electricGogglesResearch;
+	public static boolean nanoGogglesResearch;
+	public static boolean quantumGogglesResearch;
 	public static boolean ironOmnitoolResearch;
 	public static boolean diamondOmnitoolResearch;
 	public static boolean explosionFocusResearch;
@@ -74,6 +74,7 @@ public class ConfigHandler {
 	public static int wandChargeFocusCost;
 
 	public static boolean oneRingSpawn;
+	public static boolean thorHammerSpawn;
 	public static int chanceOneRing;
 	public static int chanceTaintedMjolnir;
 	public static boolean allowEnchanting;
@@ -90,59 +91,59 @@ public class ConfigHandler {
 
 	public static void syncConfig() {
 		config.addCustomCategoryComment(values, "The only way to change some numbers that my machines uses.");
-		config.addCustomCategoryComment(research, "The only way to disable some researches. Be careful, if you disable some researches, all researches linked to it will be removed too. Really, don't touch that unless you know exactly what you are doing.");
+		config.addCustomCategoryComment(research, "The only way to disable some researches. Be careful, if you disable some researches, all researches linked to it will be removed too. Really, don't touch that unless you know exactly what you are doing. If a research is part of a disabled module, don't worry about it.");
 		config.addCustomCategoryComment(values, "Change outputs linked to different Essentias here");
 		config.addCustomCategoryComment(misc, "Options that don't fit into the other categories.");
 		config.addCustomCategoryComment(modules, "Select the modules to play with.");
 
 		// Research
-		thaumiumDrillResearch = config.get(research, "Thaumium Drill", false).getBoolean(thaumiumDrillResearch);
-		thaumiumChainsawResearch = config.get(research, "Thaumium Chainsaw", false).getBoolean(thaumiumChainsawResearch);
-		thaumiumDrillResearch = config.get(research, "Thaumium Omnitool", false).getBoolean(thaumiumOmnitoolResearch);
-		rockbreakerDrillResearch = config.get(research, "Drill of the Rockbreaker", false).getBoolean(rockbreakerDrillResearch);
-		streamChainsawResearch = config.get(research, "Chainsaw of the Stream", false).getBoolean(streamChainsawResearch);
-		electricGooglesResearch = config.get(research, "Electric Googles of Revealing", false).getBoolean(electricGooglesResearch);
-		nanoGooglesResearch = config.get(research, "Nanosuit Googles of Revealing", false).getBoolean(nanoGooglesResearch);
-		quantumGooglesResearch = config.get(research, "Quantum Googles of Revealing", false).getBoolean(quantumGooglesResearch);
-		ironOmnitoolResearch = config.get(research, "Omnitool", false).getBoolean(ironOmnitoolResearch);
-		diamondOmnitoolResearch = config.get(research, "Diamond Omnitool", false).getBoolean(diamondOmnitoolResearch);
-		explosionFocusResearch = config.get(research, "Explosion Focus", false).getBoolean(explosionFocusResearch);
-		christmasFocusResearch = config.get(research, "Kris-tmas Focus", false).getBoolean(christmasFocusResearch);
-		shieldFocusResearch = config.get(research, "Shield Focus", false).getBoolean(shieldFocusResearch);
-		shieldBlockResearch = config.get(research, "Shield Block", false).getBoolean(shieldBlockResearch);
-		potentiaGeneratorResearch = config.get(research, "Potentia Generator", false).getBoolean(potentiaGeneratorResearch);
-		ignisGeneratorResearch = config.get(research, "Ignis Generator", false).getBoolean(ignisGeneratorResearch);
-		auramGeneratorResearch = config.get(research, "Auram Generator", false).getBoolean(auramGeneratorResearch);
-		arborGeneratorResearch = config.get(research, "Arbor Generator", false).getBoolean(arborGeneratorResearch);
-		wandChargingSationResearch = config.get(research, "Industrial Wand Charging Station", false).getBoolean(wandChargingSationResearch);
-		tinyUraniumResearch = config.get(research, "Tiny Piles of Uranium", false).getBoolean(tinyUraniumResearch);
-		thorHammerResearch = config.get(research, "Mjolnir", false).getBoolean(thorHammerResearch);
-		superchargedThorHammerResearch = config.get(research, "Supercharged Mjolnir", false).getBoolean(superchargedThorHammerResearch);
-		compressedSolarsResearch = config.get(research, "Compressed Solars", false).getBoolean(compressedSolarsResearch);
-		solarHelmetResearch = config.get(research, "Solar Helmet of Revealing", false).getBoolean(solarHelmetResearch);
-		electricBootsResearch = config.get(research, "Electric Boots of the Traveller", false).getBoolean(electricBootsResearch);
-		nanoBootsResearch = config.get(research, "Nano Boots of the Traveller", false).getBoolean(nanoBootsResearch);
-		quantumBootsResearch = config.get(research, "Quantum Boots of the Traveller", false).getBoolean(quantumBootsResearch);
-		electricScribingToolsResearch = config.get(research, "Electric Scribing Tools", false).getBoolean(electricScribingToolsResearch);
-		etherealProcessorResearch = config.get(research, "Ethereal Processor", false).getBoolean(etherealProcessorResearch);
-		waterSolarsResearch = config.get(research, "Water Solar Panels", false).getBoolean(waterSolarsResearch);
-		darkSolarsResearch = config.get(research, "Entropy Solar Panels", false).getBoolean(darkSolarsResearch);
-		orderSolarsResearch = config.get(research, "Order Solar Panels", false).getBoolean(orderSolarsResearch);
-		fireSolarsResearch = config.get(research, "Fire Solar Panels", false).getBoolean(fireSolarsResearch);
-		airSolarsResearch = config.get(research, "Air Solar Panels", false).getBoolean(airSolarsResearch);
-		earthSolarsResearch = config.get(research, "Earth Solar Panels", false).getBoolean(earthSolarsResearch);
-		saxumGenResearch = config.get(research, "Saxum Generator", false).getBoolean(saxumGenResearch);
-		uuMInfusionResearch = config.get(research, "UU-Mater Infusion", false).getBoolean(uuMInfusionResearch);
-		portableNodeResarch = config.get(research, "Portable Node", false).getBoolean(portableNodeResarch);
-		electricHoeGrowthResearch = config.get(research, "Electric Hoe of Growth", false).getBoolean(electricHoeGrowthResearch);
-		chargeFocusResearch = config.get(research, "Wand Focus: Charging", false).getBoolean(chargeFocusResearch);
-		wandChargeFocusResearch = config.get(research, "Wand Focus: Wand Charging", false).getBoolean(wandChargeFocusResearch);
-		inventoryChargingRing = config.get(research, "Inventory Charging Ring", false).getBoolean(inventoryChargingRing);
-		armorChargingRing = config.get(research, "Armor Charging Ring", false).getBoolean(armorChargingRing);
-		thaumiumWingResearch = config.get(research, "Thaumium Reinforced Wings", false).getBoolean(thaumiumWingResearch);
-		nanoWingResearch = config.get(research, "Nanosuit Wings", false).getBoolean(nanoWingResearch);
-		quantumWingsResearch = config.get(research, "Quantum Wings", false).getBoolean(quantumWingsResearch);
-		aerGeneratorResearch = config.get(research, "Aer Generator", false).getBoolean(aerGeneratorResearch);
+		thaumiumDrillResearch = config.get(research, "thaumiumDrillResearch", true).getBoolean(thaumiumDrillResearch);
+		thaumiumChainsawResearch = config.get(research, "thaumiumChainsawResearch", true).getBoolean(thaumiumChainsawResearch);
+		thaumiumDrillResearch = config.get(research, "thaumiumDrillResearch", true).getBoolean(thaumiumOmnitoolResearch);
+		rockbreakerDrillResearch = config.get(research, "rockbreakerDrillResearch", true).getBoolean(rockbreakerDrillResearch);
+		streamChainsawResearch = config.get(research, "streamChainsawResearch", true).getBoolean(streamChainsawResearch);
+		electricGogglesResearch = config.get(research, "electricGogglesResearch", true).getBoolean(electricGogglesResearch);
+		nanoGogglesResearch = config.get(research, "nanoGogglesResearch", true).getBoolean(nanoGogglesResearch);
+		quantumGogglesResearch = config.get(research, "quantumGogglesResearch", true).getBoolean(quantumGogglesResearch);
+		ironOmnitoolResearch = config.get(research, "ironOmnitoolResearch", true).getBoolean(ironOmnitoolResearch);
+		diamondOmnitoolResearch = config.get(research, "diamondOmnitoolResearch", true).getBoolean(diamondOmnitoolResearch);
+		explosionFocusResearch = config.get(research, "explosionFocusResearch", true).getBoolean(explosionFocusResearch);
+		christmasFocusResearch = config.get(research, "christmasFocusResearch", true).getBoolean(christmasFocusResearch);
+		shieldFocusResearch = config.get(research, "shieldFocusResearch", true).getBoolean(shieldFocusResearch);
+		shieldBlockResearch = config.get(research, "shieldBlockResearch", true).getBoolean(shieldBlockResearch);
+		potentiaGeneratorResearch = config.get(research, "potentiaGeneratorResearch", true).getBoolean(potentiaGeneratorResearch);
+		ignisGeneratorResearch = config.get(research, "ignisGeneratorResearch", true).getBoolean(ignisGeneratorResearch);
+		auramGeneratorResearch = config.get(research, "auramGeneratorResearch", true).getBoolean(auramGeneratorResearch);
+		arborGeneratorResearch = config.get(research, "arborGeneratorResearch", true).getBoolean(arborGeneratorResearch);
+		wandChargingSationResearch = config.get(research, "wandChargingSationResearch", true).getBoolean(wandChargingSationResearch);
+		tinyUraniumResearch = config.get(research, "tinyUraniumResearch", true).getBoolean(tinyUraniumResearch);
+		thorHammerResearch = config.get(research, "thorHammerResearch", true).getBoolean(thorHammerResearch);
+		superchargedThorHammerResearch = config.get(research, "superchargedThorHammerResearch", true).getBoolean(superchargedThorHammerResearch);
+		compressedSolarsResearch = config.get(research, "compressedSolarsResearch", true).getBoolean(compressedSolarsResearch);
+		solarHelmetResearch = config.get(research, "solarHelmetResearch", true).getBoolean(solarHelmetResearch);
+		electricBootsResearch = config.get(research, "electricBootsResearch", true).getBoolean(electricBootsResearch);
+		nanoBootsResearch = config.get(research, "nanoBootsResearch", true).getBoolean(nanoBootsResearch);
+		quantumBootsResearch = config.get(research, "quantumBootsResearch", true).getBoolean(quantumBootsResearch);
+		electricScribingToolsResearch = config.get(research, "electricScribingToolsResearch", true).getBoolean(electricScribingToolsResearch);
+		etherealProcessorResearch = config.get(research, "etherealProcessorResearch", true).getBoolean(etherealProcessorResearch);
+		waterSolarsResearch = config.get(research, "waterSolarsResearch", true).getBoolean(waterSolarsResearch);
+		darkSolarsResearch = config.get(research, "darkSolarsResearch", true).getBoolean(darkSolarsResearch);
+		orderSolarsResearch = config.get(research, "orderSolarsResearch", true).getBoolean(orderSolarsResearch);
+		fireSolarsResearch = config.get(research, "fireSolarsResearch", true).getBoolean(fireSolarsResearch);
+		airSolarsResearch = config.get(research, "airSolarsResearch", true).getBoolean(airSolarsResearch);
+		earthSolarsResearch = config.get(research, "earthSolarsResearch", true).getBoolean(earthSolarsResearch);
+		saxumGenResearch = config.get(research, "saxumGenResearch", true).getBoolean(saxumGenResearch);
+		uuMInfusionResearch = config.get(research, "uuMInfusionResearch", true).getBoolean(uuMInfusionResearch);
+		portableNodeResarch = config.get(research, "portableNodeResarch", true).getBoolean(portableNodeResarch);
+		electricHoeGrowthResearch = config.get(research, "electricHoeGrowthResearch", true).getBoolean(electricHoeGrowthResearch);
+		chargeFocusResearch = config.get(research, "chargeFocusResearch", true).getBoolean(chargeFocusResearch);
+		wandChargeFocusResearch = config.get(research, "wandChargeFocusResearch", true).getBoolean(wandChargeFocusResearch);
+		inventoryChargingRing = config.get(research, "inventoryChargingRing", true).getBoolean(inventoryChargingRing);
+		armorChargingRing = config.get(research, "armorChargingRing", true).getBoolean(armorChargingRing);
+		thaumiumWingResearch = config.get(research, "thaumiumWingResearch", true).getBoolean(thaumiumWingResearch);
+		nanoWingResearch = config.get(research, "nanoWingResearch", true).getBoolean(nanoWingResearch);
+		quantumWingsResearch = config.get(research, "quantumWingsResearch", true).getBoolean(quantumWingsResearch);
+		aerGeneratorResearch = config.get(research, "aerGeneratorResearch", true).getBoolean(aerGeneratorResearch);
 
 		// Numeric Values
 		armorBaubleProduction = config.get(values, "armorBaubleProduction", 32, "EU/t the ring will charge at. Default is 32.").getInt();
@@ -155,7 +156,8 @@ public class ConfigHandler {
 		wandChargeFocusCost = config.get(values, "wandChargeFocusCost", 40000, "EU/vis restored. Default is 40000.").getInt();
 
 		// Misc Options
-		oneRingSpawn = config.get(misc, "oneRingSpawn", false, "There is no other way to get this item.").getBoolean(oneRingSpawn);
+		oneRingSpawn = config.get(misc, "oneRingSpawn", true, "There is no other way to get this item.").getBoolean(oneRingSpawn);
+		thorHammerSpawn = config.get(misc, "thorHammerSpawn", true, "Thre is no other way to get this item.").getBoolean(thorHammerSpawn);
 		chanceTaintedMjolnir = config.get(misc, "chanceTaintedMjolnir", 25, "If you have a lot of mods adding dungeon loot, you should definetely increase this").getInt();
 		chanceOneRing = config.get(misc, "chanceOneRing", 15, "If you have a lot of mods adding dungeon loot, you should definetely increase this").getInt();
 		allowEnchanting = config.get(misc, "allowEnchanting", false, "Very low enchantability for tools.").getBoolean(allowEnchanting);
