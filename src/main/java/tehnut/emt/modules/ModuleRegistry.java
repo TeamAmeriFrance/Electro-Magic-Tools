@@ -7,10 +7,13 @@ import tehnut.emt.modules.base.items.BaseItemRegistry;
 import tehnut.emt.modules.base.tile.BaseTileRegistry;
 import tehnut.emt.modules.ic2.IC2RecipeRegistry;
 import tehnut.emt.modules.ic2.blocks.IC2BlockRegistry;
+import tehnut.emt.modules.ic2.entity.IC2EntityRegistry;
 import tehnut.emt.modules.ic2.items.IC2ItemRegistry;
 import tehnut.emt.modules.ic2.tile.IC2TileRegistry;
-import tehnut.emt.modules.tools.items.ToolItemRegistry;
 import tehnut.emt.modules.tools.ToolRecipeRegistry;
+import tehnut.emt.modules.tools.items.ToolItemRegistry;
+
+import static tehnut.emt.ElectroMagicTools.logger;
 
 public class ModuleRegistry {
 
@@ -22,17 +25,21 @@ public class ModuleRegistry {
 		BaseRecipeRegistry.init();
 
 		if (ConfigHandler.enableIC2Module) {
+			logger.info("Enabling the IC2 module.");
 			IC2BlockRegistry.registerBlocks();
 			IC2ItemRegistry.registerItems();
 			IC2TileRegistry.registerTiles();
+			IC2EntityRegistry.registerEntities();
 			IC2RecipeRegistry.init();
 		}
 
 		if (ConfigHandler.enableTEModule) {
+			logger.info("Enabling the TE module.");
 			// Do stuff
 		}
 
 		if (ConfigHandler.enableToolModule) {
+			logger.info("Enabling the Tool module.");
 			ToolItemRegistry.registerItems();
 			ToolRecipeRegistry.init();
 		}

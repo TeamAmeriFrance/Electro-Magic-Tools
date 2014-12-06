@@ -15,6 +15,7 @@ import net.minecraft.world.World;
 import tehnut.emt.ConfigHandler;
 import tehnut.emt.ElectroMagicTools;
 import tehnut.emt.ModInformation;
+import tehnut.emt.util.TextHelper;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -52,6 +53,12 @@ public class ItemQuantumGoggles extends ItemNanoGoggles {
 		return ModInformation.TEXLOC + "textures/models/thaumicquantumhelmet.png";
 	}
 
+	@SideOnly(Side.CLIENT)
+	@Override
+	public String getItemStackDisplayName(ItemStack stack) {
+		return TextHelper.BRIGHT_BLUE + super.getItemStackDisplayName(stack).replace(TextHelper.YELLOW, "");
+	}
+
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack stack) {
@@ -80,7 +87,7 @@ public class ItemQuantumGoggles extends ItemNanoGoggles {
 			}
 		} while (true);
 
-		if (ConfigHandler.nightVisionOff) {
+		if (ConfigHandler.enableNightVision) {
 			if (ElectricItem.manager.canUse(stack, 1 / 1000)) {
 				int x = MathHelper.floor_double(player.posX);
 				int z = MathHelper.floor_double(player.posZ);

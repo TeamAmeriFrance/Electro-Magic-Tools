@@ -13,9 +13,19 @@ import tehnut.emt.modules.ic2.items.armor.goggles.ItemSolarGoggles;
 import tehnut.emt.modules.ic2.items.armor.wings.ItemNanoWing;
 import tehnut.emt.modules.ic2.items.armor.wings.ItemQuantumWing;
 import tehnut.emt.modules.ic2.items.foci.ItemFocusCharge;
+import tehnut.emt.modules.ic2.items.foci.ItemFocusExplosion;
 import tehnut.emt.modules.ic2.items.foci.ItemFocusWandCharge;
 import tehnut.emt.modules.ic2.items.tools.ItemElectricScribingTools;
 import tehnut.emt.modules.ic2.items.tools.ItemElectricThorHammer;
+import tehnut.emt.modules.ic2.items.tools.ItemHoeGrowthElectric;
+import tehnut.emt.modules.ic2.items.tools.chainsaw.ItemChainsawDiamond;
+import tehnut.emt.modules.ic2.items.tools.chainsaw.ItemChainsawStream;
+import tehnut.emt.modules.ic2.items.tools.chainsaw.ItemChainsawThaumium;
+import tehnut.emt.modules.ic2.items.tools.drill.ItemDrillRockbreaker;
+import tehnut.emt.modules.ic2.items.tools.drill.ItemDrillThaumium;
+import tehnut.emt.modules.ic2.items.tools.omnitool.ItemOmnitoolDiamond;
+import tehnut.emt.modules.ic2.items.tools.omnitool.ItemOmnitoolIron;
+import tehnut.emt.modules.ic2.items.tools.omnitool.ItemOmnitoolThaumium;
 
 public class IC2ItemRegistry {
 
@@ -23,8 +33,22 @@ public class IC2ItemRegistry {
 
 	public static Item focusCharge;
 	public static Item focusWandCharge;
+	public static Item focusExplosion;
 
 	public static Item toolScribingElectric;
+
+	public static Item toolHoeGrowthElectric;
+
+	public static Item toolChainsawThaumium;
+	public static Item toolChainsawDiamond;
+	public static Item toolChainsawStream;
+
+	public static Item toolDrillThaumium;
+	public static Item toolDrillRockbreaker;
+
+	public static Item toolOmniIron;
+	public static Item toolOmniThaumium;
+	public static Item toolOmniDiamond;
 
 	public static Item weaponHammerElectric;
 
@@ -49,9 +73,35 @@ public class IC2ItemRegistry {
 		GameRegistry.registerItem(focusCharge, "ItemFocusCharge");
 		focusWandCharge = new ItemFocusWandCharge();
 		GameRegistry.registerItem(focusWandCharge, "ItemFocusWandCharge");
+		focusExplosion = new ItemFocusExplosion();
+		GameRegistry.registerItem(focusExplosion, "ItemFocusExplosion");
 
 		toolScribingElectric = new ItemElectricScribingTools();
 		GameRegistry.registerItem(toolScribingElectric, "ItemElectricScribingTools");
+
+		toolHoeGrowthElectric = new ItemHoeGrowthElectric();
+		GameRegistry.registerItem(toolHoeGrowthElectric, "ItemHoeGrowthElectric");
+
+		toolChainsawThaumium = new ItemChainsawThaumium();
+		GameRegistry.registerItem(toolChainsawThaumium, "ItemChainsawThaumium");
+		toolChainsawDiamond = new ItemChainsawDiamond();
+		GameRegistry.registerItem(toolChainsawDiamond, "ItemChainsawDiamond");
+		toolChainsawStream = new ItemChainsawStream();
+		GameRegistry.registerItem(toolChainsawStream, "ItemChainsawStream");
+
+		toolDrillThaumium = new ItemDrillThaumium();
+		GameRegistry.registerItem(toolDrillThaumium, "ItemDrillThaumium");
+		toolDrillRockbreaker = new ItemDrillRockbreaker();
+		GameRegistry.registerItem(toolDrillRockbreaker, "ItemDrillRockbreaker");
+
+		toolOmniIron = new ItemOmnitoolIron();
+		GameRegistry.registerItem(toolOmniIron, "ItemOmnitoolIron");
+
+		toolOmniThaumium = new ItemOmnitoolThaumium();
+		GameRegistry.registerItem(toolOmniThaumium, "ItemOmnitoolThaumium");
+
+		toolOmniDiamond = new ItemOmnitoolDiamond();
+		GameRegistry.registerItem(toolOmniDiamond, "ItemOmnitoolDiamond");
 
 		weaponHammerElectric = new ItemElectricThorHammer();
 		GameRegistry.registerItem(weaponHammerElectric, "ItemElectricThorHammer");

@@ -16,6 +16,7 @@ import net.minecraft.world.World;
 import tehnut.emt.ConfigHandler;
 import tehnut.emt.ElectroMagicTools;
 import tehnut.emt.ModInformation;
+import tehnut.emt.util.TextHelper;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -36,8 +37,8 @@ public class ItemSolarGoggles extends ItemQuantumGoggles {
 	@SuppressWarnings("unchecked")
 	public ItemSolarGoggles() {
 		super();
-		this.setUnlocalizedName(ModInformation.ID + ".module.ic2.goggles.solar");
-		this.setCreativeTab(ElectroMagicTools.tabEMT);
+		setUnlocalizedName(ModInformation.ID + ".module.ic2.goggles.solar");
+		setCreativeTab(ElectroMagicTools.tabEMT);
 		maxCharge = 1000000;
 		genDay = 256;
 		genNight = 128;
@@ -63,10 +64,16 @@ public class ItemSolarGoggles extends ItemQuantumGoggles {
 		return ModInformation.TEXLOC + "textures/models/solarrevealinghelmet.png";
 	}
 
+	@SideOnly(Side.CLIENT)
+	@Override
+	public String getItemStackDisplayName(ItemStack stack) {
+		return TextHelper.BRIGHT_BLUE + super.getItemStackDisplayName(stack);
+	}
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public void onArmorTick(World worldObj, EntityPlayer player, ItemStack stack) {
-		if (!ConfigHandler.nightVisionOff) {
+		if (ConfigHandler.enableNightVision) {
 			if (ElectricItem.manager.canUse(stack, 1 / 1000)) {
 
 

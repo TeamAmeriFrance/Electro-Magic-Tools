@@ -14,6 +14,7 @@ import net.minecraft.world.World;
 import tehnut.emt.ConfigHandler;
 import tehnut.emt.ElectroMagicTools;
 import tehnut.emt.ModInformation;
+import tehnut.emt.util.TextHelper;
 
 public class ItemNanoGoggles extends ItemElectricGoggles {
 
@@ -41,7 +42,7 @@ public class ItemNanoGoggles extends ItemElectricGoggles {
 
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
-		if (!ConfigHandler.nightVisionOff) {
+		if (ConfigHandler.enableNightVision) {
 			if (ElectricItem.manager.canUse(itemStack, 1 / 1000)) {
 
 				int x = MathHelper.floor_double(player.posX);
@@ -56,5 +57,11 @@ public class ItemNanoGoggles extends ItemElectricGoggles {
 				player.addPotionEffect(new PotionEffect(Potion.blindness.id, 300, 0, true));
 			}
 		}
+	}
+
+	@SideOnly(Side.CLIENT)
+	@Override
+	public String getItemStackDisplayName(ItemStack stack) {
+		return TextHelper.YELLOW + super.getItemStackDisplayName(stack);
 	}
 }

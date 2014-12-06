@@ -19,6 +19,7 @@ import net.minecraft.world.World;
 import tehnut.emt.ConfigHandler;
 import tehnut.emt.ElectroMagicTools;
 import tehnut.emt.ModInformation;
+import tehnut.emt.modules.ic2.entity.EntityArcher;
 import tehnut.emt.util.TextHelper;
 
 import java.util.List;
@@ -111,25 +112,25 @@ public class ItemElectricThorHammer extends ItemSword implements IElectricItem {
 			world.spawnEntityInWorld(new EntityLightningBolt(world, player.posX - 3, player.posY, player.posZ + 8));
 			world.spawnEntityInWorld(new EntityLightningBolt(world, player.posX - 4, player.posY, player.posZ - 8));
 
-//			EntityArcher archer;
-//			archer = new EntityArcher(world);
-//			archer.setPosition(player.posX + 8, player.posY + 2, player.posZ - 8);
-//			world.spawnEntityInWorld(archer);
-//
-//			EntityArcher archer1;
-//			archer1 = new EntityArcher(world);
-//			archer1.setPosition(player.posX - 8, player.posY + 2, player.posZ + 8);
-//			world.spawnEntityInWorld(archer1);
-//
-//			EntityArcher archer2;
-//			archer2 = new EntityArcher(world);
-//			archer2.setPosition(player.posX - 8, player.posY + 2, player.posZ - 8);
-//			world.spawnEntityInWorld(archer2);
-//
-//			EntityArcher archer3;
-//			archer3 = new EntityArcher(world);
-//			archer3.setPosition(player.posX + 8, player.posY + 2, player.posZ + 8);
-//			world.spawnEntityInWorld(archer3);
+			EntityArcher archer;
+			archer = new EntityArcher(world);
+			archer.setPosition(player.posX + 8, player.posY + 2, player.posZ - 8);
+			world.spawnEntityInWorld(archer);
+
+			EntityArcher archer1;
+			archer1 = new EntityArcher(world);
+			archer1.setPosition(player.posX - 8, player.posY + 2, player.posZ + 8);
+			world.spawnEntityInWorld(archer1);
+
+			EntityArcher archer2;
+			archer2 = new EntityArcher(world);
+			archer2.setPosition(player.posX - 8, player.posY + 2, player.posZ - 8);
+			world.spawnEntityInWorld(archer2);
+
+			EntityArcher archer3;
+			archer3 = new EntityArcher(world);
+			archer3.setPosition(player.posX + 8, player.posY + 2, player.posZ + 8);
+			world.spawnEntityInWorld(archer3);
 
 			ElectricItem.manager.use(stack, lightningCost, player);
 			return stack;

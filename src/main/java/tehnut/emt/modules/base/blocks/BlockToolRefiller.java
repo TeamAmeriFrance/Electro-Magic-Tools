@@ -7,11 +7,11 @@ import net.minecraft.world.World;
 public class BlockToolRefiller extends BlockBaseContainer {
 
 	public BlockToolRefiller() {
-		super("toolRefiller", "tool_refiller", Material.iron, soundTypeMetal, 4.0F);
+		super("toolRefiller", "machines/side", Material.iron, soundTypeMetal, 4.0F);
 	}
 
 	@Override
-	public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
+	public TileEntity createNewTileEntity(World world, int meta) {
 		return null;
 	}
 }

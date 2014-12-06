@@ -80,7 +80,8 @@ public class ConfigHandler extends AbstractConfigHandler {
 	public static int chanceOneRing = 25;
 	public static int chanceTaintedMjolnir = 15;
 	public static boolean allowEnchanting = false;
-	public static boolean nightVisionOff = false;
+	public static boolean enableNightVision = true;
+	public static boolean toolsInBore = false;
 
 	public static boolean enableIC2Module = true;
 	public static boolean enableTEModule = false;
@@ -179,6 +180,7 @@ public class ConfigHandler extends AbstractConfigHandler {
 		chanceOneRing = getValue("chanceOnceRing", "If you have a lot of mods adding dungeon loot, you should definitely increase this", chanceOneRing, RestartReqs.NONE);
 		chanceTaintedMjolnir = getValue("chanceTaintedMjolnir", "If you have a lot of mods adding dungeon loot, you should definitely increase this", chanceTaintedMjolnir, RestartReqs.NONE);
 		allowEnchanting = getValue("allowEnchanting", "Very low enchantability for tools.", allowEnchanting, RestartReqs.NONE);
-		nightVisionOff = getValue("nightVisionOff", "This was added because of mods making you totally blind if using night-vision. For example, enable that when in the Deep Dark.", nightVisionOff, RestartReqs.NONE);
+		enableNightVision = getValue("enableNightVision", "This was added because of mods making you totally blind if using night-vision. For example, enable that when in the Deep Dark.", enableNightVision, RestartReqs.NONE);
+		toolsInBore = getValue("toolsInBore", "Allow placing EMT tools into the Arcane Bore.", toolsInBore, RestartReqs.NONE);
 	}
 }

@@ -20,6 +20,7 @@ import tehnut.emt.ConfigHandler;
 import tehnut.emt.ElectroMagicTools;
 import tehnut.emt.ModInformation;
 import tehnut.emt.modules.base.items.armor.ItemThaumiumWing;
+import tehnut.emt.util.TextHelper;
 
 import java.util.List;
 
@@ -145,6 +146,12 @@ public class ItemNanoWing extends ItemThaumiumWing implements IElectricItem, ISp
 
 	private double getBaseAbsorptionRatio() {
 		return 0.14999999999999999D;
+	}
+
+	@SideOnly(Side.CLIENT)
+	@Override
+	public String getItemStackDisplayName(ItemStack stack) {
+		return TextHelper.YELLOW + super.getItemStackDisplayName(stack);
 	}
 
     /* IC2 API METHODS */

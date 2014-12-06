@@ -3,7 +3,6 @@ itemGroup.EMT.creativeTab=Electro-Magic Tools
 
 # Items
 item.EMT.module.base.bauble.oneRing.name=The One Ring
-
 item.EMT.module.base.materials.oreClusterUranium.name=Uranium Native Cluster
 item.EMT.module.base.materials.crushedOreAmber.name=Crushed Amber Ore
 item.EMT.module.base.materials.purifiedOreAmber.name=Purified Amber Ore
@@ -32,7 +31,17 @@ item.EMT.module.ic2.bauble.euMaker.armor.name=Armor Charging Ring
 item.EMT.module.ic2.bauble.euMaker.inventory.name=Inventory Charging Ring
 item.EMT.module.ic2.focus.charge.name=Wand Focus: Charging
 item.EMT.module.ic2.focus.charge.wand.name=Wand Focus: Wand Charging
+item.EMT.module.ic2.focus.explosion.name=Wand Focus: Explosion
 item.EMT.module.ic2.scribingtools.electric.name=Electric Scribing Tools
+item.EMT.module.ic2.hoe.growth.electric=Electric Hoe of Growth
+item.EMT.module.ic2.chainsaw.thaumium.name=Thaumium Chainsaw
+item.EMT.module.ic2.chainsaw.diamond.name=Diamond Chainsaw
+item.EMT.module.ic2.chainsaw.stream.name=Chainsaw of the Stream
+item.EMT.module.ic2.drill.thaumium.name=Thaumium Drill
+item.EMT.module.ic2.drill.rockbreaker.name=Drill of the Rockbreaker
+item.EMT.module.ic2.omnitool.iron.name=Iron Omnitool
+item.EMT.module.ic2.omnitool.thaumium.name=Thaumium Omnitool
+item.EMT.module.ic2.omnitool.diamond.name=Diamond Omnitool
 item.EMT.module.ic2.hammer.electric.name=Supercharged Mjolnir
 item.EMT.module.ic2.goggles.electric.name=Electric Goggles of Revealing
 item.EMT.module.ic2.goggles.nano.name=Nanosuit Goggles of Revealing
@@ -61,7 +70,6 @@ tooltip.EMT.hammer.broken.thor=It was once the Hammer of Thor.
 tooltip.EMT.hammer.broken.danger=It is now very dangerous.
 tooltip.EMT.hammer.broken.plsNoRightClick=Do NOT right-click.
 tooltip.EMT.hammer.broken.plsRightClick=Do right-click.
-# This comes after a player name. The 's is depicting ownership.
 tooltip.EMT.hammer.owned=%s's Hammer
 
 tooltip.EMT.visDiscount=Vis Discount

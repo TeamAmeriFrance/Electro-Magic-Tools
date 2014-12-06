@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import tehnut.emt.ElectroMagicTools;
 import tehnut.emt.ModInformation;
+import tehnut.emt.util.TextHelper;
 
 public class ItemQuantumWing extends ItemNanoWing {
 
@@ -57,5 +58,11 @@ public class ItemQuantumWing extends ItemNanoWing {
 			if (isSneaking && !player.onGround && !isHoldingJump) player.motionY = -0.6;
 		}
 		if (player.fallDistance > 0.0F) player.fallDistance = 0;
+	}
+
+	@SideOnly(Side.CLIENT)
+	@Override
+	public String getItemStackDisplayName(ItemStack stack) {
+		return TextHelper.BRIGHT_BLUE + super.getItemStackDisplayName(stack).replace(TextHelper.YELLOW, "");
 	}
 }

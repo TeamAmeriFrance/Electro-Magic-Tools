@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import tehnut.emt.ConfigHandler;
 import tehnut.emt.ModInformation;
+import tehnut.emt.util.TextHelper;
 
 public class ItemQuantumBootsTraveller extends ItemElectricBootsTraveller {
 
@@ -30,5 +31,11 @@ public class ItemQuantumBootsTraveller extends ItemElectricBootsTraveller {
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
 		return ModInformation.TEXLOC + "textures/models/quantumbootstravel.png";
+	}
+
+	@SideOnly(Side.CLIENT)
+	@Override
+	public String getItemStackDisplayName(ItemStack stack) {
+		return TextHelper.BRIGHT_BLUE + super.getItemStackDisplayName(stack);
 	}
 }
