@@ -2,6 +2,7 @@ package tehnut.emt.modules.ic2.items.foci;
 
 import ic2.api.item.ElectricItem;
 import ic2.api.item.IElectricItem;
+import net.minecraft.entity.monster.EntitySnowman;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MovingObjectPosition;
@@ -20,24 +21,19 @@ public class ItemFocusCharge extends ItemFocusIC2 {
 	}
 
 	@Override
-	public int getFocusColor() {
-		return 0xFFFF00;
+	public AspectList getVisCost(ItemStack stack) {
+		return visCost.copy();
 	}
 
 	@Override
-	public AspectList getVisCost() {
-		return visCost;
-	}
-
-	@Override
-	public String getSortingHelper(ItemStack itemstack) {
-		return "WANDCHARGING";
+	public String getSortingHelper(ItemStack stack) {
+		return "INVCHARGE";
 	}
 
 	@Override
 	public ItemStack onFocusRightClick(ItemStack stack, World world, EntityPlayer player, MovingObjectPosition movingobjectposition) {
 		ItemWandCasting wand = (ItemWandCasting) stack.getItem();
-		if (wand.consumeAllVis(stack, player, getVisCost(), true, true)) {
+		if (wand.consumeAllVis(stack, player, getVisCost(stack), true, true)) {
 			if (!world.isRemote) {
 
 				int energyLeft = ConfigHandler.chargeFocusProduction;
@@ -64,5 +60,10 @@ public class ItemFocusCharge extends ItemFocusIC2 {
 			}
 		}
 		return stack;
+	}
+
+	@Override
+	public WandFocusAnimation getAnimation(ItemStack stack) {
+		return WandFocusAnimation.CHARGE;
 	}
 }

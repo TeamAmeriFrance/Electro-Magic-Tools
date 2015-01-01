@@ -17,23 +17,13 @@ public class ItemFocusWandCharge extends ItemFocusIC2 {
 	}
 
 	@Override
-	public int getFocusColor() {
-		return 0xFFFF450;
+	public AspectList getVisCost(ItemStack stack) {
+		return visCost.copy();
 	}
 
 	@Override
-	public String getSortingHelper(ItemStack itemstack) {
-		return "ELECTRICCHARGING";
-	}
-
-	@Override
-	public boolean isVisCostPerTick() {
-		return true;
-	}
-
-	@Override
-	public AspectList getVisCost() {
-		return visCost;
+	public String getSortingHelper(ItemStack stack) {
+		return "WANDCHARGE";
 	}
 
 	@Override

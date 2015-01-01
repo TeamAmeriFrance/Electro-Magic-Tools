@@ -3,6 +3,7 @@ itemGroup.EMT.creativeTab=Electro-Magic Tools
 
 # Items
 item.EMT.module.base.bauble.oneRing.name=The One Ring
+item.EMT.module.base.bauble.nothRing.name=nothRing
 item.EMT.module.base.materials.oreClusterUranium.name=Uranium Native Cluster
 item.EMT.module.base.materials.crushedOreAmber.name=Crushed Amber Ore
 item.EMT.module.base.materials.purifiedOreAmber.name=Purified Amber Ore

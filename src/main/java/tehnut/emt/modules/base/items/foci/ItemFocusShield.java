@@ -19,33 +19,23 @@ public class ItemFocusShield extends ItemFocusBase {
 	}
 
 	@Override
-	public int getFocusColor() {
-		return 555555555;
+	public AspectList getVisCost(ItemStack stack) {
+		return visCost.copy();
 	}
 
 	@Override
-	public boolean isUseItem() {
-		return true;
-	}
-
-	@Override
-	public AspectList getVisCost() {
-		return visCost;
-	}
-
-	@Override
-	public String getSortingHelper(ItemStack itemstack) {
+	public String getSortingHelper(ItemStack stack) {
 		return "SHIELD";
 	}
 
 	@Override
-	public void onUsingFocusTick(ItemStack itemstack, EntityPlayer player, int time) {
+	public void onUsingFocusTick(ItemStack stack, EntityPlayer player, int time) {
 		player.motionX = 0.0D;
 		player.motionY = 0.0D;
 		player.motionZ = 0.0D;
 
-		ItemWandCasting wand = (ItemWandCasting) itemstack.getItem();
-		if (wand.consumeAllVis(itemstack, player, getVisCost(), true, true)) {
+		ItemWandCasting wand = (ItemWandCasting) stack.getItem();
+		if (wand.consumeAllVis(stack, player, getVisCost(stack), true, true)) {
 			int x = MathHelper.floor_double(player.posX);
 			int y = MathHelper.floor_double(player.posY);
 			int z = MathHelper.floor_double(player.posZ);
@@ -104,5 +94,10 @@ public class ItemFocusShield extends ItemFocusBase {
 
 		ItemStack milk = (new ItemStack(Items.milk_bucket));
 		player.curePotionEffects(milk);
+	}
+
+	@Override
+	public WandFocusAnimation getAnimation(ItemStack stack) {
+		return WandFocusAnimation.WAVE;
 	}
 }

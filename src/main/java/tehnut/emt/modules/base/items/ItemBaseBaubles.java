@@ -24,7 +24,7 @@ import java.util.Random;
 
 public class ItemBaseBaubles extends ItemBase implements IBauble {
 
-	private static final String[] names = {"oneRing"};
+	private static final String[] names = { "oneRing", "nothRing" };
 	public IIcon[] icon = new IIcon[16];
 	public static int wornTick;
 	public Random random = new Random();
@@ -44,6 +44,7 @@ public class ItemBaseBaubles extends ItemBase implements IBauble {
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister ri) {
 		this.icon[0] = ri.registerIcon(ModInformation.TEXLOC + "onering");
+		this.icon[0] = ri.registerIcon(ModInformation.TEXLOC + "nothring");
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -54,7 +55,8 @@ public class ItemBaseBaubles extends ItemBase implements IBauble {
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	@SideOnly(Side.CLIENT)
 	public void getSubItems(Item item, CreativeTabs par2CreativeTabs, List list) {
-		list.add(new ItemStack(this, 1, 0));
+		for (int i = 0; i < names.length - 1; i++)
+			list.add(new ItemStack(this, 1, i));
 	}
 
 	// Begin Baubles

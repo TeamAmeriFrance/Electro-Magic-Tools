@@ -3,28 +3,28 @@ package tehnut.emt.modules.base.items.foci;
 import net.minecraft.entity.monster.EntitySnowman;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
+import tehnut.emt.ElectroMagicTools;
+import tehnut.emt.ModInformation;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.wands.FocusUpgradeType;
+import thaumcraft.api.wands.ItemFocusBasic;
 import thaumcraft.common.items.wands.ItemWandCasting;
 
 public class ItemFocusChristmas extends ItemFocusBase {
 
-	private static final AspectList visCost = new AspectList().add(Aspect.ORDER, 500).add(Aspect.AIR, 500);
+	private static AspectList visCost = new AspectList().add(Aspect.ORDER, 500).add(Aspect.AIR, 500);
 
 	public ItemFocusChristmas() {
 		super("christmas", "focus_christmas");
 	}
 
 	@Override
-	public int getFocusColor() {
-		return 99999999;
-	}
-
-	@Override
-	public AspectList getVisCost() {
-		return visCost;
+	public AspectList getVisCost(ItemStack stack) {
+		return visCost.copy();
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class ItemFocusChristmas extends ItemFocusBase {
 			int x = mop.blockX;
 			int y = mop.blockY + 1;
 			int z = mop.blockZ;
-			if (wand.consumeAllVis(stack, player, getVisCost(), true, true)) {
+			if (wand.consumeAllVis(stack, player, getVisCost(stack), true, true)) {
 				if (!world.isRemote) {
 					EntitySnowman snowman;
 					snowman = new EntitySnowman(world);
@@ -50,5 +50,11 @@ public class ItemFocusChristmas extends ItemFocusBase {
 			player.swingItem();
 		}
 		return stack;
+	}
+
+
+	@Override
+	public WandFocusAnimation getAnimation(ItemStack stack) {
+		return WandFocusAnimation.WAVE;
 	}
 }

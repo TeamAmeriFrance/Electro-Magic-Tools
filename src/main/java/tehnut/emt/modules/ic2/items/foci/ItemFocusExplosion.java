@@ -18,30 +18,25 @@ public class ItemFocusExplosion extends ItemFocusIC2 {
 	}
 
 	@Override
-	public int getFocusColor() {
-		return 9990;
+	public AspectList getVisCost(ItemStack stack) {
+		return visCost.copy();
 	}
 
 	@Override
-	public AspectList getVisCost() {
-		return visCost;
-	}
-
-	@Override
-	public String getSortingHelper(ItemStack itemstack) {
+	public String getSortingHelper(ItemStack stack) {
 		return "EXPLOSION";
 	}
 
 	@Override
-	public ItemStack onFocusRightClick(ItemStack itemstack, World world, EntityPlayer player, MovingObjectPosition movingobjectposition) {
-		ItemWandCasting wand = (ItemWandCasting) itemstack.getItem();
-		if (wand.consumeAllVis(itemstack, player, getVisCost(), true, true)) {
+	public ItemStack onFocusRightClick(ItemStack stack, World world, EntityPlayer player, MovingObjectPosition movingobjectposition) {
+		ItemWandCasting wand = (ItemWandCasting) stack.getItem();
+		if (wand.consumeAllVis(stack, player, getVisCost(stack), true, true)) {
 			if (!world.isRemote) {
 				EntityMiningLaser laser;
 				laser = new EntityMiningLaser(world, player, 20, 10, 5, true);
 				world.spawnEntityInWorld(laser);
 			}
 		}
-		return itemstack;
+		return stack;
 	}
 }
