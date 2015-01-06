@@ -59,6 +59,9 @@ tile.EMT.module.base.shield.name=Block of Shield
 tile.EMT.module.base.node.portable.name=Portable Node
 tile.EMT.module.base.toolRefiller.name=Tool Refiller
 
+tile.EMT.module.ic2.machine.wandrecharge.name=Industrial Wand Recharge Station
+tile.EMT.module.ic2.machine.etherealprocessor.name=Ethereal Reprocessor
+
 # Thaumonomicon Page Title
 
 # Thaumonomicon Flavor Text

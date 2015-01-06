@@ -2,19 +2,50 @@ package tehnut.emt.gui;
 
 import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import tehnut.emt.gui.container.ContainerEtherealMacerator;
+import tehnut.emt.gui.container.ContainerWandRecharger;
+import tehnut.emt.modules.ic2.tile.TileEtherealMacerator;
+import tehnut.emt.modules.ic2.tile.TileWandRecharger;
 import tterrag.core.common.Handlers;
 
-@Handlers.Handler
 public class GuiHandler implements IGuiHandler {
 
 	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-		return null;
+
+		TileEntity entity = world.getTileEntity(x, y, z);
+
+		switch (ID) {
+			case 0:
+				if (entity != null && entity instanceof TileWandRecharger) {
+					return new ContainerWandRecharger(player.inventory, (TileWandRecharger) entity);
+				}
+			case 1:
+				if (entity != null && entity instanceof TileEtherealMacerator) {
+					return new ContainerEtherealMacerator(player.inventory, (TileEtherealMacerator) entity);
+				}
+			default:
+				return null;
+		}
 	}
 
 	@Override
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-		return null;
+		TileEntity entity = world.getTileEntity(x, y, z);
+
+		switch (ID) {
+			case 0:
+				if (entity != null && entity instanceof TileWandRecharger) {
+					return new ContainerWandRecharger(player.inventory, (TileWandRecharger) entity);
+				}
+			case 1:
+				if (entity != null && entity instanceof TileEtherealMacerator) {
+					return new ContainerEtherealMacerator(player.inventory, (TileEtherealMacerator) entity);
+				}
+			default:
+				return null;
+		}
 	}
 }

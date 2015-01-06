@@ -74,6 +74,12 @@ public class ConfigHandler extends AbstractConfigHandler {
 	public static double quantumBootsJump = 0.9;
 	public static int chargeFocusProduction = 64;
 	public static int wandChargeFocusCost = 40000;
+	public static int etherealProcessorBonus = 10;
+	public static int etherealProcessorBaseSpeed = 400;
+	public static int wandChargerConsumption = 50000;
+	public static double compressedSolarOutput = 10;
+	public static double doubleCompressedSolarOutput = 100;
+	public static double tripleCompressedSolarOutput = 1000;
 
 	public static boolean oneRingSpawn = true;
 	public static boolean thorHammerSpawn = true;
@@ -173,6 +179,12 @@ public class ConfigHandler extends AbstractConfigHandler {
 		quantumBootsJump = getValue("quantumBootsJump", "Watch out, that goes up REALLY quickly. Default is 0.9", quantumBootsJump, RestartReqs.REQUIRES_WORLD_RESTART);
 		chargeFocusProduction = getValue("chargeFocusProduction", "EU/t that the Wand Focus: Charging will produce. Default is 64.", chargeFocusProduction, RestartReqs.REQUIRES_WORLD_RESTART);
 		wandChargeFocusCost = getValue("wandChargeFocusCost", "EU/vis restored. Default is 40000.", wandChargeFocusCost, RestartReqs.REQUIRES_WORLD_RESTART);
+		etherealProcessorBonus = getValue("etherealProcessorBonus", "Default is 10.", etherealProcessorBonus, RestartReqs.NONE);
+		etherealProcessorBaseSpeed = getValue("etherealProcessorBaseSpeed", "Base speed for the Ethereal Reprocessor. Default is 400.", etherealProcessorBaseSpeed, RestartReqs.NONE);
+		wandChargerConsumption = getValue("wandChargerConsumption", "EU/vis that is used to charge a wand.", wandChargerConsumption, RestartReqs.NONE);
+		compressedSolarOutput = getValue("compressedSolarOutput", "Default is 10.", compressedSolarOutput, RestartReqs.NONE);
+		doubleCompressedSolarOutput = getValue("doubleCompressedSolarOutput", "Default is 100.", doubleCompressedSolarOutput, RestartReqs.NONE);
+		tripleCompressedSolarOutput = getValue("tripleCompressedSolarOutput", "Default is 1000.", tripleCompressedSolarOutput, RestartReqs.NONE);
 
 		activateSection(misc);
 		oneRingSpawn = getValue("oneRingSpawn", "There is no other way to get this item.", oneRingSpawn, RestartReqs.NONE);

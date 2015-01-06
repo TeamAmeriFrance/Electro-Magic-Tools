@@ -5,10 +5,12 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import tehnut.emt.gui.CreativeTabEMT;
+import tehnut.emt.gui.GuiHandler;
 import tehnut.emt.modules.ModuleRegistry;
 import tehnut.emt.proxies.CommonProxy;
 import tehnut.emt.util.LootHandler;
@@ -45,6 +47,7 @@ public class ElectroMagicTools {
 
 		LootHandler.addLootToChests();
 		ModuleRegistry.registerMidModules();
+		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 	}
 
 	@Mod.EventHandler
