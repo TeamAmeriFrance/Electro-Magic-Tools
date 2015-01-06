@@ -97,6 +97,11 @@ public class ItemFocusShield extends ItemFocusBase {
 	}
 
 	@Override
+	public int getFocusColor(ItemStack focusStack) {
+		return 0x0066FF;
+	}
+
+	@Override
 	public WandFocusAnimation getAnimation(ItemStack stack) {
 		return WandFocusAnimation.WAVE;
 	}

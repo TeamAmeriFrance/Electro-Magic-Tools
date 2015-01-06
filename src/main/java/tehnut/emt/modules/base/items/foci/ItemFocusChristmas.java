@@ -52,6 +52,11 @@ public class ItemFocusChristmas extends ItemFocusBase {
 		return stack;
 	}
 
+	@Override
+	public int getFocusColor(ItemStack focusStack) {
+		return 0x66CCFF;
+	}
+
 
 	@Override
 	public WandFocusAnimation getAnimation(ItemStack stack) {

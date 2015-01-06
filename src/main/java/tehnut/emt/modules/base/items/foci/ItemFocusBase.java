@@ -23,8 +23,6 @@ public class ItemFocusBase extends ItemFocusBasic {
 
     private static AspectList visCost = new AspectList();
 
-    private static String texture;
-
     public ItemFocusBase(String unlocName, String textureName) {
         super();
 
@@ -34,13 +32,12 @@ public class ItemFocusBase extends ItemFocusBasic {
         setMaxDamage(1);
         setNoRepair();
         setMaxStackSize(1);
-        texture = textureName;
     }
 
     @SideOnly(Side.CLIENT)
     @Override
-    public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(ModInformation.TEXLOC + texture);
+    public IIcon getIconFromDamage(int meta) {
+        return this.itemIcon;
     }
 
     @Override
