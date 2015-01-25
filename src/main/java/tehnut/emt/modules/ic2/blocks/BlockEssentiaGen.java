@@ -21,10 +21,12 @@ public class BlockEssentiaGen extends BlockIC2Container {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister ri) {
-        this.blockIcon = ri.registerIcon(ModInformation.TEXLOC + ":machines/top");
-        this.top[0] = ri.registerIcon(ModInformation.TEXLOC + ":essentiagenerator/top");
-        this.bottom[0] = ri.registerIcon(ModInformation.TEXLOC + ":essentiagenerator/top");
-        this.side[0] = ri.registerIcon(ModInformation.TEXLOC + ":essentiagenerator/side");
+        this.blockIcon = ri.registerIcon(ModInformation.TEXLOC + "machines/top");
+        this.top[0] = ri.registerIcon(ModInformation.TEXLOC + "essentiagenerator/top");
+        this.bottom[0] = ri.registerIcon(ModInformation.TEXLOC + "essentiagenerator/top");
+        this.side[0] = ri.registerIcon(ModInformation.TEXLOC + "essentiagenerator/side");
+        this.frontOff[0] =ri.registerIcon(ModInformation.TEXLOC + "essentiagenerator/saxumfront");
+        this.frontOn[0] =ri.registerIcon(ModInformation.TEXLOC + "essentiagenerator/saxumfront");
     }
 
     @Override
