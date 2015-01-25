@@ -12,7 +12,7 @@ import java.util.Random;
 public class TileEntitySolarBase extends TileIC2 implements IWrenchable {
 
     public static Random random = new Random();
-    public BasicSource energySource = new BasicSource(this, 10000, 1);
+    public BasicSource energySource;
     public boolean initialized;
     public boolean theSunIsVisible;
     public boolean canRain;
@@ -22,6 +22,7 @@ public class TileEntitySolarBase extends TileIC2 implements IWrenchable {
 
     public TileEntitySolarBase() {
         this.tick = random.nextInt(64);
+        this.energySource = new BasicSource(this, 10000, 2);
     }
 
     @Override

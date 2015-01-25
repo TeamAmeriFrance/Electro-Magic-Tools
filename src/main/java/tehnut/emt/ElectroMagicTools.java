@@ -22,37 +22,32 @@ import java.io.File;
 @Mod(modid = ModInformation.ID, name = ModInformation.NAME, version = ModInformation.VERSION, dependencies = ModInformation.DEPEND, guiFactory = ModInformation.GUIFACTORY)
 public class ElectroMagicTools {
 
-	@SidedProxy(clientSide = ModInformation.CLIENTPROXY, serverSide = ModInformation.COMMONPROXY)
-	public static CommonProxy proxy;
+    @SidedProxy(clientSide = ModInformation.CLIENTPROXY, serverSide = ModInformation.COMMONPROXY)
+    public static CommonProxy proxy;
 
-	public static CreativeTabs tabEMT = new CreativeTabEMT(ModInformation.ID + ".creativeTab");
-	public static Logger logger = LogManager.getLogger(ModInformation.NAME);
+    public static CreativeTabs tabEMT = new CreativeTabEMT(ModInformation.ID + ".creativeTab");
+    public static Logger logger = LogManager.getLogger(ModInformation.NAME);
 
-	@Mod.Instance
-	public static ElectroMagicTools instance;
+    @Mod.Instance
+    public static ElectroMagicTools instance;
 
-	@Mod.EventHandler
-	public void preInit(FMLPreInitializationEvent event) {
+    @Mod.EventHandler
+    public void preInit(FMLPreInitializationEvent event) {
+        ConfigHandler.INSTANCE.initialize(new File(event.getModConfigurationDirectory() + "/" + "ElectroMagicTools" + ".cfg"));
+        ModuleRegistry.registerEarlyModules();
+        OreDictHandler.registerOreDict();
+        Handlers.addPackage("tehnut.emt");
+    }
 
-		ConfigHandler.INSTANCE.initialize(new File(event.getModConfigurationDirectory() + "/" + "ElectroMagicTools" + ".cfg"));
+    @Mod.EventHandler
+    public void init(FMLInitializationEvent event) {
+        LootHandler.addLootToChests();
+        ModuleRegistry.registerMidModules();
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+    }
 
-		ModuleRegistry.registerEarlyModules();
-
-		OreDictHandler.registerOreDict();
-		Handlers.addPackage("tehnut.emt");
-	}
-
-	@Mod.EventHandler
-	public void init(FMLInitializationEvent event) {
-
-		LootHandler.addLootToChests();
-		ModuleRegistry.registerMidModules();
-		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
-	}
-
-	@Mod.EventHandler
-	public void postInit(FMLPostInitializationEvent event) {
-
-		ModuleRegistry.registerLateModules();
-	}
+    @Mod.EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
+        ModuleRegistry.registerLateModules();
+    }
 }

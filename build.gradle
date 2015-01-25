@@ -38,7 +38,7 @@ repositories {
 
 dependencies {
 //  compile "net.industrial-craft:industrialcraft-2:${ic2_version}"
-	compile "tterrag.core:ttCore:${ttCore_version}"
+	compile "tterrag.core:ttCore:${ttCore_version}:deobf"
 }
 
 minecraft {

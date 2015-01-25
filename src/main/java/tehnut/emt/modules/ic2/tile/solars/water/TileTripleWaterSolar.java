@@ -1,5 +1,6 @@
 package tehnut.emt.modules.ic2.tile.solars.water;
 
+import ic2.api.energy.prefab.BasicSource;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import tehnut.emt.ConfigHandler;
@@ -9,6 +10,7 @@ public class TileTripleWaterSolar extends TileWaterSolar {
 
     public TileTripleWaterSolar() {
         output = ConfigHandler.tripleCompressedSolarOutput;
+        energySource = new BasicSource(this, 10000, 4);
     }
 
     @Override

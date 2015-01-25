@@ -29,6 +29,7 @@ public class IC2TileRegistry {
 		// Machines
 		GameRegistry.registerTileEntity(TileEtherealMacerator.class, "TileEtherealMacerator");
 		GameRegistry.registerTileEntity(TileWandRecharger.class, "TileWandRecharger");
+        GameRegistry.registerTileEntity(TileEssentiaGenerator.class, "TileEssentiaGenerator");
 
 		//Solars
 		GameRegistry.registerTileEntity(TileCompressedSolar.class, "TileCompressedSolar");
