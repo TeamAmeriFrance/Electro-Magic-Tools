@@ -71,6 +71,5 @@ public class BlockShield extends BlockBase {
 
     @Override
     public void onBlockExploded(World world, int x, int y, int z, Explosion explosion) {
-
     }
 }

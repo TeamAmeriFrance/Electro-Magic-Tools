@@ -6,9 +6,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import tehnut.emt.modules.base.items.ItemBaseChainsaw;
-import tehnut.emt.util.IRefillable;
 
-public class ItemVanillaChainsaw extends ItemBaseChainsaw implements IRefillable {
+public class ItemVanillaChainsaw extends ItemBaseChainsaw {
 
     public Item repairMaterial;
     public int repairMeta;

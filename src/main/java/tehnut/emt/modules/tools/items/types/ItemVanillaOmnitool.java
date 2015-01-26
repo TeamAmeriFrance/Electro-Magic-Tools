@@ -6,9 +6,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import tehnut.emt.modules.base.items.ItemBaseOmnitool;
-import tehnut.emt.util.IRefillable;
 
-public class ItemVanillaOmnitool extends ItemBaseOmnitool implements IRefillable {
+public class ItemVanillaOmnitool extends ItemBaseOmnitool {
 
     public Item repairMaterial;
     public int repairMeta;

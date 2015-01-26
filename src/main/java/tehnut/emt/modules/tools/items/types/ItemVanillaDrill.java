@@ -4,9 +4,8 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import tehnut.emt.modules.base.items.ItemBaseDrill;
-import tehnut.emt.util.IRefillable;
 
-public class ItemVanillaDrill extends ItemBaseDrill implements IRefillable {
+public class ItemVanillaDrill extends ItemBaseDrill {
 
     public ItemStack repairMaterial;
 
