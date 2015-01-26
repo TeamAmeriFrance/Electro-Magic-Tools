@@ -13,6 +13,7 @@ public class IC2BlockRegistry {
     public static Block solars1;
     public static Block solars2;
     public static Block essentiaGen;
+    public static Block processor;
 
     public static void registerBlocks() {
         machines = new BlockMachines();
@@ -25,5 +26,8 @@ public class IC2BlockRegistry {
 
         essentiaGen = new BlockEssentiaGen();
         GameRegistry.registerBlock(essentiaGen, "BlockEssentiaGen");
+
+        processor = new BlockProcessor();
+        GameRegistry.registerBlock(processor, "BlockProcessor");
     }
 }
