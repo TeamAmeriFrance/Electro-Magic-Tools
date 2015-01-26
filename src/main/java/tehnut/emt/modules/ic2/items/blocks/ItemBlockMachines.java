@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 
 public class ItemBlockMachines extends ItemBlock {
 
-    private static final String[] names = { "wandrecharge", "etherealprocessor" };
+    private static final String[] names = {"wandrecharge", "etherealprocessor"};
 
     public ItemBlockMachines(Block id) {
         super(id);

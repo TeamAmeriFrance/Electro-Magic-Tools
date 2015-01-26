@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 
 public class ItemBlockSolars1 extends ItemBlock {
 
-    private static final String[] names = { "compressed", "doublecompressed", "triplecompressed", "water", "doublewater", "triplewater", "dark", "doubledark", "tripledark", "order", "doubleorder", "tripleorder", "fire", "doublefire", "triplefire", "air" };
+    private static final String[] names = {"compressed", "doublecompressed", "triplecompressed", "water", "doublewater", "triplewater", "dark", "doubledark", "tripledark", "order", "doubleorder", "tripleorder", "fire", "doublefire", "triplefire", "air"};
 
     public ItemBlockSolars1(Block id) {
         super(id);

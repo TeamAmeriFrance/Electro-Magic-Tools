@@ -25,8 +25,8 @@ public class BlockEssentiaGen extends BlockIC2Container {
         this.top[0] = ri.registerIcon(ModInformation.TEXLOC + "essentiagenerator/top");
         this.bottom[0] = ri.registerIcon(ModInformation.TEXLOC + "essentiagenerator/top");
         this.side[0] = ri.registerIcon(ModInformation.TEXLOC + "essentiagenerator/side");
-        this.frontOff[0] =ri.registerIcon(ModInformation.TEXLOC + "essentiagenerator/saxumfront");
-        this.frontOn[0] =ri.registerIcon(ModInformation.TEXLOC + "essentiagenerator/saxumfront");
+        this.frontOff[0] = ri.registerIcon(ModInformation.TEXLOC + "essentiagenerator/saxumfront");
+        this.frontOn[0] = ri.registerIcon(ModInformation.TEXLOC + "essentiagenerator/saxumfront");
     }
 
     @Override

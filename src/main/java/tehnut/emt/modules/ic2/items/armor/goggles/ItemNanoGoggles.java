@@ -18,50 +18,50 @@ import tehnut.emt.util.TextHelper;
 
 public class ItemNanoGoggles extends ItemElectricGoggles {
 
-	public ItemNanoGoggles() {
-		super(ArmorMaterial.DIAMOND);
-		setUnlocalizedName(ModInformation.ID + ".module.ic2.goggles.nano");
-		setCreativeTab(ElectroMagicTools.tabEMT);
-		visDiscount = 6;
-		tier = 3;
-		maxCharge = 100000;
-		energyPerDamage = 1000;
-		transferLimit = 100;
-	}
+    public ItemNanoGoggles() {
+        super(ArmorMaterial.DIAMOND);
+        setUnlocalizedName(ModInformation.ID + ".module.ic2.goggles.nano");
+        setCreativeTab(ElectroMagicTools.tabEMT);
+        visDiscount = 6;
+        tier = 3;
+        maxCharge = 100000;
+        energyPerDamage = 1000;
+        transferLimit = 100;
+    }
 
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void registerIcons(IIconRegister iconRegister) {
-		this.itemIcon = iconRegister.registerIcon(ModInformation.TEXLOC + "armor/goggles_nano");
-	}
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerIcons(IIconRegister iconRegister) {
+        this.itemIcon = iconRegister.registerIcon(ModInformation.TEXLOC + "armor/goggles_nano");
+    }
 
-	@Override
-	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-		return ModInformation.TEXLOC + "textures/models/thaumicnanohelmet.png";
-	}
+    @Override
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
+        return ModInformation.TEXLOC + "textures/models/thaumicnanohelmet.png";
+    }
 
-	@Override
-	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
-		if (ConfigHandler.enableNightVision) {
-			if (ElectricItem.manager.canUse(itemStack, 1 / 1000)) {
+    @Override
+    public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
+        if (ConfigHandler.enableNightVision) {
+            if (ElectricItem.manager.canUse(itemStack, 1 / 1000)) {
 
-				int x = MathHelper.floor_double(player.posX);
-				int z = MathHelper.floor_double(player.posZ);
-				int y = MathHelper.floor_double(player.posY);
+                int x = MathHelper.floor_double(player.posX);
+                int z = MathHelper.floor_double(player.posZ);
+                int y = MathHelper.floor_double(player.posY);
 
-				int lightlevel = player.worldObj.getBlockLightValue(x, y, z);
-				if (lightlevel >= 0)
-					player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 300, -3));
-				ElectricItem.manager.use(itemStack, 1 / 1000, player);
-			} else {
-				player.addPotionEffect(new PotionEffect(Potion.blindness.id, 300, 0, true));
-			}
-		}
-	}
+                int lightlevel = player.worldObj.getBlockLightValue(x, y, z);
+                if (lightlevel >= 0)
+                    player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 300, -3));
+                ElectricItem.manager.use(itemStack, 1 / 1000, player);
+            } else {
+                player.addPotionEffect(new PotionEffect(Potion.blindness.id, 300, 0, true));
+            }
+        }
+    }
 
-	@SideOnly(Side.CLIENT)
-	@Override
-	public String getItemStackDisplayName(ItemStack stack) {
-		return TextHelper.YELLOW + super.getItemStackDisplayName(stack);
-	}
+    @SideOnly(Side.CLIENT)
+    @Override
+    public String getItemStackDisplayName(ItemStack stack) {
+        return TextHelper.YELLOW + super.getItemStackDisplayName(stack);
+    }
 }

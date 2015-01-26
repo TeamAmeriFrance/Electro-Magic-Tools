@@ -6,18 +6,18 @@ import tehnut.emt.ModInformation;
 
 public class ItemIC2 extends Item {
 
-	public ItemIC2(String unlocName, String textureName) {
-		super();
+    public ItemIC2(String unlocName, String textureName) {
+        super();
 
-		setUnlocalizedName(ModInformation.ID + ".module.ic2." + unlocName);
-		setTextureName(ModInformation.ID + ":" + textureName);
-		setCreativeTab(ElectroMagicTools.tabEMT);
-	}
+        setUnlocalizedName(ModInformation.ID + ".module.ic2." + unlocName);
+        setTextureName(ModInformation.ID + ":" + textureName);
+        setCreativeTab(ElectroMagicTools.tabEMT);
+    }
 
-	public ItemIC2(String unlocName) {
-		super();
+    public ItemIC2(String unlocName) {
+        super();
 
-		setUnlocalizedName(ModInformation.ID + ".module.ic2." + unlocName);
-		setCreativeTab(ElectroMagicTools.tabEMT);
-	}
+        setUnlocalizedName(ModInformation.ID + ".module.ic2." + unlocName);
+        setCreativeTab(ElectroMagicTools.tabEMT);
+    }
 }

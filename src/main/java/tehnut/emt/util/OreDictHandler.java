@@ -2,13 +2,13 @@ package tehnut.emt.util;
 
 public class OreDictHandler {
 
-	// Oredict entries
-	// Items
+    // Oredict entries
+    // Items
 
 
-	// Blocks
+    // Blocks
 
-	public static void registerOreDict() {
+    public static void registerOreDict() {
 
-	}
+    }
 }

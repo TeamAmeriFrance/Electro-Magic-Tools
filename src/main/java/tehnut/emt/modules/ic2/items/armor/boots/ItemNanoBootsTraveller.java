@@ -11,31 +11,31 @@ import tehnut.emt.util.TextHelper;
 
 public class ItemNanoBootsTraveller extends ItemElectricBootsTraveller {
 
-	public ItemNanoBootsTraveller() {
-		super();
-		setUnlocalizedName(ModInformation.ID + ".module.ic2.boots.traveller.nano");
-		maxCharge = 1000000;
-		speedBonus = (float) ConfigHandler.nanoBootsSpeed;
-		jumpBonus = (float) ConfigHandler.nanoBootsJump;
-		visDiscount = 4;
-		transferLimit = 1000;
-		energyPerDamage = 500;
-	}
+    public ItemNanoBootsTraveller() {
+        super();
+        setUnlocalizedName(ModInformation.ID + ".module.ic2.boots.traveller.nano");
+        maxCharge = 1000000;
+        speedBonus = (float) ConfigHandler.nanoBootsSpeed;
+        jumpBonus = (float) ConfigHandler.nanoBootsJump;
+        visDiscount = 4;
+        transferLimit = 1000;
+        energyPerDamage = 500;
+    }
 
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void registerIcons(IIconRegister iconRegister) {
-		this.itemIcon = iconRegister.registerIcon(ModInformation.TEXLOC + "armor/boots_nano");
-	}
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerIcons(IIconRegister iconRegister) {
+        this.itemIcon = iconRegister.registerIcon(ModInformation.TEXLOC + "armor/boots_nano");
+    }
 
-	@Override
-	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-		return ModInformation.TEXLOC + "textures/models/nanobootstravel.png";
-	}
+    @Override
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
+        return ModInformation.TEXLOC + "textures/models/nanobootstravel.png";
+    }
 
-	@SideOnly(Side.CLIENT)
-	@Override
-	public String getItemStackDisplayName(ItemStack stack) {
-		return TextHelper.YELLOW + super.getItemStackDisplayName(stack);
-	}
+    @SideOnly(Side.CLIENT)
+    @Override
+    public String getItemStackDisplayName(ItemStack stack) {
+        return TextHelper.YELLOW + super.getItemStackDisplayName(stack);
+    }
 }

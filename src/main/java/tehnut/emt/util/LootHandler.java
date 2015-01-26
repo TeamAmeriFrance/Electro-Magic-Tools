@@ -9,12 +9,12 @@ import static tehnut.emt.ConfigHandler.*;
 
 public class LootHandler {
 
-	public static void addLootToChests() {
-		if (thorHammerSpawn && thorHammerResearch) {
-			ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(BaseItemRegistry.thorHammerBroken), 0, 1, chanceTaintedMjolnir));
-		}
-		if (oneRingSpawn) {
-			ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(BaseItemRegistry.baseBaubles, 1, 0), 0, 1, chanceOneRing));
-		}
-	}
+    public static void addLootToChests() {
+        if (thorHammerSpawn && thorHammerResearch) {
+            ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(BaseItemRegistry.thorHammerBroken), 0, 1, chanceTaintedMjolnir));
+        }
+        if (oneRingSpawn) {
+            ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(BaseItemRegistry.baseBaubles, 1, 0), 0, 1, chanceOneRing));
+        }
+    }
 }

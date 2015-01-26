@@ -16,58 +16,58 @@ import java.util.List;
 
 public class ItemElectricScribingTools extends ItemInkwell implements IElectricItem, IScribeTools {
 
-	public static int maxCharge = 400;
+    public static int maxCharge = 400;
 
-	public ItemElectricScribingTools() {
-		setUnlocalizedName(ModInformation.ID + ".module.ic2.scribingtools.electric");
-		setCreativeTab(ElectroMagicTools.tabEMT);
-		setMaxDamage(maxCharge);
-		setMaxStackSize(1);
-	}
+    public ItemElectricScribingTools() {
+        setUnlocalizedName(ModInformation.ID + ".module.ic2.scribingtools.electric");
+        setCreativeTab(ElectroMagicTools.tabEMT);
+        setMaxDamage(maxCharge);
+        setMaxStackSize(1);
+    }
 
-	@SuppressWarnings({"rawtypes", "unchecked"})
-	@SideOnly(Side.CLIENT)
-	public void getSubItems(Item item, CreativeTabs tabs, List list) {
-		ItemStack itemStack = new ItemStack(this, 1);
-		if (getChargedItem(itemStack) == this) {
-			ItemStack charged = new ItemStack(this, 1);
-			ElectricItem.manager.charge(charged, 2147483647, 2147483647, true, false);
-			list.add(charged);
-		}
-		if (getEmptyItem(itemStack) == this) {
-			list.add(new ItemStack(this, 1, getMaxDamage()));
-		}
-	}
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    @SideOnly(Side.CLIENT)
+    public void getSubItems(Item item, CreativeTabs tabs, List list) {
+        ItemStack itemStack = new ItemStack(this, 1);
+        if (getChargedItem(itemStack) == this) {
+            ItemStack charged = new ItemStack(this, 1);
+            ElectricItem.manager.charge(charged, 2147483647, 2147483647, true, false);
+            list.add(charged);
+        }
+        if (getEmptyItem(itemStack) == this) {
+            list.add(new ItemStack(this, 1, getMaxDamage()));
+        }
+    }
 
-	// Begin IElectricItem
+    // Begin IElectricItem
 
-	@Override
-	public boolean canProvideEnergy(ItemStack itemStack) {
-		return false;
-	}
+    @Override
+    public boolean canProvideEnergy(ItemStack itemStack) {
+        return false;
+    }
 
-	@Override
-	public Item getChargedItem(ItemStack itemStack) {
-		return this;
-	}
+    @Override
+    public Item getChargedItem(ItemStack itemStack) {
+        return this;
+    }
 
-	@Override
-	public Item getEmptyItem(ItemStack itemStack) {
-		return this;
-	}
+    @Override
+    public Item getEmptyItem(ItemStack itemStack) {
+        return this;
+    }
 
-	@Override
-	public double getMaxCharge(ItemStack itemStack) {
-		return maxCharge;
-	}
+    @Override
+    public double getMaxCharge(ItemStack itemStack) {
+        return maxCharge;
+    }
 
-	@Override
-	public int getTier(ItemStack itemStack) {
-		return 1;
-	}
+    @Override
+    public int getTier(ItemStack itemStack) {
+        return 1;
+    }
 
-	@Override
-	public double getTransferLimit(ItemStack itemStack) {
-		return 5;
-	}
+    @Override
+    public double getTransferLimit(ItemStack itemStack) {
+        return 5;
+    }
 }

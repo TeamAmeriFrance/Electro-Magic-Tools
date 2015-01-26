@@ -14,45 +14,45 @@ import thaumcraft.api.ThaumcraftApi;
 
 public class BaseItemRegistry {
 
-	// Materials
-	// Armor
-	public static ItemArmor.ArmorMaterial featherWingMaterial = EnumHelper.addArmorMaterial("FEATEHRWiNG", 1, new int[]{2, 2, 2, 2}, 6);
+    // Materials
+    // Armor
+    public static ItemArmor.ArmorMaterial featherWingMaterial = EnumHelper.addArmorMaterial("FEATEHRWiNG", 1, new int[]{2, 2, 2, 2}, 6);
 
-	public static Item baseBaubles;
+    public static Item baseBaubles;
 
-	public static Item materials;
+    public static Item materials;
 
-	public static Item focusChristmas;
-	public static Item focusShield;
+    public static Item focusChristmas;
+    public static Item focusShield;
 
-	public static Item thorHammer;
-	public static Item thorHammerBroken;
+    public static Item thorHammer;
+    public static Item thorHammerBroken;
 
-	public static Item wingFeather;
-	public static Item wingThaumium;
+    public static Item wingFeather;
+    public static Item wingThaumium;
 
-	public static void registerItems() {
+    public static void registerItems() {
 
-		baseBaubles = new ItemBaseBaubles();
-		GameRegistry.registerItem(baseBaubles, "ItemBaseBaubles");
+        baseBaubles = new ItemBaseBaubles();
+        GameRegistry.registerItem(baseBaubles, "ItemBaseBaubles");
 
-		materials = new ItemBaseMaterials();
-		GameRegistry.registerItem(materials, "ItemBaseMaterials");
+        materials = new ItemBaseMaterials();
+        GameRegistry.registerItem(materials, "ItemBaseMaterials");
 
 
-		focusChristmas = new ItemFocusChristmas();
-		GameRegistry.registerItem(focusChristmas, "ItemFocusChristmas");
-		focusShield = new ItemFocusShield();
-		GameRegistry.registerItem(focusShield, "ItemFocusShield");
+        focusChristmas = new ItemFocusChristmas();
+        GameRegistry.registerItem(focusChristmas, "ItemFocusChristmas");
+        focusShield = new ItemFocusShield();
+        GameRegistry.registerItem(focusShield, "ItemFocusShield");
 
-		thorHammer = new ItemThorHammer();
-		GameRegistry.registerItem(thorHammer, "ItemThorHammer");
-		thorHammerBroken = new ItemThorHammerBroken();
-		GameRegistry.registerItem(thorHammerBroken, "ItemThorHammerBroken");
+        thorHammer = new ItemThorHammer();
+        GameRegistry.registerItem(thorHammer, "ItemThorHammer");
+        thorHammerBroken = new ItemThorHammerBroken();
+        GameRegistry.registerItem(thorHammerBroken, "ItemThorHammerBroken");
 
-		wingFeather = new ItemFeatherWing(featherWingMaterial);
-		GameRegistry.registerItem(wingFeather, "ItemFeatherWing");
-		wingThaumium = new ItemThaumiumWing(ThaumcraftApi.armorMatThaumium);
-		GameRegistry.registerItem(wingThaumium, "ItemThaumiumWing");
-	}
+        wingFeather = new ItemFeatherWing(featherWingMaterial);
+        GameRegistry.registerItem(wingFeather, "ItemFeatherWing");
+        wingThaumium = new ItemThaumiumWing(ThaumcraftApi.armorMatThaumium);
+        GameRegistry.registerItem(wingThaumium, "ItemThaumiumWing");
+    }
 }

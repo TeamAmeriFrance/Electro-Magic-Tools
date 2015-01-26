@@ -8,22 +8,22 @@ import tterrag.core.api.common.config.IConfigHandler;
 import tterrag.core.client.config.BaseConfigGui;
 
 public class ConfigGui extends BaseConfigGui {
-	public ConfigGui(GuiScreen parentScreen) {
-		super(parentScreen);
-	}
+    public ConfigGui(GuiScreen parentScreen) {
+        super(parentScreen);
+    }
 
-	@Override
-	protected IConfigHandler getConfigHandler() {
-		return ConfigHandler.INSTANCE;
-	}
+    @Override
+    protected IConfigHandler getConfigHandler() {
+        return ConfigHandler.INSTANCE;
+    }
 
-	@Override
-	protected String getTitle() {
-		return TextHelper.localize("EMT.config.title");
-	}
+    @Override
+    protected String getTitle() {
+        return TextHelper.localize("EMT.config.title");
+    }
 
-	@Override
-	protected String getLangPrefix() {
-		return ModInformation.ID + ".config.";
-	}
+    @Override
+    protected String getLangPrefix() {
+        return ModInformation.ID + ".config.";
+    }
 }
