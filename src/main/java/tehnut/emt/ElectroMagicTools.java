@@ -41,6 +41,7 @@ public class ElectroMagicTools {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        proxy.registerRenders();
         LootHandler.addLootToChests();
         ModuleRegistry.registerMidModules();
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());

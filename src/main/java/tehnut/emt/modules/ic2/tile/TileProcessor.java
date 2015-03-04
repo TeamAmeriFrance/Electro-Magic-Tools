@@ -1,67 +1,85 @@
 package tehnut.emt.modules.ic2.tile;
 
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
+import tehnut.emt.modules.base.tile.TileMultiblock;
 
-public class TileProcessor extends TileIC2 {
+public class TileProcessor extends TileMultiblock {
 
-    public boolean multiblockFormed;
+    @Override
+    public boolean checkMultiblock() {
+        int i = 0;
+        for (int x = xCoord - 1; x < xCoord + 2; x++) {
+            for (int y = yCoord; y < yCoord + 3; y++) {
+                for (int z = zCoord - 1; z < zCoord + 2; z++) {
+                    TileEntity tile = worldObj.getTileEntity(x, y, z);
+                    if (tile != null && (tile instanceof TileProcessor)) {
+                        if (this.isMaster()) {
+                            if (((TileProcessor) tile).hasMaster()) i++;
+                        } else if (!((TileProcessor) tile).hasMaster()) i++;
+                    }
+                }
+            }
+        }
+        return i > 25 && worldObj.isAirBlock(xCoord, yCoord + 1, zCoord);
+    }
 
-    public boolean isMultiblockFormed() {
-        //Row 1
-        if (worldObj.getBlock(xCoord - 1, yCoord, zCoord) != Blocks.end_stone) return false;
-        else if (worldObj.getBlock(xCoord + 1, yCoord, zCoord) != Blocks.end_stone) return false;
-        else if (worldObj.getBlock(xCoord, yCoord, zCoord - 1) != Blocks.end_stone) return false;
-        else if (worldObj.getBlock(xCoord, yCoord, zCoord + 1) != Blocks.end_stone) return false;
+    @Override
+    public void setupStructure() {
+        for (int x = xCoord - 1; x < xCoord + 2; x++) {
+            for (int y = yCoord; y < yCoord + 3; y++) {
+                for (int z = zCoord - 1; z < zCoord + 2; z++) {
+                    TileEntity tile = worldObj.getTileEntity(x, y, z);
+                    boolean master = (x == xCoord && y == yCoord && z == zCoord);
+                    if (tile != null && (tile instanceof TileProcessor)) {
+                        ((TileProcessor) tile).setMasterCoords(xCoord, yCoord, zCoord);
+                        ((TileProcessor) tile).setHasMaster(true);
+                        ((TileProcessor) tile).setIsMaster(master);
+                    }
+                }
+            }
+        }
+    }
 
-        if (worldObj.getBlock(xCoord - 1, yCoord, zCoord - 1) != Blocks.snow) return false;
-        else if (worldObj.getBlock(xCoord + 1, yCoord, zCoord - 1) != Blocks.snow) return false;
-        else if (worldObj.getBlock(xCoord + 1, yCoord, zCoord + 1) != Blocks.snow) return false;
-        else if (worldObj.getBlock(xCoord + 1, yCoord, zCoord + 1) != Blocks.snow) return false;
+    @Override
+    public void resetStructure() {
+        for (int x = xCoord - 1; x < xCoord + 2; x++) {
+            for (int y = yCoord; y < yCoord + 3; y++) {
+                for (int z = zCoord - 1; z < zCoord + 2; z++) {
+                    TileEntity tile = worldObj.getTileEntity(x, y, z);
+                    if (tile != null && (tile instanceof TileProcessor)) ((TileProcessor) tile).reset();
+                }
+            }
+        }
+    }
 
-        //Row 2
-        if (worldObj.getBlock(xCoord - 1, yCoord + 1, zCoord) != Blocks.iron_block) return false;
-        else if (worldObj.getBlock(xCoord + 1, yCoord + 1, zCoord) != Blocks.iron_block) return false;
-        else if (worldObj.getBlock(xCoord, yCoord + 1, zCoord - 1) != Blocks.iron_block) return false;
-        else if (worldObj.getBlock(xCoord, yCoord + 1, zCoord + 1) != Blocks.iron_block) return false;
+    @Override
+    public void multiblockTick() {
+        if (worldObj.isAirBlock(xCoord, yCoord + 6, zCoord)) {
+            worldObj.setBlock(xCoord, yCoord + 6, zCoord, Blocks.diamond_block);
+        }
+    }
 
-        if (worldObj.getBlock(xCoord - 1, yCoord + 1, zCoord - 1) != Blocks.obsidian) return false;
-        else if (worldObj.getBlock(xCoord + 1, yCoord + 1, zCoord - 1) != Blocks.obsidian) return false;
-        else if (worldObj.getBlock(xCoord + 1, yCoord + 1, zCoord + 1) != Blocks.obsidian) return false;
-        else if (worldObj.getBlock(xCoord + 1, yCoord + 1, zCoord + 1) != Blocks.obsidian) return false;
+    @Override
+    public void masterWriteToNBT(NBTTagCompound tagCompound) {
+    }
 
-        //Row3
-        if (worldObj.getBlock(xCoord - 1, yCoord + 2, zCoord) != Blocks.quartz_block) return false;
-        else if (worldObj.getBlock(xCoord + 1, yCoord + 2, zCoord) != Blocks.quartz_block) return false;
-        else if (worldObj.getBlock(xCoord, yCoord + 2, zCoord - 1) != Blocks.quartz_block) return false;
-        else if (worldObj.getBlock(xCoord, yCoord + 2, zCoord + 1) != Blocks.quartz_block) return false;
+    @Override
+    public void masterReadFromNBT(NBTTagCompound tagCompound) {
+    }
 
-        if (worldObj.getBlock(xCoord - 1, yCoord + 2, zCoord - 1) != Blocks.iron_bars) return false;
-        else if (worldObj.getBlock(xCoord + 1, yCoord + 2, zCoord - 1) != Blocks.iron_bars) return false;
-        else if (worldObj.getBlock(xCoord + 1, yCoord + 2, zCoord + 1) != Blocks.iron_bars) return false;
-        else if (worldObj.getBlock(xCoord + 1, yCoord + 2, zCoord + 1) != Blocks.iron_bars) return false;
+    @Override
+    public void slaveWriteToNBT(NBTTagCompound tagCompound) {
+    }
 
-        if (worldObj.getBlock(xCoord, yCoord + 2, zCoord) != Blocks.trapdoor) return false;
+    @Override
+    public void slaveReadFromNBT(NBTTagCompound tagCompound) {
+    }
 
+    @Override
+    public boolean onBlockRightClicked(EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
         return true;
-    }
-
-    @Override
-    public void updateEntity() {
-        if (worldObj.getWorldTime() % 60 == 0) multiblockFormed = isMultiblockFormed();
-    }
-
-    @Override
-    public void readFromNBT(NBTTagCompound tagCompound) {
-        super.readFromNBT(tagCompound);
-
-        multiblockFormed = tagCompound.getBoolean("multiblockFormed");
-    }
-
-    @Override
-    public void writeToNBT(NBTTagCompound tagCompound) {
-        super.writeToNBT(tagCompound);
-
-        tagCompound.setBoolean("multiblockFormed", multiblockFormed);
     }
 }

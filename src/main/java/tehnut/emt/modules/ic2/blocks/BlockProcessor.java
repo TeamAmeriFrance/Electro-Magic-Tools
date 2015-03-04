@@ -3,9 +3,10 @@ package tehnut.emt.modules.ic2.blocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import tehnut.emt.modules.base.blocks.BlockMultiblock;
 import tehnut.emt.modules.ic2.tile.TileProcessor;
 
-public class BlockProcessor extends BlockIC2Container {
+public class BlockProcessor extends BlockMultiblock {
 
     public BlockProcessor() {
         super("processor", Material.iron, soundTypeMetal, 4.0F);

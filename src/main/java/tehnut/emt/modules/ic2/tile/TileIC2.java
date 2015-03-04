@@ -44,7 +44,6 @@ public class TileIC2 extends TileEntity {
     @Override
     public void markDirty() {
         super.markDirty();
-        if (!worldObj.isRemote)
-            this.worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+        if (!worldObj.isRemote) this.worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
     }
 }
