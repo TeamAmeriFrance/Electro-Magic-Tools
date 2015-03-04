@@ -18,8 +18,8 @@ public abstract class TileMultiblock extends TileEntityBase {
                     resetStructure();
                     return;
                 }
+                multiblockTick();
             }
-            multiblockTick();
         } else {
             if (checkMultiblock()) setupStructure();
         }
