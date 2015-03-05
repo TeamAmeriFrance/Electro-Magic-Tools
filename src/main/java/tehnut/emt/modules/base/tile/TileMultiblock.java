@@ -8,18 +8,20 @@ public abstract class TileMultiblock extends TileEntityBase {
 
     private boolean hasMaster, isMaster;
     private int masterX, masterY, masterZ;
+    private int masterTicks;
 
     @Override
     public void updateEntity() {
         super.updateEntity();
         if (hasMaster()) {
             if (isMaster()) {
-                if (worldObj.getWorldTime() % 60 == 0 && !checkMultiblock()) {
+                masterTicks++;
+                if (masterTicks % 400 == 0 && !checkMultiblock()) {
                     resetStructure();
                     return;
                 }
-                multiblockTick();
             }
+            multiblockTick();
         } else {
             if (checkMultiblock()) setupStructure();
         }
