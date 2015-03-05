@@ -42,7 +42,7 @@ public class BlockMultiblock extends BlockBaseContainer {
     @Override
     public void onNeighborChange(IBlockAccess world, int x, int y, int z, int tileX, int tileY, int tileZ) {
         TileMultiblock multiblock = (TileMultiblock) world.getTileEntity(x, y, z);
-        if (multiblock.getMaster() != null) {
+        if (multiblock.getMaster() != null & !multiblock.checkMultiblock()) {
             multiblock.getMaster().resetStructure();
         }
         super.onNeighborChange(world, x, y, z, tileX, tileY, tileZ);

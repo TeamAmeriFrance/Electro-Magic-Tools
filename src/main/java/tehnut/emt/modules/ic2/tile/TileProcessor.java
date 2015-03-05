@@ -56,8 +56,8 @@ public class TileProcessor extends TileMultiblock {
     }
 
     @Override
-    public void multiblockTick() {
-        if (worldObj.isAirBlock(xCoord, yCoord + 6, zCoord)) {
+    public void multiblockTick(boolean isMaster) {
+        if (isMaster && worldObj.isAirBlock(xCoord, yCoord + 6, zCoord)) {
             worldObj.setBlock(xCoord, yCoord + 6, zCoord, Blocks.diamond_block);
         }
     }

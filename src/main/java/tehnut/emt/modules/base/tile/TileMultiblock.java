@@ -21,7 +21,7 @@ public abstract class TileMultiblock extends TileEntityBase {
                     return;
                 }
             }
-            multiblockTick();
+            multiblockTick(isMaster());
         } else {
             if (checkMultiblock()) setupStructure();
         }
@@ -115,7 +115,7 @@ public abstract class TileMultiblock extends TileEntityBase {
 
     public abstract void resetStructure();
 
-    public abstract void multiblockTick();
+    public abstract void multiblockTick(boolean isMaster);
 
     public abstract void masterWriteToNBT(NBTTagCompound tagCompound);
 
