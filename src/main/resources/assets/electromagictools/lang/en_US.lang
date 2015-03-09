@@ -62,11 +62,8 @@ tile.EMT.module.base.toolRefiller.name=Tool Refiller
 tile.EMT.module.ic2.machine.wandrecharge.name=Industrial Wand Recharge Station
 tile.EMT.module.ic2.machine.etherealprocessor.name=Ethereal Reprocessor
 
-# Thaumonomicon Page Title
-
-# Thaumonomicon Flavor Text
-
-# Thaumonomicon Entries
+#Thaumonomicon Tab Title
+tc.research_category.EMT=Electro-Magic Tools
 
 # Tooltips
 tooltip.EMT.hammer=The Hammer of Thor
@@ -93,3 +90,29 @@ EMT.config.section.misc=Miscellaneous Settings
 EMT.config.section.misc.tooltip=Options that don't fit into the other categories.
 EMT.config.section.modules=Module Settings
 EMT.config.section.modules.tooltip=Select the modules to play with.
+
+#EMT_IC2
+emt.name.emt_ic2=Electro-Magic Tools: IC2 Module
+emt.tag.emt_ic2=Who says magic and technology can't go together?
+emt.page.emt_ic2.0=Who says magic can't work with technology? Our researchers have collaborated with the top mages of the school of Thaumaturgy to bring you the effectiveness of magic coupled with the convenience of electric tools, powerered by EU.
+
+#ELECTRIC_GOGGLES
+emt.name.electric_goggles=Electric Goggles of Revealing
+emt.tag.electric_goggles=The best of both worlds
+emt.page.electric_goggles.0=You have found a way to detect auras using purely electronic means, no longer requiring mystical energy that can be depleted over time. You can now create a pair of Goggles of Revealing that can be recharged with EU while being able to see Aura Nodes just as you could before. A diamond helmet is required to house the sensitive vis sensing circuitry and prevent it from being damaged, which also has the added benefit of providing extra protection.
+
+#NANO_GOGGLES
+emt.name.nano_goggles=Nano Goggles of Revealing
+emt.tag.nano_goggles=Top-tier eye protection
+emt.page.nano_goggles.0=You have discovered a way to incorporate your previous vis sensors to a Nanosuit Helmet without moving too much around. By infusing the nano helmet with magic, you will be able to use it to see Aura Nodes. During the magical process, the control circuits for the night vision feature are replaced with capacitors to absorb the excess magical energy and vis-sensing microchips. This will prevent you from turning off the night vision effect of the helmet.
+
+#QUANTUM_GOGGLES
+emt.name.quantum_goggles=Quantum Goggles of Revealing
+emt.tag.quantum_goggles=Protection, coupled with utility
+emt.page.quantum_goggles.0=It took a lot of trial and error, but you have found a way to slip in vis detection sensors to a Quantum Helmet. By infusing the quantum helmet with magic, you will be able to use it to see Aura Nodes. During the design process, you had to replace several control circuits that involve night vision and automatic feeding with vis detecting circuitry and capacitors to absorb the excess magical energy. You find that using a Mining Laser to contain it can safely focus and direct the explosive pulse where the vision effect and the feeding unit of the helmet lie. Have fun getting force-fed energy. This will prevent you from turning off the night vision and feeding features.
+
+#SOLAR_HELMET
+emt.name.solar_helmet=Solar Helmet of Revealing
+emt.tag.solar_helmet=The sunlight hurts my eyes
+emt.page.solar_helmet.0=You now have a helmet that acts exactly like your quantum goggles of revealing, but can also recharge your chest armor! It generates 128 EU/t during the day, and nothing at night.
+

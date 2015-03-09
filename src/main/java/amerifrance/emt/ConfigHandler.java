@@ -103,6 +103,8 @@ public class ConfigHandler extends AbstractConfigHandler {
     public static boolean enableTEModule = false;
     public static boolean enableToolModule = false;
 
+    public static String researchTag = "[EMT]";
+
     @Override
     protected void init() {
         addSection(values, "values", "The only way to change some numbers that my machines uses.");
@@ -176,6 +178,7 @@ public class ConfigHandler extends AbstractConfigHandler {
 
         activateSection(misc);
         // Do stuff
+        researchTag = getValue("emtReseachTag", researchTag);
 
         activateSection(generators);
         // Do stuff

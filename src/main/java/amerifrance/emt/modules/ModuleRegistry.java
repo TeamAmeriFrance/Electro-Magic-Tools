@@ -9,6 +9,7 @@ import amerifrance.emt.modules.ic2.IC2RecipeRegistry;
 import amerifrance.emt.modules.ic2.blocks.IC2BlockRegistry;
 import amerifrance.emt.modules.ic2.entity.IC2EntityRegistry;
 import amerifrance.emt.modules.ic2.items.IC2ItemRegistry;
+import amerifrance.emt.modules.ic2.research.IC2ResearchRegistry;
 import amerifrance.emt.modules.ic2.tile.IC2TileRegistry;
 import amerifrance.emt.modules.tools.ToolRecipeRegistry;
 import amerifrance.emt.modules.tools.items.ToolItemRegistry;
@@ -67,6 +68,8 @@ public class ModuleRegistry {
 
         if (ConfigHandler.enableIC2Module) {
             // Do stuff
+            IC2ResearchRegistry.addResearchTab();
+            IC2ResearchRegistry.addResearch();
         }
 
         if (ConfigHandler.enableTEModule) {
