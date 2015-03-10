@@ -4,6 +4,7 @@ import amerifrance.emt.ConfigHandler;
 import amerifrance.emt.modules.base.BaseRecipeRegistry;
 import amerifrance.emt.modules.base.blocks.BaseBlockRegistry;
 import amerifrance.emt.modules.base.items.BaseItemRegistry;
+import amerifrance.emt.modules.base.research.BaseResearchRegistry;
 import amerifrance.emt.modules.base.tile.BaseTileRegistry;
 import amerifrance.emt.modules.ic2.IC2RecipeRegistry;
 import amerifrance.emt.modules.ic2.blocks.IC2BlockRegistry;
@@ -66,9 +67,11 @@ public class ModuleRegistry {
 
     public static void registerLateModules() {
 
+        BaseResearchRegistry.addResearchTab();
+        BaseResearchRegistry.addResearch();
+
         if (ConfigHandler.enableIC2Module) {
             // Do stuff
-            IC2ResearchRegistry.addResearchTab();
             IC2ResearchRegistry.addResearch();
         }
 

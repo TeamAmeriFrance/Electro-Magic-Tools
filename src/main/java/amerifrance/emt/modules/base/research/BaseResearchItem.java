@@ -1,4 +1,4 @@
-package amerifrance.emt.modules.ic2.research;
+package amerifrance.emt.modules.base.research;
 
 import amerifrance.emt.ConfigHandler;
 import amerifrance.emt.util.TextHelper;
@@ -8,34 +8,34 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
-public class IC2ResearchItem extends ResearchItem {
+public class BaseResearchItem extends ResearchItem {
 
-    public IC2ResearchItem(String key, String category) {
+    public BaseResearchItem(String key, String category) {
         super(key, category);
     }
 
-    public IC2ResearchItem(String key, String category, AspectList tags, int col, int row, int complex, ResourceLocation icon) {
+    public BaseResearchItem(String key, String category, AspectList tags, int col, int row, int complex, ResourceLocation icon) {
         super(key, category, tags, col, row, complex, icon);
     }
 
-    public IC2ResearchItem(String key, String category, AspectList tags, int col, int row, int complex, ItemStack icon) {
+    public BaseResearchItem(String key, String category, AspectList tags, int col, int row, int complex, ItemStack icon) {
         super(key, category, tags, col, row, complex, icon);
     }
 
     @Override
     public String getName() {
-        return TextHelper.localize("emt.ic2.name." + key);
+        return TextHelper.localize("emt.base.name." + key);
     }
 
     @Override
     public String getText() {
-        return ConfigHandler.researchTag + " " + TextHelper.localize("emt.ic2.tag." + key);
+        return ConfigHandler.researchTag + " " + TextHelper.localize("emt.base.tag." + key);
     }
 
     @Override
     public ResearchItem setPages(ResearchPage... par) {
         for (ResearchPage page : par) {
-            if (page.type == ResearchPage.PageType.TEXT) page.text = "emt.ic2.page." + key + "." + page.text;
+            if (page.type == ResearchPage.PageType.TEXT) page.text = "emt.base.page." + key + "." + page.text;
             if (page.type == ResearchPage.PageType.INFUSION_CRAFTING) {
                 if (parentsHidden == null || parentsHidden.length == 0)
                     parentsHidden = new String[]{"INFUSION"};
