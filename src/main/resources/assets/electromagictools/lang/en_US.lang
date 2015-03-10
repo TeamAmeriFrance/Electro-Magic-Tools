@@ -116,3 +116,18 @@ emt.name.solar_helmet=Solar Helmet of Revealing
 emt.tag.solar_helmet=The sunlight hurts my eyes
 emt.page.solar_helmet.0=You now have a helmet that acts exactly like your quantum goggles of revealing, but can also recharge your chest armor! It generates 128 EU/t during the day, and nothing at night.
 
+#ELECTRIC_BOOTS
+emt.name.electric_boots=Electric Boots of the Traveller
+emt.tag.electric_boots=I've got the power
+emt.page.electric_boots.0=With lots of precise mechanical components and a touch of magic, you have recreated the effects of the Boots of the Traveller in a more stable form. These boots, unlike the original, will not wear away over time, but instead use EU. These boots negate all fall damage, and have all the normal properties of the Boots of the Traveller.
+
+#NANO_BOOTS
+emt.name.nano_boots=Nano Boots of the Traveller
+emt.tag.nano_boots=Speed Demon
+emt.page.nano_boots.0=Your Electric Boots of the Traveller are nice, but you think you can do better. You have found a way to upgrade these boots to the Nano tier, improving the mechanical components and improving the spell cast on the footwear. These boots allow for higher jumps and faster running than before.
+
+#QUANTUM_BOOTS
+emt.name.quantum_boots=Quantum Boots of the Traveller
+emt.tag.quantum_boots=Faster than light
+emt.page.quantum_boots.0=You have meddled with Quantum Physics, making these Quantum Boots of the Traveller so fast, that you appear to be in multiple places at once. But do not forget what happened to Schrodinger's cat...
+

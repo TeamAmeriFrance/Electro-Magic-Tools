@@ -37,23 +37,48 @@ public class IC2ResearchRegistry {
                     .registerResearchItem();
         }
         if (ConfigHandler.electricGogglesResearch && ConfigHandler.nanoGogglesResearch) {
-            researchItem = new IC2ResearchItem("nano_goggles", EMT, IC2ResearchAspects.nanoGoggles, 3, 3, 1, new ItemStack(IC2ItemRegistry.armorNanoGoggles))
+            researchItem = new IC2ResearchItem("nano_goggles", EMT, IC2ResearchAspects.nanoGoggles, 3, 3, 2, new ItemStack(IC2ItemRegistry.armorNanoGoggles))
                     .setParents("electric_goggles")
                     .setConcealed()
                     .setPages(new ResearchPage("0")/*,Recipe Page*/)
                     .registerResearchItem();
         }
         if (ConfigHandler.electricGogglesResearch && ConfigHandler.nanoGogglesResearch && ConfigHandler.quantumGogglesResearch) {
-            researchItem = new IC2ResearchItem("quantum_goggles", EMT, IC2ResearchAspects.quantumGoggles, 4, 3, 1, new ItemStack(IC2ItemRegistry.armorQuantumGoggles))
+            researchItem = new IC2ResearchItem("quantum_goggles", EMT, IC2ResearchAspects.quantumGoggles, 4, 3, 3, new ItemStack(IC2ItemRegistry.armorQuantumGoggles))
                     .setParents("nano_goggles")
                     .setConcealed()
                     .setPages(new ResearchPage("0")/*,Recipe Page*/)
                     .registerResearchItem();
         }
         if (ConfigHandler.electricGogglesResearch && ConfigHandler.nanoGogglesResearch && ConfigHandler.quantumGogglesResearch && ConfigHandler.solarHelmetResearch) {
-            researchItem = new IC2ResearchItem("solar_helmet", EMT, IC2ResearchAspects.solarHelmet, 5, 3, 1, new ItemStack(IC2ItemRegistry.armorSolarGoggles))
+            researchItem = new IC2ResearchItem("solar_helmet", EMT, IC2ResearchAspects.solarHelmet, 5, 3, 3, new ItemStack(IC2ItemRegistry.armorSolarGoggles))
                     .setParents("quantum_goggles")
                     .setHidden()
+                    .setPages(new ResearchPage("0")/*,Recipe Page*/)
+                    .registerResearchItem();
+        }
+
+        if (ConfigHandler.electricBootsResearch) {
+            researchItem = new IC2ResearchItem("electric_boots", EMT, IC2ResearchAspects.electricBoots, 2, -3, 1, new ItemStack(IC2ItemRegistry.armorElectricBoots))
+                    .setSecondary()
+                    .setParents("emt_ic2")
+                    .setConcealed()
+                    .setPages(new ResearchPage("0")/*,Recipe Page*/)
+                    .registerResearchItem();
+        }
+        if (ConfigHandler.electricBootsResearch && ConfigHandler.nanoBootsResearch) {
+            researchItem = new IC2ResearchItem("nano_boots", EMT, IC2ResearchAspects.nanoBoots, 3, -3, 2, new ItemStack(IC2ItemRegistry.armorNanoBoots))
+                    .setSecondary()
+                    .setParents("electric_boots")
+                    .setConcealed()
+                    .setPages(new ResearchPage("0")/*,Recipe Page*/)
+                    .registerResearchItem();
+        }
+        if (ConfigHandler.electricBootsResearch && ConfigHandler.nanoBootsResearch && ConfigHandler.quantumBootsResearch) {
+            researchItem = new IC2ResearchItem("quantum_boots", EMT, IC2ResearchAspects.quantumBoots, 4, -3, 3, new ItemStack(IC2ItemRegistry.armorQuantumBoots))
+                    .setSecondary()
+                    .setParents("nano_boots")
+                    .setConcealed()
                     .setPages(new ResearchPage("0")/*,Recipe Page*/)
                     .registerResearchItem();
         }
