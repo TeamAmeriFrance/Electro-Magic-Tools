@@ -22,14 +22,14 @@ public class BaseResearchRegistry {
     public static void addResearch() {
         ResearchItem researchItem;
 
-        researchItem = new BaseResearchItem("feather_wings", EMT, new AspectList(), 2, -1, 0, new ItemStack(BaseItemRegistry.wingFeather))
+        researchItem = new BaseResearchItem("feather_wings", EMT, new AspectList(), 2, 1, 0, new ItemStack(BaseItemRegistry.wingFeather))
                 .setAutoUnlock()
                 .setParents("emt_ic2")
                 .setRound()
                 .setPages(new ResearchPage("0")/*,Recipe Page*/)
                 .registerResearchItem();
         if (ConfigHandler.nanoWingResearch) {
-            researchItem = new BaseResearchItem("thaumium_wings", EMT, BaseResearchAspects.thaumiumWings, 3, -1, 1, new ItemStack(BaseItemRegistry.wingThaumium))
+            researchItem = new BaseResearchItem("thaumium_wings", EMT, BaseResearchAspects.thaumiumWings, 3, 1, 1, new ItemStack(BaseItemRegistry.wingThaumium))
                     .setSecondary()
                     .setParents("feather_wings")
                     .setConcealed()

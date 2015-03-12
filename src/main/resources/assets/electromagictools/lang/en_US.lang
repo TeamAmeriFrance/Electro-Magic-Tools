@@ -150,3 +150,43 @@ emt.ic2.page.nano_wings.0=Combining the magic harnessed by Thaumium with the nan
 emt.ic2.name.quantum_wings=Quantum Wings
 emt.ic2.tag.quantum_wings=The last step is here...
 emt.ic2.page.quantum_wings.0=After exploring all the possibilities of nanotechnologies, you decided to do the last jump. Quantum. You can thrust yourself many blocks high, have a very good protection, and your fall is slowed down a lot. However, the quantum unpredictability happened once again. Your fall will be completely stopped when spacebar and sneak are maintained. You don't know why, but it works. Included: fall damage reduction, 100%
+
+#THAUMIUM_DRILL
+emt.ic2.name.thaumium_drill=Thaumium Drill
+emt.ic2.tag.thaumium_drill=Magical mining
+emt.ic2.page.thaumium_drill.0=You have discovered a way to infuse Thaumium with mundane electricity. Fusing Thaumium to a Diamond Drill results in a tool that can dig through stone faster and has a higher capacity.<BR><BR>While Thaumium is a very useful and powerful material, it is nowhere near the strength of Iridium. It is considered a mid-tier tool. <BR><BR>This tool may not be the most powerful, but you have a feeling that you will be able to upgrade it in the near future.
+
+#ROCKBREAKER_DRILL
+emt.ic2.name.rockbreaker_drill=Drill of the Rockbreaker
+emt.ic2.tag.rockbreaker_drill=Mining it big
+emt.ic2.page.rockbreaker_drill.0=After studying the Pickaxe of the Core, the Shovel of the Earthmover and the Thaumium Drill, you have managed to combine most of their abilities, resulting in an electric tool that can mine a whole 3x3x1 area of pickaxe and dirt materials very quickly.<BR><BR>This marvelous device is able to find the closest ore clusters on a shift-right click, though at the cost of some EU.
+
+#DIAMOND_CHAINSAW
+emt.ic2.name.diamond_chainsaw=Diamond Chainsaw
+emt.ic2.tag.diamond_chainsaw=Harder, better, faster, stronger
+emt.ic2.page.diamond_chainsaw.0=You are unsure why the thought of upgrading a Chainsaw with diamonds similarly to what you have done with a Drill has never occurred to you. This upgrade makes the Chainsaw capable of holding more energy and breaking blocks faster.
+
+#THAUMIUM_CHAINSAW
+emt.ic2.name.thaumium_chainsaw=Thaumium Chainsaw
+emt.ic2.tag.thaumium_chainsaw=Felling trees and severing heads with a touch of magic
+emt.ic2.page.thaumium_chainsaw.0=You have found a way to fuse Thaumium to a Diamond Chainsaw, allowing it to fell trees quicker and hold more power. Nevertheless, these ameliorations do not come without drawbacks: during the process of fusing these materials, the chainsaw loses its ability to shear foliage, tall grass, and animals.<BR><BR>You have an intuition you will be able to upgrade this tool in the near future.
+
+#STREAM_CHAINSAW
+emt.ic2.name.stream_chainsaw=Chainsaw of the Stream
+emt.ic2.tag.stream_chainsaw=Felling trees in a single swoop
+emt.ic2.page.stream_chainsaw.0=After studying both the Axe of the Stream and the Thaumium Chainsaw, you managed to combine most of their abilities, resulting in an electric tool that can chop down whole trees without much effort.
+
+#IRON_OMNITOOL
+emt.ic2.name.iron_omnitool=Iron Omnitool
+emt.ic2.tag.iron_omnitool=Changing tools is for peasants
+emt.ic2.page.iron_omnitool.0=While tinkering with the inner workings of some of your tools to see if magical integration is a possibility, you have discovered a way to combine the Mining Drill and the Chainsaw, resulting in a tool capable of both mining, cutting down trees and attacking enemies! As you are working with mundane metals, magic influence is not needed to merge these tools together.
+
+#DIAMOND_OMNITOOL
+emt.ic2.name.diamond_omnitool=Diamond Omnitool
+emt.ic2.tag.diamond_omnitool=Jack of all trades
+emt.ic2.page.diamond_omnitool.0=Your discovery of an Iron Omnitool has driven you to try to accomplish the same with some more powerful devices. You have discovered a way to combine the Diamond Drill and the Diamond Chainsaw, resulting in a tool capable of both mining, cutting down trees and attacking enemies, while maintaining the speed and capacity bonuses of the diamond tools. As diamonds are incredibly tough and nearly impossible to reshape once the raw diamonds have been fashioned into tools such as drills and chainsaws, you will require a little bit of magic to coax them to merge.
+
+#THAUMIUM_OMNITOOL
+emt.ic2.name.thaumium_omnitool=Thaumium Omnitool
+emt.ic2.tag.thaumium_omnitool=Mystical multitool
+emt.ic2.page.thaumium_omnitool.0=After creating the Diamond and Iron Omnitools, the next logical step was to do the same with Thaumium. Unfortunately, this isn't as easy. You have discovered a way to combine the Thaumium Drill and the Thaumium Chainsaw, resulting in a tool capable of mining and chopping trees at great speed with a high energy capacity. These tools have already once been infused with magic. You are not sure what will happen if they were to be infused again.
