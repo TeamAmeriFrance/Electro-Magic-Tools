@@ -1,7 +1,7 @@
 package amerifrance.emt.modules.tools.items.types;
 
-import net.minecraft.item.Item;
 import amerifrance.emt.ElectroMagicTools;
+import net.minecraft.item.Item;
 
 public class ItemShardCarver extends Item {
 

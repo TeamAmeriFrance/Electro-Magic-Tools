@@ -1,5 +1,7 @@
 package amerifrance.emt.model;
 
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.modules.ic2.tile.TileProcessor;
 import cpw.mods.fml.client.FMLClientHandler;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.item.ItemStack;
@@ -7,8 +9,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.IItemRenderer;
 import org.lwjgl.opengl.GL11;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.modules.ic2.tile.TileProcessor;
 
 public class RenderProcessor extends TileEntitySpecialRenderer implements IItemRenderer {
 

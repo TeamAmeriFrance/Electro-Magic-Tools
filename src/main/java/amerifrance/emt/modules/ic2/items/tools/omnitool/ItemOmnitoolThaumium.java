@@ -1,5 +1,8 @@
 package amerifrance.emt.modules.ic2.items.tools.omnitool;
 
+import amerifrance.emt.ConfigHandler;
+import amerifrance.emt.ElectroMagicTools;
+import amerifrance.emt.ModInformation;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ic2.api.item.ElectricItem;
@@ -10,9 +13,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import amerifrance.emt.ConfigHandler;
-import amerifrance.emt.ElectroMagicTools;
-import amerifrance.emt.ModInformation;
 
 public class ItemOmnitoolThaumium extends ItemOmnitoolIron {
 

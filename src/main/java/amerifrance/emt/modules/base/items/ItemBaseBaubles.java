@@ -1,5 +1,7 @@
 package amerifrance.emt.modules.base.items;
 
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.util.TextHelper;
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
 import cpw.mods.fml.relauncher.Side;
@@ -16,8 +18,6 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.IIcon;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.util.TextHelper;
 
 import java.util.List;
 import java.util.Random;
@@ -25,8 +25,8 @@ import java.util.Random;
 public class ItemBaseBaubles extends ItemBase implements IBauble {
 
     private static final String[] names = {"oneRing", "nothRing"};
-    public IIcon[] icon = new IIcon[16];
     public static int wornTick;
+    public IIcon[] icon = new IIcon[16];
     public Random random = new Random();
 
     public ItemBaseBaubles() {

@@ -1,5 +1,7 @@
 package amerifrance.emt.modules.ic2.blocks;
 
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.modules.ic2.tile.TileEssentiaGenerator;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.material.Material;
@@ -7,8 +9,6 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.modules.ic2.tile.TileEssentiaGenerator;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.IEssentiaContainerItem;
 

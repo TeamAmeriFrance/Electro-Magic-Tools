@@ -1,10 +1,10 @@
 package amerifrance.emt.modules.ic2.tile.solars.fire;
 
+import amerifrance.emt.ConfigHandler;
+import amerifrance.emt.modules.ic2.blocks.IC2BlockRegistry;
 import ic2.api.energy.prefab.BasicSource;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import amerifrance.emt.ConfigHandler;
-import amerifrance.emt.modules.ic2.blocks.IC2BlockRegistry;
 
 public class TileDoubleFireSolar extends TileFireSolar {
 

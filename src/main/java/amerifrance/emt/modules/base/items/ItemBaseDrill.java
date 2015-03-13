@@ -1,5 +1,9 @@
 package amerifrance.emt.modules.base.items;
 
+import amerifrance.emt.ConfigHandler;
+import amerifrance.emt.ElectroMagicTools;
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.util.TorchPlacer;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -9,10 +13,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import amerifrance.emt.ConfigHandler;
-import amerifrance.emt.ElectroMagicTools;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.util.TorchPlacer;
 
 public class ItemBaseDrill extends ItemPickaxe {
 

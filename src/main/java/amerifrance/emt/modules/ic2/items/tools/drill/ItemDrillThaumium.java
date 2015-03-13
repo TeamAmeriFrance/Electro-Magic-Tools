@@ -1,5 +1,9 @@
 package amerifrance.emt.modules.ic2.items.tools.drill;
 
+import amerifrance.emt.ConfigHandler;
+import amerifrance.emt.ElectroMagicTools;
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.util.TorchPlacer;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ic2.api.item.ElectricItem;
@@ -14,10 +18,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import amerifrance.emt.ConfigHandler;
-import amerifrance.emt.ElectroMagicTools;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.util.TorchPlacer;
 
 import java.util.List;
 

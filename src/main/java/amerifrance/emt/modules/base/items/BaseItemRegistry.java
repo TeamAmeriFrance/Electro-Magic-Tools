@@ -1,15 +1,15 @@
 package amerifrance.emt.modules.base.items;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
-import net.minecraftforge.common.util.EnumHelper;
 import amerifrance.emt.modules.base.items.armor.ItemFeatherWing;
 import amerifrance.emt.modules.base.items.armor.ItemThaumiumWing;
 import amerifrance.emt.modules.base.items.foci.ItemFocusChristmas;
 import amerifrance.emt.modules.base.items.foci.ItemFocusShield;
 import amerifrance.emt.modules.base.items.tools.hammer.ItemThorHammer;
 import amerifrance.emt.modules.base.items.tools.hammer.ItemThorHammerBroken;
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
+import net.minecraftforge.common.util.EnumHelper;
 import thaumcraft.api.ThaumcraftApi;
 
 public class BaseItemRegistry {

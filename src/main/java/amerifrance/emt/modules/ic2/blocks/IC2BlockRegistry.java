@@ -1,11 +1,11 @@
 package amerifrance.emt.modules.ic2.blocks;
 
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.block.Block;
 import amerifrance.emt.modules.ic2.items.blocks.ItemBlockMachines;
 import amerifrance.emt.modules.ic2.items.blocks.ItemBlockSolars1;
 import amerifrance.emt.modules.ic2.items.blocks.ItemBlockSolars2;
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
 
 public class IC2BlockRegistry {
 

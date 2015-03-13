@@ -1,5 +1,7 @@
 package amerifrance.emt.modules.tools.items;
 
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.modules.base.items.ItemBase;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -7,18 +9,16 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.modules.base.items.ItemBase;
 
 import java.util.List;
 
 public class ItemToolComponents extends ItemBase {
 
-    public IIcon[] icon = new IIcon[128];
     public final String drillTop = "drillTop";
     public final String chainsawTop = "chainsawTop";
     public final String omnitoolTop = "omnitoolTop";
     public final String shard = "shard";
+    public IIcon[] icon = new IIcon[128];
 
     public ItemToolComponents() {
         super("tool.component");

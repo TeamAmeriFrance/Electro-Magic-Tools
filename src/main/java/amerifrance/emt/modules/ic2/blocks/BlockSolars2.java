@@ -1,5 +1,11 @@
 package amerifrance.emt.modules.ic2.blocks;
 
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.modules.ic2.tile.solars.air.TileDoubleAirSolar;
+import amerifrance.emt.modules.ic2.tile.solars.air.TileTripleAirSolar;
+import amerifrance.emt.modules.ic2.tile.solars.earth.TileDoubleEarthSolar;
+import amerifrance.emt.modules.ic2.tile.solars.earth.TileEarthSolar;
+import amerifrance.emt.modules.ic2.tile.solars.earth.TileTripleEarthSolar;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -10,12 +16,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.modules.ic2.tile.solars.air.TileDoubleAirSolar;
-import amerifrance.emt.modules.ic2.tile.solars.air.TileTripleAirSolar;
-import amerifrance.emt.modules.ic2.tile.solars.earth.TileDoubleEarthSolar;
-import amerifrance.emt.modules.ic2.tile.solars.earth.TileEarthSolar;
-import amerifrance.emt.modules.ic2.tile.solars.earth.TileTripleEarthSolar;
 
 import java.util.List;
 

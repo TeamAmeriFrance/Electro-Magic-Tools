@@ -1,13 +1,13 @@
 package amerifrance.emt.modules.ic2.items.armor.boots;
 
+import amerifrance.emt.ConfigHandler;
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.util.TextHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-import amerifrance.emt.ConfigHandler;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.util.TextHelper;
 
 public class ItemNanoBootsTraveller extends ItemElectricBootsTraveller {
 

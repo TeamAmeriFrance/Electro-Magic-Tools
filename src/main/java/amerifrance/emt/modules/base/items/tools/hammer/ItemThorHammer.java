@@ -1,5 +1,8 @@
 package amerifrance.emt.modules.base.items.tools.hammer;
 
+import amerifrance.emt.ElectroMagicTools;
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.util.TextHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
@@ -11,9 +14,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import amerifrance.emt.ElectroMagicTools;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.util.TextHelper;
 import thaumcraft.api.IRepairable;
 
 import java.util.List;

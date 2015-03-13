@@ -1,13 +1,13 @@
 package amerifrance.emt.gui;
 
-import cpw.mods.fml.common.network.IGuiHandler;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.World;
 import amerifrance.emt.gui.container.ContainerEtherealMacerator;
 import amerifrance.emt.gui.container.ContainerWandRecharger;
 import amerifrance.emt.modules.ic2.tile.TileEtherealMacerator;
 import amerifrance.emt.modules.ic2.tile.TileWandRecharger;
+import cpw.mods.fml.common.network.IGuiHandler;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 
 public class GuiHandler implements IGuiHandler {
 

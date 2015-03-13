@@ -1,11 +1,11 @@
 package amerifrance.emt.modules.ic2.tile.solars;
 
+import amerifrance.emt.modules.ic2.tile.TileIC2;
 import ic2.api.energy.prefab.BasicSource;
 import ic2.api.tile.IWrenchable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import amerifrance.emt.modules.ic2.tile.TileIC2;
 
 import java.util.Random;
 

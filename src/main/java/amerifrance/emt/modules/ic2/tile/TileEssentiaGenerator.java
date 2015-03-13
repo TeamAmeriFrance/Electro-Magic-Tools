@@ -1,17 +1,17 @@
 package amerifrance.emt.modules.ic2.tile;
 
+import amerifrance.emt.ConfigHandler;
+import amerifrance.emt.util.EssentiaOutputs;
 import ic2.api.energy.prefab.BasicSource;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.util.ForgeDirection;
-import amerifrance.emt.ConfigHandler;
-import amerifrance.emt.util.EssentiaOutputs;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.common.lib.events.EssentiaHandler;
 
 public class TileEssentiaGenerator extends TileIC2 {
+    public static int waitTime;
     public String[] aspects = new String[4];
     public boolean[] isFree = new boolean[4];
-    public static int waitTime;
     public BasicSource energySource = new BasicSource(this, 1000000000, 3);
 
     public TileEssentiaGenerator() {

@@ -1,9 +1,9 @@
 package amerifrance.emt.modules.base.blocks;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import amerifrance.emt.ElectroMagicTools;
 import amerifrance.emt.ModInformation;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 
 public class BlockBase extends Block {
 

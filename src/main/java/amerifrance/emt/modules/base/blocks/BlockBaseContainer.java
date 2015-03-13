@@ -1,5 +1,8 @@
 package amerifrance.emt.modules.base.blocks;
 
+import amerifrance.emt.ElectroMagicTools;
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.modules.base.tile.TileEntityBase;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockContainer;
@@ -11,9 +14,6 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import amerifrance.emt.ElectroMagicTools;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.modules.base.tile.TileEntityBase;
 
 public class BlockBaseContainer extends BlockContainer {
 

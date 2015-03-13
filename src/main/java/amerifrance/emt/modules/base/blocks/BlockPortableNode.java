@@ -1,5 +1,8 @@
 package amerifrance.emt.modules.base.blocks;
 
+import amerifrance.emt.ElectroMagicTools;
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.modules.base.tile.TileEntityPortableNode;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -12,9 +15,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
-import amerifrance.emt.ElectroMagicTools;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.modules.base.tile.TileEntityPortableNode;
 import thaumcraft.common.blocks.BlockAiry;
 
 import java.util.List;

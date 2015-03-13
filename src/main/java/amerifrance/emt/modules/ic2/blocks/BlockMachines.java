@@ -1,5 +1,9 @@
 package amerifrance.emt.modules.ic2.blocks;
 
+import amerifrance.emt.ElectroMagicTools;
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.modules.ic2.tile.TileEtherealMacerator;
+import amerifrance.emt.modules.ic2.tile.TileWandRecharger;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -14,10 +18,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import amerifrance.emt.ElectroMagicTools;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.modules.ic2.tile.TileEtherealMacerator;
-import amerifrance.emt.modules.ic2.tile.TileWandRecharger;
 
 import java.util.List;
 import java.util.Random;

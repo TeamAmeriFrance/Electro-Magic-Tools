@@ -1,5 +1,7 @@
 package amerifrance.emt.modules.ic2.tile;
 
+import amerifrance.emt.ConfigHandler;
+import amerifrance.emt.modules.ic2.blocks.IC2BlockRegistry;
 import ic2.api.item.IC2Items;
 import ic2.api.tile.IWrenchable;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,8 +14,6 @@ import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.oredict.OreDictionary;
-import amerifrance.emt.ConfigHandler;
-import amerifrance.emt.modules.ic2.blocks.IC2BlockRegistry;
 import thaumcraft.common.config.ConfigItems;
 
 public class TileEtherealMacerator extends TileIC2 implements ISidedInventory, IWrenchable {
@@ -21,10 +21,9 @@ public class TileEtherealMacerator extends TileIC2 implements ISidedInventory, I
     private static final int[] slots_top = new int[]{0};
     private static final int[] slots_bottom = new int[]{2, 1};
     private static final int[] slots_sides = new int[]{1};
-
-    private ItemStack[] slots = new ItemStack[3];
     public int maceratingSpeed = ConfigHandler.etherealProcessorBaseSpeed;
     public int cookTime;
+    private ItemStack[] slots = new ItemStack[3];
 
     public int getSizeInventory() {
         return this.slots.length;

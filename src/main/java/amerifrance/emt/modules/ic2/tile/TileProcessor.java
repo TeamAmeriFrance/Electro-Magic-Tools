@@ -1,10 +1,10 @@
 package amerifrance.emt.modules.ic2.tile;
 
+import amerifrance.emt.modules.base.tile.TileMultiblock;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-import amerifrance.emt.modules.base.tile.TileMultiblock;
 
 public class TileProcessor extends TileMultiblock {
 

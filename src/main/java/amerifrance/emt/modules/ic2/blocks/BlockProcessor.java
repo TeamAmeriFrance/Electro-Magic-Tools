@@ -1,10 +1,10 @@
 package amerifrance.emt.modules.ic2.blocks;
 
+import amerifrance.emt.modules.base.blocks.BlockMultiblock;
+import amerifrance.emt.modules.ic2.tile.TileProcessor;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import amerifrance.emt.modules.base.blocks.BlockMultiblock;
-import amerifrance.emt.modules.ic2.tile.TileProcessor;
 
 public class BlockProcessor extends BlockMultiblock {
 

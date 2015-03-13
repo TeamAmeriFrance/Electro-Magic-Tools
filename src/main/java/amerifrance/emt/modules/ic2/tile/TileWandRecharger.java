@@ -1,20 +1,19 @@
 package amerifrance.emt.modules.ic2.tile;
 
+import amerifrance.emt.ConfigHandler;
 import ic2.api.energy.prefab.BasicSink;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import amerifrance.emt.ConfigHandler;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.common.items.wands.ItemWandCasting;
 
 public class TileWandRecharger extends TileIC2 implements IInventory {
 
-    private BasicSink ic2EnergySink = new BasicSink(this, 100000, 4);
-
     ItemStack ItemStacks[];
+    private BasicSink ic2EnergySink = new BasicSink(this, 100000, 4);
 
     public TileWandRecharger() {
         ItemStacks = new ItemStack[1];

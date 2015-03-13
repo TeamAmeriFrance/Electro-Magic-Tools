@@ -1,5 +1,7 @@
 package amerifrance.emt.modules.ic2.items.tools;
 
+import amerifrance.emt.ElectroMagicTools;
+import amerifrance.emt.ModInformation;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ic2.api.item.ElectricItem;
@@ -7,8 +9,6 @@ import ic2.api.item.IElectricItem;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import amerifrance.emt.ElectroMagicTools;
-import amerifrance.emt.ModInformation;
 import thaumcraft.api.IScribeTools;
 import thaumcraft.common.items.ItemInkwell;
 

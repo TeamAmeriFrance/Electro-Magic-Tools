@@ -1,9 +1,9 @@
 package amerifrance.emt.gui;
 
-import net.minecraft.client.gui.GuiScreen;
 import amerifrance.emt.ConfigHandler;
 import amerifrance.emt.ModInformation;
 import amerifrance.emt.util.TextHelper;
+import net.minecraft.client.gui.GuiScreen;
 import tterrag.core.api.common.config.IConfigHandler;
 import tterrag.core.client.config.BaseConfigGui;
 

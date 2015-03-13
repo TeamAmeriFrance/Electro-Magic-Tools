@@ -1,5 +1,9 @@
 package amerifrance.emt.modules.base.items;
 
+import amerifrance.emt.ConfigHandler;
+import amerifrance.emt.ElectroMagicTools;
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.util.TorchPlacer;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -15,10 +19,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
-import amerifrance.emt.ConfigHandler;
-import amerifrance.emt.ElectroMagicTools;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.util.TorchPlacer;
 
 import java.util.ArrayList;
 import java.util.Random;

@@ -1,9 +1,9 @@
 package amerifrance.emt.modules.tools.items.types;
 
+import amerifrance.emt.modules.base.items.ItemBaseDrill;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import amerifrance.emt.modules.base.items.ItemBaseDrill;
 
 public class ItemVanillaDrill extends ItemBaseDrill {
 

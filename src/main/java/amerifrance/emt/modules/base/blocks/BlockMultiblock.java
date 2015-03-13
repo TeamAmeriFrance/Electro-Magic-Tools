@@ -1,12 +1,12 @@
 package amerifrance.emt.modules.base.blocks;
 
+import amerifrance.emt.modules.base.tile.TileMultiblock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import amerifrance.emt.modules.base.tile.TileMultiblock;
 
 public class BlockMultiblock extends BlockBaseContainer {
 

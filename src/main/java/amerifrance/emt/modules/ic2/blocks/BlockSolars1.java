@@ -1,15 +1,5 @@
 package amerifrance.emt.modules.ic2.blocks;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.World;
 import amerifrance.emt.ModInformation;
 import amerifrance.emt.modules.ic2.tile.solars.air.TileAirSolar;
 import amerifrance.emt.modules.ic2.tile.solars.compressed.TileCompressedSolar;
@@ -27,6 +17,16 @@ import amerifrance.emt.modules.ic2.tile.solars.order.TileTripleOrderSolar;
 import amerifrance.emt.modules.ic2.tile.solars.water.TileDoubleWaterSolar;
 import amerifrance.emt.modules.ic2.tile.solars.water.TileTripleWaterSolar;
 import amerifrance.emt.modules.ic2.tile.solars.water.TileWaterSolar;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 
 import java.util.List;
 

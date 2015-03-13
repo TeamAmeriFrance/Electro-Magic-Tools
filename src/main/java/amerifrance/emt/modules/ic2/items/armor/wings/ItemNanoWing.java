@@ -1,5 +1,10 @@
 package amerifrance.emt.modules.ic2.items.armor.wings;
 
+import amerifrance.emt.ConfigHandler;
+import amerifrance.emt.ElectroMagicTools;
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.modules.base.items.armor.ItemThaumiumWing;
+import amerifrance.emt.util.TextHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ic2.api.item.ElectricItem;
@@ -16,11 +21,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ISpecialArmor;
-import amerifrance.emt.ConfigHandler;
-import amerifrance.emt.ElectroMagicTools;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.modules.base.items.armor.ItemThaumiumWing;
-import amerifrance.emt.util.TextHelper;
 
 import java.util.List;
 

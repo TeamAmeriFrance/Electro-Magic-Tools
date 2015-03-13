@@ -1,9 +1,9 @@
 package amerifrance.emt.modules.ic2.items.foci;
 
+import amerifrance.emt.ConfigHandler;
 import ic2.api.item.ElectricItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import amerifrance.emt.ConfigHandler;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.items.wands.ItemWandCasting;

@@ -1,12 +1,12 @@
 package amerifrance.emt.gui.container;
 
+import amerifrance.emt.modules.ic2.tile.TileWandRecharger;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
-import amerifrance.emt.modules.ic2.tile.TileWandRecharger;
 
 public class ContainerWandRecharger extends Container {
 

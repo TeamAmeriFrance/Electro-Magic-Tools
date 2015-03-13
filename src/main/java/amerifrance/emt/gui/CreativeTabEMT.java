@@ -1,10 +1,10 @@
 package amerifrance.emt.gui;
 
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.modules.base.items.BaseItemRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.modules.base.items.BaseItemRegistry;
 
 public class CreativeTabEMT extends CreativeTabs {
 

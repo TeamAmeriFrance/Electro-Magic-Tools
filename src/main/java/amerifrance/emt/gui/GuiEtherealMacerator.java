@@ -1,24 +1,24 @@
 package amerifrance.emt.gui;
 
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.gui.container.ContainerEtherealMacerator;
+import amerifrance.emt.modules.ic2.tile.TileEtherealMacerator;
+import amerifrance.emt.util.TextHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.gui.container.ContainerEtherealMacerator;
-import amerifrance.emt.modules.ic2.tile.TileEtherealMacerator;
-import amerifrance.emt.util.TextHelper;
 
 public class GuiEtherealMacerator extends GuiContainer {
+
+    public static final ResourceLocation texture = new ResourceLocation(ModInformation.ID, "textures/guis/etherealmacerator.png");
 
     public GuiEtherealMacerator(InventoryPlayer inventory, TileEtherealMacerator te) {
         super(new ContainerEtherealMacerator(inventory, te));
         xSize = 176;
         ySize = 165;
     }
-
-    public static final ResourceLocation texture = new ResourceLocation(ModInformation.ID, "textures/guis/etherealmacerator.png");
 
     @Override
     public void drawGuiContainerBackgroundLayer(float f, int j, int i) {

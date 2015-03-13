@@ -1,13 +1,13 @@
 package amerifrance.emt.modules.base.items.tools.hammer;
 
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.util.TextHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import org.lwjgl.input.Keyboard;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.util.TextHelper;
 import thaumcraft.common.entities.projectile.EntityAlumentum;
 
 import java.util.List;

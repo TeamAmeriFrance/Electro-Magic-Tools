@@ -5,18 +5,12 @@ import tterrag.core.common.config.AbstractConfigHandler;
 public class ConfigHandler extends AbstractConfigHandler {
 
     public static final ConfigHandler INSTANCE = new ConfigHandler();
-
-    private ConfigHandler() {
-        super(ModInformation.ID);
-    }
-
     // Config categories
     public static String modules = "Modules";
     public static String research = "Research";
     public static String values = "Numeric Values";
     public static String misc = "Misc Options";
     public static String generators = "Essentia Generator Outputs";
-
     // Config Options
     public static boolean thaumiumDrillResearch = true;
     public static boolean thaumiumChainsawResearch = true;
@@ -61,7 +55,6 @@ public class ConfigHandler extends AbstractConfigHandler {
     public static boolean nanoWingResearch = true;
     public static boolean quantumWingResearch = true;
     public static boolean essentiaGeneratorResearch = true;
-
     public static int armorBaubleProduction = 32;
     public static int inventoryBaubleProduction = 32;
     public static double nanoBootsSpeed = 0.25;
@@ -76,7 +69,6 @@ public class ConfigHandler extends AbstractConfigHandler {
     public static double compressedSolarOutput = 10;
     public static double doubleCompressedSolarOutput = 100;
     public static double tripleCompressedSolarOutput = 1000;
-
     // DEFAULTS - Aer - 15,000 Aqua - 5,000 Ignis - 20,000 Ordo - 16,000 Perditio - 10,000 Terra - 2,000
     public static double fireOutput = 20000;
     public static double waterOutput = 5000;
@@ -86,7 +78,6 @@ public class ConfigHandler extends AbstractConfigHandler {
     public static double entropyOutput = 10000;
     public static double outputCap = -1;
     public static int essentiaGeneratorsDelay = 120;
-
     public static boolean oneRingSpawn = true;
     public static boolean thorHammerSpawn = true;
     public static int chanceOneRing = 25;
@@ -94,12 +85,14 @@ public class ConfigHandler extends AbstractConfigHandler {
     public static boolean allowEnchanting = false;
     public static boolean enableNightVision = true;
     public static boolean toolsInBore = false;
-
     public static boolean enableIC2Module = true;
     public static boolean enableTEModule = false;
     public static boolean enableToolModule = false;
-
     public static String researchTag = "[EMT]";
+
+    private ConfigHandler() {
+        super(ModInformation.ID);
+    }
 
     @Override
     protected void init() {

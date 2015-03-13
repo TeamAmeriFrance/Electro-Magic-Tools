@@ -1,5 +1,7 @@
 package amerifrance.emt.modules.ic2.items;
 
+import amerifrance.emt.ConfigHandler;
+import amerifrance.emt.ModInformation;
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
 import cpw.mods.fml.relauncher.Side;
@@ -13,17 +15,15 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
-import amerifrance.emt.ConfigHandler;
-import amerifrance.emt.ModInformation;
 
 import java.util.List;
 import java.util.Random;
 
 public class ItemIC2Baubles extends ItemIC2 implements IBauble {
 
+    private static final String[] names = {"euMaker.armor", "euMaker.inventory"};
     public IIcon[] icon = new IIcon[16];
     public Random random = new Random();
-    private static final String[] names = {"euMaker.armor", "euMaker.inventory"};
 
     public ItemIC2Baubles() {
         super("bauble");

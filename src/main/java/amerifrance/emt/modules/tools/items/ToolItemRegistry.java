@@ -1,5 +1,10 @@
 package amerifrance.emt.modules.tools.items;
 
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.modules.tools.items.types.ItemShardCarver;
+import amerifrance.emt.modules.tools.items.types.ItemVanillaChainsaw;
+import amerifrance.emt.modules.tools.items.types.ItemVanillaDrill;
+import amerifrance.emt.modules.tools.items.types.ItemVanillaOmnitool;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -7,11 +12,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.modules.tools.items.types.ItemShardCarver;
-import amerifrance.emt.modules.tools.items.types.ItemVanillaChainsaw;
-import amerifrance.emt.modules.tools.items.types.ItemVanillaDrill;
-import amerifrance.emt.modules.tools.items.types.ItemVanillaOmnitool;
 
 public class ToolItemRegistry {
 

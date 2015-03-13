@@ -1,6 +1,5 @@
 package amerifrance.emt.modules.ic2.tile;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import amerifrance.emt.modules.ic2.tile.solars.air.TileAirSolar;
 import amerifrance.emt.modules.ic2.tile.solars.air.TileDoubleAirSolar;
 import amerifrance.emt.modules.ic2.tile.solars.air.TileTripleAirSolar;
@@ -22,6 +21,7 @@ import amerifrance.emt.modules.ic2.tile.solars.order.TileTripleOrderSolar;
 import amerifrance.emt.modules.ic2.tile.solars.water.TileDoubleWaterSolar;
 import amerifrance.emt.modules.ic2.tile.solars.water.TileTripleWaterSolar;
 import amerifrance.emt.modules.ic2.tile.solars.water.TileWaterSolar;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class IC2TileRegistry {
 

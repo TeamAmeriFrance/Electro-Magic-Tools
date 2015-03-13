@@ -1,11 +1,11 @@
 package amerifrance.emt.modules.tools.items.types;
 
+import amerifrance.emt.modules.base.items.ItemBaseOmnitool;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import amerifrance.emt.modules.base.items.ItemBaseOmnitool;
 
 public class ItemVanillaOmnitool extends ItemBaseOmnitool {
 

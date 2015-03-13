@@ -1,8 +1,5 @@
 package amerifrance.emt.modules.ic2.items;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
 import amerifrance.emt.modules.ic2.items.armor.boots.ItemElectricBootsTraveller;
 import amerifrance.emt.modules.ic2.items.armor.boots.ItemNanoBootsTraveller;
 import amerifrance.emt.modules.ic2.items.armor.boots.ItemQuantumBootsTraveller;
@@ -26,6 +23,9 @@ import amerifrance.emt.modules.ic2.items.tools.drill.ItemDrillThaumium;
 import amerifrance.emt.modules.ic2.items.tools.omnitool.ItemOmnitoolDiamond;
 import amerifrance.emt.modules.ic2.items.tools.omnitool.ItemOmnitoolIron;
 import amerifrance.emt.modules.ic2.items.tools.omnitool.ItemOmnitoolThaumium;
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
 
 public class IC2ItemRegistry {
 

@@ -1,5 +1,6 @@
 package amerifrance.emt.gui.container;
 
+import amerifrance.emt.modules.ic2.tile.TileEtherealMacerator;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -7,7 +8,6 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.tileentity.TileEntity;
-import amerifrance.emt.modules.ic2.tile.TileEtherealMacerator;
 import thaumcraft.common.container.SlotOutput;
 
 public class ContainerEtherealMacerator extends Container {

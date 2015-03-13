@@ -1,5 +1,6 @@
 package amerifrance.emt.modules.base.items;
 
+import amerifrance.emt.ModInformation;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -16,7 +17,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import amerifrance.emt.ModInformation;
 import thaumcraft.common.config.Config;
 import thaumcraft.common.lib.utils.InventoryUtils;
 

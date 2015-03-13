@@ -1,16 +1,16 @@
 package amerifrance.emt.modules.ic2.entity;
 
+import amerifrance.emt.ElectroMagicTools;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;
-import amerifrance.emt.ElectroMagicTools;
 
 public class IC2EntityRegistry {
 
+    private static final Class<? extends EntityLiving> ARCHER_CLASS = EntityArcher.class;
     private static int startEID = 300;
     private static int entityIDs = 0;
-    private static final Class<? extends EntityLiving> ARCHER_CLASS = EntityArcher.class;
 
     private static int getUniqueEntityID() {
 

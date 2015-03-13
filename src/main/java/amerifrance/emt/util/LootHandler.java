@@ -1,9 +1,9 @@
 package amerifrance.emt.util;
 
+import amerifrance.emt.modules.base.items.BaseItemRegistry;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.ChestGenHooks;
-import amerifrance.emt.modules.base.items.BaseItemRegistry;
 
 import static amerifrance.emt.ConfigHandler.*;
 

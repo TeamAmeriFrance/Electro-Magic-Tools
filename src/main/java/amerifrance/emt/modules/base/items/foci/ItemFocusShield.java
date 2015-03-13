@@ -1,11 +1,11 @@
 package amerifrance.emt.modules.base.items.foci;
 
+import amerifrance.emt.modules.base.blocks.BaseBlockRegistry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import amerifrance.emt.modules.base.blocks.BaseBlockRegistry;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.items.wands.ItemWandCasting;

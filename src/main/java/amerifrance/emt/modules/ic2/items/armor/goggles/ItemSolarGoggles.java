@@ -1,5 +1,9 @@
 package amerifrance.emt.modules.ic2.items.armor.goggles;
 
+import amerifrance.emt.ConfigHandler;
+import amerifrance.emt.ElectroMagicTools;
+import amerifrance.emt.ModInformation;
+import amerifrance.emt.util.TextHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ic2.api.item.ElectricItem;
@@ -13,10 +17,6 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import amerifrance.emt.ConfigHandler;
-import amerifrance.emt.ElectroMagicTools;
-import amerifrance.emt.ModInformation;
-import amerifrance.emt.util.TextHelper;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -25,14 +25,13 @@ import java.util.Map;
 
 public class ItemSolarGoggles extends ItemQuantumGoggles {
 
+    private static final Map potionCost = new HashMap();
     private int ticker;
     private int generating;
     private int genDay;
     private int genNight;
     private boolean sunIsUp;
     private boolean skyIsVisible;
-
-    private static final Map potionCost = new HashMap();
 
     @SuppressWarnings("unchecked")
     public ItemSolarGoggles() {
@@ -51,6 +50,10 @@ public class ItemSolarGoggles extends ItemQuantumGoggles {
         potionCost.put(Potion.poison.id, 10000);
         potionCost.put(Potion.wither.id, 15000);
         potionCost.put(Potion.confusion.id, 5000);
+    }
+
+    public static int tickRate() {
+        return 128;
     }
 
     @SideOnly(Side.CLIENT)
@@ -168,9 +171,5 @@ public class ItemSolarGoggles extends ItemQuantumGoggles {
 
         sunIsUp = player.worldObj.isDaytime() || !rainWeather;
         skyIsVisible = player.worldObj.canBlockSeeTheSky((int) player.posX, (int) player.posY + 1, (int) player.posZ) || !noSunWorld;
-    }
-
-    public static int tickRate() {
-        return 128;
     }
 }

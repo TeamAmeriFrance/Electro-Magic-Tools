@@ -1,13 +1,13 @@
 package amerifrance.emt.modules.tools;
 
+import amerifrance.emt.modules.tools.items.ToolItemRegistry;
+import amerifrance.emt.modules.tools.items.ToolItemStacks;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.oredict.OreDictionary;
-import amerifrance.emt.modules.tools.items.ToolItemRegistry;
-import amerifrance.emt.modules.tools.items.ToolItemStacks;
 
 public class ToolRecipeRegistry {
 
