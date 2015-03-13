@@ -1,5 +1,13 @@
 package amerifrance.emt;
 
+import amerifrance.emt.gui.CreativeTabEMT;
+import amerifrance.emt.gui.GuiHandler;
+import amerifrance.emt.modules.ModuleRegistry;
+import amerifrance.emt.proxies.CommonProxy;
+import amerifrance.emt.util.EventHandler;
+import amerifrance.emt.util.LootHandler;
+import amerifrance.emt.util.OreDictHandler;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -7,14 +15,9 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.common.MinecraftForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import amerifrance.emt.gui.CreativeTabEMT;
-import amerifrance.emt.gui.GuiHandler;
-import amerifrance.emt.modules.ModuleRegistry;
-import amerifrance.emt.proxies.CommonProxy;
-import amerifrance.emt.util.LootHandler;
-import amerifrance.emt.util.OreDictHandler;
 import tterrag.core.common.Handlers;
 
 import java.io.File;
@@ -45,6 +48,8 @@ public class ElectroMagicTools {
         LootHandler.addLootToChests();
         ModuleRegistry.registerMidModules();
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+        FMLCommonHandler.instance().bus().register(new EventHandler());
+        MinecraftForge.EVENT_BUS.register(new EventHandler());
     }
 
     @Mod.EventHandler

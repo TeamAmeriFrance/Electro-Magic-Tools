@@ -2,12 +2,18 @@ package amerifrance.emt.modules.ic2.research;
 
 import amerifrance.emt.ConfigHandler;
 import amerifrance.emt.ModInformation;
+import amerifrance.emt.modules.ic2.blocks.IC2BlockRegistry;
 import amerifrance.emt.modules.ic2.items.IC2ItemRegistry;
+import amerifrance.emt.util.EssentiaOutputs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class IC2ResearchRegistry {
 
@@ -48,6 +54,7 @@ public class IC2ResearchRegistry {
         if (ConfigHandler.electricGogglesResearch && ConfigHandler.nanoGogglesResearch && ConfigHandler.quantumGogglesResearch && ConfigHandler.solarHelmetResearch) {
             researchItem = new IC2ResearchItem("solar_helmet", EMT, IC2ResearchAspects.solarHelmet, 5, 5, 3, new ItemStack(IC2ItemRegistry.armorSolarGoggles))
                     .setParents("quantum_goggles")
+                    .setParentsHidden("compressed_solars")
                     .setConcealed()
                     .setPages(new ResearchPage("0")/*,Recipe Page*/)
                     .registerResearchItem();
@@ -91,7 +98,7 @@ public class IC2ResearchRegistry {
                     .registerResearchItem();
         }
 
-        //Tools reseaches
+        // Tools reseaches
         if (ConfigHandler.thaumiumDrillResearch) {
             researchItem = new IC2ResearchItem("thaumium_drill", EMT, IC2ResearchAspects.thaumiumDrill, 3, -1, 2, new ItemStack(IC2ItemRegistry.toolDrillThaumium))
                     .setParents("emt_ic2")
@@ -150,6 +157,112 @@ public class IC2ResearchRegistry {
                     .setParents("diamond_omnitool")
                     .setConcealed()
                     .setPages(new ResearchPage("0")/*,Recipe Page*/)
+                    .registerResearchItem();
+        }
+
+        // Essentia Generator
+        if (ConfigHandler.essentiaGeneratorResearch) {
+            List<ResearchPage> pages = new ArrayList<ResearchPage>();
+            pages.add(new ResearchPage("emt.ic2.page.essentia_generator.0"));
+            //pages.add(/*Recipe Page*/)
+            String primals = "";
+            for (int i = 0; i < Aspect.getPrimalAspects().size(); i++) {
+                Aspect aspect = Aspect.getPrimalAspects().get(i);
+                if (aspect != null) {
+                    if (i == 0) {
+                        primals = aspect.getName() + ": " + String.valueOf(EssentiaOutputs.outputs.get(aspect.getTag()).intValue()) + " EU";
+                    } else {
+                        primals += "<BR>" + aspect.getName() + ": " + String.valueOf(EssentiaOutputs.outputs.get(aspect.getTag()).intValue()) + " EU";
+                    }
+                }
+            }
+            pages.add(new ResearchPage(primals));
+            String compounds[] = new String[(Aspect.getCompoundAspects().size() / 10) + 1];
+            int pageNumber = 0;
+            for (int i = 0; i < Aspect.getCompoundAspects().size(); i++) {
+                Aspect aspect = Aspect.getCompoundAspects().get(i);
+                if (aspect != null) {
+                    if (i != 0 && i % 10 == 0) pageNumber++;
+                    if (i % 10 == 0) {
+                        compounds[pageNumber] = aspect.getName() + ": " + String.valueOf(EssentiaOutputs.outputs.get(aspect.getTag()).intValue()) + " EU";
+                    } else {
+                        compounds[pageNumber] += "<BR>" + aspect.getName() + ": " + String.valueOf(EssentiaOutputs.outputs.get(aspect.getTag()).intValue()) + " EU";
+                    }
+                }
+            }
+            for (String s : compounds) pages.add(new ResearchPage(s));
+
+            researchItem = new IC2ResearchItem.NonLocTextResearchItem("essentia_generator", EMT, IC2ResearchAspects.essentiaGenerator, 6, 0, 2, new ItemStack(IC2BlockRegistry.essentiaGen))
+                    .setParents("emt_ic2")
+                    .setConcealed()
+                    .setPages(pages.toArray(new ResearchPage[pages.size()]))
+                    .registerResearchItem();
+        }
+
+        //Solar Panels
+        if (ConfigHandler.essentiaGeneratorResearch && ConfigHandler.compressedSolarsResearch) {
+            researchItem = new IC2ResearchItem("compressed_solars", EMT, IC2ResearchAspects.compressedSolars, 8, 0, 3, new ItemStack(IC2BlockRegistry.solars1, 0))
+                    .setParents("essentia_generator")
+                    .setConcealed()
+                    .setPages(new ResearchPage("0"))
+                    .registerResearchItem();
+        }
+        if (ConfigHandler.essentiaGeneratorResearch && ConfigHandler.compressedSolarsResearch && ConfigHandler.airSolarsResearch) {
+            researchItem = new IC2ResearchItem("air_solars", EMT, IC2ResearchAspects.airSolars, 8, 2, 2, new ItemStack(IC2BlockRegistry.solars1, 15))
+                    .setParents("compressed_solars")
+                    .setConcealed()
+                    .setSecondary()
+                    .setPages(new ResearchPage("0"))
+                    .registerResearchItem();
+        }
+        if (ConfigHandler.essentiaGeneratorResearch && ConfigHandler.compressedSolarsResearch && ConfigHandler.darkSolarsResearch) {
+            researchItem = new IC2ResearchItem("dark_solars", EMT, IC2ResearchAspects.darkSolars, 8, -2, 2, new ItemStack(IC2BlockRegistry.solars1, 6))
+                    .setParents("compressed_solars")
+                    .setConcealed()
+                    .setSecondary()
+                    .setPages(new ResearchPage("0"))
+                    .registerResearchItem();
+        }
+        if (ConfigHandler.essentiaGeneratorResearch && ConfigHandler.compressedSolarsResearch && ConfigHandler.earthSolarsResearch) {
+            researchItem = new IC2ResearchItem("earth_solars", EMT, IC2ResearchAspects.earthSolars, 9, 2, 2, new ItemStack(IC2BlockRegistry.solars2, 2))
+                    .setParents("compressed_solars")
+                    .setConcealed()
+                    .setSecondary()
+                    .setPages(new ResearchPage("0"))
+                    .registerResearchItem();
+        }
+        if (ConfigHandler.essentiaGeneratorResearch && ConfigHandler.compressedSolarsResearch && ConfigHandler.fireSolarsResearch) {
+            researchItem = new IC2ResearchItem("fire_solars", EMT, IC2ResearchAspects.fireSolars, 9, -2, 2, new ItemStack(IC2BlockRegistry.solars1, 12))
+                    .setParents("compressed_solars")
+                    .setConcealed()
+                    .setSecondary()
+                    .setPages(new ResearchPage("0"))
+                    .registerResearchItem();
+        }
+        if (ConfigHandler.essentiaGeneratorResearch && ConfigHandler.compressedSolarsResearch && ConfigHandler.orderSolarsResearch) {
+            researchItem = new IC2ResearchItem("order_solars", EMT, IC2ResearchAspects.orderSolars, 10, 1, 2, new ItemStack(IC2BlockRegistry.solars1, 9))
+                    .setParents("compressed_solars")
+                    .setConcealed()
+                    .setSecondary()
+                    .setPages(new ResearchPage("0"))
+                    .registerResearchItem();
+        }
+        if (ConfigHandler.essentiaGeneratorResearch && ConfigHandler.compressedSolarsResearch && ConfigHandler.waterSolarsResearch) {
+            researchItem = new IC2ResearchItem("water_solars", EMT, IC2ResearchAspects.waterSolars, 10, -1, 2, new ItemStack(IC2BlockRegistry.solars1, 3))
+                    .setParents("compressed_solars")
+                    .setConcealed()
+                    .setSecondary()
+                    .setPages(new ResearchPage("0"))
+                    .registerResearchItem();
+        }
+
+        //Wand Charging Station
+        if (ConfigHandler.essentiaGeneratorResearch && ConfigHandler.compressedSolarsResearch && ConfigHandler.wandChargingStationResearch) {
+            researchItem = new IC2ResearchItem("wand_charger", EMT, IC2ResearchAspects.wandCharger, 11, 0, 3, new ItemStack(IC2BlockRegistry.machines, 0))
+                    .setParents("compressed_solars")
+                    .setConcealed()
+                    .setSecondary()
+                    .setPages(new ResearchPage("0"))
                     .registerResearchItem();
         }
     }

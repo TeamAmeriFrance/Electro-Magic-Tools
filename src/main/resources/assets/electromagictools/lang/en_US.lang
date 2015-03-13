@@ -190,3 +190,48 @@ emt.ic2.page.diamond_omnitool.0=Your discovery of an Iron Omnitool has driven yo
 emt.ic2.name.thaumium_omnitool=Thaumium Omnitool
 emt.ic2.tag.thaumium_omnitool=Mystical multitool
 emt.ic2.page.thaumium_omnitool.0=After creating the Diamond and Iron Omnitools, the next logical step was to do the same with Thaumium. Unfortunately, this isn't as easy. You have discovered a way to combine the Thaumium Drill and the Thaumium Chainsaw, resulting in a tool capable of mining and chopping trees at great speed with a high energy capacity. These tools have already once been infused with magic. You are not sure what will happen if they were to be infused again.
+
+#ESSENTIA_GENERATOR
+emt.ic2.name.essentia_generator=Essentia Generator
+emt.ic2.tag.essentia_generator=Harnessing the power-producing potential of Essentia
+emt.ic2.page.essentia_generator.0=After much studying and research, you have finally discovered how to create electricity from your leftover Essentia.<BR><BR>This Generator will produce various amounts of EU depending on the type of Essentia it is fed. It is able process 4 different types of Essentia at the same time. To set which Essentia it needs to target, simply right click the Generator with a phial filled with the Essentia type. Simply place a Warded Jar containing Potentia in a 8 blocks radius of the machine and it will draw it in to create EU.
+
+#COMPRESSED_SOLARS
+emt.ic2.name.compressed_solars=Compressed Solar Panels
+emt.ic2.tag.compressed_solars=Increase the efficiency!
+emt.ic2.page.compressed_solars.0=You have found a way to compress 9 mundane Solar Panels in a magical one, that acts as if it was made of 10 mundane solar panels, generating 10 EU/t. You may repeat this process with compressed solar panels, allowing you to increase the power potential per block even higher. You can also, by magical infusion, create triple compressed solar panels, taking the folly a step further.
+
+#AIR_SOLARS
+emt.ic2.name.air_solars=Aer Infused Compressed Solar Panels
+emt.ic2.tag.air_solars=Don't be afraid of heights
+emt.ic2.page.air_solars.0=Your adventurous mind and the natural amount of air existing at the top of the world make these Solar Panels yield more energy when located over Y = 160.
+
+#DARK_SOLARS
+emt.ic2.name.dark_solars=Entropy Infused Compressed Solar Panels
+emt.ic2.tag.dark_solars=Not afraid of the dark
+emt.ic2.page.dark_solars.0=You know that Solar Panels stop working at nightime. To counter that, you found a way to make your Solar Panels produce energy at night!
+
+#EARTH_SOLARS
+emt.ic2.name.earth_solars=Terra Infused Compressed Solar Panels
+emt.ic2.tag.earth_solars=Not for claustrophobic persons
+emt.ic2.page.earth_solars.0=You have decided to get closer to the core. These Solar Panels produce more energy under Y = 10, but keep in mind the rebellious spirits need to be able to see the sun to work.
+
+#FIRE_SOLARS
+emt.ic2.name.fire_solars=Ignis Infused Compressed Solar Panels
+emt.ic2.tag.fire_solars=Where it is hot and dangerous...
+emt.ic2.page.fire_solars.0=Fascinated by the Nether, you created a monster. These Solar Panels work like normal in the Overworld, but also produce more energy when they are located in the Nether! A monster I tell you..
+
+#ORDER_SOLARS
+emt.ic2.name.order_solars=Ordo Infused Compressed Solar Panels
+emt.ic2.tag.order_solars=I've got the power!
+emt.ic2.page.order_solars.0=Harnessing the power of Order, you have managed to triple the output of your Solar Panels at day!
+
+#WATER_SOLARS
+emt.ic2.name.water_solars=Aqua Infused Compressed Solar Panels
+emt.ic2.tag.water_solars=Curse you rain!
+emt.ic2.page.water_solars.0=You always hated rain, especially when all your power came from Solar Panels. You hated it so much that you decided to find a way to make your Solar Panels keep running during rain. You managed... kind of. The Water Infused Solar Panels work during rain, and during rain only.
+
+#WAND_CHARGER
+emt.ic2.name.wand_charger=Industrial Wand Charging Station
+emt.ic2.tag.wand_charger=Charging your wand the industrial way
+emt.ic2.page.wand_charger.0=You have managed to combine the powers of the Wand Pedestal with those of the mighty UU-Matter, resulting in a machine capable of replicating aspects on your wand, at the cost of 50000 EU to recharge every aspect on the wand of 1 unit.

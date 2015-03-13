@@ -32,10 +32,6 @@ public class ConfigHandler extends AbstractConfigHandler {
     public static boolean christmasFocusResearch = true;
     public static boolean shieldFocusResearch = true;
     public static boolean shieldBlockResearch = true;
-    public static boolean potentiaGeneratorResearch = true;
-    public static boolean ignisGeneratorResearch = true;
-    public static boolean auramGeneratorResearch = true;
-    public static boolean arborGeneratorResearch = true;
     public static boolean wandChargingStationResearch = true;
     public static boolean tinyUraniumResearch = true;
     public static boolean thorHammerResearch = true;
@@ -64,7 +60,7 @@ public class ConfigHandler extends AbstractConfigHandler {
     public static boolean thaumiumWingResearch = true;
     public static boolean nanoWingResearch = true;
     public static boolean quantumWingResearch = true;
-    public static boolean aerGeneratorResearch = true;
+    public static boolean essentiaGeneratorResearch = true;
 
     public static int armorBaubleProduction = 32;
     public static int inventoryBaubleProduction = 32;
@@ -131,10 +127,6 @@ public class ConfigHandler extends AbstractConfigHandler {
         christmasFocusResearch = getValue("christmasFocusResearch", christmasFocusResearch, RestartReqs.REQUIRES_MC_RESTART);
         shieldFocusResearch = getValue("shieldFocusResearch", shieldFocusResearch, RestartReqs.REQUIRES_MC_RESTART);
         shieldBlockResearch = getValue("shieldBlockResearch", shieldBlockResearch, RestartReqs.REQUIRES_MC_RESTART);
-        potentiaGeneratorResearch = getValue("potentiaGeneratorResearch", potentiaGeneratorResearch, RestartReqs.REQUIRES_MC_RESTART);
-        ignisGeneratorResearch = getValue("ignisGeneratorResearch", ignisGeneratorResearch, RestartReqs.REQUIRES_MC_RESTART);
-        auramGeneratorResearch = getValue("auramGeneratorResearch", auramGeneratorResearch, RestartReqs.REQUIRES_MC_RESTART);
-        arborGeneratorResearch = getValue("arborGeneratorResearch", arborGeneratorResearch, RestartReqs.REQUIRES_MC_RESTART);
         wandChargingStationResearch = getValue("wandChargingStationResearch", wandChargingStationResearch, RestartReqs.REQUIRES_MC_RESTART);
         tinyUraniumResearch = getValue("tinyUraniumResearch", tinyUraniumResearch, RestartReqs.REQUIRES_MC_RESTART);
         thorHammerResearch = getValue("thorHammerResearch", thorHammerResearch, RestartReqs.REQUIRES_MC_RESTART);
@@ -163,7 +155,7 @@ public class ConfigHandler extends AbstractConfigHandler {
         thaumiumWingResearch = getValue("thaumiumWingResearch", thaumiumWingResearch, RestartReqs.REQUIRES_MC_RESTART);
         nanoWingResearch = getValue("nanoWingResearch", nanoWingResearch, RestartReqs.REQUIRES_MC_RESTART);
         quantumWingResearch = getValue("quantumWingResearch", quantumWingResearch, RestartReqs.REQUIRES_MC_RESTART);
-        aerGeneratorResearch = getValue("aerGeneratorResearch", aerGeneratorResearch, RestartReqs.REQUIRES_MC_RESTART);
+        essentiaGeneratorResearch = getValue("essentiaGeneratorResearch", essentiaGeneratorResearch, RestartReqs.REQUIRES_MC_RESTART);
 
         activateSection(values);
         // Do stuff

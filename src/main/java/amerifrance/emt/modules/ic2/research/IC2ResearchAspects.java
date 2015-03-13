@@ -27,4 +27,19 @@ public class IC2ResearchAspects {
 
     public static AspectList diamondOmnitool = new AspectList().add(Aspect.ENERGY, 2).add(Aspect.TOOL, 3).add(Aspect.MINE, 2).add(Aspect.WEAPON, 2);
     public static AspectList thaumiumOnmitool = new AspectList().add(Aspect.ENERGY, 5).add(Aspect.TOOL, 6).add(Aspect.MINE, 4).add(Aspect.WEAPON, 6);
+
+    //Essentia Generator
+    public static AspectList essentiaGenerator = new AspectList().add(Aspect.ENERGY, 4).add(Aspect.EXCHANGE, 4).add(Aspect.METAL, 3).add(Aspect.AURA, 5);
+
+    //Solar Panels
+    public static AspectList compressedSolars = new AspectList().add(Aspect.ENERGY, 4).add(Aspect.LIGHT, 3).add(Aspect.METAL, 2);
+    public static AspectList airSolars = new AspectList().add(Aspect.AIR, 4).add(Aspect.MAGIC, 3).add(Aspect.ENERGY, 4);
+    public static AspectList darkSolars = new AspectList().add(Aspect.ENTROPY, 4).add(Aspect.MAGIC, 3).add(Aspect.ENERGY, 4);
+    public static AspectList earthSolars = new AspectList().add(Aspect.EARTH, 4).add(Aspect.MAGIC, 3).add(Aspect.ENERGY, 4);
+    public static AspectList fireSolars = new AspectList().add(Aspect.FIRE, 4).add(Aspect.MAGIC, 3).add(Aspect.ENERGY, 4);
+    public static AspectList orderSolars = new AspectList().add(Aspect.ORDER, 4).add(Aspect.MAGIC, 3).add(Aspect.ENERGY, 4);
+    public static AspectList waterSolars = new AspectList().add(Aspect.WATER, 4).add(Aspect.MAGIC, 3).add(Aspect.ENERGY, 4);
+
+    //Wand Charging Station
+    public static AspectList wandCharger = new AspectList().add(Aspect.ENERGY, 4).add(Aspect.CRAFT, 2).add(Aspect.EXCHANGE, 3).add(Aspect.GREED, 5);
 }
